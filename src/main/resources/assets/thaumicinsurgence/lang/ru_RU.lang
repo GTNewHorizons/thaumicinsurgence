@@ -1,0 +1,644 @@
+language.name=Russian
+language.region=RU
+language.code=ru_RU
+
+#Items
+item.magicbees:jellyBabies.name=Горсть маленького желе
+item.thaumiumScoop.name=Таумический сачок
+item.thaumiumGrafter.name=Таумический садовый нож
+item.magicbees:mysteriousMagnet.name=Таинственный магнит
+item.moonDial.name=Нефритовый набор луны
+
+#Tiles
+tile.planks.greatwood.name=Доски из великого дерева
+tile.slab.wood.greatwood.name=Плита из великого дерева
+tile.planks.silverwood.name=Доски из серебряного дерева
+tile.slab.wood.silverwood.name=Плита из серебряного дерева
+tile.effectJar.name=Банка для сбора пчёл
+tile.hive.curious.name=Странный улей
+tile.hive.unusual.name=Необычный улей
+tile.hive.deep.name=Глубинный улей
+tile.hive.resonant.name=Резонирующий улей
+tile.hive.infernal.name=Адский улей
+tile.hive.oblivion.name=Забвенный улей
+
+#Combs
+comb.mundane=Мирские соты
+comb.molten=Расплавленные соты
+comb.occult=Оккультные соты
+comb.otherworldly=Потусторонние соты
+comb.transmuted=Трансмутирующие соты
+comb.paper=Бумажные соты
+comb.soul=Душевные соты
+comb.furtive=Незаметные соты
+comb.aware=Памятные соты
+comb.time=Временные соты
+comb.forgotten=Забытые соты
+comb.air=Ветреные соты
+comb.fire=Огненные соты
+comb.water=Водяные соты
+comb.earth=Земляные соты
+comb.TCair=Блестящие ветреные соты
+comb.TCfire=Блестящие огненные соты
+comb.TCwater=Блестящие водяные соты
+comb.TCearth=Блестящие земляные соты
+comb.TCorder=Блестящие упорядоченные соты
+comb.TCchaos=Блестящие энтропийные соты
+comb.essence=Соты эссенции
+comb.potent=Крепкие соты
+comb.TEcarbon=Углеродные соты
+comb.TEelectric=Электрические соты
+comb.TElux=Соты света
+comb.TEendearing=Покоряющие соты
+
+#Waxes
+wax.magic=Магический воск
+wax.soul=Душевный воск
+wax.amnesic=Амнезийный воск
+
+#Drops
+drop.enchanting=Зачарованная капля
+drop.intellect=Интеллектуальная капля
+drop.destabilized=Нестабильная капля
+drop.carbon=Углеродная капля
+drop.lux=Капля света
+drop.endearing=Покоряющая капля
+
+#Pollens
+pollen.unusual=Необычная пыльца
+pollen.phased=Поэтапная пыльца
+
+#Nuggets
+nugget.iron=Железный самородок
+nugget.steel=Стальной самородок
+nugget.copper=Медный самородок
+nugget.tin=Оловянный самородок
+nugget.silver=Серебряный самородок
+nugget.lead=Свинцовый самородок
+nugget.diamond=Алмазный осколок
+nugget.emerald=Изумрудный осколок
+nugget.apatite=Апатитовый осколок
+
+#Propolises
+propolis.dull=Упорядоченный прополис
+propolis.air=Свежий прополис
+propolis.fire=Горящий прополис
+propolis.water=Текучий прополис
+propolis.earth=Каменный прополис
+propolis.magic=Хаотический прополис
+propolis.unstable=Нестабильный прополис
+
+#Misc resources
+resource.fragment=Фрагмент знаний
+resource.lump=Ароматический кусок
+resource.fertilizer=Концентрированные соединения
+resource.skullChip=Обломок кости скелета-иссушителя
+resource.skullFragment=Фрагмент черепа скелета-иссушителя
+resource.dragonDust=Драконья пыль
+resource.dragonChunk=Драконий кусок
+resource.essenceLife=Эссенция ложной жизни
+resource.essenceDeath=Эссенция неглубокой могилы
+resource.essenceTime=Эссенция утраченного времени
+resource.essenceDurability=Эссенция вечной прочности
+resource.essenceOblivion=Эссенция бесконечного равнодушия
+resource.essenceMutable=Эссенция изменчивого постоянства
+resource.TCairDust=Наполненная воздухом пыль
+resource.TCfireDust=Наполненная огнём пыль
+resource.TCwaterDust=Наполненная водой пыль
+resource.TCearthDust=Наполненная землёй пыль
+resource.TCorderDust=Наполненная порядком пыль
+resource.TCchaosDust=Наполненная хаосом пыль
+resource.dimensionalSingularity=Пространственная сингулярность
+resource.startNode=Пчёлы и магия
+resource.crystalAspect=Кристаллизованный %s аспект
+
+#Frames
+item.frameMagic.name=Магическая рамка
+item.frameResilient.name=Эластичная рамка
+item.frameGentle.name=Лёгкая рамка
+item.frameMetabolic.name=Метаболическая рамка
+item.frameNecrotic.name=Некротическая рамка
+item.frameTemporal.name=Временная рамка
+item.frameOblivion.name=Забвенная рамка
+
+#Capsules
+capsule.magic=Магическая капсула %s
+capsule.void=Пустотная капсула %s
+
+#Liquids
+liquid.=(пустая)
+liquid.water=воды
+liquid.lava=лавы
+liquid.biomass=биомассы
+liquid.bioethanol=биотоплива
+liquid.oil=нефти
+liquid.fuel=топлива
+liquid.seedoil=растительного масла
+liquid.honey=мёда
+liquid.juice=фруктового сока
+liquid.ice=льда
+liquid.milk=молока
+liquid.acid=кислоты
+liquid.poison=яда
+liquid.liquidnitrogen=жидкого азота
+liquid.liquiddna=жидкого ДНК
+liquid.creosote=креозотного масла
+liquid.steam=пара
+
+#Moondial
+moon.full=Полнолуние
+moon.gibbousWaning=Выпуклая луна
+moon.gibbousWaxing=Рассеивающая луна
+moon.halfWaning=Последняя четверть луны
+moon.halfWaxing=Первая четверть луны
+moon.crescentWaning=Серповидная луна
+moon.crescentWaxing=Бальзамическая луна
+moon.new=Новолуние
+
+#Backpack
+backpack.thaumaturge=Рюкзак тауматурга
+
+#Itemgroups
+itemGroup.magicBees=Magic Bees
+
+#Misc
+misc.level=Уровень %s
+misc.magnetActive=%s - активирован
+misc.magnetInactive=%s - деактивирован
+
+#Research
+research.requiresBlock=Требует основы %s
+research.requiresPhase=Происходит между %s и %s
+research.requiresPhaseSingle=Во время %s
+research.requiresNode=Происходит только тогда, когда нод находится вблизи
+research.requiresNodeSpecific=Происходит только под влиянием %s нода
+research.requiresBiome=Происходит в пределах %s биома
+research.node.pure=чистого
+research.node.dark=тёмного
+research.node.chaotic=хаотического
+research.block.crystals=Скопление кристаллов
+
+#Species
+magicbees.speciesMystical=Мистическая
+magicbees.speciesMystical.description=Распространены во многих частях мира, а также немного капризны.|Apinomicon
+magicbees.speciesSorcerous=Волшебная
+magicbees.speciesSorcerous.description=Любят тепло и сухую среду кажется, что они обладают способностью вызывать воду из воздуха.|Apinomicon
+magicbees.speciesUnusual=Необычная
+magicbees.speciesUnusual.description="Любопытный образец для моей коллекции!"|Junior Apiarist
+magicbees.speciesAttuned=Приученная
+magicbees.speciesAttuned.description=Они летят, как будто руководствуясь невидимой нитью через воздух.|Apinomicon
+
+magicbees.speciesEldritch=Древняя
+magicbees.speciesEldritch.description=Потенциал, который был заперт в предках этих пчёл в настоящее время выходят на первый план.|Apinomicon
+
+magicbees.speciesEsoteric=Тайная
+magicbees.speciesEsoteric.description=Необычный гибрид, который кажется имеет магические свойства.|Apinomicon
+magicbees.speciesMysterious=Таинственная
+magicbees.speciesMysterious.description=Эти пчёлы были в краю мира и вернулись, и их сила выросла.|Apinomicon
+magicbees.speciesArcane=Магическая
+magicbees.speciesArcane.description="Их продукция заряжена магией."|Azanor, Master Thaumaturge
+
+magicbees.speciesCharmed=Заколдованная
+magicbees.speciesCharmed.description=Ваши первые эксперименты в тауматургическом пчеловодстве дали свои плоды. Жужжащие плоды.|Apinomicon
+magicbees.speciesEnchanted=Зачарованная
+magicbees.speciesEnchanted.description=Последующие поколения заколдованных пчёл усилили их связь с неизвестным.|Apinomicon
+magicbees.speciesSupernatural=Сверхъестественная
+magicbees.speciesSupernatural.description=Эти пчёлы ходят по линии между этим миром и невидимым.|Apinomicon
+
+magicbees.speciesEthereal=Эфирная
+magicbees.speciesEthereal.description=Призрачные и заряжанные энергией извне.|Apinomicon
+
+magicbees.speciesWatery=Водная
+magicbees.speciesWatery.description=Любит влажные места и текущую воду.|Apinomicon
+magicbees.speciesEarthen=Земляная
+magicbees.speciesEarthen.description=У них есть "железная" связь с камнем и грязью.|Apinomicon
+magicbees.speciesFirey=Огненная
+magicbees.speciesFirey.description=Насколько близко вы сможете добраться до живого пламени без "белого каление".|Apinomicon
+magicbees.speciesWindy=Ветряная
+magicbees.speciesWindy.description=Редко можно увидеть в плоских, широко открытых пространствах. Их территории огромны.|Apinomicon
+
+magicbees.speciesPupil=Подопечная
+magicbees.speciesPupil.description="Что эта пчела хочет сделать с моей бумагой?!"|Yorae, Librarian
+magicbees.speciesScholarly=Учёная
+magicbees.speciesScholarly.description="Я не могу быть уверен, но я думаю, что они могут быть умнее меня..."|Yorae, Librarian
+magicbees.speciesSavant=Сведущая
+magicbees.speciesSavant.description=lim(x^(i / pi)/ log(e * 7 - ln(32/x^-pi))). Решите за мёд.|Note found on Yorae's desk
+
+magicbees.speciesAware=Памятная
+magicbees.speciesAware.description="Они могут видеть в вашу душу!"|Florastar, Expert Beekeeper
+magicbees.speciesSpirit=Духовная
+magicbees.speciesSpirit.description=Говорят, что эти пчёлы в состоянии связаться с мертвыми.|Apinomicon
+magicbees.speciesSoul=Душевная
+magicbees.speciesSoul.description="Dread Pirate Roberts пришёл за твоей ДУУУУУУУШОЙ!"|Dread Pirate Roberts
+
+magicbees.speciesSkulking=Прячущиеся
+magicbees.speciesSkulking.description=Эти пчёлы стали ксенофобскими и злыми. Будьте осторожны.|Apinomicon
+magicbees.speciesGhastly=Ужасная
+magicbees.speciesGhastly.description="*вздох*... правда, мистические?"|Taveria, irritated Apiarist
+magicbees.speciesSpidery=Паучая
+magicbees.speciesSpidery.description=Паук-пчела; n. Делает то, что делает паук-пчела.|Unknown
+magicbees.speciesSmouldering=Тлеющая
+magicbees.speciesSmouldering.description=Тлеющие пчёлы стали зажженным огнём неугасимого пламени.|Apinomicon
+
+magicbees.speciesTimely=Временная
+magicbees.speciesTimely.description="Пчеловод никогда не опаздывает. Он приходит именно тогда, когда он хочет!"|Sengir, Mad Apiarist
+magicbees.speciesLordly=Роскошная
+magicbees.speciesLordly.description=Они живут в мире, в пределах видимости глаза гармонии|Tattered Remains of ancient Apinomicon
+magicbees.speciesDoctoral=Докторская
+magicbees.speciesDoctoral.description="Хотите детское желе?"|Passing stranger with a great scarf and a blue box
+
+magicbees.speciesInfernal=Адская
+magicbees.speciesInfernal.description=Появляются глубоко в аду, ни одна не прожила достаточно долго, чтобы освоить свои способности.|Apinomicon
+magicbees.speciesHateful=Ненавистная
+magicbees.speciesHateful.description=Продолжительное воздействие ада вообще не улучшило их темперамент. Будьте осторожны.|Apinomicon
+magicbees.speciesSpiteful=Злопамятная
+magicbees.speciesSpiteful.description=Они охраняют свою территорию яростно, с демоническим рвением и рубцами огня.|Apinomicon
+magicbees.speciesWithering=Иссушающая
+magicbees.speciesWithering.description=Они просто проводят жизнь на провал, медленно извлекая всю энергию со своей территории.|Apinomicon
+
+magicbees.speciesOblivion=Забвенная
+magicbees.speciesOblivion.description=Неясно, являются ли эти пчёлы родными для этого мира, или для какого-либо другого.|Apinomicon
+magicbees.speciesNameless=Безымянная
+magicbees.speciesNameless.description="Другие натуралисты отказывались изучать эти пчёл. Я должен узнать, почему."|Tattered Research Notes
+magicbees.speciesAbandoned=Брошенная
+magicbees.speciesAbandoned.description="Чем больше я изучаю этих пчёл, тем больше чувствую, что им здесь не место, или в другом месте."|Tattered Research Notes
+magicbees.speciesForlorn=Одинокая
+magicbees.speciesForlorn.description="Сейчас я убеждён, что они остались в нашей вселенной с целью некоторого непознаваемого существа."|Tattered Research Notes
+magicbees.speciesDraconic=Драконья
+magicbees.speciesDraconic.description="Со скверным звуком, они вырвались из своего улья. Это был последний раз, когда мы видели Джеральда."|Tattered Research Notes
+
+magicbees.speciesIron=Железистая
+magicbees.speciesIron.description=Вобрав некоторые из неблагородных металлов, эти пчёлы могут концентрировать эссенцию железа из региона.|Apinomicon
+magicbees.speciesGold=Золотоносная
+magicbees.speciesGold.description=Не всё, что блестит, золото.|Ancient Aphorism
+magicbees.speciesCopper=Медная
+magicbees.speciesCopper.description=Базовый металл во многих применениях; эти пчёлы полезны для борьбы с нехваткой ресурсов.|Apinomicon
+magicbees.speciesTin=Оловянная
+magicbees.speciesTin.description=Хотя они металлические, эти пчёлы удивительно хрупкие.|Apinomicon
+magicbees.speciesSilver=Серебряная
+magicbees.speciesSilver.description=Хотя они не получили столького внимания, как золотые пчёлы, они тем не менее ценны.|Apinomicon
+magicbees.speciesLead=Свинцовая
+magicbees.speciesLead.description=Любимые у любительских алхимиков, они считают, что могут превратить этих пчёл в золото.|Apinomicon
+magicbees.speciesAluminum=Алюминиевая
+magicbees.speciesAluminum.description=Морщинистые, блестящие и чрезвычайно податливые.|Apinomicon
+magicbees.speciesArdite=Ардитовая
+magicbees.speciesArdite.description=Нежные, желтовато-оранжевого материала, находятся в адских областях.|Apinomicon
+magicbees.speciesCobalt=Кобальтовая
+magicbees.speciesCobalt.description=Нестабильные свойства этого материала, кажется не влияют на хрупкость пчёл.|Apinomicon
+magicbees.speciesManyullyn=Мануллиновая
+magicbees.speciesManyullyn.description="Doot doo-dee-doot doot!"
+
+magicbees.speciesDiamond=Алмазная
+magicbees.speciesDiamond.description=Кристаллические, сверкающие и труднее, чем зубы дракона. Эти пчёлы не одни из тех.|Apinomicon
+magicbees.speciesEmerald=Изумрудная
+magicbees.speciesEmerald.description=Говорят, что они были на земле, которой правил великий волшебник и они взяли аспект его города.|Apinomicon
+magicbees.speciesApatite=Апатитовая
+magicbees.speciesApatite.description=День и ночь жужжат. Я забаррикадировал окна и спрятался в подвале, но пронзительный шум апатин пчёл проникал в стены и доводил меня до безумия.|Beekeeping 101
+
+magicbees.speciesMutable=Изменчивая
+magicbees.speciesMutable.description=Changeable in nature, mercurial in personality.|Apinomicon
+magicbees.speciesTransmuting=Трансмутирующая
+magicbees.speciesTransmuting.description="I could've sworn this was made out of stone yesterday!"|Sengir, Mad Apiarist
+magicbees.speciesCrumbling=Разрушающая
+magicbees.speciesCrumbling.description=They have a corrosive effect on their surroundings, rapidly aging them.|Apinomicon
+
+magicbees.speciesInvisible=Невидимая
+magicbees.speciesInvisible.description=Easy to miss, their glassy body is difficult to spot in the countryside.|Apinomicon
+
+magicbees.speciesTCAir=Аура
+magicbees.speciesTCAir.description="Они работают так быстро, что это захватывает дух."|Sengir, Mad Apiarist
+magicbees.speciesTCFire=Игнис
+magicbees.speciesTCFire.description=Внимание: содержание улья очень горячо.|Warning label on Azanor's apiary
+magicbees.speciesTCWater=Аква
+magicbees.speciesTCWater.description="Я пытался размножить их однажды, но я получил мыло."|MysteriousAges, Apprentice Thaumaturge
+magicbees.speciesTCEarth=Солим
+magicbees.speciesTCEarth.description="You're really gonna dig these bees, but watch out - they bore quite easily."|MysteriousAges, Apprentice Comedian
+magicbees.speciesTCOrder=Праекантатио
+magicbees.speciesTCOrder.description=Пчеловодство это магия!|Apinomicon, Preface
+magicbees.speciesTCChaos=Абсолютные
+magicbees.speciesTCChaos.description="Их сильно привлекают осколки. Они требуют дальнейшего изучения."|Azanor, Master Thaumaturge
+magicbees.speciesTCVis=Вис
+magicbees.speciesTCVis.description="Они могут чувствовать изменения в ауре, но ещё не в состоянии воздействовать на неё."|Azanor, research notes
+magicbees.speciesTCPure=Чистые
+magicbees.speciesTCPure.description="Это как пчела-швейцар!"|MysteriousAges, Thaumaturge
+magicbees.speciesTCFlux=Льняные
+magicbees.speciesTCFlux.description="Я думал, что они помогут прибраться, но они делают только хуже!"|Kreicus, Apprentice Thaumaturge
+magicbees.speciesTCAttractive=Привлекательные
+magicbees.speciesTCAttractive.description=Претерпев странную мутацию, эти пчёлы в настоящее время привлекают магию к себе.|Apinomicon
+magicbees.speciesTCRejuvenating=Rejuvenating
+magicbees.speciesTCRejuvenating.description=The hum of the hive is magical, and over time is absorbed by nearby nodes.|Apinomicon
+magicbees.speciesTCBrainy=Умные
+magicbees.speciesTCBrainy.description=Их соты могут быть вонючими и плохо пахнуть, но их интеллект хорошо развит.|Apinomicon
+magicbees.speciesTCWispy=Виспи
+magicbees.speciesTCWispy.description=Их язык искажён и не понятен. Вполне вероятно, что они говорят с неестественными существами.|Apinomicon
+magicbees.speciesTCBatty=Сумасшедшие
+magicbees.speciesTCBatty.description=Они, как правило, привлекают летучих мышей в свои ульи с помощью неизвестных средств.|Apinomicon
+magicbees.speciesTCChicken=Куриные
+magicbees.speciesTCChicken.description="Кудах. Кудах кудах! ... вы слышали меня."|Confused bee
+magicbees.speciesTCBeef=Мясистые
+magicbees.speciesTCBeef.description="Муу, муу, муу. Погоди, что?"|Confused bee
+magicbees.speciesTCPork=Свиные
+magicbees.speciesTCPork.description="Хрю, хрю. Эм.... бззз?"|Confused bee
+magicbees.speciesEEMinium=Алхимические
+magicbees.speciesEEMinium.description=Это может быть возможным, чтобы воспользоваться их ртутной и изменчивой природой.|Apinomicon
+magicbees.speciesAMEssence=Essence
+magicbees.speciesAMEssence.description=Drawing from motes of dust in the air and ground, they concentrate the energy
+magicbees.speciesAMQuintessence=Quintessential
+magicbees.speciesAMQuintessence.description=The heart of magic lies dormant in all things.|Apinomicon, preface
+magicbees.speciesAMEarth=Erde
+magicbees.speciesAMEarth.description=Empowered by the Earth, their produce is infused with its essence.|Apinomicon
+magicbees.speciesAMAir=Luft
+magicbees.speciesAMAir.description=Swift as the wind, and lighter than air.|Apinomicon
+magicbees.speciesAMFire=Feuer
+magicbees.speciesAMFire.description=Their colony can reach temperatures that boil water and melt metals.|Apinomicon
+magicbees.speciesAMWater=Wasser
+magicbees.speciesAMWater.description=Through prolonged exposure to liquids, their combs are quite wet and heavy.|Apinomicon
+magicbees.speciesAMLightning=Blitz
+magicbees.speciesAMLightning.description=They can travel vast distances in a blink, and are known for starting many wildfires.|Apinomicon
+magicbees.speciesAMPlant=Staude
+magicbees.speciesAMPlant.description=They have an affinity for all that is green and grows.|Apinomicon
+magicbees.speciesAMIce=Eis
+magicbees.speciesAMIce.description="They keep stealing stuff from me, and I never see them. They're far too slippery."|MysteriousAges, incorrigible punster
+magicbees.speciesAMMagma=Magma
+magicbees.speciesAMMagma.description=As they fly by, they sear the surface of the landscape, eventually scouring all plants and fragile minerals away.|Apinomicon
+magicbees.speciesAMArcane=Arkanen
+magicbees.speciesAMArcane.description="Curious creatures, though their produce is quite useful."|Mithion, Adept
+magicbees.speciesAMVortex=Вихревые
+magicbees.speciesAMVortex.description=Ненасытны маной, они могут быть опасны для любого заклинателя.|Apinomicon
+magicbees.speciesAMWight=Wight
+magicbees.speciesAMWight.description="They attract magical spirits; not always docile."|Mithion, Adept
+magicbees.speciesTEBlizzy=Blizzy
+magicbees.speciesTEBlizzy.description=Frigid and cold, like miniature snowmen.|Apinomicon
+magicbees.speciesTEGelid=Gelid
+magicbees.speciesTEGelid.description=Liquid coolant producers.|Apinomicon
+magicbees.speciesTEDante=Dante
+magicbees.speciesTEDante.description=Mixing bees in an inferno produces surprising results.|Apinomicon
+magicbees.speciesTEPyro=Pyro
+magicbees.speciesTEPyro.description=You Monster.|Everyone, to you.
+magicbees.speciesTEElectrum=Electrum
+magicbees.speciesTEElectrum.description=...|Apinomicon
+magicbees.speciesTEPlatinum=Platinum
+magicbees.speciesTEPlatinum.description=...|Apinomicon
+magicbees.speciesTENickel=Nickel
+magicbees.speciesTENickel.description=...|Apinomicon
+magicbees.speciesTEInvar=Invar
+magicbees.speciesTEInvar.description=...|Apinomicon
+magicbees.speciesTEBronze=Tinker
+magicbees.speciesTEBronze.description=...|Apinomicon
+magicbees.speciesTECoal=Carbon
+magicbees.speciesTECoal.description=...|Apinomicon
+magicbees.speciesTEDestabilized=Destabilized
+magicbees.speciesTEDestabilized.description=These bees started out unstable; they didn't get better with time.|Apinomicon
+magicbees.speciesTELux=Lux
+magicbees.speciesTELux.description=Let there be light...|Apinomicon
+magicbees.speciesTEWinsome=Winsome
+magicbees.speciesTEWinsome.description=....|Apinomicon
+magicbees.speciesTEEndearing=Endearing
+magicbees.speciesTEEndearing.description=....|Apinomicon
+magicbees.speciesRSAFluxed=Fluxed
+magicbees.speciesRSAFluxed.description=....|Apinomicon
+magicbees.speciesBMBloody=Bloody
+magicbees.speciesBMBloody.description=....|Apinomicon
+magicbees.speciesBMBound=Bound
+magicbees.speciesBMBound.description=....|Apinomicon
+magicbees.species=
+magicbees.species.description=
+magicbees.speedBlinding=Blinding
+magicbees.effectCurative=Очищение
+magicbees.effectDigSpeed=Добывание
+magicbees.effectMoveSpeed=Ускорение
+magicbees.effectSlowSpeed=Искажение времени
+magicbees.effectWithering=Иссушение
+magicbees.effectTransmuting=Трансмутация
+magicbees.effectCrumbling=Разрушение
+magicbees.effectInvisiblility=Невидимость
+magicbees.effectNodeAttract=Привлечение ауры
+magicbees.effectNodePurify=Очищение ауры
+magicbees.effectNodeFlux=Загрязнение ауры
+magicbees.effectNodeCharge=Зарядка ауры
+magicbees.effectBrainy=Мозговитость
+magicbees.effectBatty=Сумасшествие
+magicbees.effectWispy=Призрачность
+magicbees.effectGhastly=Ghastly
+magicbees.effectSpidery=Spidery
+magicbees.effectAblaze=Ablaze
+magicbees.effectManaDrainer=Vortex
+magicbees.effectAMWisp=Spiritual
+magicbees.effectTEBlizzy=Blizzy
+flowerProvider.book=Книги
+flowerProvider.magic=Таумические цветы
+flowerProvider.arsmagica=Экзотические цветы
+flowerProvider.node=Узел
+classification.veiled=Сокрытые
+classification.veiled.description=Эти странные виды разбросаны по всему миру, могут иметь способности за пределами своего мышления.|Apinomicon
+classification.arcane=Скрытые
+classification.arcane.description=Эти пчёлы имеют необъяснимую близость к магии.|Apinomicon
+classification.supernatural=Сверхъестественные
+classification.supernatural.description=Уже необыкновенные пчёлы, они были связаны со многими странными происшествиями.|Apinomicon
+classification.scholarly=Научные
+classification.scholarly.description=Каста пчёл, которые имеют большой интеллект и дедуктивные способности.|Apinomicon
+classification.skulking=Прячущиеся
+classification.skulking.description=Неприятные и злобные.Относитесь к этой группе с осторожностью.|Apinomicon
+classification.magic=Знающие
+classification.magic.description=Неясно, являются ли они разумными, но у них есть поразительное осознание о своих средах обитания.|Apinomicon
+classification.time=Временные
+classification.time.description=Несмотря на умное использование времени на путешествие, эти пчёлы выполняют в два раза больше работы за один день.|Apinomicon
+classification.soul=Душевные
+classification.soul.description=Становится жутко когда думаешь, что они собирают души умерших.|Apinomicon
+classification.abominable=Отвратительные
+classification.abominable.description=Спавнятся в огненных глубинах нижнего мира, нет ничего приятного об этих существах.|Apinomicon
+classification.Extrinsic=Посторнонние
+classification.Extrinsic.description=Неизвестно, является ли эти существа порождением семьи Apidae в этой вселенной, или они развивались отдельно.|Apinomicon
+classification.metallic=Металлические
+classification.metallic.description=Они собирают фрагменты металла и объединяют их в большие части.|Apinomicon
+classification.gem=Жемчужные
+classification.gem.description=Они собирают фрагменты драгоценных камней в их сотах.|Apinomicon
+classification.transmuting=Polymorphic
+classification.transmuting.description=Reality seems to be somewhat volatile around bees of this family.|Apinomicon
+classification.thaumic=Таумические
+classification.thaumic.description=Эти пчёлы имеют повышенную близость к магии и ауре.|Apinomicon
+classification.fleshy=Мясистые
+classification.fleshy.description=Через неизвестный механизм, эти пчёлы накапливают куски мяса животных. Так или иначе, это все еще съедобно.|Apinomicon
+classification.alchemical=Алхимические
+classification.alchemical.description=Эти пчёлы имеют непостоянную сущность.|Apinomicon
+classification.essential=Ценные
+classification.essential.description=Эти пчёлы имеют повышенную близость к аспектированной магии.|Apinomicon
+
+tc.aspect.tempus=Time, Moment, Eternity
+tc.research_category.MAGICBEES=Apimancy
+
+
+tc.research_name.MB_Root=Apimancy
+tc.research_text.MB_Root=[MB] Adding some sparkle to your buzz.
+tc.research_page.MB_Root.1=Welcome to Apimancy! As a budding keeper of magical bees, there are a few things you should know before diving in. As your acceptance letter to the Academy of Austere Apimancers has mentioned, there are several new tools available to discover. These include some improved versions of Forestry tools, each with their own particular quirks and new frames for your apiaries. <LINE> You may also discover that there are new bee strains available to discover, if you can coax them to live in certain conditions. The Forestry Escritoire will help you discover them and become the envy
+tc.research_page.MB_Root.2=of your former, nonmagical colleagues. Also take note of the several new strains of wild bees that have appeared: these are the key to progressing into the magical lineages of your small winged charges.
+
+tc.research_name.MB_LoreFragment=Фрагменты знаний
+tc.research_text.MB_LoreFragment=[MB] Исследование? Скорее всего пчелиное исследование!
+tc.research_page.MB_LoreFragment.1=While experimenting with bee breeds, you may run accross a strain whose intellectual capabilities are a match for your own. Well, maybe, however unlikely that is. It's possible that they may unearth some obscure reference or a snippet of information that your great intellect may have missed while exploiting the greater mysteries of the universe. <BR> Should your helpful buzzing friends happen to locate this sort of item for you, it may be possible to combine the scraps together into something a little more cohesive.
+
+tc.research_name.MB_FrameMagic=Магическая рамка
+tc.research_text.MB_FrameMagic=[MB] Появление магии в контекстах пчеловодства
+tc.research_page.MB_FrameMagic.1=The Magic Frame is a simple improvement over your regular, run-of-the-mill Untreated Frames. Still fairly simple to produce, it is capable of lasting three times longer in an apiary than Untreated Frames before becoming unuseable. The enchantable properties of the Magic Frame enable it to be used with several of the special essences involved in Apimancy where other frames would reject the infusion of magics.
+
+tc.research_name.MB_Scoop=Таумический сачок
+tc.research_text.MB_Scoop=[MB] Используйте с осторожностью.
+tc.research_page.MB_Scoop.1=Normal scoops are fragile, and prone to breakage. As an authority in Apimancy, you can do better. By adding some Thaumium to the handle, and lacing it with a measure of order, your new scoop will last up to three times longer! <BR> In addition, the Thaumium in the device will accept the Repair enchantment.
+
+tc.research_name.MB_Grafter=Таумический садовый нож
+tc.research_text.MB_Grafter=[MB] Саженцы для каждого случая.
+tc.research_page.MB_Grafter.1=Simple grafters are almost uselessly fragile, and while Proven Grafters are useful, the rarity of emeralds makes them annoying to procure. The solution? Make it yourself! <BR> The Thaumium Grafter, like the Thaumium Scoop, is a tougher, enchantable version of the most basic of the Arborimancer's tools. Use caution though, for although the Repair enchantment can be applied to the grafter, its unusual properties make it exhausting to use.
+
+tc.research_name.MB_EssenceLife=Эссенция ложной жизни
+tc.research_text.MB_EssenceLife=[MB] Роза с другим названием. . .
+tc.research_page.MB_EssenceLife.1=Simple to create by means of magic, this essence has unusual properties when exposed to bees. When combined with an everyday apiary frame, it has the effect of greatly extending the lifespan of a working hive.
+
+tc.research_name.MB_EssenceDeath=Эссенция неглубокой могилы
+tc.research_text.MB_EssenceDeath=[MB] Не совсем шесть футов под килем.
+tc.reseacrh_page.MB_EssenceDeath.1=The Essence of a Shallow Grave channels the death of many of the ... "natural" creatures that wander the world: Zombies, Skeletons, those sorts of things. Exposing bees to this energy has the effect of making them slow and sluggish, and curtails the extent of their lifespan. Some Apimancers consider using frames imbued with these Essences to be cruel, however, others view it as a natrual part of normal beekeeping, with an eye to creating their perfect strain of bees sometime within THEIR lifetime. <BR> The Apimancer's Guild of Safety recommends handling them with telekenisis or very long tongs.
+
+tc.research_name.MB_EssenceArmor=Эссенция вечной прочности
+tc.research_text.MB_EssenceArmor=[MB] Резина для Вашего клея
+tc.research_page.MB_EssenceArmor.1=This is the distilled essence of protection, bound to last forever, or until the magics stored within it weaken and eventually break. But until then, it's invincible. Mostly. <BR> While Magic Frames are useful, they are a tad fragile. This essence takes the enchantments you weave into Magic frames to an entirely new level. Combine the essence with a magic frame, and it should have a vastly extended lifespan.
+
+tc.research_name.MB_EssenceUnstable=Эссенция изменчивого постоянства
+tc.research_text.MB_EssenceUnstable=[MB] Гарантированная неуверенность
+tc.research_page.MB_EssenceUnstable.1=Unstable by nature, the Essence of Fickle Permanence has the side effect of causing normally stable objects and systems to become somewhat unreliable. While this may mostly be a bad thing, Apimancers have discovered that exposing a hive to the essence has the duel effects of both causing the bees to work faster, and the offspring to have higher mutation rates.
+
+tc.research_name.MB_EssenceTime=Эссенция утраченного времени
+tc.research_text.MB_EssenceTime=[MB] No time like the unmoment
+tc.research_page.MB_EssenceTime.1=Time is a fickle thing. It comes and it goes, but where exactly does it go to? As a respectable thaumaturge, it has become possible to trap these wasted moments and save them in a magical form. So, now that it is possible to collect extra time from the world, it seems only appropriate that they are used in a place that would be useful. It would be too dangerous to attempt to access these moments yourself for the moment, but perhaps it would be simple to allow your bees access to this untapped lump of time. <BR> By combining the essence with a Magic Frame as usual will suffice to extend the lifespan of bees in your keeping by several times.
+
+tc.research_name.MB_DimensionalSingularity=Пространственная сингулярность
+tc.research_text.MB_DimensionalSingularity=[MB] Quantum flux for them, unlimited storage for you
+tc.research_page.MB_DimensionalSingularity.1=While it may appear similar to the Portable Hole, it serves as a two-way link with another place, which is... probably uninhabited. It should be possible to utilize these singularities to store materials outside of your dimensional understanding - which of course means that they won't clutter up your inventory. As they are now, they are not particularly useful, but there should be ways to unlock their potential.
+
+tc.research_name.MB_EssenceOblivion=Эссенция бесконечного равнодушия
+tc.research_text.MB_EssenceOblivion=[MB] Cast aside with malice
+tc.research_page.MB_EssenceOblivion.1=Breeding bees for mutations can be aggrivating, especially whith long-lived species. With a little cleverness and only the slightest hint of smugness, you have found a way to utilize the Dimensional Singularity in a manner that only sucks away the life force of your tiny flying friends, bit by bit. Well, maybe significant amounts all at once. It's probably not going to affect them too badly. <BR> It may be somewhat tricky to obtain more than one of the §5Dragon Eggs§0 nessecary to obtain more than one of these. Perhaps there is a bee species that can assist with the limitation.
+
+for.bees.custom.drone.magicbees.speciesMystical=Мистический трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesMystical=Мистический
+for.bees.custom.drone.magicbees.speciesSorcerous=Волшебный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesSorcerous=Волшебный
+for.bees.custom.drone.magicbees.speciesUnusual=Необычный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesUnusual=Необычный
+for.bees.custom.drone.magicbees.speciesAttuned=Приученный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesAttuned=Приученный
+
+for.bees.custom.drone.magicbees.speciesEldritch=Древний трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesEldritch=Древний
+
+for.bees.custom.drone.magicbees.speciesEsoteric=Тайный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesEsoteric=Тайный
+for.bees.custom.drone.magicbees.speciesMysterious=Таинственный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesMysterious=Таинственный
+for.bees.custom.drone.magicbees.speciesArcane=Магический трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesArcane=Магический
+
+for.bees.custom.drone.magicbees.speciesCharmed=Заколдованный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesCharmed=Заколдованный
+for.bees.custom.drone.magicbees.speciesEnchanted=Зачарованный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesEnchanted=Зачарованный
+for.bees.custom.drone.magicbees.speciesSupernatural=Сверхъестественный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesSupernatural=Сверхъестественный
+
+for.bees.custom.drone.magicbees.speciesEthereal=Эфирный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesEthereal=Эфирный
+
+for.bees.custom.drone.magicbees.speciesWatery=Водный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesWatery=Водный
+for.bees.custom.drone.magicbees.speciesEarthen=Земляной трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesEarthen=Земляной
+for.bees.custom.drone.magicbees.speciesFirey=Огненный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesFirey=Огненный
+for.bees.custom.drone.magicbees.speciesWindy=Ветряный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesWindy=Ветряный
+
+for.bees.custom.drone.magicbees.speciesPupil=Подопечный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesPupil=Подопечный
+for.bees.custom.drone.magicbees.speciesScholarly=Учёный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesScholarly=Учёный
+for.bees.custom.drone.magicbees.speciesSavant=Сведущий трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesSavant=Сведущий
+
+for.bees.custom.drone.magicbees.speciesAware=Памятный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesAware=Памятный
+for.bees.custom.drone.magicbees.speciesSpirit=Духовный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesSpirit=Духовный
+for.bees.custom.drone.magicbees.speciesSoul=Душевный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesSoul=Душевный
+
+for.bees.custom.drone.magicbees.speciesSkulking=Прячущийся трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesSkulking=Прячущийся
+for.bees.custom.drone.magicbees.speciesGhastly=Ужасный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesGhastly=Ужасный
+for.bees.custom.drone.magicbees.speciesSpidery=Паучий трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesSpidery=Паучий
+for.bees.custom.drone.magicbees.speciesSmouldering=Тлеющий трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesSmouldering=Тлеющий
+
+for.bees.custom.drone.magicbees.speciesTimely=Временный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesTimely=Временный
+for.bees.custom.drone.magicbees.speciesLordly=Роскошный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesLordly=Роскошный
+for.bees.custom.drone.magicbees.speciesDoctoral=Докторский трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesDoctoral=Докторский
+
+for.bees.custom.drone.magicbees.speciesInfernal=Адский трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesInfernal=Адский
+for.bees.custom.drone.magicbees.speciesHateful=Ненавистный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesHateful=Ненавистный
+for.bees.custom.drone.magicbees.speciesSpiteful=Злопамятный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesSpiteful=Злопамятный
+for.bees.custom.drone.magicbees.speciesWithering=Иссушающий трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesWithering=Иссушающий
+
+for.bees.custom.drone.magicbees.speciesOblivion=Забвенный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesOblivion=Забвенный
+for.bees.custom.drone.magicbees.speciesNameless=Безымянный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesNameless=Безымянный
+for.bees.custom.drone.magicbees.speciesAbandoned=Брошенный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesAbandoned=Брошенный
+for.bees.custom.drone.magicbees.speciesForlorn=Одинокий трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesForlorn=Одинокий
+for.bees.custom.drone.magicbees.speciesDraconic=Драконий трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesDraconic=Драконий
+
+for.bees.custom.drone.magicbees.speciesIron=Железистый трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesIron=Железистый
+for.bees.custom.drone.magicbees.speciesGold=Золотоносный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesGold=Золотоносный
+for.bees.custom.drone.magicbees.speciesCopper=Медный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesCopper=Медный
+for.bees.custom.drone.magicbees.speciesTin=Оловянный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesTin=Оловянный
+for.bees.custom.drone.magicbees.speciesSilver=Серебряный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesSilver=Серебряный
+for.bees.custom.drone.magicbees.speciesLead=Свинцовый трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesLead=Свинцовый
+for.bees.custom.drone.magicbees.speciesAluminum=Алюминиевый трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesAluminum=Алюминиевый
+for.bees.custom.drone.magicbees.speciesArdite=Ардитовый трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesArdite=Ардитовый
+for.bees.custom.drone.magicbees.speciesCobalt=Кобальтовый трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesCobalt=Кобальтовый
+for.bees.custom.drone.magicbees.speciesManyullyn=Мануллиновый трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesManyullyn=Мануллиновый
+
+for.bees.custom.drone.magicbees.speciesDiamond=Алмазный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesDiamond=Алмазный
+for.bees.custom.drone.magicbees.speciesEmerald=Изумрудный трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesEmerald=Изумрудный
+for.bees.custom.drone.magicbees.speciesApatite=Апатитовый трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesApatite=Апатитовый
+
+for.bees.custom.drone.magicbees.speciesMutable=Изменчивый трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesMutable=Изменчивый
+for.bees.custom.drone.magicbees.speciesTransmuting=Трансмутирующий трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesTransmuting=Трансмутирующий
+for.bees.custom.drone.magicbees.speciesCrumbling=Разрушающий трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesCrumbling=Разрушающий
+
+for.bees.custom.drone.magicbees.speciesInvisible=Невидимый трутень
+for.bees.custom.beealyzer.drone.magicbees.speciesInvisible=Невидимый

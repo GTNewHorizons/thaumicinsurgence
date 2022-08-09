@@ -1,0 +1,24 @@
+language.name=English
+language.region=US
+language.code=en_US
+
+# Miscellaneous strings
+# -- Updater strings. Please try to keep these to one line if possible.
+thaumicinsurgence.versioning.newVersion=A new version of Magic Bees is available: %s
+thaumicinsurgence.versioning.critical=Magic Bees has a critical update ready: %s - Please update!
+thaumicinsurgence.versioning.clickDownload=Click to open the Download page. Hover for update info.
+thaumicinsurgence.config.category.general=General
+thaumicinsurgence.config.category.general.tooltip=General mod configs
+thaumicinsurgence.config.category.debug=Debug
+thaumicinsurgence.config.category.debug.tooltip=Options to enable debugging and/or informational messages
+thaumicinsurgence.config.category.modules=Modules
+thaumicinsurgence.config.category.modules.tooltip=Options to enable or disable integration
+tc.research_category.THAUMICINSURGENCE=Thaumic Insurgence
+
+tc.research_name.InfusionInterceptor=Infusion Interceptor
+tc.research_text.InfusionInterceptor=Fucking Azanor's "balance" since 2022!
+InfusionInterceptor.1=Do you hate how slow infusion is? Are you sick and tired of the lag associated with WAing it? WELL DO I HAVE THE SOLUTION FOR YOU!!! FOR ONE LOW LOW PAYMENT OF [2000 warp] I CAN JAILBREAK YOUR INFUSION MATRIX FOR YOU AND ALLOW IT TO ACCEPT THE INFUSION PROVIDER!!!
+
+
+#Tiles
+tile.infusionIntercepter.name=Infusion Interceptor
