@@ -1,5 +1,5 @@
-# thaumicinsurgence
-thaumic insurgence is the latest new addon for thaumcraft 4 (yes I know I'm about 8 years late to the party)
+# Thaumic Insurgence
+Thaumic Insurgence is the latest addon for thaumcraft 4 (yes I know I'm about 8 years late to the party)
    
 This mod will be adding a myriad of new features, such as a few new thaumic multis, new content that just needs to exist, and likewise will be taking over
 older content from mods such as kekztech (such as the thaumium jar) that didn't balance their content well and would be better within another mod.
