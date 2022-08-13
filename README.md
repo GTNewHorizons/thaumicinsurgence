@@ -7,7 +7,7 @@ older content from mods such as kekztech (such as the thaumium jar) that didn't 
 Likewise, this mod will be attempting to provide support for some older bugs/features that might not be able to be fixed directly, but do have potential. 
 for alternative workarounds
 
-Ver 1.0.0.0 - Release Saturday August 13th, 12022/2022
+# Ver 1.0.0.0 - Release Saturday August 13th, 12022/2022
     
     1. What is currently in the mod
     
@@ -36,9 +36,9 @@ Ver 1.0.0.0 - Release Saturday August 13th, 12022/2022
     2. Future Plans
       - Taking over Kekztech's thaum stuff
         - All of kekztech's thaum additions are currently horrifically balanced, 
-          (such as the thaumium jar having the same capacity has an essentia
-          reservoir, but only for a single aspect, but for some reason costing 
-          titanium for some idiotic reason) and as such, I'm going to be pulling the
+          (such as the thaumium jar having the same capacity as an essentia
+          reservoir, but only for a single aspect, however costing titanium
+          for some idiotic reason) and as such, I'm going to be pulling the
           code into this mod and handling it here.
       
       - Possibly moving my MagicBees updates to this mod instead
