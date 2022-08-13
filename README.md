@@ -37,7 +37,7 @@ Ver 1.0.0.0 - Release Saturday August 13th, 12022/2022
       - Taking over Kekztech's thaum stuff
         - All of kekztech's thaum additions are currently horrifically balanced, 
           (such as the thaumium jar having the same capacity as an essentia
-          reservoir,byr only for a single aspect, however costing titanium
+          reservoir, but only for a single aspect, however costing titanium
           for some idiotic reason) and as such, I'm going to be pulling the
           code into this mod and handling it here.
       
