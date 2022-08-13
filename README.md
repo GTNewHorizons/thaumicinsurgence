@@ -7,6 +7,9 @@ older content from mods such as kekztech (such as the thaumium jar) that didn't 
 Likewise, this mod will be attempting to provide support for some older bugs/features that might not be able to be fixed directly, but do have potential. 
 for alternative workarounds
 
+I'd also like to take this line to extend my thanks to the Arcana team for their lovely textures and just amazing mod in general, I'll be spending a lot
+of time backporting a lot of their content, so thank you Arcana Dev Team for allowing the use of Arcana assets except the lore!
+
 # Ver 1.0.0.0 - Release Saturday August 13th, 12022/2022
     
     1. What is currently in the mod
