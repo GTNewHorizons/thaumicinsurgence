@@ -34,6 +34,7 @@ for alternative workarounds
            I have a few small tweaks I still need to make to it first.
     
     2. Future Plans
+    
       - Taking over Kekztech's thaum stuff
         - All of kekztech's thaum additions are currently horrifically balanced, 
           (such as the thaumium jar having the same capacity as an essentia
