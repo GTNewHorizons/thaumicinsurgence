@@ -9,6 +9,7 @@ for alternative workarounds
 
 I'd also like to take this line to extend my thanks to the Arcana team for their lovely textures and just amazing mod in general, I'll be spending a lot
 of time backporting a lot of their content, so thank you Arcana Dev Team for allowing the use of Arcana assets except the lore!
+Specificially thank you to Ibanplay for the lovely textures! Thank you for the good work sir!
 
 # Ver 1.0.0.0 - Release Saturday August 13th, 12022/2022
     
