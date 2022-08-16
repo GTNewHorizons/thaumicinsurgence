@@ -7,6 +7,10 @@ older content from mods such as kekztech (such as the thaumium jar) that didn't 
 Likewise, this mod will be attempting to provide support for some older bugs/features that might not be able to be fixed directly, but do have potential. 
 for alternative workarounds
 
+I'd also like to take this line to extend my thanks to the Arcana team for their lovely textures and just amazing mod in general, I'll be spending a lot
+of time backporting a lot of their content, so thank you Arcana Dev Team for allowing the use of Arcana assets except the lore!
+Specificially thank you to Ibanplay for the lovely textures! Thank you for the good work sir!
+
 # Ver 1.0.0.0 - Release Saturday August 13th, 12022/2022
     
     1. What is currently in the mod
@@ -34,6 +38,7 @@ for alternative workarounds
            I have a few small tweaks I still need to make to it first.
     
     2. Future Plans
+    
       - Taking over Kekztech's thaum stuff
         - All of kekztech's thaum additions are currently horrifically balanced, 
           (such as the thaumium jar having the same capacity as an essentia
