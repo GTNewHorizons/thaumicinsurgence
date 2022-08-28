@@ -5,18 +5,14 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import java.io.File;
 import java.lang.reflect.Field;
-
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
-import thaumcraft.api.ThaumcraftApi;
-import thaumcraft.api.aspects.Aspect;
-import thaumcraft.api.aspects.AspectList;
 import thaumicinsurgence.block.BlockInfusionFucker;
-import thaumicinsurgence.main.utils.VersionInfo;
-import thaumicinsurgence.tileentity.TileEntityInfusionFucker;
 import thaumicinsurgence.item.ItemMiscResources;
+import thaumicinsurgence.main.utils.VersionInfo;
 import thaumicinsurgence.main.utils.compat.ThaumcraftHelper;
+import thaumicinsurgence.tileentity.TileEntityInfusionFucker;
+
 /**
  * A class to hold some data related to mod state & functions.
  *
@@ -83,20 +79,19 @@ public class Config {
     private void doModuleConfigs() {
         Property p;
 
-  //      p = configuration.get(CATEGORY_MODULES, "BloodMagic", true);
-  //      bloodMagicActive = p.getBoolean();
-
+        //      p = configuration.get(CATEGORY_MODULES, "BloodMagic", true);
+        //      bloodMagicActive = p.getBoolean();
 
         p = configuration.get(CATEGORY_MODULES, "Thaumcraft", true);
         thaumcraftActive = p.getBoolean();
 
-   //     p = configuration.get(CATEGORY_MODULES, "Botania", true);
-   //     botaniaActive = p.getBoolean();
-   //     BotaniaHelper.doBotaniaModuleConfigs(configuration);
+        //     p = configuration.get(CATEGORY_MODULES, "Botania", true);
+        //     botaniaActive = p.getBoolean();
+        //     BotaniaHelper.doBotaniaModuleConfigs(configuration);
     }
 
     public void setupInfusionFucker() {
-        if (ThaumcraftHelper.isActive()){}
+        if (ThaumcraftHelper.isActive()) {}
         infusionIntercepter = new BlockInfusionFucker();
         GameRegistry.registerBlock(infusionIntercepter, "infusionIntercepter");
         GameRegistry.registerTileEntity(TileEntityInfusionFucker.class, TileEntityInfusionFucker.tileEntityName);

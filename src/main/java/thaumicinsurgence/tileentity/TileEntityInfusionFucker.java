@@ -8,7 +8,6 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.aspects.IAspectContainer;
 import thaumcraft.api.aspects.IEssentiaTransport;
 import thaumcraft.common.tiles.TileInfusionMatrix;
-import thaumcraft.common.tiles.TileTube;
 import thaumicinsurgence.main.CommonProxy;
 
 public class TileEntityInfusionFucker extends TileEntity implements IAspectContainer, IEssentiaTransport {
@@ -156,8 +155,6 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
         this.currentSuction = null;
         listSlot = 0;
     }
-
-
 
     /** this method handles removing essentia from the essentia source */
     private void removeFromSource() {

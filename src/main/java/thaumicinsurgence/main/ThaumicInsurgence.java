@@ -11,7 +11,6 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import thaumicinsurgence.main.utils.CraftingManager;
 import thaumicinsurgence.main.utils.LogHelper;
 import thaumicinsurgence.main.utils.VersionInfo;
-import thaumicinsurgence.main.utils.compat.ModHelperManager;
 import thaumicinsurgence.main.utils.compat.ThaumcraftHelper;
 
 @Mod(
@@ -37,7 +36,7 @@ public class ThaumicInsurgence {
         FMLCommonHandler.instance().bus().register(modConfig);
 
         // Compatibility Helpers setup time.
-       // ModHelperManager.preInit();
+        // ModHelperManager.preInit();
 
         this.modConfig.setupBlocks();
         this.modConfig.setupItems();
@@ -50,7 +49,6 @@ public class ThaumicInsurgence {
         ThaumcraftHelper.getBlocks();
         ThaumcraftHelper.getItems();
         LogHelper.info("Init completed");
-
     }
 
     @Mod.EventHandler
@@ -58,7 +56,6 @@ public class ThaumicInsurgence {
         ThaumcraftHelper.setupItemAspects();
         ThaumcraftHelper.setupCrafting();
         ThaumcraftHelper.setupResearch();
-
 
         proxy.registerRenderers();
 

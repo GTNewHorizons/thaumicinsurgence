@@ -159,7 +159,7 @@
       <option name="MAIN_CLASS_NAME" value="GradleStart"/>
       <option name="VM_PARAMETERS" value="-Xmx6G -Xms256M -Dfml.ignoreInvalidMinecraftCertificates=true"/>
       <option name="PROGRAM_PARAMETERS" value="--username Developer"/>
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/run"/>
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$\run"/>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false"/>
       <option name="ALTERNATIVE_JRE_PATH" value=""/>
       <option name="ENABLE_SWING_INSPECTOR" value="false"/>
@@ -176,7 +176,7 @@
       <option name="MAIN_CLASS_NAME" value="GradleStartServer"/>
       <option name="VM_PARAMETERS" value="-Xmx6G -Xms256M -Dfml.ignoreInvalidMinecraftCertificates=true"/>
       <option name="PROGRAM_PARAMETERS" value=""/>
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/run"/>
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$\run"/>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false"/>
       <option name="ALTERNATIVE_JRE_PATH" value=""/>
       <option name="ENABLE_SWING_INSPECTOR" value="false"/>
