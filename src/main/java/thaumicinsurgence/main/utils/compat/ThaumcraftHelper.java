@@ -16,11 +16,11 @@ import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 import thaumicinsurgence.block.BlockInfusionFucker;
-import thaumicinsurgence.main.CommonProxy;
 import thaumicinsurgence.main.Config;
 import thaumicinsurgence.main.utils.BlockInterface;
 import thaumicinsurgence.main.utils.ItemInterface;
 import thaumicinsurgence.main.utils.LocalizationManager;
+import thaumicinsurgence.main.utils.VersionInfo;
 
 public class ThaumcraftHelper implements IModHelper {
 
@@ -289,7 +289,7 @@ public class ThaumcraftHelper implements IModHelper {
         String category = "THAUMICINSURGENCE";
         ResearchCategories.registerCategory(
                 category,
-                new ResourceLocation(CommonProxy.DOMAIN, CommonProxy.ITEM_TEXTURE + "silverwood_filter.png"),
+                new ResourceLocation(VersionInfo.ModID, "textures/items/silverwood_filter.png"),
                 new ResourceLocation("thaumcraft", "textures/gui/gui_researchback.png"));
         ResearchItem infusionInterceptorPage;
         ResearchPage interceptor1, interceptor2;

@@ -1,18 +1,25 @@
 package thaumicinsurgence.main;
 
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import thaumicinsurgence.main.utils.LogHelper;
+import thaumicinsurgence.main.utils.compat.ThaumcraftHelper;
+
+@SuppressWarnings("unused")
 public class CommonProxy {
-    public static final String DOMAIN = "thaumicinsurgence";
-    public static final String TEXTURE = "textures/";
-    public static final String GUI_TEXTURE = TEXTURE + "gui/";
-    public static final String ITEM_TEXTURE = TEXTURE + "items/";
-    public static final String MODEL = "model/";
-    public static final String LANGS = "lang/";
+    public void preInit(FMLPreInitializationEvent event) {
+        LogHelper.info("Preinit started");
+        Config.Init(event.getSuggestedConfigurationFile());
 
-    public static String FORESTRY_GFX_ITEMS;
-    public static String FORESTRY_GFX_BEEEFFECTS;
+        Config.setupBlocks();
+        Config.setupItems();
 
-    public static int RenderIdEffectJar;
-    public static int RenderIdVisAuraProvider;
+        LogHelper.info("Preinit completed");
+    }
 
-    public void registerRenderers() {}
+    public void init(FMLInitializationEvent event) {
+        ThaumcraftHelper.getBlocks();
+        ThaumcraftHelper.getItems();
+        LogHelper.info("Init completed");
+    }
 }
