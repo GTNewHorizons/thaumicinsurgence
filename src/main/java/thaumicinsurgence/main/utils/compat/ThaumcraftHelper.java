@@ -1,11 +1,9 @@
 package thaumicinsurgence.main.utils.compat;
 
-import java.util.ArrayList;
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import thaumcraft.api.ThaumcraftApi;
@@ -282,10 +280,6 @@ public class ThaumcraftHelper implements IModHelper {
     }
 
     public static void setupResearch() {
-
-        ArrayList<Object> list;
-        ItemStack input;
-        IRecipe recipe;
         String category = "THAUMICINSURGENCE";
         ResearchCategories.registerCategory(
                 category,
@@ -296,9 +290,8 @@ public class ThaumcraftHelper implements IModHelper {
         infusionInterceptorPage = new ResearchItem(
                 "InfusionInterceptor", category, new AspectList(), 0, 0, 0, new ItemStack(Config.infusionIntercepter));
         interceptor1 = new ResearchPage("InfusionInterceptor.1");
-        interceptor2 = new ResearchPage((InfusionRecipe) infusionInterceptor);
-        infusionInterceptorPage.setPages(new ResearchPage[] {interceptor1, interceptor2});
-        infusionInterceptorPage.setAutoUnlock();
+        interceptor2 = new ResearchPage(infusionInterceptor);
+        infusionInterceptorPage.setPages(interceptor1, interceptor2);
         ResearchCategories.addResearch(infusionInterceptorPage);
     }
 
