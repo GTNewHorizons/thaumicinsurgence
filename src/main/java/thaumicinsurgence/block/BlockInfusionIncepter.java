@@ -15,13 +15,13 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
 import thaumicinsurgence.main.utils.VersionInfo;
-import thaumicinsurgence.tileentity.TileEntityInfusionFucker;
+import thaumicinsurgence.tileentity.TileEntityInfusionIncepter;
 
 public class BlockInfusionIncepter extends BlockContainer {
 
     @Override
     public TileEntity createNewTileEntity(World world, int metadata) {
-        return new TileEntityInfusionFucker();
+        return new TileEntityInfusionIncepter();
     }
 
     @SideOnly(Side.CLIENT)

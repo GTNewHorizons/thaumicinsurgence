@@ -10,7 +10,7 @@ import thaumcraft.api.aspects.IEssentiaTransport;
 import thaumcraft.common.tiles.TileInfusionMatrix;
 import thaumicinsurgence.main.utils.VersionInfo;
 
-public class TileEntityInfusionFucker extends TileEntity implements IAspectContainer, IEssentiaTransport {
+public class TileEntityInfusionIncepter extends TileEntity implements IAspectContainer, IEssentiaTransport {
 
     public static final String tileEntityName = VersionInfo.ModID + ".infusionIntercepter";
 
@@ -38,7 +38,7 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
         this.myAspects = aspects;
     }
 
-    public TileEntityInfusionFucker() {
+    public TileEntityInfusionIncepter() {
         this.currentSuction = null;
     }
 
