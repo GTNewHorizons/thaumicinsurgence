@@ -50,7 +50,7 @@ public class Config {
         }
     }
 
-    public void saveConfigs() {
+    public static void saveConfigs() {
         configuration.save();
     }
 

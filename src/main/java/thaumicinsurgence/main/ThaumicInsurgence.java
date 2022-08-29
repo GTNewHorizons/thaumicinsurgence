@@ -7,10 +7,8 @@ import cpw.mods.fml.common.event.FMLMissingMappingsEvent;
 import cpw.mods.fml.common.event.FMLMissingMappingsEvent.MissingMapping;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import thaumicinsurgence.main.utils.CraftingManager;
 import thaumicinsurgence.main.utils.LogHelper;
 import thaumicinsurgence.main.utils.VersionInfo;
-import thaumicinsurgence.main.utils.compat.ThaumcraftHelper;
 
 @SuppressWarnings("unused")
 @Mod(
@@ -26,8 +24,6 @@ public class ThaumicInsurgence {
     @SidedProxy(serverSide = "thaumicinsurgence.main.CommonProxy", clientSide = "thaumicinsurgence.main.ClientProxy")
     public static CommonProxy proxy;
 
-    private Config modConfig;
-
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
@@ -40,15 +36,7 @@ public class ThaumicInsurgence {
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        ThaumcraftHelper.setupItemAspects();
-        ThaumcraftHelper.setupCrafting();
-        ThaumcraftHelper.setupResearch();
-
-        this.modConfig.saveConfigs();
-
-        CraftingManager.setupCrafting();
-
-        LogHelper.info("Postinit completed");
+        proxy.postInit(event);
     }
 
     @Mod.EventHandler
