@@ -4,10 +4,10 @@
   "version": "${modVersion}",
   "mcversion": "${minecraftVersion}",
   "name": "${modName}",
-  "url": "http://bit.ly/XFDvLY",
-  "description": "Magic themed bee expansion for Forestry. TC4, Botania, EE3, AM 2, TE 3",
-  "authors": [ "MysteriousAges" ],
-  "credits": "SirSengir, Azanor, Binnie & the Forestry Dev peeps",
-  "logoFile": "/mods/magicbees/textures/logo.png"
+  "url": "https://github.com/GTNewHorizons/thaumicinsurgence",
+  "description": "Addon for thaumcraft 4, adds new content",
+  "authorList": ["Alastor"],
+  "credits": "",
+  "logoFile": ""
 }
 ]
