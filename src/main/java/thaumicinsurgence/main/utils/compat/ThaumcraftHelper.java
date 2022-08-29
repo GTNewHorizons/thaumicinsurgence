@@ -13,7 +13,7 @@ import thaumcraft.api.crafting.InfusionRecipe;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
-import thaumicinsurgence.block.BlockInfusionIncepter;
+import thaumicinsurgence.block.BlockInfusionIntercepter;
 import thaumicinsurgence.main.Config;
 import thaumicinsurgence.main.utils.BlockInterface;
 import thaumicinsurgence.main.utils.ItemInterface;
@@ -185,7 +185,7 @@ public class ThaumcraftHelper implements IModHelper {
     public static Block airy;
     public static Block fluxGas;
     public static Block fluxGoo;
-    public static Block infusionInterceptorBlock = new BlockInfusionIncepter();
+    public static Block infusionInterceptorBlock = new BlockInfusionIntercepter();
 
     public static Item filledJar;
     public static Item miscResource;
