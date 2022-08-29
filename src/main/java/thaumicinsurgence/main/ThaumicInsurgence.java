@@ -1,6 +1,5 @@
 package thaumicinsurgence.main;
 
-import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -13,16 +12,16 @@ import thaumicinsurgence.main.utils.LogHelper;
 import thaumicinsurgence.main.utils.VersionInfo;
 import thaumicinsurgence.main.utils.compat.ThaumcraftHelper;
 
+@SuppressWarnings("unused")
 @Mod(
-        modid = VersionInfo.ModName,
-        name = "Thaumic Insurgence",
+        modid = VersionInfo.ModID,
+        name = VersionInfo.ModName,
         version = VersionInfo.Version,
-        dependencies = VersionInfo.Depends,
-        guiFactory = VersionInfo.GUI_FACTORY_CLASS)
+        dependencies = VersionInfo.Depends)
 public class ThaumicInsurgence {
 
-    @Mod.Instance(VersionInfo.ModName)
-    public static thaumicinsurgence.main.ThaumicInsurgence object;
+    @Mod.Instance(VersionInfo.ModID)
+    public static thaumicinsurgence.main.ThaumicInsurgence instance;
 
     @SidedProxy(serverSide = "thaumicinsurgence.main.CommonProxy", clientSide = "thaumicinsurgence.main.ClientProxy")
     public static CommonProxy proxy;
@@ -31,24 +30,12 @@ public class ThaumicInsurgence {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        LogHelper.info("Preinit started");
-        this.modConfig = new Config(event.getSuggestedConfigurationFile());
-        FMLCommonHandler.instance().bus().register(modConfig);
-
-        // Compatibility Helpers setup time.
-        // ModHelperManager.preInit();
-
-        this.modConfig.setupBlocks();
-        this.modConfig.setupItems();
-
-        LogHelper.info("Preinit completed");
+        proxy.preInit(event);
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        ThaumcraftHelper.getBlocks();
-        ThaumcraftHelper.getItems();
-        LogHelper.info("Init completed");
+        proxy.init(event);
     }
 
     @Mod.EventHandler
@@ -57,13 +44,10 @@ public class ThaumicInsurgence {
         ThaumcraftHelper.setupCrafting();
         ThaumcraftHelper.setupResearch();
 
-        proxy.registerRenderers();
-
         this.modConfig.saveConfigs();
 
         CraftingManager.setupCrafting();
 
-        VersionInfo.doVersionCheck();
         LogHelper.info("Postinit completed");
     }
 
