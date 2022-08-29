@@ -17,7 +17,7 @@ import thaumicinsurgence.main.utils.TabThaumicInsurgence;
 import thaumicinsurgence.main.utils.VersionInfo;
 import thaumicinsurgence.tileentity.TileEntityInfusionFucker;
 
-public class BlockInfusionFucker extends BlockContainer {
+public class BlockInfusionIncepter extends BlockContainer {
 
     @Override
     public TileEntity createNewTileEntity(World world, int metadata) {
@@ -27,7 +27,7 @@ public class BlockInfusionFucker extends BlockContainer {
     @SideOnly(Side.CLIENT)
     private IIcon[] icons;
 
-    public BlockInfusionFucker() {
+    public BlockInfusionIncepter() {
         super(Material.rock);
         this.setCreativeTab(TabThaumicInsurgence.tabThaumicInsurgence);
         this.setBlockName("infusionIntercepter");

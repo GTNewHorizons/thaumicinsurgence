@@ -6,7 +6,7 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import java.io.File;
 import net.minecraftforge.common.config.Configuration;
-import thaumicinsurgence.block.BlockInfusionFucker;
+import thaumicinsurgence.block.BlockInfusionIncepter;
 import thaumicinsurgence.item.ItemMiscResources;
 import thaumicinsurgence.main.utils.VersionInfo;
 import thaumicinsurgence.tileentity.TileEntityInfusionFucker;
@@ -23,7 +23,7 @@ public class Config {
 
     public static ItemMiscResources miscResources;
 
-    public static BlockInfusionFucker infusionIntercepter;
+    public static BlockInfusionIncepter infusionIntercepter;
 
     // ----- Config State info ----------------------------------
     public static Configuration configuration;
@@ -76,7 +76,7 @@ public class Config {
     }
 
     public static void setupInfusionFucker() {
-        infusionIntercepter = new BlockInfusionFucker();
+        infusionIntercepter = new BlockInfusionIncepter();
         GameRegistry.registerBlock(infusionIntercepter, "infusionIntercepter");
         GameRegistry.registerTileEntity(TileEntityInfusionFucker.class, TileEntityInfusionFucker.tileEntityName);
     }
