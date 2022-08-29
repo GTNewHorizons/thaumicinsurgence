@@ -13,21 +13,21 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
-import thaumicinsurgence.main.CommonProxy;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
-import thaumicinsurgence.tileentity.TileEntityInfusionFucker;
+import thaumicinsurgence.main.utils.VersionInfo;
+import thaumicinsurgence.tileentity.TileEntityInfusionIntercepter;
 
-public class BlockInfusionFucker extends BlockContainer {
+public class BlockInfusionIntercepter extends BlockContainer {
 
     @Override
     public TileEntity createNewTileEntity(World world, int metadata) {
-        return new TileEntityInfusionFucker();
+        return new TileEntityInfusionIntercepter();
     }
 
     @SideOnly(Side.CLIENT)
     private IIcon[] icons;
 
-    public BlockInfusionFucker() {
+    public BlockInfusionIntercepter() {
         super(Material.rock);
         this.setCreativeTab(TabThaumicInsurgence.tabThaumicInsurgence);
         this.setBlockName("infusionIntercepter");
@@ -64,10 +64,10 @@ public class BlockInfusionFucker extends BlockContainer {
     public void registerBlockIcons(IIconRegister register) {
         icons = new IIcon[4];
 
-        icons[0] = register.registerIcon(CommonProxy.DOMAIN + ":arcane_stone_bricks_alt4");
-        icons[1] = register.registerIcon(CommonProxy.DOMAIN + ":arcane_stone_bricks_alt5");
-        icons[2] = register.registerIcon(CommonProxy.DOMAIN + ":arcane_stone_bricks_alt6");
-        icons[3] = register.registerIcon(CommonProxy.DOMAIN + ":arcane_stone_bricks_alt6");
+        icons[0] = register.registerIcon(VersionInfo.ModID + ":arcane_stone_bricks_alt4");
+        icons[1] = register.registerIcon(VersionInfo.ModID + ":arcane_stone_bricks_alt5");
+        icons[2] = register.registerIcon(VersionInfo.ModID + ":arcane_stone_bricks_alt6");
+        icons[3] = register.registerIcon(VersionInfo.ModID + ":arcane_stone_bricks_alt6");
     }
 
     @Override
