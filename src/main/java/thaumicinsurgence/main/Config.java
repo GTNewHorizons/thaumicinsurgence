@@ -9,7 +9,7 @@ import net.minecraftforge.common.config.Configuration;
 import thaumicinsurgence.block.BlockInfusionIncepter;
 import thaumicinsurgence.item.ItemMiscResources;
 import thaumicinsurgence.main.utils.VersionInfo;
-import thaumicinsurgence.tileentity.TileEntityInfusionFucker;
+import thaumicinsurgence.tileentity.TileEntityInfusionIncepter;
 
 /**
  * A class to hold some data related to mod state & functions.
@@ -78,6 +78,6 @@ public class Config {
     public static void setupInfusionFucker() {
         infusionIntercepter = new BlockInfusionIncepter();
         GameRegistry.registerBlock(infusionIntercepter, "infusionIntercepter");
-        GameRegistry.registerTileEntity(TileEntityInfusionFucker.class, TileEntityInfusionFucker.tileEntityName);
+        GameRegistry.registerTileEntity(TileEntityInfusionIncepter.class, TileEntityInfusionIncepter.tileEntityName);
     }
 }
