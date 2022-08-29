@@ -1,7 +1,9 @@
 package thaumicinsurgence.main;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import thaumicinsurgence.main.utils.CraftingManager;
 import thaumicinsurgence.main.utils.LogHelper;
 import thaumicinsurgence.main.utils.compat.ThaumcraftHelper;
 
@@ -21,5 +23,15 @@ public class CommonProxy {
         ThaumcraftHelper.getBlocks();
         ThaumcraftHelper.getItems();
         LogHelper.info("Init completed");
+    }
+
+    public void postInit(FMLPostInitializationEvent event) {
+        ThaumcraftHelper.setupItemAspects();
+        ThaumcraftHelper.setupCrafting();
+        ThaumcraftHelper.setupResearch();
+
+        CraftingManager.setupCrafting();
+
+        LogHelper.info("Postinit completed");
     }
 }
