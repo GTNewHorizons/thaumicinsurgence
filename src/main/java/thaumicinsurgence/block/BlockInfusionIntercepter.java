@@ -15,19 +15,19 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
 import thaumicinsurgence.main.utils.VersionInfo;
-import thaumicinsurgence.tileentity.TileEntityInfusionIntercepter;
+import thaumicinsurgence.tileentity.TileEntityInfusionFucker;
 
-public class BlockInfusionIntercepter extends BlockContainer {
+public class BlockInfusionFucker extends BlockContainer {
 
     @Override
     public TileEntity createNewTileEntity(World world, int metadata) {
-        return new TileEntityInfusionIntercepter();
+        return new TileEntityInfusionFucker();
     }
 
     @SideOnly(Side.CLIENT)
     private IIcon[] icons;
 
-    public BlockInfusionIntercepter() {
+    public BlockInfusionFucker() {
         super(Material.rock);
         this.setCreativeTab(TabThaumicInsurgence.tabThaumicInsurgence);
         this.setBlockName("infusionIntercepter");
