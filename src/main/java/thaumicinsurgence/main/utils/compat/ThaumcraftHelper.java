@@ -1,7 +1,6 @@
 package thaumicinsurgence.main.utils.compat;
 
 import net.minecraft.block.Block;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -251,14 +250,10 @@ public class ThaumcraftHelper implements IModHelper {
     }
 
     public static void setupCrafting() {
-        ItemStack input, output;
-
-        input = new ItemStack(Items.ender_pearl);
-
         infusionIntercepter = ThaumcraftApi.addInfusionCraftingRecipe(
                 "TI_InfusionIntercepter",
                 new ItemStack(Config.infusionIntercepter),
-                0,
+                10,
                 new AspectList()
                         .add(Aspect.MAGIC, 100)
                         .add(Aspect.HUNGER, 100)
@@ -299,7 +294,7 @@ public class ThaumcraftHelper implements IModHelper {
                         .add(Aspect.EXCHANGE, 1),
                 0,
                 0,
-                0,
+                1,
                 new ItemStack(Config.infusionIntercepter));
         intercepter1 = new ResearchPage("InfusionIntercepter.1");
         intercepter2 = new ResearchPage(infusionIntercepter);
@@ -313,7 +308,6 @@ public class ThaumcraftHelper implements IModHelper {
     }
 
     public static void setupItemAspects() {
-        ItemStack item;
-        AspectList list;
+
     }
 }
