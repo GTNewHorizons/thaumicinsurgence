@@ -1,6 +1,5 @@
 package thaumicinsurgence.tileentity;
 
-import java.util.Iterator;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 import thaumcraft.api.aspects.Aspect;
@@ -236,10 +235,8 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
     public boolean doesContainerContain(AspectList ot) {
         boolean hasIt = true;
         ot.aspects.keySet().iterator();
-        Iterator iterator = ot.aspects.keySet().iterator();
-        while (iterator.hasNext()) {
-            Object next = iterator.next();
-            if (this.myAspects.getAmount((Aspect) next) < ot.getAmount((Aspect) next)) hasIt = false;
+        for (Aspect next : ot.aspects.keySet()) {
+            if (this.myAspects.getAmount(next) < ot.getAmount(next)) hasIt = false;
         }
 
         return hasIt;
