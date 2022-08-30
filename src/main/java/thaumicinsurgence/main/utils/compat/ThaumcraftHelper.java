@@ -283,7 +283,7 @@ public class ThaumcraftHelper implements IModHelper {
         String category = "THAUMICINSURGENCE";
         ResearchCategories.registerCategory(
                 category,
-                new ResourceLocation(VersionInfo.ModID, "textures/blocks/arcane_stone_bricks_alt4.png"),
+                new ResourceLocation(CommonProxy.DOMAIN, CommonProxy.ITEM_TEXTURE + "silverwood_filter.png"),
                 new ResourceLocation("thaumcraft", "textures/gui/gui_researchback.png"));
         ResearchItem infusionInterceptorPage;
         ResearchPage interceptor1, interceptor2;
