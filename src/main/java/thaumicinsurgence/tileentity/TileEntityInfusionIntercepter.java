@@ -8,11 +8,11 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.aspects.IAspectContainer;
 import thaumcraft.api.aspects.IEssentiaTransport;
 import thaumcraft.common.tiles.TileInfusionMatrix;
-import thaumicinsurgence.main.CommonProxy;
+import thaumicinsurgence.main.utils.VersionInfo;
 
-public class TileEntityInfusionFucker extends TileEntity implements IAspectContainer, IEssentiaTransport {
+public class TileEntityInfusionIntercepter extends TileEntity implements IAspectContainer, IEssentiaTransport {
 
-    public static final String tileEntityName = CommonProxy.DOMAIN + ".infusionIntercepter";
+    public static final String tileEntityName = VersionInfo.ModID + ".infusionIntercepter";
 
     // added directly from the crucible of souls
     public AspectList myAspects = new AspectList();
@@ -38,7 +38,7 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
         this.myAspects = aspects;
     }
 
-    public TileEntityInfusionFucker() {
+    public TileEntityInfusionIntercepter() {
         this.currentSuction = null;
     }
 
@@ -335,10 +335,8 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
     // added directly from the crucible of souls
     private float tagAmount() {
         int amount = 0;
-        Iterator iterator = this.myAspects.aspects.keySet().iterator();
-        while (iterator.hasNext()) {
-            Object next = iterator.next();
-            amount += this.myAspects.getAmount((Aspect) next);
+        for (Aspect next : this.myAspects.aspects.keySet()) {
+            amount += this.myAspects.getAmount(next);
         }
         return amount;
     }
