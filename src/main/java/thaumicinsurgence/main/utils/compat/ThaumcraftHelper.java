@@ -3,7 +3,6 @@ package thaumicinsurgence.main.utils.compat;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
@@ -12,7 +11,6 @@ import thaumcraft.api.crafting.InfusionRecipe;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
-import thaumicinsurgence.block.BlockInfusionFucker;
 import thaumicinsurgence.main.Config;
 import thaumicinsurgence.main.utils.BlockInterface;
 import thaumicinsurgence.main.utils.ItemInterface;
@@ -21,6 +19,7 @@ import thaumicinsurgence.main.utils.VersionInfo;
 
 public class ThaumcraftHelper implements IModHelper {
 
+    @SuppressWarnings("unused")
     public enum MiscResource {
         ALUMENTUM,
         NITOR,
@@ -44,6 +43,7 @@ public class ThaumcraftHelper implements IModHelper {
         ;
     }
 
+    @SuppressWarnings("unused")
     public enum NuggetType {
         IRON,
         COPPER,
@@ -80,6 +80,7 @@ public class ThaumcraftHelper implements IModHelper {
         ;
     }
 
+    @SuppressWarnings("unused")
     public enum ShardType {
         AIR,
         FIRE,
@@ -91,6 +92,7 @@ public class ThaumcraftHelper implements IModHelper {
         ;
     }
 
+    @SuppressWarnings("unused")
     public enum MetalDeviceType {
         CRUCIBLE,
         ALEMBIC,
@@ -110,6 +112,7 @@ public class ThaumcraftHelper implements IModHelper {
         ;
     }
 
+    @SuppressWarnings("unused")
     public enum WoodenDeviceType {
         BELLOWS,
         EAR,
@@ -123,6 +126,7 @@ public class ThaumcraftHelper implements IModHelper {
         ;
     }
 
+    @SuppressWarnings("unused")
     public enum AiryBlockType {
         NODE,
         NITOR,
@@ -133,6 +137,7 @@ public class ThaumcraftHelper implements IModHelper {
         ;
     }
 
+    @SuppressWarnings("unused")
     public enum Entity {
         BRAINY_ZOMBIE("entBrainyZombie", "EntityBrainyZombie"),
         GIANT_BRAINY_ZOMBIE("entGiantBrainyZombie", "EntityGiantBrainyZombie"),
@@ -140,10 +145,10 @@ public class ThaumcraftHelper implements IModHelper {
         FIREBAT("entFirebat", "EntityFireBat"),
         ;
 
-        private static String packageName = "thaumcraft.common.entities.monster.";
+        private static final String packageName = "thaumcraft.common.entities.monster.";
 
-        public String entityID;
-        private String className;
+        public final String entityID;
+        private final String className;
 
         private Entity(String id, String clazz) {
             this.entityID = id;
@@ -155,6 +160,7 @@ public class ThaumcraftHelper implements IModHelper {
         }
     }
 
+    @SuppressWarnings("unused")
     public enum BlockPlant {
         GREATWOOD_SAPLING,
         SILVERWOOD_SAPLING,
@@ -165,6 +171,7 @@ public class ThaumcraftHelper implements IModHelper {
         ;
     }
 
+    @SuppressWarnings("unused")
     public enum TreeType {
         GREATWOOD,
         SILVERWOOD,
@@ -182,9 +189,6 @@ public class ThaumcraftHelper implements IModHelper {
     public static Block wooden;
     public static Block metal;
     public static Block airy;
-    public static Block fluxGas;
-    public static Block fluxGoo;
-    public static Block infusionIntercepterBlock = new BlockInfusionFucker();
 
     public static Item filledJar;
     public static Item miscResource;
@@ -196,18 +200,9 @@ public class ThaumcraftHelper implements IModHelper {
     public static Item nuggetPork;
     public static Item zombieBrain;
 
-    public static Class<? extends TileEntity> nodeClass;
-
     public static final String Name = "Thaumcraft";
-    public static boolean isThaumcraftPresent = true;
 
-    public static boolean isActive() {
-        return isThaumcraftPresent;
-    }
-
-    public void preInit() {
-        isThaumcraftPresent = true;
-    }
+    public void preInit() {}
 
     public void init() {
         getBlocks();
@@ -300,6 +295,7 @@ public class ThaumcraftHelper implements IModHelper {
         intercepter2 = new ResearchPage(infusionIntercepter);
         infusionIntercepterPage.setPages(intercepter1, intercepter2);
         infusionIntercepterPage.setParents("INFUSION");
+        ThaumcraftApi.addWarpToResearch("TI_InfusionIntercepter", 4);
         ResearchCategories.addResearch(infusionIntercepterPage);
     }
 
@@ -307,7 +303,5 @@ public class ThaumcraftHelper implements IModHelper {
         return new ResearchPage(LocalizationManager.getLocalizedString("tc.research_page." + ident));
     }
 
-    public static void setupItemAspects() {
-
-    }
+    public static void setupItemAspects() {}
 }
