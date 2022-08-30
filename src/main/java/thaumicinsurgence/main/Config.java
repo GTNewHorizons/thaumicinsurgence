@@ -6,10 +6,10 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import java.io.File;
 import net.minecraftforge.common.config.Configuration;
-import thaumicinsurgence.block.BlockInfusionIntercepter;
+import thaumicinsurgence.block.BlockInfusionFucker;
 import thaumicinsurgence.item.ItemMiscResources;
 import thaumicinsurgence.main.utils.VersionInfo;
-import thaumicinsurgence.tileentity.TileEntityInfusionIntercepter;
+import thaumicinsurgence.tileentity.TileEntityInfusionFucker;
 
 /**
  * A class to hold some data related to mod state & functions.
@@ -23,7 +23,7 @@ public class Config {
 
     public static ItemMiscResources miscResources;
 
-    public static BlockInfusionIntercepter infusionIntercepter;
+    public static BlockInfusionFucker infusionIntercepter;
 
     // ----- Config State info ----------------------------------
     public static Configuration configuration;
