@@ -28,7 +28,7 @@ public class ModHelperManager {
     }
 
     private static void setupHelpers() {
-        helpers = new ArrayList<IModHelper>();
+        helpers = new ArrayList<>();
         helpers.add(new ThaumcraftHelper());
     }
 }
