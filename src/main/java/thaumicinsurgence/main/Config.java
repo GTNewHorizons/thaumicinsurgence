@@ -76,9 +76,9 @@ public class Config {
     }
 
     public static void setupInfusionFucker() {
-        infusionIntercepter = new BlockInfusionIntercepter();
+        infusionIntercepter = new BlockInfusionFucker();
         GameRegistry.registerBlock(infusionIntercepter, "infusionIntercepter");
         GameRegistry.registerTileEntity(
-                TileEntityInfusionIntercepter.class, TileEntityInfusionIntercepter.tileEntityName);
+                                        TileEntityInfusionFucker.class, TileEntityInfusionFucker.tileEntityName);
     }
 }
