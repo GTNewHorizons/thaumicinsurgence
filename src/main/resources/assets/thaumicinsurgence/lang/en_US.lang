@@ -15,8 +15,8 @@ thaumicinsurgence.config.category.modules=Modules
 thaumicinsurgence.config.category.modules.tooltip=Options to enable or disable integration
 tc.research_category.THAUMICINSURGENCE=Thaumic Insurgence
 
-tc.research_name.InfusionInterceptor=Infusion Interceptor
-tc.research_text.InfusionInterceptor=Fucking Azanor's "balance" since 2022!
+tc.research_name.TI_InfusionInterceptor=Infusion Interceptor
+tc.research_text.TI_InfusionInterceptor=Fucking Azanor's "balance" since 2022!
 InfusionInterceptor.1=Do you hate how slow infusion is? Are you sick and tired of the lag associated with WAing it? WELL DO I HAVE THE SOLUTION FOR YOU!!! FOR ONE LOW LOW PAYMENT OF [2000 warp] I CAN JAILBREAK YOUR INFUSION MATRIX FOR YOU AND ALLOW IT TO ACCEPT THE INFUSION PROVIDER!!!
 
 
