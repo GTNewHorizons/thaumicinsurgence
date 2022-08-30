@@ -290,7 +290,13 @@ public class ThaumcraftHelper implements IModHelper {
         infusionIntercepterPage = new ResearchItem(
                 "TI_InfusionIntercepter",
                 category,
-                new AspectList(),
+                new AspectList()
+                        .add(Aspect.MAGIC, 1)
+                        .add(Aspect.HUNGER, 1)
+                        .add(Aspect.TOOL, 1)
+                        .add(Aspect.TRAP, 1)
+                        .add(Aspect.MECHANISM, 1)
+                        .add(Aspect.EXCHANGE, 1),
                 0,
                 0,
                 0,
