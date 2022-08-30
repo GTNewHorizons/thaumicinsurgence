@@ -45,7 +45,7 @@ public class TileEntityInfusionIntercepter extends TileEntity implements IAspect
     @Override
     public void updateEntity() {
 
-        // these two if statements handle setting the TE variables the interceptor deals with.
+        // these two if statements handle setting the TE variables the intercepter deals with.
         if (matrix == null) setMatrix();
         if (essentiaEntity == null) setInput();
 
@@ -73,7 +73,7 @@ public class TileEntityInfusionIntercepter extends TileEntity implements IAspect
 
         /* this method handles the Aspect array that I use to handle suction, if the matrix's AspectList has anything in it,
          *  the Aspect array is set to be a mirrored copy of it, otherwise,
-         *  it sets the interceptor's internal AspectList to a new blank AspectList so that it can be reused without breaking. */
+         *  it sets the intercepter's internal AspectList to a new blank AspectList so that it can be reused without breaking. */
         setTodoList();
 
         // just a bit of logic to prevent it from using unnecessary resources.
@@ -83,7 +83,7 @@ public class TileEntityInfusionIntercepter extends TileEntity implements IAspect
             // this set handles the suction methods and variable resetting related to the lists and suction
             try {
                 if (listSlot < listOfAspects.length) {
-                    setInterceptorSuction();
+                    setIntercepterSuction();
                 } else {
                     resetLists();
                 }
@@ -108,7 +108,7 @@ public class TileEntityInfusionIntercepter extends TileEntity implements IAspect
         }
     }
 
-    /** this is obvious, but it grabs the infusion matrix that the interceptor is going to screw with. */
+    /** this is obvious, but it grabs the infusion matrix that the intercepter is going to screw with. */
     public void setMatrix() {
         try {
             if (worldObj.getTileEntity(this.xCoord, this.yCoord + 3, this.zCoord) instanceof TileInfusionMatrix) {
@@ -119,7 +119,7 @@ public class TileEntityInfusionIntercepter extends TileEntity implements IAspect
     }
 
     /** if the matrix has an AspectList active, then it sets the Aspect array so that suction can be set, otherwise
-     *  it resets the interceptor's AspectList into a clean list. */
+     *  it resets the intercepter's AspectList into a clean list. */
     private void setTodoList() {
         try {
             if (!grabbedAspects.equals(new AspectList())) {
@@ -131,10 +131,10 @@ public class TileEntityInfusionIntercepter extends TileEntity implements IAspect
         }
     }
 
-    /** This methods Takes into consideration if the suction is null, and sets it if it can, otherwise, if the interceptor AspectList
+    /** This methods Takes into consideration if the suction is null, and sets it if it can, otherwise, if the intercepter AspectList
      * is equal to the grabbedAspects AspectList of the matrix, it tiers up the listSlot iteration int and removes the
      * essentia from the infusion matrix while setting the suction to null so the next tick can set the suction to the new aspect. */
-    private void setInterceptorSuction() {
+    private void setIntercepterSuction() {
         int set_desired_amount = grabbedAspects.getAmount(listOfAspects[listSlot]);
         if (currentSuction == null) {
             this.currentSuction = listOfAspects[listSlot];

@@ -185,7 +185,7 @@ public class ThaumcraftHelper implements IModHelper {
     public static Block airy;
     public static Block fluxGas;
     public static Block fluxGoo;
-    public static Block infusionInterceptorBlock = new BlockInfusionFucker();
+    public static Block infusionIntercepterBlock = new BlockInfusionFucker();
 
     public static Item filledJar;
     public static Item miscResource;
@@ -221,7 +221,7 @@ public class ThaumcraftHelper implements IModHelper {
         setupResearch();
     }
 
-    public static InfusionRecipe infusionInterceptor;
+    public static InfusionRecipe infusionIntercepter;
 
     public static void getBlocks() {
         plant = BlockInterface.getBlock(Name, "blockCustomPlant");
@@ -255,8 +255,8 @@ public class ThaumcraftHelper implements IModHelper {
 
         input = new ItemStack(Items.ender_pearl);
 
-        infusionInterceptor = ThaumcraftApi.addInfusionCraftingRecipe(
-                "TI_InfusionInterceptor",
+        infusionIntercepter = ThaumcraftApi.addInfusionCraftingRecipe(
+                "TI_InfusionIntercepter",
                 new ItemStack(Config.infusionIntercepter),
                 0,
                 new AspectList()
@@ -285,20 +285,20 @@ public class ThaumcraftHelper implements IModHelper {
                 category,
                 new ResourceLocation(VersionInfo.ModID, "textures/items/silverwood_filter.png"),
                 new ResourceLocation("thaumcraft", "textures/gui/gui_researchback.png"));
-        ResearchItem infusionInterceptorPage;
-        ResearchPage interceptor1, interceptor2;
-        infusionInterceptorPage = new ResearchItem(
-                "TI_InfusionInterceptor",
+        ResearchItem infusionIntercepterPage;
+        ResearchPage intercepter1, intercepter2;
+        infusionIntercepterPage = new ResearchItem(
+                "TI_InfusionIntercepter",
                 category,
                 new AspectList(),
                 0,
                 0,
                 0,
                 new ItemStack(Config.infusionIntercepter));
-        interceptor1 = new ResearchPage("InfusionInterceptor.1");
-        interceptor2 = new ResearchPage(infusionInterceptor);
-        infusionInterceptorPage.setPages(interceptor1, interceptor2);
-        ResearchCategories.addResearch(infusionInterceptorPage);
+        intercepter1 = new ResearchPage("InfusionIntercepter.1");
+        intercepter2 = new ResearchPage(infusionIntercepter);
+        infusionIntercepterPage.setPages(intercepter1, intercepter2);
+        ResearchCategories.addResearch(infusionIntercepterPage);
     }
 
     public static ResearchPage getResearchPage(String ident) {
