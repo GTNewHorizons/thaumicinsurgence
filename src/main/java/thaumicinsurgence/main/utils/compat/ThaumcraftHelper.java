@@ -274,7 +274,7 @@ public class ThaumcraftHelper implements IModHelper {
         ResearchCategories.registerCategory(
                 category,
                 new ResourceLocation(VersionInfo.ModID, "textures/items/silverwood_filter.png"),
-                new ResourceLocation("thaumcraft", "textures/gui/gui_researchback.png"));
+                new ResourceLocation(VersionInfo.ModID, "textures/gui/eldritch_bg.png"));
         ResearchItem infusionIntercepterPage;
         ResearchPage intercepter1, intercepter2;
         infusionIntercepterPage = new ResearchItem(
