@@ -288,7 +288,13 @@ public class ThaumcraftHelper implements IModHelper {
         ResearchItem infusionInterceptorPage;
         ResearchPage interceptor1, interceptor2;
         infusionInterceptorPage = new ResearchItem(
-                "InfusionInterceptor", category, new AspectList(), 0, 0, 0, new ItemStack(Config.infusionIntercepter));
+                "TI_InfusionInterceptor",
+                category,
+                new AspectList(),
+                0,
+                0,
+                0,
+                new ItemStack(Config.infusionIntercepter));
         interceptor1 = new ResearchPage("InfusionInterceptor.1");
         interceptor2 = new ResearchPage(infusionInterceptor);
         infusionInterceptorPage.setPages(interceptor1, interceptor2);
