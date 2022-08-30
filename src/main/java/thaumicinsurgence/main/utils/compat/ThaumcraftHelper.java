@@ -18,7 +18,6 @@ import thaumicinsurgence.main.Config;
 import thaumicinsurgence.main.utils.BlockInterface;
 import thaumicinsurgence.main.utils.ItemInterface;
 import thaumicinsurgence.main.utils.LocalizationManager;
-import thaumicinsurgence.main.utils.VersionInfo;
 
 public class ThaumcraftHelper implements IModHelper {
 
