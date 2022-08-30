@@ -1,11 +1,9 @@
 package thaumicinsurgence.main.utils.compat;
 
-import java.util.ArrayList;
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import thaumcraft.api.ThaumcraftApi;
@@ -15,12 +13,12 @@ import thaumcraft.api.crafting.InfusionRecipe;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
-import thaumicinsurgence.block.BlockInfusionFucker;
-import thaumicinsurgence.main.CommonProxy;
+import thaumicinsurgence.block.BlockInfusionIntercepter;
 import thaumicinsurgence.main.Config;
 import thaumicinsurgence.main.utils.BlockInterface;
 import thaumicinsurgence.main.utils.ItemInterface;
 import thaumicinsurgence.main.utils.LocalizationManager;
+import thaumicinsurgence.main.utils.VersionInfo;
 
 public class ThaumcraftHelper implements IModHelper {
 
@@ -187,7 +185,7 @@ public class ThaumcraftHelper implements IModHelper {
     public static Block airy;
     public static Block fluxGas;
     public static Block fluxGoo;
-    public static Block infusionInterceptorBlock = new BlockInfusionFucker();
+    public static Block infusionInterceptorBlock = new BlockInfusionIntercepter();
 
     public static Item filledJar;
     public static Item miscResource;
@@ -282,23 +280,24 @@ public class ThaumcraftHelper implements IModHelper {
     }
 
     public static void setupResearch() {
-
-        ArrayList<Object> list;
-        ItemStack input;
-        IRecipe recipe;
         String category = "THAUMICINSURGENCE";
         ResearchCategories.registerCategory(
                 category,
-                new ResourceLocation(CommonProxy.DOMAIN, CommonProxy.ITEM_TEXTURE + "silverwood_filter.png"),
+                new ResourceLocation(VersionInfo.ModID, "textures/blocks/arcane_stone_bricks_alt4.png"),
                 new ResourceLocation("thaumcraft", "textures/gui/gui_researchback.png"));
         ResearchItem infusionInterceptorPage;
         ResearchPage interceptor1, interceptor2;
         infusionInterceptorPage = new ResearchItem(
-                "InfusionInterceptor", category, new AspectList(), 0, 0, 0, new ItemStack(Config.infusionIntercepter));
+                "TI_InfusionInterceptor",
+                category,
+                new AspectList(),
+                0,
+                0,
+                0,
+                new ItemStack(Config.infusionIntercepter));
         interceptor1 = new ResearchPage("InfusionInterceptor.1");
-        interceptor2 = new ResearchPage((InfusionRecipe) infusionInterceptor);
-        infusionInterceptorPage.setPages(new ResearchPage[] {interceptor1, interceptor2});
-        infusionInterceptorPage.setAutoUnlock();
+        interceptor2 = new ResearchPage(infusionInterceptor);
+        infusionInterceptorPage.setPages(interceptor1, interceptor2);
         ResearchCategories.addResearch(infusionInterceptorPage);
     }
 

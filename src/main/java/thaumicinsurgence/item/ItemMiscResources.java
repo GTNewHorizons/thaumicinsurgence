@@ -10,8 +10,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import thaumicinsurgence.item.types.ResourceType;
-import thaumicinsurgence.main.CommonProxy;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
+import thaumicinsurgence.main.utils.VersionInfo;
 
 public class ItemMiscResources extends Item {
     private IIcon[] icons = new IIcon[ResourceType.values().length];
@@ -34,7 +34,7 @@ public class ItemMiscResources extends Item {
 
     @Override
     @SideOnly(Side.CLIENT)
-    @SuppressWarnings({"unchecked", "rawtypes"})
+    @SuppressWarnings({"unchecked"})
     public void getSubItems(Item item, CreativeTabs tabs, List list) {
         for (ResourceType type : ResourceType.values()) {
             if (type.showInList) {
@@ -46,8 +46,7 @@ public class ItemMiscResources extends Item {
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister par1IconRegister) {
         for (int i = 0; i < ResourceType.values().length; i++) {
-            this.icons[i] =
-                    par1IconRegister.registerIcon(CommonProxy.DOMAIN + ":" + ResourceType.values()[i].getName());
+            this.icons[i] = par1IconRegister.registerIcon(VersionInfo.ModID + ":" + ResourceType.values()[i].getName());
         }
     }
 
