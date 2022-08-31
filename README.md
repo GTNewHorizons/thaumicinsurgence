@@ -13,14 +13,15 @@ Specificially thank you to Ibanplay for the lovely textures! Thank you for the g
 
 Curseforge: https://www.curseforge.com/minecraft/mc-mods/thaumic-insurgence
 
-Original Branch: https://github.com/Alastors/thaumicinsurgence/tree/0.0.0.2
+
+GTNH Branch: https://github.com/GTNewHorizons/thaumicinsurgence/tree/0.0.0.2
+
 (Sometimes this branch might have a newer update than it might be here, though obviously sometimes this branch might be newer)
 
 # Ver 0.0.0.2 - Release Wednesday August 31st, 12022/2022
 (Yes, I know this should technically be version 1.0.0.2, but I decided last second to change how I label versions)
 
    1. What's been updated?
-
       - The Infusion Interceptor
         - The Infusion Intercepter now has an accessible crafting recipe and I've updated it's entry in the thaumonimicon!
 
