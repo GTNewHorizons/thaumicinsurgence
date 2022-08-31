@@ -11,7 +11,27 @@ I'd also like to take this line to extend my thanks to the Arcana team for their
 of time backporting a lot of their content, so thank you Arcana Dev Team for allowing the use of Arcana assets except the lore!
 Specificially thank you to Ibanplay for the lovely textures! Thank you for the good work sir!
 
-# Ver 1.0.0.0 - Release Saturday August 13th, 12022/2022
+Curseforge: https://www.curseforge.com/minecraft/mc-mods/thaumic-insurgence
+
+GTNH Branch: https://github.com/GTNewHorizons/thaumicinsurgence/tree/0.0.0.1
+(Sometimes this branch might have a newer update than it might be here, though obviously sometimes this branch might be newer)
+
+# Ver 0.0.0.2 - Release Wednesday August 31st, 12022/2022
+(Yes, I know this should technically be version 1.0.0.2, but I decided last second to change how I label versions)
+
+   1. What's been updated?
+      - The Infusion Interceptor
+        - The Infusion Intercepter now has an accessible crafting recipe and I've updated it's entry in the thaumonimicon!
+
+      - Thaumic Insurgence's research tab background!
+         -  Thaumic Insurgence now has its own custom background for its research tab! 
+         -  Thanks once again to the Arcana Dev Team for opening your beautiful textures for free use!!!
+         -  DM me if you are interested on where to find/obtain Arcana's textures!
+
+      - A massive overhaul in the cleanup of my code!!! Special thanks to @kuba6000 for helping, your work is very appreciated!!
+
+# Ver 0.0.0.1 - Release Saturday August 13th, 12022/2022
+(Previously labeled as Ver 1.0.0.0, I changed how I labeled versions as of August 31st, 12022/2022)
     
     1. What is currently in the mod
     
