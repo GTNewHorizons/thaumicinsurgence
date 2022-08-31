@@ -20,6 +20,7 @@ Original Branch: https://github.com/Alastors/thaumicinsurgence/tree/0.0.0.2
 (Yes, I know this should technically be version 1.0.0.2, but I decided last second to change how I label versions)
 
    1. What's been updated?
+
       - The Infusion Interceptor
         - The Infusion Intercepter now has an accessible crafting recipe and I've updated it's entry in the thaumonimicon!
 
