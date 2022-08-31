@@ -75,6 +75,7 @@ GTNH Branch: https://github.com/GTNewHorizons/thaumicinsurgence
       - Introduction of new thaumic multis, such as a multi portal system to allow for an 
         alternative to rockets and likely the system that will craft magic circuits
       
-      - I need to update the background to be it's own instead of the current one.
+      - I need to update the background to be its own instead of the current one.
+           - Finished as of August 31st
       
       - Dunno fam.
