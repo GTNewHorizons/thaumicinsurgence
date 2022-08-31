@@ -28,7 +28,8 @@ GTNH Branch: https://github.com/GTNewHorizons/thaumicinsurgence/tree/0.0.0.1
          -  Thanks once again to the Arcana Dev Team for opening your beautiful textures for free use!!!
          -  DM me if you are interested on where to find/obtain Arcana's textures!
 
-      - A massive overhaul in the cleanup of my code!!! Special thanks to @kuba6000 for helping, your work is very appreciated!!
+      - A massive overhaul in the cleanup of my code!!! 
+         -  Special thanks to @kuba6000 for helping, your work is very appreciated!!
 
 # Ver 0.0.0.1 - Release Saturday August 13th, 12022/2022
 (Previously labeled as Ver 1.0.0.0, I changed how I labeled versions as of August 31st, 12022/2022)
