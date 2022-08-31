@@ -14,8 +14,7 @@ Specificially thank you to Ibanplay for the lovely textures! Thank you for the g
 Curseforge: https://www.curseforge.com/minecraft/mc-mods/thaumic-insurgence
 
 
-GTNH Branch: https://github.com/GTNewHorizons/thaumicinsurgence/tree/0.0.0.2
-
+Original Branch: https://github.com/Alastors/thaumicinsurgence
 (Sometimes this branch might have a newer update than it might be here, though obviously sometimes this branch might be newer)
 
 # Ver 0.0.0.2 - Release Wednesday August 31st, 12022/2022
