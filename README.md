@@ -17,24 +17,9 @@ GTNH Branch: https://github.com/GTNewHorizons/thaumicinsurgence
    - (Sometimes this branch might have a newer update than it might be here, though obviously sometimes this branch might be newer)
 
 # Ver 0.0.0.2 - Release Wednesday August 31st, 12022/2022
-
-   1. What's been updated?
-      - The Infusion Interceptor
-        - The Infusion Intercepter now has an accessible crafting recipe and I've updated it's entry in the thaumonimicon!
-
-      - Thaumic Insurgence's research tab background!
-         -  Thaumic Insurgence now has its own custom background for its research tab! 
-         -  Thanks once again to the Arcana Dev Team for opening your beautiful textures for free use!!!
-         -  DM me if you are interested on where to find/obtain Arcana's textures!
-
-      - A massive overhaul in the cleanup of my code!!! 
-         -  Special thanks to @kuba6000 for helping, your work is very appreciated!!
-
-# Ver 0.0.0.2 - Release Wednesday August 31st, 12022/2022
 (Yes, I know this should technically be version 1.0.0.2, but I decided last second to change how I label versions)
     
     1. What's been updated?
-    
       - Infusion Interceptor
          - The Infusion Intercepter now has an accessible crafting recipe and I've updated it's entry in the thaumonimicon!
          
