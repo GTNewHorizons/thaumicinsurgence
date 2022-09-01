@@ -11,6 +11,10 @@ I'd also like to take this line to extend my thanks to the Arcana team for their
 of time backporting a lot of their content, so thank you Arcana Dev Team for allowing the use of Arcana assets except the lore!
 Specificially thank you to Ibanplay for the lovely textures! Thank you for the good work sir!
 
+If you have issues with this mod, post them here: https://github.com/Alastors/thaumicinsurgence/issues
+Please specify which version of my mod you're using and where you got it please!!! <3
+(And if you're reporting an issue and coming from GTNH, please specify that as well!)
+
 Curseforge: https://www.curseforge.com/minecraft/mc-mods/thaumic-insurgence
 
 Modrinth: https://modrinth.com/mod/thaumic_insurgence
