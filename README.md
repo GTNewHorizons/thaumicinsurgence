@@ -25,7 +25,8 @@ Original Branch: https://github.com/Alastors/thaumicinsurgence
 # Ver 0.0.5 - Release Saturday September 3rd, 12022/2022
     
     1. What's been updated?
-      - Updated the GTNH release of the mod to use semver versioning schemes, the mainline release will still use the 0.0.0.0 formatting
+      - Updated the GTNH release of the mod to use semver versioning schemes, 
+        the mainline release will still use the 0.0.0.0 formatting
 
 # Ver 0.0.0.4 - Release Saturday September 3rd, 12022/2022
     
