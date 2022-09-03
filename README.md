@@ -22,6 +22,16 @@ Modrinth: https://modrinth.com/mod/thaumic_insurgence
 Original Branch: https://github.com/Alastors/thaumicinsurgence
    - (Sometimes this branch might have a newer update than it might be here, though obviously sometimes this branch might be newer)
 
+# Ver 0.0.5 - Release Saturday September 3rd, 12022/2022
+    
+    1. What's been updated?
+      - Updated the GTNH release of the mod to use semver versioning schemes, the mainline release will still use the 0.0.0.0 formatting
+
+# Ver 0.0.0.4 - Release Saturday September 3rd, 12022/2022
+    
+    1. What's been updated?
+      - The intercepter's entry in the thaumonomicon.
+
 # Ver 0.0.0.2 - Release Wednesday August 31st, 12022/2022
 (Yes, I know this should technically be version 1.0.0.2, but I decided last second to change how I label versions)
     
