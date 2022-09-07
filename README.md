@@ -22,6 +22,11 @@ Modrinth: https://modrinth.com/mod/thaumic_insurgence
 GTNH Branch: https://github.com/GTNewHorizons/thaumicinsurgence
    - (Sometimes this branch might have a newer update than it might be here, though obviously sometimes this branch might be newer)
 
+# Ver 0.0.0.4 - Release Saturday September 3rd, 12022/2022
+    
+    1. What's been updated?
+      - The intercepter's entry in the thaumonomicon.
+
 # Ver 0.0.0.2 - Release Wednesday August 31st, 12022/2022
 (Yes, I know this should technically be version 1.0.0.2, but I decided last second to change how I label versions)
     
@@ -83,5 +88,8 @@ GTNH Branch: https://github.com/GTNewHorizons/thaumicinsurgence
       
       - I need to update the background to be its own instead of the current one.
            - Finished as of August 31st
+
       
       - Dunno fam.
+      
+      
