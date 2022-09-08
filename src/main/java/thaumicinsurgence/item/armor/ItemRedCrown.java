@@ -26,7 +26,7 @@ public class ItemRedCrown extends ItemGoggles
     public ItemRedCrown(final ArmorMaterial material, final int j, final int k) {
         super(material, j, k);
         setCreativeTab(TabThaumicInsurgence.tabThaumicInsurgence);
-        setUnlocalizedName("ItemVoidmetalGoggles");
+        setUnlocalizedName("ItemRedCrown");
     }
 
     @Override
@@ -36,7 +36,7 @@ public class ItemRedCrown extends ItemGoggles
     }
 
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
-        return VersionInfo.ModID + ":goggles_of_revealing_layer_1";
+        return "thaumicinsurgence:textures/model/goggles_of_revealing_layer_1.png";
     }
 
     @Override
