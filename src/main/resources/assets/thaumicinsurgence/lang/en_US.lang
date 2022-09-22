@@ -4,7 +4,7 @@ language.code=en_US
 
 # Miscellaneous strings
 # -- Updater strings. Please try to keep these to one line if possible.
-thaumicinsurgence.versioning.newVersion=A new version of Magic Bees is available: %s
+thaumicinsurgence.versioning.newVersion=A new version of Thaumic Insurgence is available: %s
 thaumicinsurgence.versioning.critical=Magic Bees has a critical update ready: %s - Please update!
 thaumicinsurgence.versioning.clickDownload=Click to open the Download page. Hover for update info.
 thaumicinsurgence.config.category.general=General
@@ -17,7 +17,7 @@ tc.research_category.THAUMICINSURGENCE=Thaumic Insurgence
 
 tc.research_name.TI_InfusionIntercepter=Infusion Intercepter
 tc.research_text.TI_InfusionIntercepter=Fucking Azanor's "balance" since 2022!
-InfusionIntercepter.1=Do you hate how slow infusion is? Are you sick and tired of the lag associated with WAing it? WELL DO I HAVE THE SOLUTION FOR YOU!!! FOR ONE LOW LOW PAYMENT OF [2000 warp] I CAN JAILBREAK YOUR INFUSION MATRIX FOR YOU AND ALLOW IT TO ACCEPT THE ESSENTIA PROVIDER!!!
+InfusionInterceptor.1=Do you hate how slow infusion is? Are you sick and tired of the lag associated with WAing it? WELL DO I HAVE THE SOLUTION FOR YOU!!! FOR ONE LOW LOW PAYMENT OF [2000 warp] I CAN JAILBREAK YOUR INFUSION MATRIX FOR YOU AND ALLOW IT TO ACCEPT THE ESSENTIA PROVIDER!!! Place the intercepter directly below your infusion altar's center pedestal, it takes essentia from the bottom face.
 
 
 #Tiles
