@@ -14,16 +14,15 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
     public static final String tileEntityName = VersionInfo.ModID + ".infusionIntercepter";
 
     // added directly from the crucible of souls
-    public AspectList myAspects = new AspectList();
-    public AspectList grabbedAspects = new AspectList();
-    Aspect[] listOfAspects;
-    public int desired_amount = 0;
-    public int grabbed_amount = 0;
-    public int listSlot = 0;
-    public int incre = 0;
-    public Aspect currentSuction;
-    public TileInfusionMatrix matrix = null;
-    public IEssentiaTransport essentiaEntity = null;
+    private AspectList myAspects = new AspectList();
+    private AspectList matrixAspects = new AspectList();
+    private Aspect[] listOfAspects;
+    private int desiredAmount = 0;
+    private int grabbedAmount = 0;
+    private int listSlot = 0;
+    private Aspect currentSuction;
+    private TileInfusionMatrix matrix = null;
+    private IEssentiaTransport essentiaEntity = null;
 
     /* public static final Aspect AIR = new Aspect("aer", 16777086, "e", 1);
     public static final Aspect EARTH = new Aspect("terra", 5685248, "2", 1); */
@@ -57,42 +56,23 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
 
     public void matrixFuckery() {
 
-        // this statement grabs the matrix's aspects every 5 seconds and the line after increments the incremented
-        // variable, assuming the matrix exists anyway.
-        if (matrix != null) {
-            if (incre == 100) {
-                try {
-                    grabbedAspects = matrix.getAspects();
-                } catch (Exception ignored) {
-                }
-                incre = 0;
-            }
-            incre++;
-        }
-
-        /* this method handles the Aspect array that I use to handle suction, if the matrix's AspectList has anything in it,
-         *  the Aspect array is set to be a mirrored copy of it, otherwise,
-         *  it sets the intercepter's internal AspectList to a new blank AspectList so that it can be reused without breaking. */
-        setTodoList();
-
-        // just a bit of logic to prevent it from using unnecessary resources.
-        if (!grabbedAspects.equals(new AspectList())) {
-            //   if (listOfAspects != null) {
-
+        matrixAspects = matrix.getAspects();
+        if (matrixAspects.size() != 0) {
+            listOfAspects = matrixAspects.getAspects();
             // this set handles the suction methods and variable resetting related to the lists and suction
-            try {
-                if (listSlot < listOfAspects.length) {
-                    setIntercepterSuction();
-                } else {
-                    resetLists();
-                }
-            } catch (Exception ignored) {
+            if (listSlot < listOfAspects.length) {
+                setIntercepterSuction();
+            } else {
+                resetLists();
             }
 
             // this method handles removing essentia from the essentia source.
             if (this.currentSuction != null) {
                 removeFromSource();
             }
+        } else if (myAspects.size() != 0) {
+            // reset internal aspects if there are no matrix aspects to process
+            myAspects = new AspectList();
         }
     }
 
@@ -100,8 +80,9 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
      *  set the current input to the whatever is trying to input */
     public void setInput() {
         try {
-            if (worldObj.getTileEntity(this.xCoord, this.yCoord - 1, this.zCoord) instanceof IEssentiaTransport) {
-                essentiaEntity = (IEssentiaTransport) worldObj.getTileEntity(this.xCoord, this.yCoord - 1, this.zCoord);
+            TileEntity inputCandidate = worldObj.getTileEntity(this.xCoord, this.yCoord - 1, this.zCoord);
+            if (inputCandidate instanceof IEssentiaTransport) {
+                essentiaEntity = (IEssentiaTransport) inputCandidate;
             }
         } catch (Exception ignored) {
         }
@@ -110,8 +91,9 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
     /** this is obvious, but it grabs the infusion matrix that the intercepter is going to screw with. */
     public void setMatrix() {
         try {
-            if (worldObj.getTileEntity(this.xCoord, this.yCoord + 3, this.zCoord) instanceof TileInfusionMatrix) {
-                matrix = (TileInfusionMatrix) worldObj.getTileEntity(this.xCoord, this.yCoord + 3, this.zCoord);
+            TileEntity matrixCandidate = worldObj.getTileEntity(this.xCoord, this.yCoord + 3, this.zCoord);
+            if (matrixCandidate instanceof TileInfusionMatrix) {
+                matrix = (TileInfusionMatrix) matrixCandidate;
             }
         } catch (Exception ignored) {
         }
@@ -120,13 +102,10 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
     /** if the matrix has an AspectList active, then it sets the Aspect array so that suction can be set, otherwise
      *  it resets the intercepter's AspectList into a clean list. */
     private void setTodoList() {
-        try {
-            if (!grabbedAspects.equals(new AspectList())) {
-                listOfAspects = grabbedAspects.getAspects();
-            } else if (grabbedAspects.equals(new AspectList())) {
-                myAspects = new AspectList();
-            }
-        } catch (Exception ignored) {
+        if (matrixAspects.size() == 0) {
+            myAspects = new AspectList();
+        } else {
+            listOfAspects = matrixAspects.getAspects();
         }
     }
 
@@ -134,22 +113,22 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
      * is equal to the grabbedAspects AspectList of the matrix, it tiers up the listSlot iteration int and removes the
      * essentia from the infusion matrix while setting the suction to null so the next tick can set the suction to the new aspect. */
     private void setIntercepterSuction() {
-        int set_desired_amount = grabbedAspects.getAmount(listOfAspects[listSlot]);
+        int desiredAmount = matrixAspects.getAmount(listOfAspects[listSlot]);
         if (currentSuction == null) {
             this.currentSuction = listOfAspects[listSlot];
-            this.desired_amount = set_desired_amount;
-        } else if (myAspects.getAmount(listOfAspects[listSlot]) >= set_desired_amount) {
-            grabbedAspects.remove(listOfAspects[listSlot], myAspects.getAmount(listOfAspects[listSlot]));
+            this.desiredAmount = desiredAmount;
+        } else if (myAspects.getAmount(listOfAspects[listSlot]) >= desiredAmount) {
+            matrixAspects.remove(listOfAspects[listSlot], myAspects.getAmount(listOfAspects[listSlot]));
             listSlot += 1;
             this.currentSuction = null;
-            this.desired_amount = 0;
+            this.desiredAmount = 0;
         }
     }
 
     /** this method just resets the lists, duh */
     private void resetLists() {
         myAspects = new AspectList();
-        grabbedAspects = new AspectList();
+        matrixAspects = new AspectList();
         listOfAspects = null;
         this.currentSuction = null;
         listSlot = 0;
@@ -163,16 +142,16 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
                     Aspect tubeAspect = essentiaEntity.getEssentiaType(ForgeDirection.UP);
                     int aspectAmount = essentiaEntity.getEssentiaAmount(ForgeDirection.UP);
 
-                    if (aspectAmount >= desired_amount) {
-                        grabbed_amount = desired_amount;
+                    if (aspectAmount >= desiredAmount) {
+                        grabbedAmount = desiredAmount;
                     } else {
-                        grabbed_amount = aspectAmount;
+                        grabbedAmount = aspectAmount;
                     }
 
                     if (tubeAspect.equals(currentSuction)) {
-                        essentiaEntity.takeEssentia(tubeAspect, grabbed_amount, ForgeDirection.UP);
-                        myAspects.add(tubeAspect, grabbed_amount);
-                        this.desired_amount -= grabbed_amount;
+                        essentiaEntity.takeEssentia(tubeAspect, grabbedAmount, ForgeDirection.UP);
+                        myAspects.add(tubeAspect, grabbedAmount);
+                        this.desiredAmount -= grabbedAmount;
                     }
                 }
             }
@@ -201,13 +180,11 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
     // modified for infusion fuckery
     @Override
     public int addToContainer(Aspect tag, int am) {
-        if (am == 0) {
-            return am;
-        } else {
+        if (am != 0) {
             this.myAspects.add(tag, am);
             am = 0;
-            return am;
         }
+        return am;
     }
 
     // modified for infusion fuckery
