@@ -61,7 +61,7 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
             // Cannot copy before checking size or the moronic AspectList copy method will add a null entry
             matrixAspects = matrix.getAspects().copy();
 
-            for (Aspect aspect: matrixAspects.getAspects()) {
+            for (Aspect aspect : matrixAspects.getAspects()) {
                 // Set suction for every new aspect so essentiaEntity knows what we want
                 currentSuction = aspect;
 
