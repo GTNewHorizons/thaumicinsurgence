@@ -13,13 +13,8 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
 
     public static final String tileEntityName = VersionInfo.ModID + ".infusionIntercepter";
 
-    // added directly from the crucible of souls
     private AspectList myAspects = new AspectList();
     private AspectList matrixAspects = new AspectList();
-    private Aspect[] listOfAspects;
-    private int desiredAmount = 0;
-    private int grabbedAmount = 0;
-    private int listSlot = 0;
     private Aspect currentSuction;
     private TileInfusionMatrix matrix = null;
     private IEssentiaTransport essentiaEntity = null;
@@ -42,33 +37,44 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
 
     @Override
     public void updateEntity() {
+        if (worldObj.isRemote) {
+            return;
+        }
 
         // these two if statements handle setting the TE variables the intercepter deals with.
         if (matrix == null) setMatrix();
         if (essentiaEntity == null) setInput();
 
-        /* this method handles literally everything this does, I moved it to it's own method so that I could
-         * make it not do anything if the matrix didn't exist to save idle performance */
-        if (matrix != null) {
+        // We cannot pull essentia if there is no source (essentiaEntity) or destination (matrix)
+        if (matrix != null && essentiaEntity != null) {
             matrixFuckery();
         }
     }
 
+    /**
+     * If the matrix needs any aspects, attempt to grab ALL of them
+     * from the essentiaEntity sequentially in this tick.
+     */
     public void matrixFuckery() {
+        if (matrix.getAspects().size() != 0) {
+            // Copy the list so we can remove aspects from the matrix as needed
+            // Cannot copy before checking size or the moronic AspectList copy method will add a null entry
+            matrixAspects = matrix.getAspects().copy();
 
-        matrixAspects = matrix.getAspects();
-        if (matrixAspects.size() != 0) {
-            listOfAspects = matrixAspects.getAspects();
-            // this set handles the suction methods and variable resetting related to the lists and suction
-            if (listSlot < listOfAspects.length) {
-                setIntercepterSuction();
-            } else {
-                resetLists();
-            }
+            for (Aspect aspect: matrixAspects.getAspects()) {
+                // Set suction for every new aspect so essentiaEntity knows what we want
+                currentSuction = aspect;
 
-            // this method handles removing essentia from the essentia source.
-            if (this.currentSuction != null) {
-                removeFromSource();
+                int desiredAmount = matrixAspects.getAmount(aspect);
+                int removedAmount = removeFromSource(desiredAmount);
+                if (removedAmount > 0) {
+                    moveEssentiaToMatrix(desiredAmount);
+                }
+
+                // Stop if there was not enough of this essentia type so suction remains the same
+                if (removedAmount != desiredAmount) {
+                    break;
+                }
             }
         } else if (myAspects.size() != 0) {
             // reset internal aspects if there are no matrix aspects to process
@@ -99,63 +105,27 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
         }
     }
 
-    /** if the matrix has an AspectList active, then it sets the Aspect array so that suction can be set, otherwise
-     *  it resets the intercepter's AspectList into a clean list. */
-    private void setTodoList() {
-        if (matrixAspects.size() == 0) {
-            myAspects = new AspectList();
-        } else {
-            listOfAspects = matrixAspects.getAspects();
+    /** this method handles removing essentia from the essentia source, and adds it to myAspects */
+    private int removeFromSource(int desiredAmount) {
+        int sourceAmount = essentiaEntity.getEssentiaAmount(ForgeDirection.UP);
+        Aspect tubeAspect = essentiaEntity.getEssentiaType(ForgeDirection.UP);
+        if (tubeAspect != null && tubeAspect.equals(currentSuction) && sourceAmount > 0) {
+            int usedAmount = Math.min(sourceAmount, desiredAmount);
+            essentiaEntity.takeEssentia(tubeAspect, usedAmount, ForgeDirection.UP);
+            myAspects.add(tubeAspect, usedAmount);
+            return usedAmount;
         }
+
+        return 0;
     }
 
-    /** This methods Takes into consideration if the suction is null, and sets it if it can, otherwise, if the intercepter AspectList
-     * is equal to the grabbedAspects AspectList of the matrix, it tiers up the listSlot iteration int and removes the
-     * essentia from the infusion matrix while setting the suction to null so the next tick can set the suction to the new aspect. */
-    private void setIntercepterSuction() {
-        int desiredAmount = matrixAspects.getAmount(listOfAspects[listSlot]);
-        if (currentSuction == null) {
-            this.currentSuction = listOfAspects[listSlot];
-            this.desiredAmount = desiredAmount;
-        } else if (myAspects.getAmount(listOfAspects[listSlot]) >= desiredAmount) {
-            matrixAspects.remove(listOfAspects[listSlot], myAspects.getAmount(listOfAspects[listSlot]));
-            listSlot += 1;
-            this.currentSuction = null;
-            this.desiredAmount = 0;
-        }
-    }
-
-    /** this method just resets the lists, duh */
-    private void resetLists() {
-        myAspects = new AspectList();
-        matrixAspects = new AspectList();
-        listOfAspects = null;
-        this.currentSuction = null;
-        listSlot = 0;
-    }
-
-    /** this method handles removing essentia from the essentia source */
-    private void removeFromSource() {
-        try {
-            if (essentiaEntity != null) {
-                if (essentiaEntity.getEssentiaAmount(ForgeDirection.UP) >= 1) {
-                    Aspect tubeAspect = essentiaEntity.getEssentiaType(ForgeDirection.UP);
-                    int aspectAmount = essentiaEntity.getEssentiaAmount(ForgeDirection.UP);
-
-                    if (aspectAmount >= desiredAmount) {
-                        grabbedAmount = desiredAmount;
-                    } else {
-                        grabbedAmount = aspectAmount;
-                    }
-
-                    if (tubeAspect.equals(currentSuction)) {
-                        essentiaEntity.takeEssentia(tubeAspect, grabbedAmount, ForgeDirection.UP);
-                        myAspects.add(tubeAspect, grabbedAmount);
-                        this.desiredAmount -= grabbedAmount;
-                    }
-                }
-            }
-        } catch (Exception ignored) {
+    /** based on currentSuction, move necessary essentia to the matrix if we have any */
+    private void moveEssentiaToMatrix(int desiredAmount) {
+        int heldAmount = myAspects.getAmount(currentSuction);
+        matrix.getAspects().remove(currentSuction, heldAmount);
+        myAspects.remove(currentSuction);
+        if (heldAmount >= desiredAmount) {
+            currentSuction = null;
         }
     }
 
