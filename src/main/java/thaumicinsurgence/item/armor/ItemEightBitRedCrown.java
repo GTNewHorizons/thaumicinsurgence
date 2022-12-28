@@ -18,19 +18,19 @@ import thaumcraft.api.nodes.IRevealer;
 import thaumcraft.common.items.armor.ItemGoggles;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
 
-public class ItemRedCrown extends ItemGoggles
+public class ItemEightBitRedCrown extends ItemGoggles
         implements IRepairable, IVisDiscountGear, IRevealer, IGoggles, IRunicArmor {
     public IIcon icon;
 
-    public ItemRedCrown(final ArmorMaterial material, final int j, final int k) {
+    public ItemEightBitRedCrown(final ArmorMaterial material, final int j, final int k) {
         super(material, j, k);
         setCreativeTab(TabThaumicInsurgence.tabThaumicInsurgence);
-        setUnlocalizedName("ItemRedCrown");
+        setUnlocalizedName("ItemEightBitRedCrown");
     }
 
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IIconRegister ir) {
-        icon = ir.registerIcon("thaumicinsurgence:redcrown_ver_ 2");
+        icon = ir.registerIcon("thaumicinsurgence:redcrown_32_bit");
     }
 
     @SideOnly(Side.CLIENT)

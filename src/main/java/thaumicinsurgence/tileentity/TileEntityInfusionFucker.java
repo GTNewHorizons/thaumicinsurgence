@@ -24,6 +24,9 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
     public Aspect currentSuction;
     public TileInfusionMatrix matrix = null;
     public IEssentiaTransport essentiaEntity = null;
+    private boolean addedStability = false;
+    public boolean stabilityHasBeenAdded = false;
+    private boolean firstTime = false;
 
     /* public static final Aspect AIR = new Aspect("aer", 16777086, "e", 1);
     public static final Aspect EARTH = new Aspect("terra", 5685248, "2", 1); */
@@ -68,6 +71,10 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
                 incre = 0;
             }
             incre++;
+
+            if (!addedStability) {
+                addStability();
+            }
         }
 
         /* this method handles the Aspect array that I use to handle suction, if the matrix's AspectList has anything in it,
@@ -96,6 +103,18 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
         }
     }
 
+    public void addStability() {
+        matrix.instability -= 20;
+        addedStability = true;
+        stabilityHasBeenAdded = true;
+    }
+
+    public void removeStability() {
+        matrix.instability += 20;
+        addedStability = false;
+        stabilityHasBeenAdded = false;
+    }
+
     /** If an input exists, this method will see if it contains the IEssentiaTransport interface, and if it does, it will
      *  set the current input to the whatever is trying to input */
     public void setInput() {
@@ -122,6 +141,10 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
     private void setTodoList() {
         try {
             if (!grabbedAspects.equals(new AspectList())) {
+                if (!firstTime) {
+                    firstTime = true;
+                    addStability();
+                }
                 listOfAspects = grabbedAspects.getAspects();
             } else if (grabbedAspects.equals(new AspectList())) {
                 myAspects = new AspectList();
@@ -153,6 +176,9 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
         listOfAspects = null;
         this.currentSuction = null;
         listSlot = 0;
+        addedStability = false;
+        stabilityHasBeenAdded = false;
+        firstTime = false;
     }
 
     /** this method handles removing essentia from the essentia source */
