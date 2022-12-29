@@ -19,6 +19,10 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
     private TileInfusionMatrix matrix = null;
     private IEssentiaTransport essentiaEntity = null;
 
+    public boolean addedStability;
+    public boolean stabilityHasBeenAdded;
+
+
     /* public static final Aspect AIR = new Aspect("aer", 16777086, "e", 1);
     public static final Aspect EARTH = new Aspect("terra", 5685248, "2", 1); */
 

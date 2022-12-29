@@ -70,9 +70,11 @@ public class BlockInfusionFucker extends BlockContainer {
     @Override
     public void breakBlock(World world, int x, int y, int z, Block block, int meta) {
         TileEntity te = world.getTileEntity(x, y, z);
-        if (((TileEntityInfusionFucker) te).stabilityHasBeenAdded) {
+
+         if (((TileEntityInfusionFucker) te).stabilityHasBeenAdded) {
             ((TileEntityInfusionFucker) te).removeStability();
-        }
+        } 
+
         if (te != null && te instanceof IInventory) {
             IInventory inventory = (IInventory) te;
 
