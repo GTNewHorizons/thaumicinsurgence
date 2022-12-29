@@ -9,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.common.config.Configuration;
 import thaumcraft.api.ThaumcraftApi;
 
+
 import thaumicinsurgence.block.*;
 import thaumicinsurgence.item.ItemMiscResources;
 import thaumicinsurgence.item.ItemSanitySoapAlpha;
@@ -44,6 +45,7 @@ public class Config {
     public static Item thaumicInterfacer;
     public static Item alastorsWand;
     public static Item soapAlpha;
+
 
 
     public static BlockInfusionFucker infusionIntercepter;
