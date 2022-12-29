@@ -12,7 +12,7 @@ import thaumcraft.api.crafting.InfusionRecipe;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
-import thaumcraft.common.items.ItemSanitySoap;
+import thaumcraft.common.config.ConfigItems;
 import thaumicinsurgence.main.Config;
 import thaumicinsurgence.main.utils.BlockInterface;
 import thaumicinsurgence.main.utils.ItemInterface;
@@ -20,8 +20,6 @@ import thaumicinsurgence.main.utils.LocalizationManager;
 import thaumicinsurgence.main.utils.VersionInfo;
 
 public class ThaumcraftHelper implements IModHelper {
-
-    private static ItemSanitySoap ItemSanitySoap;
 
     @SuppressWarnings("unused")
     public enum MiscResource {
@@ -285,7 +283,7 @@ public class ThaumcraftHelper implements IModHelper {
         soapAlpha = ThaumcraftApi.addCrucibleRecipe(
                 "TI_SanitizingSoapAlpha",
                 new ItemStack(Config.soapAlpha),
-                new ItemStack(ThaumcraftHelper.ItemSanitySoap),
+                new ItemStack(ConfigItems.itemSanitySoap),
                 new AspectList().add(Aspect.HEAL, 32).add(Aspect.ORDER, 64));
     }
 

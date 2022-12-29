@@ -27,7 +27,7 @@ public class ItemSanitySoapAlpha extends ItemSanitySoap {
 
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister ir) {
-        this.icon = ir.registerIcon("thaumicinsurgence:soap_alpha");
+        this.icon = ir.registerIcon("thaumicinsurgence:soap_alpha_2");
     }
 
     @SideOnly(Side.CLIENT)
