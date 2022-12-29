@@ -4,7 +4,7 @@ language.code=en_US
 
 # Miscellaneous strings
 # -- Updater strings. Please try to keep these to one line if possible.
-thaumicinsurgence.versioning.newVersion=A new version of Magic Bees is available: %s
+thaumicinsurgence.versioning.newVersion=A new version of Thaumic Insurgence is available: %s
 thaumicinsurgence.versioning.critical=Magic Bees has a critical update ready: %s - Please update!
 thaumicinsurgence.versioning.clickDownload=Click to open the Download page. Hover for update info.
 thaumicinsurgence.config.category.general=General
@@ -28,9 +28,11 @@ tc.research_text.TI_SanitizingSoapAlpha=Every day we inch closer to replacing Az
 
 #Items
 tile.infusionIntercepter.name=Infusion Intercepter
+
 item.ItemRedCrown.name=Red Crown
 item.ItemEightBitRedCrown.name=Red Crown
 item.ItemAlastorsWand.name=Alastor's First Wand
 item.ItemSanitySoapAlpha.name=Trosma Sláintíochta Soap
 
 itemGroup.Thaumic Insurgence=Thaumic Insurgence
+

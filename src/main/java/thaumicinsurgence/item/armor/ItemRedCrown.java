@@ -17,6 +17,7 @@ import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.nodes.IRevealer;
 import thaumcraft.common.items.armor.ItemGoggles;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
+import thaumicinsurgence.main.utils.VersionInfo;
 
 public class ItemRedCrown extends ItemGoggles
         implements IRepairable, IVisDiscountGear, IRevealer, IGoggles, IRunicArmor {
@@ -28,24 +29,22 @@ public class ItemRedCrown extends ItemGoggles
         setUnlocalizedName("ItemRedCrown");
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IIconRegister ir) {
-        icon = ir.registerIcon("thaumicinsurgence:redcrown_ver_ 2");
-    }
-
-    @SideOnly(Side.CLIENT)
-    public IIcon func_77617_a(int par1) {
-        return this.icon;
+        icon = ir.registerIcon(VersionInfo.ModID + ":goggles_of_revealing");
     }
 
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
-        return "thaumicinsurgence:model/redcrownmodel.png";
+        return "thaumicinsurgence:textures/model/goggles_of_revealing_layer_1.png";
     }
 
+    @Override
     public int getVisDiscount(ItemStack stack, EntityPlayer player, Aspect aspect) {
         return 15;
     }
 
+    @Override
     public boolean showNodes(ItemStack itemstack, EntityLivingBase player) {
         return true;
     }
