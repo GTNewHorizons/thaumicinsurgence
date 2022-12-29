@@ -5,9 +5,12 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import java.io.File;
+import net.minecraft.item.Item;
 import net.minecraftforge.common.config.Configuration;
+import thaumcraft.api.ThaumcraftApi;
 import thaumicinsurgence.block.BlockInfusionFucker;
 import thaumicinsurgence.item.ItemMiscResources;
+import thaumicinsurgence.item.armor.ItemRedCrown;
 import thaumicinsurgence.main.utils.VersionInfo;
 import thaumicinsurgence.tileentity.TileEntityInfusionFucker;
 
@@ -22,6 +25,8 @@ public class Config {
     public static boolean thaumcraftActive;
 
     public static ItemMiscResources miscResources;
+
+    public static Item redCrownItem;
 
     public static BlockInfusionFucker infusionIntercepter;
 
@@ -59,6 +64,8 @@ public class Config {
     }
 
     public static void setupItems() {
+        redCrownItem = new ItemRedCrown(ThaumcraftApi.armorMatSpecial, 4, 0);
+        GameRegistry.registerItem(redCrownItem, "ItemRedCrown");
         miscResources = new ItemMiscResources();
     }
 
