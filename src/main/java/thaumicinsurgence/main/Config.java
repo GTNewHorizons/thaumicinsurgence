@@ -8,17 +8,14 @@ import java.io.File;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.config.Configuration;
 import thaumcraft.api.ThaumcraftApi;
-
 import thaumicinsurgence.block.*;
+import thaumicinsurgence.block.BlockInfusionFucker;
 import thaumicinsurgence.item.ItemMiscResources;
 import thaumicinsurgence.item.ItemSanitySoapAlpha;
 import thaumicinsurgence.item.armor.ItemEightBitRedCrown;
 import thaumicinsurgence.item.armor.ItemRedCrown;
 import thaumicinsurgence.item.tools.ItemAlastorsWand;
 import thaumicinsurgence.item.tools.ItemThaumicInterfacer;
-
-import thaumicinsurgence.block.BlockInfusionFucker;
-
 import thaumicinsurgence.main.utils.VersionInfo;
 import thaumicinsurgence.tileentity.TileEntityInfusionFucker;
 import thaumicinsurgence.tileentity.TileEntityInfusionMatrixAlpha;
@@ -45,7 +42,6 @@ public class Config {
     public static Item thaumicInterfacer;
     public static Item alastorsWand;
     public static Item soapAlpha;
-
 
     public static BlockInfusionFucker infusionIntercepter;
     public static BlockInfusionMatrixAlpha matrixAlpha;
