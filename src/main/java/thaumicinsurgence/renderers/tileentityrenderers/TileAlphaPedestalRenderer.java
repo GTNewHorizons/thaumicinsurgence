@@ -1,5 +1,7 @@
 package thaumicinsurgence.renderers.tileentityrenderers;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.item.EntityItem;
@@ -11,10 +13,12 @@ import org.lwjgl.opengl.GL11;
 import thaumcraft.client.renderers.tile.TilePedestalRenderer;
 import thaumicinsurgence.tileentity.TileEntityPedestalAlpha;
 
+@SideOnly(Side.CLIENT)
 public class TileAlphaPedestalRenderer extends TilePedestalRenderer {
+    @SideOnly(Side.CLIENT)
     public void renderTileEntityAt(TileEntityPedestalAlpha ped, double par2, double par4, double par6, float par8) {
         if (ped != null && ped.getWorldObj() != null && ped.getStackInSlot(0) != null) {
-            EntityItem entityitem = null;
+            EntityItem entityitem;
             float ticks = (float) Minecraft.getMinecraft().renderViewEntity.ticksExisted + par8;
             GL11.glPushMatrix();
             float h = MathHelper.sin(ticks % 32767.0F / 16.0F) * 0.05F;
@@ -40,6 +44,7 @@ public class TileAlphaPedestalRenderer extends TilePedestalRenderer {
         }
     }
 
+    @SideOnly(Side.CLIENT)
     public void renderTileEntityAt(TileEntity par1TileEntity, double par2, double par4, double par6, float par8) {
         this.renderTileEntityAt((TileEntityPedestalAlpha) par1TileEntity, par2, par4, par6, par8);
     }
