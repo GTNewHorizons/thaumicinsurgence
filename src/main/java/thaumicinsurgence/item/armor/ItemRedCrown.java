@@ -17,8 +17,6 @@ import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.nodes.IRevealer;
 import thaumcraft.common.items.armor.ItemGoggles;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
-import thaumicinsurgence.main.utils.VersionInfo;
-
 
 public class ItemRedCrown extends ItemGoggles
         implements IRepairable, IVisDiscountGear, IRevealer, IGoggles, IRunicArmor {
@@ -29,7 +27,6 @@ public class ItemRedCrown extends ItemGoggles
         setCreativeTab(TabThaumicInsurgence.tabThaumicInsurgence);
         setUnlocalizedName("ItemRedCrown");
     }
-
 
     @SideOnly(Side.CLIENT)
     public void registerIcons(final IIconRegister ir) {
@@ -48,7 +45,6 @@ public class ItemRedCrown extends ItemGoggles
     public int getVisDiscount(ItemStack stack, EntityPlayer player, Aspect aspect) {
         return 15;
     }
-
 
     public boolean showNodes(ItemStack itemstack, EntityLivingBase player) {
         return true;
