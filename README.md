@@ -19,7 +19,7 @@ Curseforge: https://www.curseforge.com/minecraft/mc-mods/thaumic-insurgence
 
 Modrinth: https://modrinth.com/mod/thaumic_insurgence
 
-Original Branch: https://github.com/Alastors/thaumicinsurgence
+GTNH Branch: https://github.com/GTNewHorizons/thaumicinsurgence
    - (Sometimes this branch might have a newer update than it might be here, though obviously sometimes this branch might be newer)
 
 # Ver 0.0.0.4 - Release Saturday September 3rd, 12022/2022
