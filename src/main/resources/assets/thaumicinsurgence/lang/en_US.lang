@@ -35,6 +35,7 @@ SoapBeta.1=Do you have perm warp that induces constant nightmares foreboding eld
 tc.research_name.TI_DeliciousKromer=[[Funky]] LITTLE [[Worm]]
 tc.research_text.TI_DeliciousKromer=THIS IS [One Purchase] YOU WILL [Regret] FOR THE REST OF YOUR LIFE!
 
+
 #Tiles
 
 #Items
@@ -45,6 +46,7 @@ item.ItemEightBitRedCrown.name=Red Crown
 item.ItemAlastorsWand.name=Alastor's First Wand
 item.ItemSanitySoapAlpha.name=Trosma Sláintíochta Soap
 item.ItemSanitySoapBeta.name=Alastor's Soap
+
 item.ItemBIGSHOT.name=[Hyperlink Blocked]
 
 

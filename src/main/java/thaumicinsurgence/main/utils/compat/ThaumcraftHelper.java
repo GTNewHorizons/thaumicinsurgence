@@ -332,7 +332,6 @@ public class ThaumcraftHelper implements IModHelper {
         ResearchItem soapBetaPage;
         ResearchPage soapBeta1;
         ResearchPage soapBeta2;
-
         ResearchItem littleSponge;
         ResearchPage unintelligbleLaughter;
         ResearchPage shootForTheSky;
@@ -412,6 +411,7 @@ public class ThaumcraftHelper implements IModHelper {
         unintelligbleLaughter = new ResearchPage("unintelligbleLaughter");
         shootForTheSky = new ResearchPage(bigShot);
 
+
         infusionIntercepterPage.setPages(intercepter1, intercepter2);
         infusionIntercepterPage.setParents("INFUSION");
 
@@ -430,6 +430,7 @@ public class ThaumcraftHelper implements IModHelper {
         littleSponge.setPages(unintelligbleLaughter, shootForTheSky);
         littleSponge.setParents("GOGGLES");
 
+
         ThaumcraftApi.addWarpToResearch("TI_InfusionIntercepter", 4);
         ResearchCategories.addResearch(infusionIntercepterPage);
         ResearchCategories.addResearch(redCrownPage);
@@ -437,6 +438,7 @@ public class ThaumcraftHelper implements IModHelper {
         ResearchCategories.addResearch(soapAlphaPage);
         ResearchCategories.addResearch(soapBetaPage);
         ResearchCategories.addResearch(littleSponge);
+
     }
 
     public static ResearchPage getResearchPage(String ident) {
