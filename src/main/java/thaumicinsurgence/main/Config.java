@@ -45,7 +45,6 @@ public class Config {
     public static Item soapAlpha;
     public static Item soapBetaBitch;
 
-
     public static BlockInfusionFucker infusionIntercepter;
     public static BlockInfusionMatrixAlpha matrixAlpha;
     public static BlockInfusionPillarAlpha pillarAlpha;
