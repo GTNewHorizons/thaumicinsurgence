@@ -24,6 +24,9 @@ InfusionInterceptor.1=Do you hate how slow infusion is? Are you sick and tired o
 tc.research_name.TI_SanitizingSoapAlpha=Sanitizing Soap Alpha
 tc.research_text.TI_SanitizingSoapAlpha=Every day we inch closer to replacing Azanor.
 
+tc.research_name.TI_SanitizingSoapBeta=Alastor's Soap
+tc.research_text.TI_SanitizingSoapBeta=Made from Azanor's tears
+
 #Tiles
 
 #Items
@@ -33,6 +36,8 @@ item.ItemRedCrown.name=Red Crown
 item.ItemEightBitRedCrown.name=Red Crown
 item.ItemAlastorsWand.name=Alastor's First Wand
 item.ItemSanitySoapAlpha.name=Trosma Sláintíochta Soap
+item.ItemSanitySoapBeta.name=Alastor's Soap
+
 
 itemGroup.Thaumic Insurgence=Thaumic Insurgence
 

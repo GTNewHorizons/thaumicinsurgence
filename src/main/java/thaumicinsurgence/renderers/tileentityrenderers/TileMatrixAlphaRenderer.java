@@ -1,6 +1,8 @@
 package thaumicinsurgence.renderers.tileentityrenderers;
 
 import cpw.mods.fml.client.FMLClientHandler;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
@@ -18,17 +20,20 @@ import thaumcraft.client.renderers.tile.TileRunicMatrixRenderer;
 import thaumicinsurgence.main.utils.VersionInfo;
 import thaumicinsurgence.tileentity.TileEntityInfusionMatrixAlpha;
 
+@SideOnly(Side.CLIENT)
 public class TileMatrixAlphaRenderer extends TileRunicMatrixRenderer {
     private ModelCube model = new ModelCube(0);
     private ModelCube model_over = new ModelCube(32);
     static Map<String, ResourceLocation> boundTextures = new HashMap();
-    int type = 0;
+    int type;
 
+    @SideOnly(Side.CLIENT)
     public TileMatrixAlphaRenderer(int type) {
         super(type);
         this.type = type;
     }
 
+    @SideOnly(Side.CLIENT)
     private void drawHalo(TileEntity is, double x, double y, double z, float par8, int count) {
         GL11.glPushMatrix();
         GL11.glTranslated(x + 0.5D, y + 0.5D, z + 0.5D);
@@ -63,10 +68,10 @@ public class TileMatrixAlphaRenderer extends TileRunicMatrixRenderer {
             tessellator.setColorRGBA_I(16777215, (int) (255.0F * (1.0F - f2)));
             tessellator.addVertex(0.0D, 0.0D, 0.0D);
             tessellator.setColorRGBA_I(13369599, 0);
-            tessellator.addVertex(-0.866D * (double) f4, (double) fa, (double) (-0.5F * f4));
-            tessellator.addVertex(0.866D * (double) f4, (double) fa, (double) (-0.5F * f4));
-            tessellator.addVertex(0.0D, (double) fa, (double) (1.0F * f4));
-            tessellator.addVertex(-0.866D * (double) f4, (double) fa, (double) (-0.5F * f4));
+            tessellator.addVertex(-0.866D * (double) f4, fa, (-0.5F * f4));
+            tessellator.addVertex(0.866D * (double) f4, fa, (-0.5F * f4));
+            tessellator.addVertex(0.0D, fa, (f4));
+            tessellator.addVertex(-0.866D * (double) f4, fa, (-0.5F * f4));
             tessellator.draw();
         }
 
@@ -83,6 +88,7 @@ public class TileMatrixAlphaRenderer extends TileRunicMatrixRenderer {
         GL11.glPopMatrix();
     }
 
+    @SideOnly(Side.CLIENT)
     public void renderInfusionMatrix(
             TileEntityInfusionMatrixAlpha is, double par2, double par4, double par6, float par8) {
         GL11.glPushMatrix();
@@ -101,9 +107,9 @@ public class TileMatrixAlphaRenderer extends TileRunicMatrixRenderer {
         float b1 = 0.0F;
         float b2 = 0.0F;
         float b3 = 0.0F;
-        int aa = 0;
-        int bb = 0;
-        int cc = 0;
+        int aa;
+        int bb;
+        int cc;
 
         for (int a = 0; a < 2; ++a) {
             for (int b = 0; b < 2; ++b) {
@@ -195,8 +201,7 @@ public class TileMatrixAlphaRenderer extends TileRunicMatrixRenderer {
                         int j = 15728880;
                         int k = j % 65536;
                         int l = j / 65536;
-                        OpenGlHelper.setLightmapTextureCoords(
-                                OpenGlHelper.lightmapTexUnit, (float) k / 1.0F, (float) l / 1.0F);
+                        OpenGlHelper.setLightmapTextureCoords(OpenGlHelper.lightmapTexUnit, (float) k, (float) l);
                         GL11.glColor4f(
                                 0.8F,
                                 0.1F,
@@ -222,20 +227,22 @@ public class TileMatrixAlphaRenderer extends TileRunicMatrixRenderer {
         }
     }
 
+    @SideOnly(Side.CLIENT)
     public void renderTileEntityAt(TileEntity par1TileEntity, double par2, double par4, double par6, float par8) {
         switch (this.type) {
             case 0:
                 this.renderInfusionMatrix((TileEntityInfusionMatrixAlpha) par1TileEntity, par2, par4, par6, par8);
                 break;
             case 1:
-                this.renderTileEntityAt((TileEntityInfusionMatrixAlpha) par1TileEntity, par2, par4, par6, par8);
+                this.renderTileEntityAt(par1TileEntity, par2, par4, par6, par8);
         }
     }
 
+    @SideOnly(Side.CLIENT)
     public static void bindTexture(String texture) {
-        ResourceLocation rl = null;
+        ResourceLocation rl;
         if (boundTextures.containsKey(texture)) {
-            rl = (ResourceLocation) boundTextures.get(texture);
+            rl = boundTextures.get(texture);
         } else {
             rl = new ResourceLocation("thaumicinsurgence", texture);
         }
@@ -243,10 +250,11 @@ public class TileMatrixAlphaRenderer extends TileRunicMatrixRenderer {
         Minecraft.getMinecraft().renderEngine.bindTexture(rl);
     }
 
+    @SideOnly(Side.CLIENT)
     public static void bindTexture(String mod, String texture) {
-        ResourceLocation rl = null;
+        ResourceLocation rl;
         if (boundTextures.containsKey(mod + ":" + texture)) {
-            rl = (ResourceLocation) boundTextures.get(mod + ":" + texture);
+            rl = boundTextures.get(mod + ":" + texture);
         } else {
             rl = new ResourceLocation(mod, texture);
         }
@@ -254,6 +262,7 @@ public class TileMatrixAlphaRenderer extends TileRunicMatrixRenderer {
         Minecraft.getMinecraft().renderEngine.bindTexture(rl);
     }
 
+    @SideOnly(Side.CLIENT)
     public void bindTexture(ResourceLocation resource) {
         Minecraft.getMinecraft().renderEngine.bindTexture(resource);
     }

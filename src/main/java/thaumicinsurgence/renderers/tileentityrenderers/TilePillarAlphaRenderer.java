@@ -1,5 +1,7 @@
 package thaumicinsurgence.renderers.tileentityrenderers;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.AdvancedModelLoader;
@@ -10,14 +12,17 @@ import thaumcraft.client.renderers.tile.TileInfusionPillarRenderer;
 import thaumicinsurgence.main.utils.VersionInfo;
 import thaumicinsurgence.tileentity.TileEntityInfusionPillarAlpha;
 
+@SideOnly(Side.CLIENT)
 public class TilePillarAlphaRenderer extends TileInfusionPillarRenderer {
     private IModelCustom model;
     private static final ResourceLocation PILLAR = new ResourceLocation("thaumcraft", "textures/models/pillar.obj");
 
+    @SideOnly(Side.CLIENT)
     public TilePillarAlphaRenderer() {
         this.model = AdvancedModelLoader.loadModel(PILLAR);
     }
 
+    @SideOnly(Side.CLIENT)
     public void renderTileEntityAt(
             TileEntityInfusionPillarAlpha tile, double par2, double par4, double par6, float par8) {
         GL11.glPushMatrix();
@@ -38,6 +43,7 @@ public class TilePillarAlphaRenderer extends TileInfusionPillarRenderer {
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public void renderTileEntityAt(TileEntity par1TileEntity, double par2, double par4, double par6, float par8) {
         this.renderTileEntityAt((TileEntityInfusionPillarAlpha) par1TileEntity, par2, par4, par6, par8);
     }
