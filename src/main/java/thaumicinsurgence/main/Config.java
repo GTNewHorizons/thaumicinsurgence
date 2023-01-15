@@ -13,6 +13,7 @@ import thaumicinsurgence.block.BlockInfusionFucker;
 import thaumicinsurgence.item.ItemMiscResources;
 import thaumicinsurgence.item.ItemSanitySoapAlpha;
 import thaumicinsurgence.item.ItemSanitySoapBeta;
+import thaumicinsurgence.item.armor.ItemBIGSHOT;
 import thaumicinsurgence.item.armor.ItemEightBitRedCrown;
 import thaumicinsurgence.item.armor.ItemRedCrown;
 import thaumicinsurgence.item.tools.ItemAlastorsWand;
@@ -44,6 +45,7 @@ public class Config {
     public static Item alastorsWand;
     public static Item soapAlpha;
     public static Item soapBetaBitch;
+    public static Item hyperLinkBlocked;
 
     public static BlockInfusionFucker infusionIntercepter;
     public static BlockInfusionMatrixAlpha matrixAlpha;
@@ -111,6 +113,9 @@ public class Config {
 
         soapBetaBitch = new ItemSanitySoapBeta();
         GameRegistry.registerItem(soapBetaBitch, soapBetaBitch.getUnlocalizedName());
+
+        hyperLinkBlocked = new ItemBIGSHOT(ThaumcraftApi.armorMatSpecial, 4, 0);
+        GameRegistry.registerItem(hyperLinkBlocked, hyperLinkBlocked.getUnlocalizedName());
     }
 
     private static void processConfigFile() {

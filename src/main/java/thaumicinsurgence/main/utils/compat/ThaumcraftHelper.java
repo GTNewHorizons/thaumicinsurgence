@@ -221,6 +221,7 @@ public class ThaumcraftHelper implements IModHelper {
     public static InfusionRecipe thaumicInterfacer;
     public static CrucibleRecipe soapAlpha;
     public static CrucibleRecipe soapBeta;
+    public static CrucibleRecipe bigShot;
 
     public static void getBlocks() {
         plant = BlockInterface.getBlock(Name, "blockCustomPlant");
@@ -295,6 +296,17 @@ public class ThaumcraftHelper implements IModHelper {
                         .add(Aspect.ELDRITCH, 32)
                         .add(Aspect.EXCHANGE, 64)
                         .add(Aspect.HEAL, 64));
+
+        bigShot = ThaumcraftApi.addCrucibleRecipe(
+                "TI_DeliciousKromer",
+                new ItemStack(Config.hyperLinkBlocked),
+                new ItemStack(ConfigItems.itemGoggles),
+                new AspectList()
+                        .add(Aspect.GREED, 128)
+                        .add(Aspect.ELDRITCH, 64)
+                        .add(Aspect.DARKNESS, 64)
+                        .add(Aspect.EXCHANGE, 64)
+                        .add(Aspect.TRAP, 32));
     }
 
     public static void setupResearch() {
@@ -320,6 +332,10 @@ public class ThaumcraftHelper implements IModHelper {
         ResearchItem soapBetaPage;
         ResearchPage soapBeta1;
         ResearchPage soapBeta2;
+
+        ResearchItem littleSponge;
+        ResearchPage unintelligbleLaughter;
+        ResearchPage shootForTheSky;
 
         soapAlphaPage = new ResearchItem(
                 "TI_SanitizingSoapAlpha",
@@ -366,6 +382,20 @@ public class ThaumcraftHelper implements IModHelper {
                 -5,
                 new ItemStack(Config.thaumicInterfacer));
 
+        littleSponge = new ResearchItem(
+                "TI_DeliciousKromer",
+                category,
+                new AspectList()
+                        .add(Aspect.GREED, 1)
+                        .add(Aspect.ELDRITCH, 1)
+                        .add(Aspect.DARKNESS, 1)
+                        .add(Aspect.EXCHANGE, 1)
+                        .add(Aspect.TRAP, 1),
+                0,
+                3,
+                0,
+                new ItemStack(Config.hyperLinkBlocked));
+
         intercepter1 = new ResearchPage("InfusionIntercepter.1");
         intercepter2 = new ResearchPage(infusionIntercepter);
 
@@ -378,6 +408,9 @@ public class ThaumcraftHelper implements IModHelper {
         soapAlpha2 = new ResearchPage(soapBeta);
         soapBeta1 = new ResearchPage("SoapBeta.1");
         soapBeta2 = new ResearchPage(soapBeta);
+
+        unintelligbleLaughter = new ResearchPage("unintelligbleLaughter");
+        shootForTheSky = new ResearchPage(bigShot);
 
         infusionIntercepterPage.setPages(intercepter1, intercepter2);
         infusionIntercepterPage.setParents("INFUSION");
@@ -394,12 +427,16 @@ public class ThaumcraftHelper implements IModHelper {
         soapBetaPage.setPages(soapBeta1, soapBeta2);
         soapBetaPage.setParents("TI_SanitizingSoapAlpha");
 
+        littleSponge.setPages(unintelligbleLaughter, shootForTheSky);
+        littleSponge.setParents("GOGGLES");
+
         ThaumcraftApi.addWarpToResearch("TI_InfusionIntercepter", 4);
         ResearchCategories.addResearch(infusionIntercepterPage);
         ResearchCategories.addResearch(redCrownPage);
         ResearchCategories.addResearch(thaumicInterfacerPage);
         ResearchCategories.addResearch(soapAlphaPage);
         ResearchCategories.addResearch(soapBetaPage);
+        ResearchCategories.addResearch(littleSponge);
     }
 
     public static ResearchPage getResearchPage(String ident) {

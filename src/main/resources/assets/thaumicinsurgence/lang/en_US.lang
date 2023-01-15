@@ -27,6 +27,14 @@ tc.research_text.TI_SanitizingSoapAlpha=Every day we inch closer to replacing Az
 tc.research_name.TI_SanitizingSoapBeta=Alastor's Soap
 tc.research_text.TI_SanitizingSoapBeta=Made from Azanor's tears
 
+unintelligbleLaughter=I USED TO BE NOTHING BUT THE E_MAIL GUY, NOW I'M THE [[It Burns! Ow! Stop! Help Me! It Burns!]] GUY!                                                [[Amazed at thi5 amazing transformation? You too can]] HAVE A [[Communion]] WITH [[Unintelligble Laughter]]
+SoapAlpha.1=[Insert punchline here] boosts the base chance for normal warp removal to 50% from 33%, so now you can guarantee normal warp removal!
+SoapBeta.1=Do you have perm warp that induces constant nightmares foreboding eldritch horrors rending your flesh from your bones? Have you grown a cloaca? Well I have the solution for you!  For the low low price of your [[soul]] you can have a [[miniscule]] chance to lower your perm warp by 1 at the low low price of [[2 normal]]                                                           Warning: This product will cause you to develop 2 points of temp warp for every failed attempt to remove perm warp. Purchase now at [[hyperlink blocked]]!
+
+
+tc.research_name.TI_DeliciousKromer=[[Funky]] LITTLE [[Worm]]
+tc.research_text.TI_DeliciousKromer=THIS IS [One Purchase] YOU WILL [Regret] FOR THE REST OF YOUR LIFE!
+
 #Tiles
 
 #Items
@@ -37,6 +45,8 @@ item.ItemEightBitRedCrown.name=Red Crown
 item.ItemAlastorsWand.name=Alastor's First Wand
 item.ItemSanitySoapAlpha.name=Trosma Sláintíochta Soap
 item.ItemSanitySoapBeta.name=Alastor's Soap
+item.ItemBIGSHOT.name=[Hyperlink Blocked]
+
 
 
 itemGroup.Thaumic Insurgence=Thaumic Insurgence
