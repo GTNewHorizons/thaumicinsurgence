@@ -1,7 +1,5 @@
 package thaumicinsurgence.renderers.tileentityrenderers;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.item.EntityItem;
@@ -9,12 +7,17 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
+
 import org.lwjgl.opengl.GL11;
+
 import thaumcraft.client.renderers.tile.TilePedestalRenderer;
 import thaumicinsurgence.tileentity.TileEntityPedestalAlpha;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class TileAlphaPedestalRenderer extends TilePedestalRenderer {
+
     @SideOnly(Side.CLIENT)
     public void renderTileEntityAt(TileEntityPedestalAlpha ped, double par2, double par4, double par6, float par8) {
         if (ped != null && ped.getWorldObj() != null && ped.getStackInSlot(0) != null) {

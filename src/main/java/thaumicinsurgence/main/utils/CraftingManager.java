@@ -8,22 +8,17 @@ public class CraftingManager {
     }
 
     private static void setupVanillaCrafting() {
-        //	ItemStack input;
-        //	ItemStack output;
+        // ItemStack input;
+        // ItemStack output;
 
         // Magic capsules
-        /*	output = new ItemStack(Config.magicCapsule);
-        output.stackSize = 4;
-        GameRegistry.addRecipe(new ShapedOreRecipe(output,
-        		"WWW",
-        		'W', "waxMagical"
-        )); */
-        /*	output = output.copy();
-        output.stackSize = 12;
-        GameRegistry.addRecipe(output,
-        		"aaa", "aFa", "aaa",
-        		'F', input,
-        		'a', ItemInterface.getItemStack("ash")
-        ); */
+        /*
+         * output = new ItemStack(Config.magicCapsule); output.stackSize = 4; GameRegistry.addRecipe(new
+         * ShapedOreRecipe(output, "WWW", 'W', "waxMagical" ));
+         */
+        /*
+         * output = output.copy(); output.stackSize = 12; GameRegistry.addRecipe(output, "aaa", "aFa", "aaa", 'F',
+         * input, 'a', ItemInterface.getItemStack("ash") );
+         */
     }
 }

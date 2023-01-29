@@ -1,19 +1,22 @@
 package thaumicinsurgence.item;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import java.util.List;
+
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+
 import thaumicinsurgence.item.types.ResourceType;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
 import thaumicinsurgence.main.utils.VersionInfo;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemMiscResources extends Item {
+
     private IIcon[] icons = new IIcon[ResourceType.values().length];
 
     public ItemMiscResources() {
@@ -34,11 +37,11 @@ public class ItemMiscResources extends Item {
 
     @Override
     @SideOnly(Side.CLIENT)
-    @SuppressWarnings({"unchecked"})
+    @SuppressWarnings({ "unchecked" })
     public void getSubItems(Item item, CreativeTabs tabs, List list) {
         for (ResourceType type : ResourceType.values()) {
             if (type.showInList) {
-                //  list.add(this.getStackForType(type));
+                // list.add(this.getStackForType(type));
             }
         }
     }

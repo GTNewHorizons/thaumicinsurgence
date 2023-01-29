@@ -4,5 +4,5 @@ dependencies {
 	compile('com.github.GTNewHorizons:ForestryMC:4.4.6:dev')
 	compile('thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev')
 	compile('com.github.GTNewHorizons:Baubles:1.0.1.14:dev')
-	runtime('com.github.GTNewHorizons:TCNEIAdditions:1.1.1.5:dev')
+	runtimeOnly('com.github.GTNewHorizons:TCNEIAdditions:1.1.1.5:dev')
 }

@@ -1,9 +1,11 @@
 package thaumicinsurgence.main.utils;
 
-import cpw.mods.fml.common.FMLLog;
 import org.apache.logging.log4j.Level;
 
+import cpw.mods.fml.common.FMLLog;
+
 public class LogHelper {
+
     public static void log(Level logLevel, Object object) {
         FMLLog.log(VersionInfo.ModName, logLevel, String.valueOf(object));
     }

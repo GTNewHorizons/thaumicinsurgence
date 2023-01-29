@@ -1,10 +1,12 @@
 package thaumicinsurgence.main.utils;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+import cpw.mods.fml.common.registry.GameRegistry;
+
 public class ItemInterface {
+
     public static ItemStack getItemStack(String item) {
         return GameRegistry.findItemStack("Forestry", item, 1);
     }

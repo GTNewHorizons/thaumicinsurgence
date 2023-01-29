@@ -1,11 +1,9 @@
 package thaumicinsurgence.renderers.tileentityrenderers;
 
-import cpw.mods.fml.client.FMLClientHandler;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.RenderHelper;
@@ -13,15 +11,21 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
+
 import org.lwjgl.opengl.GL11;
+
 import thaumcraft.client.lib.UtilsFX;
 import thaumcraft.client.renderers.models.ModelCube;
 import thaumcraft.client.renderers.tile.TileRunicMatrixRenderer;
 import thaumicinsurgence.main.utils.VersionInfo;
 import thaumicinsurgence.tileentity.TileEntityInfusionMatrixAlpha;
+import cpw.mods.fml.client.FMLClientHandler;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class TileMatrixAlphaRenderer extends TileRunicMatrixRenderer {
+
     private ModelCube model = new ModelCube(0);
     private ModelCube model_over = new ModelCube(32);
     static Map<String, ResourceLocation> boundTextures = new HashMap();
@@ -89,8 +93,8 @@ public class TileMatrixAlphaRenderer extends TileRunicMatrixRenderer {
     }
 
     @SideOnly(Side.CLIENT)
-    public void renderInfusionMatrix(
-            TileEntityInfusionMatrixAlpha is, double par2, double par4, double par6, float par8) {
+    public void renderInfusionMatrix(TileEntityInfusionMatrixAlpha is, double par2, double par4, double par6,
+            float par8) {
         GL11.glPushMatrix();
         UtilsFX.bindTexture(VersionInfo.ModID, "model/infusion-2-gilded.png");
         GL11.glTranslatef((float) par2 + 0.5F, (float) par4 + 0.5F, (float) par6 + 0.5F);
@@ -102,8 +106,8 @@ public class TileMatrixAlphaRenderer extends TileRunicMatrixRenderer {
         }
 
         // this is a reference to instability, was originally 50.0 and 50.0F respectively
-        float instability =
-                Math.min(6.0F, 1.0F + (float) is.instability * 0.66F * ((float) Math.min(is.craftCount, 100) / 100.0F));
+        float instability = Math
+                .min(6.0F, 1.0F + (float) is.instability * 0.66F * ((float) Math.min(is.craftCount, 100) / 100.0F));
         float b1 = 0.0F;
         float b2 = 0.0F;
         float b3 = 0.0F;
@@ -116,18 +120,15 @@ public class TileMatrixAlphaRenderer extends TileRunicMatrixRenderer {
                 for (int c = 0; c < 2; ++c) {
                     if (is.active) {
                         // this is a reference to instability
-                        b1 = MathHelper.sin((ticks + (float) (a * 10)) / (15.0F - instability / 2.0F))
-                                * 0.01F
+                        b1 = MathHelper.sin((ticks + (float) (a * 10)) / (15.0F - instability / 2.0F)) * 0.01F
                                 * is.startUp
                                 * instability;
                         // this is a reference to instability
-                        b2 = MathHelper.sin((ticks + (float) (b * 10)) / (14.0F - instability / 2.0F))
-                                * 0.01F
+                        b2 = MathHelper.sin((ticks + (float) (b * 10)) / (14.0F - instability / 2.0F)) * 0.01F
                                 * is.startUp
                                 * instability;
                         // this is a reference to instability
-                        b3 = MathHelper.sin((ticks + (float) (c * 10)) / (13.0F - instability / 2.0F))
-                                * 0.01F
+                        b3 = MathHelper.sin((ticks + (float) (c * 10)) / (13.0F - instability / 2.0F)) * 0.01F
                                 * is.startUp
                                 * instability;
                     }
@@ -166,18 +167,15 @@ public class TileMatrixAlphaRenderer extends TileRunicMatrixRenderer {
                 for (int b = 0; b < 2; ++b) {
                     for (int c = 0; c < 2; ++c) {
                         // this is a reference to instability
-                        b1 = MathHelper.sin((ticks + (float) (a * 10)) / (15.0F - instability / 2.0F))
-                                * 0.01F
+                        b1 = MathHelper.sin((ticks + (float) (a * 10)) / (15.0F - instability / 2.0F)) * 0.01F
                                 * is.startUp
                                 * instability;
                         // this is a reference to instability
-                        b2 = MathHelper.sin((ticks + (float) (b * 10)) / (14.0F - instability / 2.0F))
-                                * 0.01F
+                        b2 = MathHelper.sin((ticks + (float) (b * 10)) / (14.0F - instability / 2.0F)) * 0.01F
                                 * is.startUp
                                 * instability;
                         // this is a reference to instability
-                        b3 = MathHelper.sin((ticks + (float) (c * 10)) / (13.0F - instability / 2.0F))
-                                * 0.01F
+                        b3 = MathHelper.sin((ticks + (float) (c * 10)) / (13.0F - instability / 2.0F)) * 0.01F
                                 * is.startUp
                                 * instability;
                         aa = a == 0 ? -1 : 1;
@@ -207,9 +205,7 @@ public class TileMatrixAlphaRenderer extends TileRunicMatrixRenderer {
                                 0.1F,
                                 1.0F,
                                 (MathHelper.sin((ticks + (float) (a * 2) + (float) (b * 3) + (float) (c * 4)) / 4.0F)
-                                                        * 0.1F
-                                                + 0.2F)
-                                        * is.startUp);
+                                        * 0.1F + 0.2F) * is.startUp);
                         this.model_over.render();
                         GL11.glPopMatrix();
                     }

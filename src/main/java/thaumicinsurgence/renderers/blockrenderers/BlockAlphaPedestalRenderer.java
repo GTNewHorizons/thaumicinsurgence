@@ -1,14 +1,15 @@
 package thaumicinsurgence.renderers.blockrenderers;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.world.IBlockAccess;
+
 import thaumcraft.client.renderers.block.BlockStoneDeviceRenderer;
 import thaumcraft.common.tiles.*;
 import thaumicinsurgence.block.BlockPedestalAlpha;
 import thaumicinsurgence.main.Config;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class BlockAlphaPedestalRenderer extends BlockStoneDeviceRenderer {
@@ -55,8 +56,8 @@ public class BlockAlphaPedestalRenderer extends BlockStoneDeviceRenderer {
     }
 
     @SideOnly(Side.CLIENT)
-    public boolean renderWorldBlock(
-            IBlockAccess world, int x, int y, int z, Block block, int modelId, RenderBlocks renderer) {
+    public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId,
+            RenderBlocks renderer) {
         block.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 0.25F, 1.0F);
         renderer.setRenderBoundsFromBlock(block);
         renderer.renderStandardBlock(block, x, y, z);

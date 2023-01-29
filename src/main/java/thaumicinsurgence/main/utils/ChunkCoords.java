@@ -6,6 +6,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 public class ChunkCoords {
+
     public final int dimension;
     public final int x;
     public final int y;

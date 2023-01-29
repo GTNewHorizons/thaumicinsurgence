@@ -1,12 +1,10 @@
 package thaumicinsurgence.main;
 
-import cpw.mods.fml.client.event.ConfigChangedEvent;
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 import java.io.File;
+
 import net.minecraft.item.Item;
 import net.minecraftforge.common.config.Configuration;
+
 import thaumcraft.api.ThaumcraftApi;
 import thaumicinsurgence.block.*;
 import thaumicinsurgence.block.BlockInfusionFucker;
@@ -23,6 +21,10 @@ import thaumicinsurgence.tileentity.TileEntityInfusionFucker;
 import thaumicinsurgence.tileentity.TileEntityInfusionMatrixAlpha;
 import thaumicinsurgence.tileentity.TileEntityInfusionPillarAlpha;
 import thaumicinsurgence.tileentity.TileEntityPedestalAlpha;
+import cpw.mods.fml.client.event.ConfigChangedEvent;
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 /**
  * A class to hold some data related to mod state & functions.
@@ -30,6 +32,7 @@ import thaumicinsurgence.tileentity.TileEntityPedestalAlpha;
  * @author MysteriousAges
  */
 public class Config {
+
     public static final String CATEGORY_MODULES = "modules";
 
     public static boolean thaumcraftActive;
@@ -126,8 +129,7 @@ public class Config {
     }
 
     private static void doModuleConfigs() {
-        thaumcraftActive =
-                configuration.get(CATEGORY_MODULES, "Thaumcraft", true).getBoolean();
+        thaumcraftActive = configuration.get(CATEGORY_MODULES, "Thaumcraft", true).getBoolean();
     }
 
     public static void setupInfusionFucker() {
@@ -137,13 +139,13 @@ public class Config {
 
         matrixAlpha = new BlockInfusionMatrixAlpha();
         GameRegistry.registerBlock(matrixAlpha, "matrixAlpha");
-        GameRegistry.registerTileEntity(
-                TileEntityInfusionPillarAlpha.class, TileEntityInfusionPillarAlpha.tileEntityName);
+        GameRegistry
+                .registerTileEntity(TileEntityInfusionPillarAlpha.class, TileEntityInfusionPillarAlpha.tileEntityName);
 
         pillarAlpha = new BlockInfusionPillarAlpha();
         GameRegistry.registerBlock(pillarAlpha, "pillarAlpha");
-        GameRegistry.registerTileEntity(
-                TileEntityInfusionMatrixAlpha.class, TileEntityInfusionMatrixAlpha.tileEntityName);
+        GameRegistry
+                .registerTileEntity(TileEntityInfusionMatrixAlpha.class, TileEntityInfusionMatrixAlpha.tileEntityName);
 
         marblePedestal = new BlockPedestalAlpha();
         GameRegistry.registerBlock(marblePedestal, "marblePedestal");

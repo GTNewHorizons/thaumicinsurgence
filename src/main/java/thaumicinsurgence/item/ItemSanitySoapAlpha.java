@@ -1,7 +1,5 @@
 package thaumicinsurgence.item;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
@@ -9,13 +7,17 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+
 import thaumcraft.common.Thaumcraft;
 import thaumcraft.common.config.Config;
 import thaumcraft.common.config.ConfigBlocks;
 import thaumcraft.common.items.ItemSanitySoap;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemSanitySoapAlpha extends ItemSanitySoap {
+
     @SideOnly(Side.CLIENT)
     public IIcon icon;
 
@@ -109,8 +111,8 @@ public class ItemSanitySoapAlpha extends ItemSanitySoap {
                             true);
                 }
             } else {
-                player.worldObj.playSound(
-                        player.posX, player.posY, player.posZ, "thaumcraft:craftstart", 0.25F, 1.0F, false);
+                player.worldObj
+                        .playSound(player.posX, player.posY, player.posZ, "thaumcraft:craftstart", 0.25F, 1.0F, false);
 
                 for (int a = 0; a < Thaumcraft.proxy.particleCount(20); ++a) {
                     Thaumcraft.proxy.crucibleBubble(

@@ -7,10 +7,11 @@ public class ItemStackUtils {
 
     /**
      * Attempts to add all items to the inventory, starting at startSlot and considering slotCount item slots.
+     * 
      * @return Number of items successfully added to the inventory.
      */
-    public static int tryAddItemStacksToInvenotry(
-            IInventory inventory, ItemStack[] items, int startSlot, int slotCount) {
+    public static int tryAddItemStacksToInvenotry(IInventory inventory, ItemStack[] items, int startSlot,
+            int slotCount) {
         int itemsAdded = 0;
 
         for (ItemStack item : items) {
@@ -22,10 +23,11 @@ public class ItemStackUtils {
 
     /**
      * Attempts to add all items to the inventory, starting at startSlot and considering slotCount item slots.
+     * 
      * @return true if and only if all items were successfully added to the inventory.
      */
-    public static boolean tryAddAllItemStacksToInventory(
-            IInventory inventory, ItemStack[] items, int startSlot, int slotCount) {
+    public static boolean tryAddAllItemStacksToInventory(IInventory inventory, ItemStack[] items, int startSlot,
+            int slotCount) {
         int itemsToAdd = 0;
         int itemsAdded = 0;
 
@@ -39,6 +41,7 @@ public class ItemStackUtils {
 
     /**
      * Attempts to add an item to an inventory, starting at startSlot and considering slotCount item slots.
+     * 
      * @return number of items in the stack successfully added to the inventory.
      */
     public static int addItemToInventory(IInventory inventory, ItemStack item, int startSlot, int slotCount) {

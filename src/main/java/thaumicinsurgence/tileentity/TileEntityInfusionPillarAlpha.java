@@ -1,13 +1,15 @@
 package thaumicinsurgence.tileentity;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.AxisAlignedBB;
+
 import thaumcraft.common.tiles.TileInfusionPillar;
 import thaumicinsurgence.main.utils.VersionInfo;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class TileEntityInfusionPillarAlpha extends TileInfusionPillar {
+
     public byte orientation = 0;
     public static final String tileEntityName = VersionInfo.ModID + ".pillarAlpha";
 

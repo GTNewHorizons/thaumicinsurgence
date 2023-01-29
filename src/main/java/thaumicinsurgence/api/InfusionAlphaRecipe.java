@@ -1,15 +1,18 @@
 package thaumicinsurgence.api;
 
 import java.util.ArrayList;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
+
 import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.crafting.InfusionRecipe;
 
 public class InfusionAlphaRecipe extends InfusionRecipe {
+
     protected AspectList aspects;
     protected String research;
     private ItemStack[] components;
@@ -17,8 +20,8 @@ public class InfusionAlphaRecipe extends InfusionRecipe {
     protected Object recipeOutput;
     protected int instability;
 
-    public InfusionAlphaRecipe(
-            String research, Object output, int inst, AspectList aspects2, ItemStack input, ItemStack[] recipe) {
+    public InfusionAlphaRecipe(String research, Object output, int inst, AspectList aspects2, ItemStack input,
+            ItemStack[] recipe) {
         super(research, output, inst, aspects2, input, recipe);
         this.research = research;
         this.recipeOutput = output;
@@ -33,46 +36,46 @@ public class InfusionAlphaRecipe extends InfusionRecipe {
             return false;
         } else if (this.research.length() > 0
                 && !ThaumcraftApiHelper.isResearchComplete(player.getCommandSenderName(), this.research)) {
-            return false;
-        } else {
-            ItemStack i2 = central.copy();
-            if (this.getRecipeInput().getItemDamage() == 32767) {
-                i2.setItemDamage(32767);
-            }
-
-            if (!areItemStacksEqual(i2, this.getRecipeInput(), true)) {
-                return false;
-            } else {
-                ArrayList<ItemStack> ii = new ArrayList();
-
-                for (ItemStack is : input) {
-                    ii.add(is.copy());
-                }
-
-                for (ItemStack comp : this.getComponents()) {
-                    boolean b = false;
-
-                    for (int a = 0; a < ii.size(); ++a) {
-                        i2 = ((ItemStack) ii.get(a)).copy();
-                        if (comp.getItemDamage() == 32767) {
-                            i2.setItemDamage(32767);
-                        }
-
-                        if (areItemStacksEqual(i2, comp, true)) {
-                            ii.remove(a);
-                            b = true;
-                            break;
-                        }
+                    return false;
+                } else {
+                    ItemStack i2 = central.copy();
+                    if (this.getRecipeInput().getItemDamage() == 32767) {
+                        i2.setItemDamage(32767);
                     }
 
-                    if (!b) {
+                    if (!areItemStacksEqual(i2, this.getRecipeInput(), true)) {
                         return false;
+                    } else {
+                        ArrayList<ItemStack> ii = new ArrayList();
+
+                        for (ItemStack is : input) {
+                            ii.add(is.copy());
+                        }
+
+                        for (ItemStack comp : this.getComponents()) {
+                            boolean b = false;
+
+                            for (int a = 0; a < ii.size(); ++a) {
+                                i2 = ((ItemStack) ii.get(a)).copy();
+                                if (comp.getItemDamage() == 32767) {
+                                    i2.setItemDamage(32767);
+                                }
+
+                                if (areItemStacksEqual(i2, comp, true)) {
+                                    ii.remove(a);
+                                    b = true;
+                                    break;
+                                }
+                            }
+
+                            if (!b) {
+                                return false;
+                            }
+                        }
+
+                        return ii.size() == 0;
                     }
                 }
-
-                return ii.size() == 0;
-            }
-        }
     }
 
     public static boolean areItemStacksEqual(ItemStack stack0, ItemStack stack1, boolean fuzzy) {
@@ -90,17 +93,15 @@ public class InfusionAlphaRecipe extends InfusionRecipe {
                 if (fuzzy) {
                     Integer od = Integer.valueOf(OreDictionary.getOreID(stack0));
                     if (od.intValue() != -1) {
-                        ItemStack[] ores =
-                                (ItemStack[]) OreDictionary.getOres(od).toArray(new ItemStack[0]);
-                        if (ThaumcraftApiHelper.containsMatch(false, new ItemStack[] {stack1}, ores)) {
+                        ItemStack[] ores = (ItemStack[]) OreDictionary.getOres(od).toArray(new ItemStack[0]);
+                        if (ThaumcraftApiHelper.containsMatch(false, new ItemStack[] { stack1 }, ores)) {
                             return true;
                         }
                     }
                 }
 
                 boolean damage = stack0.getItemDamage() == stack1.getItemDamage() || stack1.getItemDamage() == 32767;
-                return stack0.getItem() != stack1.getItem()
-                        ? false
+                return stack0.getItem() != stack1.getItem() ? false
                         : (!damage ? false : stack0.stackSize <= stack0.getMaxStackSize());
             }
         }
