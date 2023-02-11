@@ -71,6 +71,12 @@ public class ItemThaumicInterfacer extends Item {
                                 + " Ordo: " + (int) Math.sqrt(al.getAmount(Aspect.ORDER))
                                 + " Perditio: " + (int) Math.sqrt(al.getAmount(Aspect.ENTROPY))));
                 return true;
+            } else if ((player.getEquipmentInSlot(1)instanceof ItemElectricBootsTraveller) {
+                player.addChatMessage(new ChatComponentTranslation("equipment"
+                        + " slot one: " + player.getEquipmentInSlot(1)
+                        + " slot two: " + player.getEquipmentInSlot(2)
+                        + " slot three: " + player.getEquipmentInSlot(3)
+                        + " slot four: " + player.getEquipmentInSlot(4)));
             } else {
                 player.addChatMessage(new ChatComponentText("COCK A DOODLE DO MOTHER FUCKER"));
             }
