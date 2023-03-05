@@ -106,7 +106,7 @@ public class Config {
         alastorsWand = new ItemAlastorsWand();
         GameRegistry.registerItem(alastorsWand, alastorsWand.getUnlocalizedName());
 
-        miscResources = new ItemMiscResources();
+        //    miscResources = new ItemMiscResources();
 
         soapAlpha = new ItemSanitySoapAlpha();
         GameRegistry.registerItem(soapAlpha, soapAlpha.getUnlocalizedName());
