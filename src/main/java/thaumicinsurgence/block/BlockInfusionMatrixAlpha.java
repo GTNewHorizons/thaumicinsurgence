@@ -1,8 +1,7 @@
 package thaumicinsurgence.block;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import java.util.List;
+
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
@@ -11,11 +10,14 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
+
 import thaumcraft.common.blocks.BlockStoneDevice;
 import thaumcraft.common.lib.utils.InventoryUtils;
 import thaumicinsurgence.main.Config;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
 import thaumicinsurgence.tileentity.TileEntityInfusionMatrixAlpha;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockInfusionMatrixAlpha extends BlockStoneDevice {
 
@@ -66,8 +68,8 @@ public class BlockInfusionMatrixAlpha extends BlockStoneDevice {
     }
 
     @Override
-    public boolean onBlockActivated(
-            World world, int x, int y, int z, EntityPlayer player, int side, float par7, float par8, float par9) {
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float par7,
+            float par8, float par9) {
         if (world.isRemote) {
             return true;
         } else {
@@ -78,8 +80,8 @@ public class BlockInfusionMatrixAlpha extends BlockStoneDevice {
     }
 
     @Override
-    public void addCollisionBoxesToList(
-            World world, int i, int j, int k, AxisAlignedBB axisalignedbb, List arraylist, Entity par7Entity) {
+    public void addCollisionBoxesToList(World world, int i, int j, int k, AxisAlignedBB axisalignedbb, List arraylist,
+            Entity par7Entity) {
         int metadata = world.getBlockMetadata(i, j, k);
         this.setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
         super.addCollisionBoxesToList(world, i, j, k, axisalignedbb, arraylist, par7Entity);

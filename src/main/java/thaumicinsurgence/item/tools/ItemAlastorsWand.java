@@ -1,7 +1,5 @@
 package thaumicinsurgence.item.tools;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,6 +10,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
+
 import thaumcraft.common.config.ConfigBlocks;
 import thaumcraft.common.tiles.TileInfusionMatrix;
 import thaumcraft.common.tiles.TilePedestal;
@@ -21,8 +20,11 @@ import thaumicinsurgence.main.Config;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
 import thaumicinsurgence.tileentity.TileEntityInfusionMatrixAlpha;
 import thaumicinsurgence.tileentity.TileEntityInfusionPillarAlpha;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemAlastorsWand extends Item {
+
     public TileEntity matrix;
 
     public ItemAlastorsWand() {
@@ -41,17 +43,8 @@ public class ItemAlastorsWand extends Item {
     }
 
     @Override
-    public boolean onItemUseFirst(
-            ItemStack stack,
-            EntityPlayer player,
-            World world,
-            int targetX,
-            int targetY,
-            int targetZ,
-            int side,
-            float hitX,
-            float hitY,
-            float hitZ) {
+    public boolean onItemUseFirst(ItemStack stack, EntityPlayer player, World world, int targetX, int targetY,
+            int targetZ, int side, float hitX, float hitY, float hitZ) {
         if (!world.isRemote) {
             matrix = world.getTileEntity(targetX, targetY, targetZ);
             Block bottom[] = new Block[4], middle[] = new Block[4];
@@ -59,8 +52,7 @@ public class ItemAlastorsWand extends Item {
             boolean bottomLayer = true, middleLayer = true, topLayer = true;
             if (matrix instanceof TileInfusionMatrix) {
 
-                String[] users =
-                        MinecraftServer.getServer().getConfigurationManager().getAllUsernames();
+                String[] users = MinecraftServer.getServer().getConfigurationManager().getAllUsernames();
                 player.addChatMessage(new ChatComponentText("That's a big ass mudspaw right der"));
 
                 // gets the bottom four bricks
@@ -101,23 +93,23 @@ public class ItemAlastorsWand extends Item {
                     world.setBlock(targetX - 1, targetY - 1, targetZ + 1, ConfigBlocks.blockStoneDevice, 4, 3);
 
                     world.setBlock(targetX + 1, targetY - 2, targetZ + 1, Config.pillarAlpha, 3, 3);
-                    justTheTip =
-                            (TileEntityInfusionPillarAlpha) world.getTileEntity(targetX + 1, targetY - 2, targetZ + 1);
+                    justTheTip = (TileEntityInfusionPillarAlpha) world
+                            .getTileEntity(targetX + 1, targetY - 2, targetZ + 1);
                     // 4 is the right orientation for this one.
                     justTheTip.orientation = 4;
                     world.setBlock(targetX + 1, targetY - 2, targetZ - 1, Config.pillarAlpha, 3, 3);
-                    justTheTip =
-                            (TileEntityInfusionPillarAlpha) world.getTileEntity(targetX + 1, targetY - 2, targetZ - 1);
+                    justTheTip = (TileEntityInfusionPillarAlpha) world
+                            .getTileEntity(targetX + 1, targetY - 2, targetZ - 1);
                     // 5 is the right orientation for this one.
                     justTheTip.orientation = 5;
                     world.setBlock(targetX - 1, targetY - 2, targetZ - 1, Config.pillarAlpha, 3, 3);
-                    justTheTip =
-                            (TileEntityInfusionPillarAlpha) world.getTileEntity(targetX - 1, targetY - 2, targetZ - 1);
+                    justTheTip = (TileEntityInfusionPillarAlpha) world
+                            .getTileEntity(targetX - 1, targetY - 2, targetZ - 1);
                     // 0 is the right orientation for this one.
                     justTheTip.orientation = 0;
                     world.setBlock(targetX - 1, targetY - 2, targetZ + 1, Config.pillarAlpha, 3, 3);
-                    justTheTip =
-                            (TileEntityInfusionPillarAlpha) world.getTileEntity(targetX - 1, targetY - 2, targetZ + 1);
+                    justTheTip = (TileEntityInfusionPillarAlpha) world
+                            .getTileEntity(targetX - 1, targetY - 2, targetZ + 1);
                     // 3 is the right orientation for this one.
                     justTheTip.orientation = 3;
                 }
@@ -133,10 +125,9 @@ public class ItemAlastorsWand extends Item {
         ItemStack bs = new ItemStack(Config.matrixAlpha, 1, 2);
         new ItemStack(ConfigBlocks.blockStoneDevice, 1, 1);
         ItemStack[][][] blueprint = new ItemStack[][][] {
-            {{null, null, null}, {null, bs, null}, {null, null, null}},
-            {{br1, null, br1}, {null, null, null}, {br1, null, br1}},
-            {{br2, null, br2}, {null, null, null}, {br2, null, br2}}
-        };
+                { { null, null, null }, { null, bs, null }, { null, null, null } },
+                { { br1, null, br1 }, { null, null, null }, { br1, null, br1 } },
+                { { br2, null, br2 }, { null, null, null }, { br2, null, br2 } } };
 
         for (int yy = 0; yy < 3; ++yy) {
             for (int xx = 0; xx < 3; ++xx) {
@@ -165,11 +156,8 @@ public class ItemAlastorsWand extends Item {
     }
 
     public static void replaceInfusionAltar(World world, int x, int y, int z) {
-        int[][][] blueprint = new int[][][] {
-            {{0, 0, 0}, {0, 9, 0}, {0, 0, 0}},
-            {{1, 0, 1}, {0, 0, 0}, {1, 0, 1}},
-            {{2, 0, 3}, {0, 0, 0}, {4, 0, 5}}
-        };
+        int[][][] blueprint = new int[][][] { { { 0, 0, 0 }, { 0, 9, 0 }, { 0, 0, 0 } },
+                { { 1, 0, 1 }, { 0, 0, 0 }, { 1, 0, 1 } }, { { 2, 0, 3 }, { 0, 0, 0 }, { 4, 0, 5 } } };
 
         for (int yy = 0; yy < 3; ++yy) {
             for (int xx = 0; xx < 3; ++xx) {
@@ -182,16 +170,16 @@ public class ItemAlastorsWand extends Item {
 
                         if (blueprint[yy][xx][zz] > 1 && blueprint[yy][xx][zz] < 9) {
                             world.setBlock(x + xx, y - yy + 2, z + zz, ConfigBlocks.blockStoneDevice, 3, 3);
-                            TileEntityInfusionPillarAlpha tip =
-                                    (TileEntityInfusionPillarAlpha) world.getTileEntity(x + xx, y - yy + 2, z + zz);
+                            TileEntityInfusionPillarAlpha tip = (TileEntityInfusionPillarAlpha) world
+                                    .getTileEntity(x + xx, y - yy + 2, z + zz);
                             tip.orientation = (byte) blueprint[yy][xx][zz];
                             world.markBlockForUpdate(x + xx, y - yy + 2, z + zz);
                             world.addBlockEvent(x + xx, y - yy + 2, z + zz, ConfigBlocks.blockStoneDevice, 1, 0);
                         }
 
                         if (blueprint[yy][xx][zz] == 9) {
-                            TileEntityInfusionMatrixAlpha tis =
-                                    (TileEntityInfusionMatrixAlpha) world.getTileEntity(x + xx, y - yy + 2, z + zz);
+                            TileEntityInfusionMatrixAlpha tis = (TileEntityInfusionMatrixAlpha) world
+                                    .getTileEntity(x + xx, y - yy + 2, z + zz);
                             tis.active = true;
                             world.markBlockForUpdate(x + xx, y - yy + 2, z + zz);
                         }

@@ -1,31 +1,33 @@
 package thaumicinsurgence.common;
 
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+
 import thaumicinsurgence.api.IPurifyingGear;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class EventHandlerRunic extends thaumcraft.common.lib.events.EventHandlerRunic {
+
     @SubscribeEvent
     public void tooltipEvent(ItemTooltipEvent event) {
         int purity = getFinalPurity(event.itemStack, event.entityPlayer);
         if (purity > 0) {
-            event.toolTip.add(
-                    EnumChatFormatting.GOLD + StatCollector.translateToLocal("item.purifying") + " " + purity);
+            event.toolTip
+                    .add(EnumChatFormatting.GOLD + StatCollector.translateToLocal("item.purifying") + " " + purity);
         }
 
         int charge = getFinalCharge(event.itemStack);
         if (charge > 0) {
-            event.toolTip.add(
-                    EnumChatFormatting.GOLD + StatCollector.translateToLocal("item.runic.charge") + " +" + charge);
+            event.toolTip
+                    .add(EnumChatFormatting.GOLD + StatCollector.translateToLocal("item.runic.charge") + " +" + charge);
         }
         int warp = getFinalWarp(event.itemStack, event.entityPlayer);
         if (warp > 0) {
-            event.toolTip.add(
-                    EnumChatFormatting.DARK_PURPLE + StatCollector.translateToLocal("item.warping") + " " + warp);
+            event.toolTip
+                    .add(EnumChatFormatting.DARK_PURPLE + StatCollector.translateToLocal("item.warping") + " " + warp);
         }
     }
 

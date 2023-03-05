@@ -1,7 +1,5 @@
 package thaumicinsurgence.item.armor;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -9,14 +7,18 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
+
 import thaumcraft.api.*;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.nodes.IRevealer;
 import thaumcraft.common.items.armor.ItemGoggles;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemBIGSHOT extends ItemGoggles
         implements IRepairable, IVisDiscountGear, IRevealer, IGoggles, IRunicArmor, IWarpingGear {
+
     public IIcon icon;
 
     public ItemBIGSHOT(final ArmorMaterial material, final int j, final int k) {
@@ -54,8 +56,7 @@ public class ItemBIGSHOT extends ItemGoggles
 
     public void onUpdate(final ItemStack stack, final World world, final Entity entity, final int i, final boolean b) {
         super.onUpdate(stack, world, entity, i, b);
-        if (!world.isRemote
-                && stack.isItemDamaged()
+        if (!world.isRemote && stack.isItemDamaged()
                 && entity.ticksExisted % 20 == 0
                 && entity instanceof EntityLivingBase) {
             stack.damageItem(-1, (EntityLivingBase) entity);

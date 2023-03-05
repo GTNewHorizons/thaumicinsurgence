@@ -1,19 +1,22 @@
 package thaumicinsurgence.renderers.tileentityrenderers;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.AdvancedModelLoader;
 import net.minecraftforge.client.model.IModelCustom;
+
 import org.lwjgl.opengl.GL11;
+
 import thaumcraft.client.lib.UtilsFX;
 import thaumcraft.client.renderers.tile.TileInfusionPillarRenderer;
 import thaumicinsurgence.main.utils.VersionInfo;
 import thaumicinsurgence.tileentity.TileEntityInfusionPillarAlpha;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class TilePillarAlphaRenderer extends TileInfusionPillarRenderer {
+
     private IModelCustom model;
     private static final ResourceLocation PILLAR = new ResourceLocation("thaumcraft", "textures/models/pillar.obj");
 
@@ -23,8 +26,8 @@ public class TilePillarAlphaRenderer extends TileInfusionPillarRenderer {
     }
 
     @SideOnly(Side.CLIENT)
-    public void renderTileEntityAt(
-            TileEntityInfusionPillarAlpha tile, double par2, double par4, double par6, float par8) {
+    public void renderTileEntityAt(TileEntityInfusionPillarAlpha tile, double par2, double par4, double par6,
+            float par8) {
         GL11.glPushMatrix();
         GL11.glTranslatef((float) par2 + 0.5F, (float) par4, (float) par6 + 0.5F);
         GL11.glRotatef(90.0F, -1.0F, 0.0F, 0.0F);

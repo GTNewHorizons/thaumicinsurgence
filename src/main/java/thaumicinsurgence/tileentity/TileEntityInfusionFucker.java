@@ -2,6 +2,7 @@ package thaumicinsurgence.tileentity;
 
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
+
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.aspects.IAspectContainer;
@@ -22,8 +23,10 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
     public boolean addedStability;
     public boolean stabilityHasBeenAdded;
 
-    /* public static final Aspect AIR = new Aspect("aer", 16777086, "e", 1);
-    public static final Aspect EARTH = new Aspect("terra", 5685248, "2", 1); */
+    /*
+     * public static final Aspect AIR = new Aspect("aer", 16777086, "e", 1); public static final Aspect EARTH = new
+     * Aspect("terra", 5685248, "2", 1);
+     */
 
     // the commented lines above show how the essentias are labeled, you use the actual name of the essentia to grab it.
     // public Aspect AIR = aspect.getAspect("aer");
@@ -55,8 +58,7 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
     }
 
     /**
-     * If the matrix needs any aspects, attempt to grab ALL of them
-     * from the essentiaEntity sequentially in this tick.
+     * If the matrix needs any aspects, attempt to grab ALL of them from the essentiaEntity sequentially in this tick.
      */
     public void matrixFuckery() {
         if (matrix.getAspects().size() != 0) {
@@ -97,16 +99,17 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
         stabilityHasBeenAdded = false;
     }
 
-    /** If an input exists, this method will see if it contains the IEssentiaTransport interface, and if it does, it will
-     *  set the current input to the whatever is trying to input */
+    /**
+     * If an input exists, this method will see if it contains the IEssentiaTransport interface, and if it does, it will
+     * set the current input to the whatever is trying to input
+     */
     public void setInput() {
         try {
             TileEntity inputCandidate = worldObj.getTileEntity(this.xCoord, this.yCoord - 1, this.zCoord);
             if (inputCandidate instanceof IEssentiaTransport) {
                 essentiaEntity = (IEssentiaTransport) inputCandidate;
             }
-        } catch (Exception ignored) {
-        }
+        } catch (Exception ignored) {}
     }
 
     /** this is obvious, but it grabs the infusion matrix that the intercepter is going to screw with. */
@@ -116,8 +119,7 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
             if (matrixCandidate instanceof TileInfusionMatrix) {
                 matrix = (TileInfusionMatrix) matrixCandidate;
             }
-        } catch (Exception ignored) {
-        }
+        } catch (Exception ignored) {}
     }
 
     /** this method handles removing essentia from the essentia source, and adds it to myAspects */
@@ -145,9 +147,10 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    /* This point marks the end of my custom methods used for this TE itself.
-     *  Everything after this is based off other author's code.
-     *  So only judge my code based off my own shit methods, I'll fix the rest later. :kekw:  */
+    /*
+     * This point marks the end of my custom methods used for this TE itself. Everything after this is based off other
+     * author's code. So only judge my code based off my own shit methods, I'll fix the rest later. :kekw:
+     */
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // added directly from the crucible of souls
@@ -271,9 +274,7 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
     // added directly from the crucible of souls
     @Override
     public Aspect getEssentiaType(ForgeDirection face) {
-        return this.myAspects.visSize() > 0 && face == ForgeDirection.UNKNOWN
-                ? this.myAspects.getAspects()[0]
-                : null;
+        return this.myAspects.visSize() > 0 && face == ForgeDirection.UNKNOWN ? this.myAspects.getAspects()[0] : null;
     }
 
     // modified

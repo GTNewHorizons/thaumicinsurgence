@@ -1,7 +1,5 @@
 package thaumicinsurgence.block;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
@@ -10,14 +8,18 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+
 import thaumcraft.common.blocks.BlockStoneDevice;
 import thaumcraft.common.lib.utils.InventoryUtils;
 import thaumcraft.common.tiles.*;
 import thaumicinsurgence.main.Config;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
 import thaumicinsurgence.main.utils.VersionInfo;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockPedestalAlpha extends BlockStoneDevice {
+
     public IIcon[] iconPedestal = new IIcon[2];
 
     public BlockPedestalAlpha() {
@@ -36,7 +38,7 @@ public class BlockPedestalAlpha extends BlockStoneDevice {
         } else {
             return this.iconPedestal[0];
         }
-        //  return this.iconPedestal[1];
+        // return this.iconPedestal[1];
     }
 
     public IIcon getIcon(IBlockAccess iblockaccess, int i, int j, int k, int side) {
@@ -77,8 +79,8 @@ public class BlockPedestalAlpha extends BlockStoneDevice {
         super.setBlockBoundsBasedOnState(world, i, j, k);
     }
 
-    public boolean onBlockActivated(
-            World world, int x, int y, int z, EntityPlayer player, int side, float par7, float par8, float par9) {
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float par7,
+            float par8, float par9) {
         // player.addChatMessage(new ChatComponentText("this is happening I guess"));
         if (world.isRemote) {
             return true;

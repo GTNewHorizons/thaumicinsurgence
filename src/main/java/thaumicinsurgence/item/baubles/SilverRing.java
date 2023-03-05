@@ -1,10 +1,11 @@
 package thaumicinsurgence.item.baubles;
 
-import baubles.common.items.ItemRing;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+
 import thaumcraft.api.IVisDiscountGear;
 import thaumcraft.api.aspects.Aspect;
+import baubles.common.items.ItemRing;
 
 public class SilverRing extends ItemRing implements IVisDiscountGear {
 

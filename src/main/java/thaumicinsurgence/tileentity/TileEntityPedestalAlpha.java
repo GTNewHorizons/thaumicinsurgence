@@ -1,7 +1,5 @@
 package thaumicinsurgence.tileentity;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -9,12 +7,16 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.util.AxisAlignedBB;
+
 import thaumcraft.common.Thaumcraft;
 import thaumcraft.common.tiles.TilePedestal;
 import thaumicinsurgence.main.utils.VersionInfo;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class TileEntityPedestalAlpha extends TilePedestal {
-    private static final int[] slots = new int[] {0};
+
+    private static final int[] slots = new int[] { 0 };
     private ItemStack[] inventory = new ItemStack[1];
     private String customName;
     public static final String tileEntityName = VersionInfo.ModID + ".marblePedestal";
@@ -160,10 +162,9 @@ public class TileEntityPedestalAlpha extends TilePedestal {
     }
 
     public boolean isUseableByPlayer(EntityPlayer par1EntityPlayer) {
-        return this.worldObj.getTileEntity(this.xCoord, this.yCoord, this.zCoord) == this
-                && par1EntityPlayer.getDistanceSq(
-                                (double) this.xCoord + 0.5D, (double) this.yCoord + 0.5D, (double) this.zCoord + 0.5D)
-                        <= 64.0D;
+        return this.worldObj.getTileEntity(this.xCoord, this.yCoord, this.zCoord) == this && par1EntityPlayer
+                .getDistanceSq((double) this.xCoord + 0.5D, (double) this.yCoord + 0.5D, (double) this.zCoord + 0.5D)
+                <= 64.0D;
     }
 
     public void openInventory() {}
@@ -190,8 +191,8 @@ public class TileEntityPedestalAlpha extends TilePedestal {
         if (i == 11) {
             if (this.worldObj.isRemote) {
                 for (int a = 0; a < Thaumcraft.proxy.particleCount(5); ++a) {
-                    Thaumcraft.proxy.blockSparkle(
-                            this.worldObj, this.xCoord, this.yCoord + 1, this.zCoord, 12583104, 2);
+                    Thaumcraft.proxy
+                            .blockSparkle(this.worldObj, this.xCoord, this.yCoord + 1, this.zCoord, 12583104, 2);
                 }
             }
 

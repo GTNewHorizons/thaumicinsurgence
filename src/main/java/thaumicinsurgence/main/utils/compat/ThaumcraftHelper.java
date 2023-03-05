@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -41,8 +42,7 @@ public class ThaumcraftHelper implements IModHelper {
         CHARM,
         VOID_INGOT,
         VOID_SEED,
-        COIN,
-        ;
+        COIN,;
     }
 
     @SuppressWarnings("unused")
@@ -78,8 +78,7 @@ public class ThaumcraftHelper implements IModHelper {
         _28,
         _29,
         _30,
-        NATIVE_GOLD,
-        ;
+        NATIVE_GOLD,;
     }
 
     @SuppressWarnings("unused")
@@ -90,8 +89,7 @@ public class ThaumcraftHelper implements IModHelper {
         EARTH,
         ORDER,
         CHAOS,
-        BALANCED,
-        ;
+        BALANCED,;
     }
 
     @SuppressWarnings("unused")
@@ -110,8 +108,7 @@ public class ThaumcraftHelper implements IModHelper {
         _11,
         MNEMONIC_MATRIX,
         LAMP_OF_FERTILITY,
-        VIS_RELAY,
-        ;
+        VIS_RELAY,;
     }
 
     @SuppressWarnings("unused")
@@ -124,8 +121,7 @@ public class ThaumcraftHelper implements IModHelper {
         BORE,
         PLANKS_GREATWOOD,
         PLANKS_SILVERWOOD,
-        BANNER,
-        ;
+        BANNER,;
     }
 
     @SuppressWarnings("unused")
@@ -135,17 +131,16 @@ public class ThaumcraftHelper implements IModHelper {
         _2,
         _3,
         WARDING_STONE_FENCE,
-        ENERGIZED_NODE,
-        ;
+        ENERGIZED_NODE,;
     }
 
     @SuppressWarnings("unused")
     public enum Entity {
+
         BRAINY_ZOMBIE("entBrainyZombie", "EntityBrainyZombie"),
         GIANT_BRAINY_ZOMBIE("entGiantBrainyZombie", "EntityGiantBrainyZombie"),
         WISP("entWisp", "EntityWisp"),
-        FIREBAT("entFirebat", "EntityFireBat"),
-        ;
+        FIREBAT("entFirebat", "EntityFireBat"),;
 
         private static final String packageName = "thaumcraft.common.entities.monster.";
 
@@ -169,15 +164,13 @@ public class ThaumcraftHelper implements IModHelper {
         SHIMMERLEAF,
         CINDERPEARL,
         PURIFYING_PLANT,
-        VISHROOM,
-        ;
+        VISHROOM,;
     }
 
     @SuppressWarnings("unused")
     public enum TreeType {
         GREATWOOD,
-        SILVERWOOD,
-        ;
+        SILVERWOOD,;
     }
 
     public static Block plant;
@@ -255,24 +248,17 @@ public class ThaumcraftHelper implements IModHelper {
                 "TI_InfusionIntercepter",
                 new ItemStack(Config.infusionIntercepter),
                 10,
-                new AspectList()
-                        .add(Aspect.MAGIC, 100)
-                        .add(Aspect.HUNGER, 100)
-                        .add(Aspect.TOOL, 75)
-                        .add(Aspect.TRAP, 50)
-                        .add(Aspect.MECHANISM, 50)
-                        .add(Aspect.EXCHANGE, 25),
+                new AspectList().add(Aspect.MAGIC, 100).add(Aspect.HUNGER, 100).add(Aspect.TOOL, 75)
+                        .add(Aspect.TRAP, 50).add(Aspect.MECHANISM, 50).add(Aspect.EXCHANGE, 25),
                 new ItemStack(metal, 1, MetalDeviceType.ALCHEMICAL_CONSTRUCT.ordinal()),
-                new ItemStack[] {
-                    new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal()),
-                    new ItemStack(metal, 1, MetalDeviceType.ALCHEMICAL_CONSTRUCT.ordinal()),
-                    new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal()),
-                    new ItemStack(metal, 1, MetalDeviceType.ALCHEMICAL_CONSTRUCT.ordinal()),
-                    new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal()),
-                    new ItemStack(metal, 1, MetalDeviceType.ALCHEMICAL_CONSTRUCT.ordinal()),
-                    new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal()),
-                    new ItemStack(metal, 1, MetalDeviceType.ALCHEMICAL_CONSTRUCT.ordinal())
-                });
+                new ItemStack[] { new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal()),
+                        new ItemStack(metal, 1, MetalDeviceType.ALCHEMICAL_CONSTRUCT.ordinal()),
+                        new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal()),
+                        new ItemStack(metal, 1, MetalDeviceType.ALCHEMICAL_CONSTRUCT.ordinal()),
+                        new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal()),
+                        new ItemStack(metal, 1, MetalDeviceType.ALCHEMICAL_CONSTRUCT.ordinal()),
+                        new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal()),
+                        new ItemStack(metal, 1, MetalDeviceType.ALCHEMICAL_CONSTRUCT.ordinal()) });
 
         thaumicInterfacer = ThaumcraftApi.addInfusionCraftingRecipe(
                 "TI_ThaumicInterfacer",
@@ -280,10 +266,8 @@ public class ThaumcraftHelper implements IModHelper {
                 64,
                 new AspectList().add(Aspect.FIRE, 8),
                 new ItemStack(ConfigItems.itemThaumometer),
-                new ItemStack[] {
-                    new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal()),
-                    new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal())
-                });
+                new ItemStack[] { new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal()),
+                        new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal()) });
 
         soapAlpha = ThaumcraftApi.addCrucibleRecipe(
                 "TI_SanitizingSoapAlpha",
@@ -295,21 +279,14 @@ public class ThaumcraftHelper implements IModHelper {
                 "TI_SanitizingSoapBeta",
                 new ItemStack(Config.soapBetaBitch),
                 new ItemStack(Config.soapAlpha),
-                new AspectList()
-                        .add(Aspect.ELDRITCH, 32)
-                        .add(Aspect.EXCHANGE, 64)
-                        .add(Aspect.HEAL, 64));
+                new AspectList().add(Aspect.ELDRITCH, 32).add(Aspect.EXCHANGE, 64).add(Aspect.HEAL, 64));
 
         bigShot = ThaumcraftApi.addCrucibleRecipe(
                 "TI_DeliciousKromer",
                 new ItemStack(Config.hyperLinkBlocked),
                 new ItemStack(ConfigItems.itemGoggles),
-                new AspectList()
-                        .add(Aspect.GREED, 128)
-                        .add(Aspect.ELDRITCH, 64)
-                        .add(Aspect.DARKNESS, 64)
-                        .add(Aspect.EXCHANGE, 64)
-                        .add(Aspect.TRAP, 32));
+                new AspectList().add(Aspect.GREED, 128).add(Aspect.ELDRITCH, 64).add(Aspect.DARKNESS, 64)
+                        .add(Aspect.EXCHANGE, 64).add(Aspect.TRAP, 32));
     }
 
     public static void setupResearch() {
@@ -361,20 +338,21 @@ public class ThaumcraftHelper implements IModHelper {
         infusionIntercepterPage = new ResearchItem(
                 "TI_InfusionIntercepter",
                 category,
-                new AspectList()
-                        .add(Aspect.MAGIC, 1)
-                        .add(Aspect.HUNGER, 1)
-                        .add(Aspect.TOOL, 1)
-                        .add(Aspect.TRAP, 1)
-                        .add(Aspect.MECHANISM, 1)
-                        .add(Aspect.EXCHANGE, 1),
+                new AspectList().add(Aspect.MAGIC, 1).add(Aspect.HUNGER, 1).add(Aspect.TOOL, 1).add(Aspect.TRAP, 1)
+                        .add(Aspect.MECHANISM, 1).add(Aspect.EXCHANGE, 1),
                 0,
                 0,
                 0,
                 new ItemStack(Config.infusionIntercepter));
 
         redCrownPage = new ResearchItem(
-                "TI_RedCrown", category, new AspectList(), 5, 5, 5, new ItemStack(Config.redCrownItem));
+                "TI_RedCrown",
+                category,
+                new AspectList(),
+                5,
+                5,
+                5,
+                new ItemStack(Config.redCrownItem));
 
         thaumicInterfacerPage = new ResearchItem(
                 "TI_ThaumicInterfacer",
@@ -388,12 +366,8 @@ public class ThaumcraftHelper implements IModHelper {
         littleSponge = new ResearchItem(
                 "TI_DeliciousKromer",
                 category,
-                new AspectList()
-                        .add(Aspect.GREED, 1)
-                        .add(Aspect.ELDRITCH, 1)
-                        .add(Aspect.DARKNESS, 1)
-                        .add(Aspect.EXCHANGE, 1)
-                        .add(Aspect.TRAP, 1),
+                new AspectList().add(Aspect.GREED, 1).add(Aspect.ELDRITCH, 1).add(Aspect.DARKNESS, 1)
+                        .add(Aspect.EXCHANGE, 1).add(Aspect.TRAP, 1),
                 0,
                 3,
                 0,

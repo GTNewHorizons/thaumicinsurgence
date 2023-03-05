@@ -1,7 +1,5 @@
 package thaumicinsurgence.item.tools;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -12,14 +10,18 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
+
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.nodes.INode;
 import thaumcraft.common.lib.research.ResearchManager;
 import thaumcraft.common.tiles.TileInfusionMatrix;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemThaumicInterfacer extends Item {
+
     public TileEntity matrix;
 
     @SideOnly(Side.CLIENT)
@@ -38,45 +40,48 @@ public class ItemThaumicInterfacer extends Item {
     }
 
     @Override
-    public boolean onItemUseFirst(
-            ItemStack stack,
-            EntityPlayer player,
-            World world,
-            int targetX,
-            int targetY,
-            int targetZ,
-            int side,
-            float hitX,
-            float hitY,
-            float hitZ) {
+    public boolean onItemUseFirst(ItemStack stack, EntityPlayer player, World world, int targetX, int targetY,
+            int targetZ, int side, float hitX, float hitY, float hitZ) {
         if (!world.isRemote) {
             matrix = world.getTileEntity(targetX, targetY, targetZ);
             if (matrix instanceof TileInfusionMatrix) {
 
-                String[] users =
-                        MinecraftServer.getServer().getConfigurationManager().getAllUsernames();
+                String[] users = MinecraftServer.getServer().getConfigurationManager().getAllUsernames();
                 player.addChatMessage(new ChatComponentText("That's a big ass mudspaw right der"));
                 player.addChatMessage(new ChatComponentText(users[0]));
-                player.addChatMessage(new ChatComponentText(
-                        "Infusion Matrix Instability: " + String.valueOf(((TileInfusionMatrix) matrix).instability)));
-            } else if (world.getTileEntity(targetX, targetY, targetZ) instanceof INode) {
-                AspectList al = ResearchManager.reduceToPrimals(
-                        ((INode) world.getTileEntity(targetX, targetY, targetZ)).getAspects());
                 player.addChatMessage(
-                        new ChatComponentTranslation("Energized Primal Aspects Equivalents within this node:"
-                                + " Aer: " + (int) Math.sqrt(al.getAmount(Aspect.AIR))
-                                + " Terra: " + (int) Math.sqrt(al.getAmount(Aspect.EARTH))
-                                + " Ignis: " + (int) Math.sqrt(al.getAmount(Aspect.FIRE))
-                                + " Aqua: " + (int) Math.sqrt(al.getAmount(Aspect.WATER))
-                                + " Ordo: " + (int) Math.sqrt(al.getAmount(Aspect.ORDER))
-                                + " Perditio: " + (int) Math.sqrt(al.getAmount(Aspect.ENTROPY))));
+                        new ChatComponentText(
+                                "Infusion Matrix Instability: "
+                                        + String.valueOf(((TileInfusionMatrix) matrix).instability)));
+            } else if (world.getTileEntity(targetX, targetY, targetZ) instanceof INode) {
+                AspectList al = ResearchManager
+                        .reduceToPrimals(((INode) world.getTileEntity(targetX, targetY, targetZ)).getAspects());
+                player.addChatMessage(
+                        new ChatComponentTranslation(
+                                "Energized Primal Aspects Equivalents within this node:" + " Aer: "
+                                        + (int) Math.sqrt(al.getAmount(Aspect.AIR))
+                                        + " Terra: "
+                                        + (int) Math.sqrt(al.getAmount(Aspect.EARTH))
+                                        + " Ignis: "
+                                        + (int) Math.sqrt(al.getAmount(Aspect.FIRE))
+                                        + " Aqua: "
+                                        + (int) Math.sqrt(al.getAmount(Aspect.WATER))
+                                        + " Ordo: "
+                                        + (int) Math.sqrt(al.getAmount(Aspect.ORDER))
+                                        + " Perditio: "
+                                        + (int) Math.sqrt(al.getAmount(Aspect.ENTROPY))));
                 return true;
             } else if (true) {
-                player.addChatMessage(new ChatComponentTranslation("equipment"
-                        + " slot one: " + player.getEquipmentInSlot(1)
-                        + " slot two: " + player.getEquipmentInSlot(2)
-                        + " slot three: " + player.getEquipmentInSlot(3)
-                        + " slot four: " + player.getEquipmentInSlot(4)));
+                player.addChatMessage(
+                        new ChatComponentTranslation(
+                                "equipment" + " slot one: "
+                                        + player.getEquipmentInSlot(1)
+                                        + " slot two: "
+                                        + player.getEquipmentInSlot(2)
+                                        + " slot three: "
+                                        + player.getEquipmentInSlot(3)
+                                        + " slot four: "
+                                        + player.getEquipmentInSlot(4)));
             } else {
                 player.addChatMessage(new ChatComponentText("COCK A DOODLE DO MOTHER FUCKER"));
             }

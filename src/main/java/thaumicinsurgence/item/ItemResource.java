@@ -1,9 +1,8 @@
 package thaumicinsurgence.item;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import java.util.List;
 import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -20,6 +19,7 @@ import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
+
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.Thaumcraft;
@@ -32,8 +32,11 @@ import thaumcraft.common.lib.network.playerdata.PacketAspectPool;
 import thaumcraft.common.lib.network.playerdata.PacketResearchComplete;
 import thaumcraft.common.lib.research.ResearchManager;
 import thaumcraft.common.lib.utils.InventoryUtils;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemResource extends Item {
+
     public IIcon[] icon = new IIcon[1];
     private IIcon iconOverlay;
 
@@ -60,8 +63,7 @@ public class ItemResource extends Item {
 
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(ItemStack stack, int pass) {
-        return pass != 0 && this.getAspects(stack) != null
-                ? this.iconOverlay
+        return pass != 0 && this.getAspects(stack) != null ? this.iconOverlay
                 : this.getIconFromDamage(stack.getItemDamage());
     }
 
@@ -92,8 +94,7 @@ public class ItemResource extends Item {
 
     public void onUpdate(ItemStack stack, World world, Entity entity, int par4, boolean par5) {
         super.onUpdate(stack, world, entity, par4, par5);
-        if (!entity.worldObj.isRemote
-                && (stack.getItemDamage() == 11 || stack.getItemDamage() == 12)
+        if (!entity.worldObj.isRemote && (stack.getItemDamage() == 11 || stack.getItemDamage() == 12)
                 && entity instanceof EntityLivingBase
                 && !((EntityLivingBase) entity).isEntityUndead()
                 && !((EntityLivingBase) entity).isPotionActive(Config.potionTaintPoisonID)
@@ -137,66 +138,58 @@ public class ItemResource extends Item {
                     EntityAspectOrb orb = new EntityAspectOrb(world, entity.posX, entity.posY, entity.posZ, aspect, 1);
                     world.spawnEntityInWorld(orb);
                 }
-            } else if (r == 42
-                    && entity instanceof EntityPlayer
-                    && !ResearchManager.isResearchComplete(
-                            ((EntityPlayer) entity).getCommandSenderName(), "FOCUSPRIMAL")
-                    && !ResearchManager.isResearchComplete(
-                            ((EntityPlayer) entity).getCommandSenderName(), "@FOCUSPRIMAL")) {
-                ((EntityPlayer) entity)
-                        .addChatMessage(new ChatComponentTranslation(
-                                "§5§o" + StatCollector.translateToLocal("tc.primalcharm.trigger"), new Object[0]));
-                PacketHandler.INSTANCE.sendTo(new PacketResearchComplete("@FOCUSPRIMAL"), (EntityPlayerMP) entity);
-                Thaumcraft.proxy.getResearchManager().completeResearch((EntityPlayer) entity, "@FOCUSPRIMAL");
-            }
+            } else if (r == 42 && entity instanceof EntityPlayer
+                    && !ResearchManager
+                            .isResearchComplete(((EntityPlayer) entity).getCommandSenderName(), "FOCUSPRIMAL")
+                    && !ResearchManager
+                            .isResearchComplete(((EntityPlayer) entity).getCommandSenderName(), "@FOCUSPRIMAL")) {
+                                ((EntityPlayer) entity).addChatMessage(
+                                        new ChatComponentTranslation(
+                                                "§5§o" + StatCollector.translateToLocal("tc.primalcharm.trigger"),
+                                                new Object[0]));
+                                PacketHandler.INSTANCE
+                                        .sendTo(new PacketResearchComplete("@FOCUSPRIMAL"), (EntityPlayerMP) entity);
+                                Thaumcraft.proxy.getResearchManager()
+                                        .completeResearch((EntityPlayer) entity, "@FOCUSPRIMAL");
+                            }
         }
     }
 
-    public boolean onItemUse(
-            ItemStack itemstack,
-            EntityPlayer player,
-            World world,
-            int x,
-            int y,
-            int z,
-            int par7,
-            float par8,
-            float par9,
-            float par10) {
+    public boolean onItemUse(ItemStack itemstack, EntityPlayer player, World world, int x, int y, int z, int par7,
+            float par8, float par9, float par10) {
         if (itemstack.getItemDamage() != 1) {
             return super.onItemUse(itemstack, player, world, x, y, z, par7, par8, par9, par10);
         } else {
             Block var11 = world.getBlock(x, y, z);
             if (var11 == Blocks.snow_layer && (world.getBlockMetadata(x, y, z) & 7) < 1) {
                 par7 = 1;
-            } else if (var11 != Blocks.vine
-                    && var11 != Blocks.tallgrass
+            } else if (var11 != Blocks.vine && var11 != Blocks.tallgrass
                     && var11 != Blocks.deadbush
                     && !var11.isReplaceable(world, x, y, z)) {
-                if (par7 == 0) {
-                    --y;
-                }
+                        if (par7 == 0) {
+                            --y;
+                        }
 
-                if (par7 == 1) {
-                    ++y;
-                }
+                        if (par7 == 1) {
+                            ++y;
+                        }
 
-                if (par7 == 2) {
-                    --z;
-                }
+                        if (par7 == 2) {
+                            --z;
+                        }
 
-                if (par7 == 3) {
-                    ++z;
-                }
+                        if (par7 == 3) {
+                            ++z;
+                        }
 
-                if (par7 == 4) {
-                    --x;
-                }
+                        if (par7 == 4) {
+                            --x;
+                        }
 
-                if (par7 == 5) {
-                    ++x;
-                }
-            }
+                        if (par7 == 5) {
+                            ++x;
+                        }
+                    }
 
             if (itemstack.stackSize == 0) {
                 return false;
@@ -234,19 +227,8 @@ public class ItemResource extends Item {
         }
     }
 
-    public boolean placeBlockAt(
-            ItemStack stack,
-            EntityPlayer player,
-            World world,
-            int x,
-            int y,
-            int z,
-            int side,
-            float hitX,
-            float hitY,
-            float hitZ,
-            Block bid,
-            int metadata) {
+    public boolean placeBlockAt(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side,
+            float hitX, float hitY, float hitZ, Block bid, int metadata) {
         if (!world.setBlock(x, y, z, bid, metadata, 3)) {
             return false;
         } else {
@@ -283,8 +265,9 @@ public class ItemResource extends Item {
                             new PacketAspectPool(
                                     a.getTag(),
                                     Short.valueOf(q),
-                                    Short.valueOf(Thaumcraft.proxy.playerKnowledge.getAspectPoolFor(
-                                            player.getCommandSenderName(), a))),
+                                    Short.valueOf(
+                                            Thaumcraft.proxy.playerKnowledge
+                                                    .getAspectPoolFor(player.getCommandSenderName(), a))),
                             (EntityPlayerMP) player);
                 }
             }
