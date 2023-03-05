@@ -1,7 +1,5 @@
 package thaumicinsurgence.item.armor;
 
-import baubles.api.BaubleType;
-import baubles.api.IBauble;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -70,7 +68,5 @@ public class ItemBIGSHOT extends ItemGoggles
         if (!world.isRemote && stack.isItemDamaged() && player.ticksExisted % 20 == 0) {
             stack.damageItem(-1, player);
         }
-    }
-
     }
 }
