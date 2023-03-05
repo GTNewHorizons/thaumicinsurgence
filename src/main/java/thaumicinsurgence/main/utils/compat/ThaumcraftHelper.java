@@ -265,8 +265,9 @@ public class ThaumcraftHelper implements IModHelper {
                 new ItemStack(Config.thaumicInterfacer),
                 64,
                 new AspectList().add(Aspect.FIRE, 8),
-                new ItemStack(metal, 1, MetalDeviceType.MNEMONIC_MATRIX.ordinal()),
-                new ItemStack[] { new ItemStack(metal, 2, MetalDeviceType.ALEMBIC.ordinal()) });
+                new ItemStack(ConfigItems.itemThaumometer),
+                new ItemStack[] { new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal()),
+                        new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal()) });
 
         soapAlpha = ThaumcraftApi.addCrucibleRecipe(
                 "TI_SanitizingSoapAlpha",
@@ -311,6 +312,7 @@ public class ThaumcraftHelper implements IModHelper {
         ResearchItem soapBetaPage;
         ResearchPage soapBeta1;
         ResearchPage soapBeta2;
+
         ResearchItem littleSponge;
         ResearchPage unintelligbleLaughter;
         ResearchPage shootForTheSky;
@@ -380,7 +382,7 @@ public class ThaumcraftHelper implements IModHelper {
         thaumicInterface2 = new ResearchPage(thaumicInterfacer);
 
         soapAlpha1 = new ResearchPage("SoapAlpha.1");
-        soapAlpha2 = new ResearchPage(soapBeta);
+        soapAlpha2 = new ResearchPage(soapAlpha);
         soapBeta1 = new ResearchPage("SoapBeta.1");
         soapBeta2 = new ResearchPage(soapBeta);
 
@@ -407,7 +409,7 @@ public class ThaumcraftHelper implements IModHelper {
 
         ThaumcraftApi.addWarpToResearch("TI_InfusionIntercepter", 4);
         ResearchCategories.addResearch(infusionIntercepterPage);
-        ResearchCategories.addResearch(redCrownPage);
+        // ResearchCategories.addResearch(redCrownPage); // TODO: actually implement this feature.
         ResearchCategories.addResearch(thaumicInterfacerPage);
         ResearchCategories.addResearch(soapAlphaPage);
         ResearchCategories.addResearch(soapBetaPage);
