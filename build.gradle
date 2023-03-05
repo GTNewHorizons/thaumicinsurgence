@@ -1,4 +1,5 @@
 //version: 1678003329
+
 /*
  DO NOT CHANGE THIS FILE!
  Also, you may replace this file at any time if there is an update available.
@@ -9,9 +10,11 @@
 import com.diffplug.blowdryer.Blowdryer
 import com.github.jengelman.gradle.plugins.shadow.tasks.ConfigureShadowRelocation
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
 import com.gtnewhorizons.retrofuturagradle.ObfuscationAttribute
 import com.gtnewhorizons.retrofuturagradle.mcp.ReobfuscatedJar
 import com.gtnewhorizons.retrofuturagradle.minecraft.RunMinecraftTask
+
 import com.matthewprenger.cursegradle.CurseArtifact
 import com.matthewprenger.cursegradle.CurseRelation
 import com.modrinth.minotaur.dependencies.ModDependency
@@ -21,6 +24,7 @@ import org.gradle.api.tasks.options.Option;
 import org.gradle.internal.logging.text.StyledTextOutput.Style
 import org.gradle.internal.logging.text.StyledTextOutputFactory
 import org.gradle.internal.xml.XmlTransformer
+
 import org.jetbrains.gradle.ext.*
 
 import java.nio.file.Files
@@ -32,6 +36,7 @@ import javax.inject.Inject
 
 buildscript {
     repositories {
+        mavenLocal()
         mavenCentral()
 
         maven {
@@ -52,8 +57,8 @@ buildscript {
             name 'Scala CI dependencies'
             url 'https://repo1.maven.org/maven2/'
         }
-
         mavenLocal()
+
     }
 }
 plugins {
@@ -74,6 +79,7 @@ plugins {
     id 'com.modrinth.minotaur' version '2.+' apply false
     id 'com.matthewprenger.cursegradle' version '1.4.0' apply false
     id 'com.gtnewhorizons.retrofuturagradle' version '1.2.3'
+
 }
 boolean settingsupdated = verifySettingsGradle()
 settingsupdated = verifyGitAttributes() || settingsupdated
@@ -132,6 +138,7 @@ propertyDefaultIfUnset("enableGenericInjection", false) // On by default for new
 // this is meant to be set using the user wide property file. by default we do nothing.
 propertyDefaultIfUnset("ideaOverrideBuildType", "") // Can be nothing, "gradle" or "idea"
 
+
 project.extensions.add(Blowdryer, "Blowdryer", Blowdryer) // Make blowdryer available in "apply from:" scripts
 if (!disableSpotless) {
     apply plugin: 'com.diffplug.spotless'
@@ -153,7 +160,9 @@ java {
         } else {
             languageVersion.set(projectJavaVersion)
         }
+
         vendor.set(JvmVendorSpec.AZUL)
+
     }
     if (!noPublishedSources) {
         withSourcesJar()
@@ -204,13 +213,16 @@ if (enableModernJavaSyntax.toBoolean()) {
         }
     }
 
+
     dependencies {
         annotationProcessor 'com.github.bsideup.jabel:jabel-javac-plugin:1.0.0'
         compileOnly('com.github.bsideup.jabel:jabel-javac-plugin:1.0.0') {
             transitive = false // We only care about the 1 annotation class
         }
+
         // Allow using jdk.unsupported classes like sun.misc.Unsafe in the compiled code, working around JDK-8206937.
         patchedMinecraft('me.eigenraven.java8unsupported:java-8-unsupported-shim:1.0.0')
+
     }
 
     tasks.withType(JavaCompile).configureEach {
@@ -223,6 +235,7 @@ if (enableModernJavaSyntax.toBoolean()) {
         javaCompiler.set(javaToolchains.compilerFor {
             languageVersion.set(JavaLanguageVersion.of(17))
             vendor.set(JvmVendorSpec.AZUL)
+
         })
     }
 }
@@ -262,6 +275,27 @@ if (accessTransformersFile) {
         tasks.deobfuscateMergedJarToSrg.accessTransformerFiles.from(targetFile)
         tasks.srgifyBinpatchedJar.accessTransformerFiles.from(targetFile)
     }
+} else {
+    boolean atsFound = false
+    for (File at : sourceSets.getByName("main").resources.files) {
+        if (at.name.toLowerCase().endsWith("_at.cfg")) {
+            atsFound = true
+            tasks.deobfuscateMergedJarToSrg.accessTransformerFiles.from(at)
+            tasks.srgifyBinpatchedJar.accessTransformerFiles.from(at)
+        }
+    }
+    for (File at : sourceSets.getByName("api").resources.files) {
+        if (at.name.toLowerCase().endsWith("_at.cfg")) {
+            atsFound = true
+            tasks.deobfuscateMergedJarToSrg.accessTransformerFiles.from(at)
+            tasks.srgifyBinpatchedJar.accessTransformerFiles.from(at)
+        }
+    }
+    if (atsFound) {
+        logger.warn("Found and added access transformers in the resources folder, please configure gradle.properties to explicitly mention them by name")
+    }
+    tasks.deobfuscateMergedJarToSrg.accessTransformerFiles.from(targetFile)
+    tasks.srgifyBinpatchedJar.accessTransformerFiles.from(targetFile)
 } else {
     boolean atsFound = false
     for (File at : sourceSets.getByName("main").resources.files) {
@@ -437,6 +471,7 @@ configurations.configureEach {
             }
         }
     }
+
 }
 
 // Ensure tests have access to minecraft classes
@@ -469,6 +504,7 @@ configurations {
     runtimeClasspath.extendsFrom(runtimeOnlyNonPublishable)
     testRuntimeClasspath.extendsFrom(runtimeOnlyNonPublishable)
     for (config in [compileClasspath, runtimeClasspath, testCompileClasspath, testRuntimeClasspath]) {
+
         if (usesShadowedDependencies.toBoolean()) {
             config.extendsFrom(shadowImplementation)
             // TODO: remove Compile after all uses are refactored to Implementation
@@ -528,6 +564,7 @@ repositories {
             includeGroup "org.lwjgl"
         }
     }
+
     if (includeWellKnownRepositories.toBoolean()) {
         maven {
             name "CurseMaven"
@@ -565,6 +602,7 @@ dependencies {
         annotationProcessor('com.google.guava:guava:24.1.1-jre')
         annotationProcessor('com.google.code.gson:gson:2.8.6')
         annotationProcessor('com.gtnewhorizon:gtnhmixins:2.1.13:processor')
+
         if (usesMixinDebug.toBoolean()) {
             runtimeOnlyNonPublishable('org.jetbrains:intellij-fernflower:1.2.1.16')
         }
@@ -797,6 +835,7 @@ public abstract class RunHotswappableMinecraftTask extends RunMinecraftTask {
         if (!(project.usesMixins.toBoolean() || project.forceEnableMixins.toBoolean())) {
             this.extraArgs.addAll("--tweakClass", "org.spongepowered.asm.launch.MixinTweaker")
         }
+
     }
 }
 
@@ -856,6 +895,7 @@ if (usesShadowedDependencies.toBoolean()) {
         target = tasks.shadowJar
         prefix = modGroup + ".shadow"
         enabled = relocateShadowedDependencies.toBoolean()
+
     }
     tasks.named("shadowJar", ShadowJar).configure {
         manifest {
@@ -1217,7 +1257,6 @@ tasks.register('updateBuildScript') {
     if (gradle.gradleVersion != buildscriptGradleVersion && !Boolean.getBoolean('DISABLE_BUILDSCRIPT_GRADLE_UPDATE')) {
         dependsOn('wrapper')
     }
-
     doLast {
         if (performBuildScriptUpdate()) return
 

@@ -269,6 +269,7 @@ public class ThaumcraftHelper implements IModHelper {
                 new ItemStack[] { new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal()),
                         new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal()) });
 
+
         soapAlpha = ThaumcraftApi.addCrucibleRecipe(
                 "TI_SanitizingSoapAlpha",
                 new ItemStack(Config.soapAlpha),
