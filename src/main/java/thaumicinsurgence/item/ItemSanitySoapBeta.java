@@ -103,9 +103,7 @@ public class ItemSanitySoapBeta extends ItemSanitySoap {
                         && Thaumcraft.proxy.getPlayerKnowledge().getWarpPerm(player.getCommandSenderName()) > 0) {
                     Thaumcraft.proxy.getPlayerKnowledge().addWarpPerm(player.getCommandSenderName(), -1);
                     Thaumcraft.addStickyWarpToPlayer(player, 2);
-                }
-
-                if (Thaumcraft.proxy.getPlayerKnowledge().getWarpTemp(player.getCommandSenderName()) > 0) {
+                } else if (Thaumcraft.proxy.getPlayerKnowledge().getWarpPerm(player.getCommandSenderName()) > 0) {
                     Thaumcraft.addWarpToPlayer(player, 2, true);
                 }
             } else {
