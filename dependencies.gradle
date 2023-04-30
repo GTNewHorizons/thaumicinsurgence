@@ -1,7 +1,7 @@
 // Add your dependencies here
 
 dependencies {
-	compileOnly('com.github.GTNewHorizons:ForestryMC:4.4.6:dev')
+	compileOnly('com.github.GTNewHorizons:ForestryMC:4.6.7:dev')
 	compile('thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev')
 	compile('com.github.GTNewHorizons:Baubles:1.0.1.14:dev')
 	compileOnly('com.github.GTNewHorizons:Electro-Magic-Tools:1.2.8.27:dev') {transitive=false}
