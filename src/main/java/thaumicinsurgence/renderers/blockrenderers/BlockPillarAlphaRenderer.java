@@ -7,12 +7,12 @@ import net.minecraft.world.IBlockAccess;
 
 import org.lwjgl.opengl.GL11;
 
-import thaumcraft.client.renderers.block.BlockRenderer;
-import thaumicinsurgence.main.Config;
-import thaumicinsurgence.tileentity.TileEntityInfusionPillarAlpha;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import thaumcraft.client.renderers.block.BlockRenderer;
+import thaumicinsurgence.main.Config;
+import thaumicinsurgence.tileentity.TileEntityInfusionPillarAlpha;
 
 @SideOnly(Side.CLIENT)
 public class BlockPillarAlphaRenderer extends BlockRenderer implements ISimpleBlockRenderingHandler {

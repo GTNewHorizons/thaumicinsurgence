@@ -1,11 +1,11 @@
 package thaumicinsurgence.main;
 
-import thaumicinsurgence.main.utils.CraftingManager;
-import thaumicinsurgence.main.utils.LogHelper;
-import thaumicinsurgence.main.utils.compat.ModHelperManager;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import thaumicinsurgence.main.utils.CraftingManager;
+import thaumicinsurgence.main.utils.LogHelper;
+import thaumicinsurgence.main.utils.compat.ModHelperManager;
 
 @SuppressWarnings("unused")
 public class CommonProxy {
