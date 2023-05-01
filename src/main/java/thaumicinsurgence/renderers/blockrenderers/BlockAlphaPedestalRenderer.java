@@ -4,12 +4,12 @@ import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.world.IBlockAccess;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import thaumcraft.client.renderers.block.BlockStoneDeviceRenderer;
 import thaumcraft.common.tiles.*;
 import thaumicinsurgence.block.BlockPedestalAlpha;
 import thaumicinsurgence.main.Config;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class BlockAlphaPedestalRenderer extends BlockStoneDeviceRenderer {

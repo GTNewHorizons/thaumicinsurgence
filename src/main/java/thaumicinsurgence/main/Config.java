@@ -5,6 +5,10 @@ import java.io.File;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.config.Configuration;
 
+import cpw.mods.fml.client.event.ConfigChangedEvent;
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 import thaumcraft.api.ThaumcraftApi;
 import thaumicinsurgence.block.*;
 import thaumicinsurgence.block.BlockInfusionFucker;
@@ -21,10 +25,6 @@ import thaumicinsurgence.tileentity.TileEntityInfusionFucker;
 import thaumicinsurgence.tileentity.TileEntityInfusionMatrixAlpha;
 import thaumicinsurgence.tileentity.TileEntityInfusionPillarAlpha;
 import thaumicinsurgence.tileentity.TileEntityPedestalAlpha;
-import cpw.mods.fml.client.event.ConfigChangedEvent;
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 /**
  * A class to hold some data related to mod state & functions.
