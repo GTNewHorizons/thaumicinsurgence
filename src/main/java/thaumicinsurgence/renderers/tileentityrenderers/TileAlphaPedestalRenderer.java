@@ -10,10 +10,10 @@ import net.minecraft.util.MathHelper;
 
 import org.lwjgl.opengl.GL11;
 
-import thaumcraft.client.renderers.tile.TilePedestalRenderer;
-import thaumicinsurgence.tileentity.TileEntityPedestalAlpha;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import thaumcraft.client.renderers.tile.TilePedestalRenderer;
+import thaumicinsurgence.tileentity.TileEntityPedestalAlpha;
 
 @SideOnly(Side.CLIENT)
 public class TileAlphaPedestalRenderer extends TilePedestalRenderer {

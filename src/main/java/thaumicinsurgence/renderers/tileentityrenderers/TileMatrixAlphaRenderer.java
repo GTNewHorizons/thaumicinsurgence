@@ -14,14 +14,14 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
+import cpw.mods.fml.client.FMLClientHandler;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import thaumcraft.client.lib.UtilsFX;
 import thaumcraft.client.renderers.models.ModelCube;
 import thaumcraft.client.renderers.tile.TileRunicMatrixRenderer;
 import thaumicinsurgence.main.utils.VersionInfo;
 import thaumicinsurgence.tileentity.TileEntityInfusionMatrixAlpha;
-import cpw.mods.fml.client.FMLClientHandler;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class TileMatrixAlphaRenderer extends TileRunicMatrixRenderer {

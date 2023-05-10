@@ -24,6 +24,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
 
+import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.aspects.IAspectContainer;
@@ -45,9 +48,6 @@ import thaumcraft.common.tiles.TileInfusionMatrix;
 import thaumcraft.common.tiles.TileInfusionPillar;
 import thaumcraft.common.tiles.TilePedestal;
 import thaumicinsurgence.main.utils.VersionInfo;
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.network.NetworkRegistry;
-import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 
 public class TileEntityInfusionMatrixAlpha extends TileInfusionMatrix implements IWandable, IAspectContainer {
 

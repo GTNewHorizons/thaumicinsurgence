@@ -8,13 +8,13 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import thaumcraft.common.Thaumcraft;
 import thaumcraft.common.config.Config;
 import thaumcraft.common.config.ConfigBlocks;
 import thaumcraft.common.items.ItemSanitySoap;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemSanitySoapBeta extends ItemSanitySoap {
 
@@ -103,9 +103,7 @@ public class ItemSanitySoapBeta extends ItemSanitySoap {
                         && Thaumcraft.proxy.getPlayerKnowledge().getWarpPerm(player.getCommandSenderName()) > 0) {
                     Thaumcraft.proxy.getPlayerKnowledge().addWarpPerm(player.getCommandSenderName(), -1);
                     Thaumcraft.addStickyWarpToPlayer(player, 2);
-                }
-
-                if (Thaumcraft.proxy.getPlayerKnowledge().getWarpTemp(player.getCommandSenderName()) > 0) {
+                } else if (Thaumcraft.proxy.getPlayerKnowledge().getWarpPerm(player.getCommandSenderName()) > 0) {
                     Thaumcraft.addWarpToPlayer(player, 2, true);
                 }
                 

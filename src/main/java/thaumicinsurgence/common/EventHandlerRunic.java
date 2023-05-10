@@ -6,8 +6,8 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.StatCollector;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 
-import thaumicinsurgence.api.IPurifyingGear;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import thaumicinsurgence.api.IPurifyingGear;
 
 public class EventHandlerRunic extends thaumcraft.common.lib.events.EventHandlerRunic {
 

@@ -8,14 +8,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import thaumcraft.api.*;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.nodes.IRevealer;
 import thaumcraft.common.items.armor.ItemGoggles;
 import thaumicinsurgence.api.IPurifyingGear;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemBIGSHOT2 extends ItemGoggles
         implements IRepairable, IVisDiscountGear, IRevealer, IGoggles, IRunicArmor, IPurifyingGear {
