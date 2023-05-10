@@ -5,9 +5,11 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
+import baubles.common.container.InventoryBaubles;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import thaumcraft.api.*;
@@ -42,12 +44,19 @@ public class ItemBIGSHOT extends ItemGoggles
     }
 
     public int getVisDiscount(ItemStack stack, EntityPlayer player, Aspect aspect) {
-        return 15;
+        ItemStack[] stacklist = new InventoryBaubles(player).stackList;
+        if (stacklist[1] != null) {
+            player.addChatMessage(new ChatComponentText(String.valueOf(stacklist.length)));
+            player.addChatMessage(new ChatComponentText(stacklist[1].toString()));
+            player.addChatMessage(new ChatComponentText("the corn is creamed"));
+        }
+
+        return 8;
     }
 
     @Override
     public int getWarp(ItemStack var1, EntityPlayer var2) {
-        return 30;
+        return 5;
     }
 
     public boolean showNodes(ItemStack itemstack, EntityLivingBase player) {

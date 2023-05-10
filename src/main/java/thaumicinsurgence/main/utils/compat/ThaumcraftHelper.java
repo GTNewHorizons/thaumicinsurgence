@@ -216,6 +216,8 @@ public class ThaumcraftHelper implements IModHelper {
     public static CrucibleRecipe soapBeta;
     public static CrucibleRecipe bigShot;
 
+    public String playername = "";
+
     public static void getBlocks() {
         plant = BlockInterface.getBlock(Name, "blockCustomPlant");
         candle = BlockInterface.getBlock(Name, "blockCandle");
@@ -268,7 +270,6 @@ public class ThaumcraftHelper implements IModHelper {
                 new ItemStack(ConfigItems.itemThaumometer),
                 new ItemStack[] { new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal()),
                         new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal()) });
-
         soapAlpha = ThaumcraftApi.addCrucibleRecipe(
                 "TI_SanitizingSoapAlpha",
                 new ItemStack(Config.soapAlpha),
