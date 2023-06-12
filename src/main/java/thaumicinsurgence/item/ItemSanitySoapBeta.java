@@ -106,6 +106,7 @@ public class ItemSanitySoapBeta extends ItemSanitySoap {
                 } else if (Thaumcraft.proxy.getPlayerKnowledge().getWarpPerm(player.getCommandSenderName()) > 0) {
                     Thaumcraft.addWarpToPlayer(player, 2, true);
                 }
+
             } else {
                 player.worldObj
                         .playSound(player.posX, player.posY, player.posZ, "thaumcraft:craftstart", 0.25F, 1.0F, false);

@@ -18,7 +18,6 @@ import thaumicinsurgence.item.ItemSanitySoapBeta;
 import thaumicinsurgence.item.armor.ItemBIGSHOT;
 import thaumicinsurgence.item.armor.ItemEightBitRedCrown;
 import thaumicinsurgence.item.armor.ItemRedCrown;
-import thaumicinsurgence.item.baubles.ItemPactRing;
 import thaumicinsurgence.item.tools.ItemAlastorsWand;
 import thaumicinsurgence.item.tools.ItemThaumicInterfacer;
 import thaumicinsurgence.main.utils.VersionInfo;
@@ -50,7 +49,6 @@ public class Config {
     public static Item soapAlpha;
     public static Item soapBetaBitch;
     public static Item hyperLinkBlocked;
-    public static Item pactRing;
 
     public static BlockInfusionFucker infusionIntercepter;
     public static BlockInfusionMatrixAlpha matrixAlpha;
@@ -58,7 +56,6 @@ public class Config {
     public static BlockArcaneMarble arcaneMarble;
     public static BlockArcaneMarbleBrick arcaneMarbleBrick;
     public static BlockPedestalAlpha marblePedestal;
-    public static BlockDimensionalTeleporterBase dimensionalTeleporterBase;
 
     // ----- Config State info ----------------------------------
     public static Configuration configuration;
@@ -95,9 +92,6 @@ public class Config {
         arcaneMarbleBrick = new BlockArcaneMarbleBrick();
         GameRegistry.registerBlock(arcaneMarbleBrick, arcaneMarbleBrick.getUnlocalizedName());
 
-        dimensionalTeleporterBase = new BlockDimensionalTeleporterBase();
-        GameRegistry.registerBlock(dimensionalTeleporterBase, dimensionalTeleporterBase.getUnlocalizedName());
-
         setupInfusionFucker();
     }
 
@@ -125,9 +119,6 @@ public class Config {
 
         hyperLinkBlocked = new ItemBIGSHOT(ThaumcraftApi.armorMatSpecial, 4, 0);
         GameRegistry.registerItem(hyperLinkBlocked, hyperLinkBlocked.getUnlocalizedName());
-
-        pactRing = new ItemPactRing();
-        GameRegistry.registerItem(pactRing, pactRing.getUnlocalizedName());
     }
 
     private static void processConfigFile() {
