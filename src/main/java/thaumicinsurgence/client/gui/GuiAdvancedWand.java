@@ -7,7 +7,6 @@ import net.minecraft.world.World;
 import org.lwjgl.opengl.GL11;
 
 import thaumcraft.client.lib.UtilsFX;
-import thaumcraft.common.container.ContainerFocusPouch;
 import thaumicinsurgence.common.containers.ContainerAdvancedWand;
 
 public class GuiAdvancedWand extends GuiContainer {
