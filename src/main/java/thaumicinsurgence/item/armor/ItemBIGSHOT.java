@@ -42,12 +42,12 @@ public class ItemBIGSHOT extends ItemGoggles
     }
 
     public int getVisDiscount(ItemStack stack, EntityPlayer player, Aspect aspect) {
-        return 15;
+        return 8;
     }
 
     @Override
     public int getWarp(ItemStack var1, EntityPlayer var2) {
-        return 30;
+        return 5;
     }
 
     public boolean showNodes(ItemStack itemstack, EntityLivingBase player) {
