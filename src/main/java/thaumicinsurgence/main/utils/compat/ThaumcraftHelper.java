@@ -273,13 +273,13 @@ public class ThaumcraftHelper implements IModHelper {
                 "TI_SanitizingSoapAlpha",
                 new ItemStack(Config.soapAlpha),
                 new ItemStack(ConfigItems.itemSanitySoap),
-                new AspectList().add(Aspect.HEAL, 32).add(Aspect.ORDER, 64));
+                new AspectList().add(Aspect.HEAL, 16).add(Aspect.ORDER, 32));
 
         soapBeta = ThaumcraftApi.addCrucibleRecipe(
                 "TI_SanitizingSoapBeta",
                 new ItemStack(Config.soapBetaBitch),
                 new ItemStack(Config.soapAlpha),
-                new AspectList().add(Aspect.ELDRITCH, 32).add(Aspect.EXCHANGE, 64).add(Aspect.HEAL, 64));
+                new AspectList().add(Aspect.ELDRITCH, 16).add(Aspect.EXCHANGE, 32).add(Aspect.HEAL, 32));
 
         bigShot = ThaumcraftApi.addCrucibleRecipe(
                 "TI_DeliciousKromer",

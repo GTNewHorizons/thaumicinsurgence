@@ -16,8 +16,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.nodes.INode;
+import thaumcraft.common.items.wands.ItemWandCasting;
 import thaumcraft.common.lib.research.ResearchManager;
 import thaumcraft.common.tiles.TileInfusionMatrix;
+import thaumcraft.common.tiles.TilePedestal;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
 
 public class ItemThaumicInterfacer extends Item {
@@ -71,17 +73,23 @@ public class ItemThaumicInterfacer extends Item {
                                         + " Perditio: "
                                         + (int) Math.sqrt(al.getAmount(Aspect.ENTROPY))));
                 return true;
-            } else if (true) {
+            } else if (matrix instanceof TilePedestal) {
+                TilePedestal pedestal = (TilePedestal) matrix;
+                ItemStack wand = pedestal.getStackInSlot(0);
+                ItemWandCasting wand2 = (ItemWandCasting) wand.getItem();
+
+                player.addChatMessage(new ChatComponentTranslation("Your wand is: " + wand.getDisplayName()));
                 player.addChatMessage(
-                        new ChatComponentTranslation(
-                                "equipment" + " slot one: "
-                                        + player.getEquipmentInSlot(1)
-                                        + " slot two: "
-                                        + player.getEquipmentInSlot(2)
-                                        + " slot three: "
-                                        + player.getEquipmentInSlot(3)
-                                        + " slot four: "
-                                        + player.getEquipmentInSlot(4)));
+                        new ChatComponentTranslation("Your wand is: " + wand2.getCap(wand).getItem().getDisplayName()));
+                player.addChatMessage(
+                        new ChatComponentTranslation("Your wand is: " + wand2.getRod(wand).getItem().getDisplayName()));
+
+                ItemStack cap = wand2.getCap(wand).getItem();
+                ItemStack rod = wand2.getRod(wand).getItem();
+                player.entityDropItem(wand2.getCap(wand).getItem(), 0.0f);
+                player.entityDropItem(wand2.getCap(wand).getItem(), 0.0f);
+                player.entityDropItem(wand2.getRod(wand).getItem(), 0.0f);
+
             } else {
                 player.addChatMessage(new ChatComponentText("COCK A DOODLE DO MOTHER FUCKER"));
             }
