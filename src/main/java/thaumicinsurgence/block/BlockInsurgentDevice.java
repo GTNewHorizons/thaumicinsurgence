@@ -11,12 +11,12 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import thaumcraft.common.config.ConfigBlocks;
 import thaumcraft.common.tiles.TileArcaneLampFertility;
 import thaumcraft.common.tiles.TileArcaneLampGrowth;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockInsurgentDevice extends BlockContainer {
 

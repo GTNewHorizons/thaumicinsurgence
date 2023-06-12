@@ -8,12 +8,12 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 
-import thaumicinsurgence.item.types.ResourceType;
-import thaumicinsurgence.main.utils.TabThaumicInsurgence;
-import thaumicinsurgence.main.utils.VersionInfo;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import thaumicinsurgence.item.types.ResourceType;
+import thaumicinsurgence.main.utils.TabThaumicInsurgence;
+import thaumicinsurgence.main.utils.VersionInfo;
 
 public class ItemMiscResources extends Item {
 

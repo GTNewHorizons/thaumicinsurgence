@@ -9,19 +9,22 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.IIcon;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import thaumcraft.common.config.ConfigBlocks;
+import thaumcraft.common.items.wands.ItemWandCasting;
 import thaumcraft.common.tiles.TileInfusionMatrix;
 import thaumcraft.common.tiles.TilePedestal;
 import thaumicinsurgence.block.BlockArcaneMarble;
 import thaumicinsurgence.block.BlockArcaneMarbleBrick;
 import thaumicinsurgence.main.Config;
+import thaumicinsurgence.main.ThaumicInsurgence;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
 import thaumicinsurgence.tileentity.TileEntityInfusionMatrixAlpha;
 import thaumicinsurgence.tileentity.TileEntityInfusionPillarAlpha;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemAlastorsWand extends Item {
 
@@ -45,7 +48,21 @@ public class ItemAlastorsWand extends Item {
     @Override
     public boolean onItemUseFirst(ItemStack stack, EntityPlayer player, World world, int targetX, int targetY,
             int targetZ, int side, float hitX, float hitY, float hitZ) {
+
+        ItemWandCasting wand;
+
         if (!world.isRemote) {
+
+            if (player.isSneaking()) {
+                player.openGui(
+                        ThaumicInsurgence.instance,
+                        0,
+                        world,
+                        MathHelper.floor_double(player.posX),
+                        MathHelper.floor_double(player.posY),
+                        MathHelper.floor_double(player.posZ));
+            }
+
             matrix = world.getTileEntity(targetX, targetY, targetZ);
             Block bottom[] = new Block[4], middle[] = new Block[4];
             TileEntity pedestal;

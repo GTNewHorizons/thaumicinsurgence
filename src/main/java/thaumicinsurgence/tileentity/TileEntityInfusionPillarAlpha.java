@@ -3,10 +3,10 @@ package thaumicinsurgence.tileentity;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.AxisAlignedBB;
 
-import thaumcraft.common.tiles.TileInfusionPillar;
-import thaumicinsurgence.main.utils.VersionInfo;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import thaumcraft.common.tiles.TileInfusionPillar;
+import thaumicinsurgence.main.utils.VersionInfo;
 
 public class TileEntityInfusionPillarAlpha extends TileInfusionPillar {
 

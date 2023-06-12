@@ -9,6 +9,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
@@ -16,31 +17,25 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
 import thaumicinsurgence.main.utils.VersionInfo;
-import thaumicinsurgence.tileentity.TileEntityInfusionFucker;
+import thaumicinsurgence.tileentity.TileEntityDimensionalTeleporterBase;
 
-public class BlockInfusionFucker extends BlockContainer {
-
-    @Override
-    public TileEntity createNewTileEntity(World world, int metadata) {
-        return new TileEntityInfusionFucker();
-    }
+public class BlockDimensionalTeleporterBase extends BlockContainer {
 
     @SideOnly(Side.CLIENT)
     private IIcon[] icons;
 
-    public BlockInfusionFucker() {
+    public BlockDimensionalTeleporterBase() {
         super(Material.rock);
         this.setCreativeTab(TabThaumicInsurgence.tabThaumicInsurgence);
-        this.setBlockName("infusionIntercepter");
+        this.setBlockName("dimensionalTeleporter");
         this.setHardness(1f);
         this.setResistance(1.5f);
         this.setHarvestLevel("axe", 0);
     }
 
     @Override
-    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7,
-            float par8, float par9) {
-        return false;
+    public TileEntity createNewTileEntity(World worldIn, int meta) {
+        return new TileEntityDimensionalTeleporterBase();
     }
 
     @Override
@@ -72,10 +67,6 @@ public class BlockInfusionFucker extends BlockContainer {
     public void breakBlock(World world, int x, int y, int z, Block block, int meta) {
         TileEntity te = world.getTileEntity(x, y, z);
 
-        if (((TileEntityInfusionFucker) te).stabilityHasBeenAdded) {
-            ((TileEntityInfusionFucker) te).removeStability();
-        }
-
         if (te != null && te instanceof IInventory) {
             IInventory inventory = (IInventory) te;
 
@@ -101,5 +92,12 @@ public class BlockInfusionFucker extends BlockContainer {
         }
 
         super.breakBlock(world, x, y, z, block, meta);
+    }
+
+    @Override
+    public boolean onBlockActivated(World worldIn, int x, int y, int z, EntityPlayer player, int side, float subX,
+            float subY, float subZ) {
+        player.addChatMessage(new ChatComponentText("That's a big ass mudspaw right der"));
+        return false;
     }
 }
