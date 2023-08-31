@@ -101,7 +101,6 @@ public class TileEntityInfusionMatrixAlpha extends TileInfusionMatrix implements
         this.recipeEssentia.writeToNBT(nbtCompound);
     }
 
-    // Directly from the infusion matrix
     // TODO: change as needed
     @Override
     public void readFromNBT(NBTTagCompound nbtCompound) {
@@ -133,7 +132,6 @@ public class TileEntityInfusionMatrixAlpha extends TileInfusionMatrix implements
         }
     }
 
-    // Directly from the infusion matrix
     // TODO: change as needed
     @Override
     public void writeToNBT(NBTTagCompound nbtCompound) {
@@ -185,7 +183,6 @@ public class TileEntityInfusionMatrixAlpha extends TileInfusionMatrix implements
         }
     }
 
-    // Directly from the infusion matrix, but slightly modified.
     // TODO: change as needed
     @Override
     public void updateEntity() {
@@ -221,7 +218,6 @@ public class TileEntityInfusionMatrixAlpha extends TileInfusionMatrix implements
         }
     }
 
-    // Directly from the infusion matrix
     // TODO: change as needed
     private void inEvZap(boolean all) {
         List<Entity> targets = this.worldObj.getEntitiesWithinAABB(
@@ -257,7 +253,6 @@ public class TileEntityInfusionMatrixAlpha extends TileInfusionMatrix implements
         }
     }
 
-    // Directly from the infusion matrix
     // TODO: change as needed
     private void inEvHarm(boolean all) {
         List<EntityLivingBase> targets = this.worldObj.getEntitiesWithinAABB(
@@ -286,7 +281,6 @@ public class TileEntityInfusionMatrixAlpha extends TileInfusionMatrix implements
         }
     }
 
-    // Directly from the infusion matrix
     // TODO: change as needed
     private void inEvWarp() {
         List<EntityPlayer> targets = this.worldObj.getEntitiesWithinAABB(
@@ -308,7 +302,6 @@ public class TileEntityInfusionMatrixAlpha extends TileInfusionMatrix implements
         }
     }
 
-    // Directly from the infusion matrix
     // TODO: change as needed
     private void inEvEjectItem(int type) {
         for (int q = 0; q < 50 && this.pedestals.size() > 0; ++q) {
@@ -374,7 +367,6 @@ public class TileEntityInfusionMatrixAlpha extends TileInfusionMatrix implements
         }
     }
 
-    // Taken from the infusion matrix, but I changed the if statements to reduce redundancy
     // TODO: change as needed
     @Override
     public boolean validLocation() {

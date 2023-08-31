@@ -259,7 +259,6 @@ public class TileEntityInfusionIntercepter extends TileEntity implements IAspect
         // NEW AFTER THIS LINE
     }
 
-    // modified from the thaumatorium implementation
     @Override
     public Aspect getSuctionType(ForgeDirection face) {
         return this.currentSuction;
@@ -283,7 +282,6 @@ public class TileEntityInfusionIntercepter extends TileEntity implements IAspect
         return this.myAspects.visSize();
     }
 
-    // taken from the thaumatorium
     @Override
     public int addEssentia(Aspect arg0, int arg1, ForgeDirection arg2) {
         if (arg0 == currentSuction) {
