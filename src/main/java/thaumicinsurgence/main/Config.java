@@ -96,10 +96,6 @@ public class Config {
     }
 
     public static void setupItems() {
-        redCrownItem = new ItemRedCrown(ThaumcraftApi.armorMatSpecial, 4, 0);
-
-        GameRegistry.registerItem(redCrownItem, redCrownItem.getUnlocalizedName());
-
         eightBitRedCrownItem = new ItemEightBitRedCrown(ThaumcraftApi.armorMatSpecial, 4, 0);
         GameRegistry.registerItem(eightBitRedCrownItem, eightBitRedCrownItem.getUnlocalizedName());
 
