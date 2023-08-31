@@ -41,8 +41,6 @@ public class Config {
     public static int blockStoneDeviceThreeRI;
 
     public static ItemMiscResources miscResources;
-
-    public static Item redCrownItem;
     public static Item eightBitRedCrownItem;
     public static Item thaumicInterfacer;
     public static Item alastorsWand;
