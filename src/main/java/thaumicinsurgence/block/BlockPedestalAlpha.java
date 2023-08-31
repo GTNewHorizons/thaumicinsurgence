@@ -1,5 +1,7 @@
 package thaumicinsurgence.block;
 
+import java.util.List;
+
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -19,8 +21,6 @@ import thaumcraft.common.tiles.*;
 import thaumicinsurgence.main.Config;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
 import thaumicinsurgence.main.utils.VersionInfo;
-
-import java.util.List;
 
 public class BlockPedestalAlpha extends BlockStoneDevice {
 

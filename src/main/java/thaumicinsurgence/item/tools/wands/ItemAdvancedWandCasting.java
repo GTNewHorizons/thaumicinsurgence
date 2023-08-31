@@ -45,8 +45,8 @@ public class ItemAdvancedWandCasting extends ItemWandCasting {
         }
 
         /*
-         * TODO: Terminate this code and replace it so hard, this is from Thaumcraft and needs to be replaced.
-         * Replace it or it's your ass my guy.
+         * TODO: Terminate this code and replace it so hard, this is from Thaumcraft and needs to be replaced. Replace
+         * it or it's your ass my guy.
          */
 
         Block bi = world.getBlock(x, y, z);
