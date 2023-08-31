@@ -353,7 +353,7 @@ public class ThaumcraftHelper implements IModHelper {
                 5,
                 5,
                 5,
-                new ItemStack(Config.redCrownItem));
+                new ItemStack(Config.eightBitRedCrownItem));
 
         thaumicInterfacerPage = new ResearchItem(
                 "TI_ThaumicInterfacer",

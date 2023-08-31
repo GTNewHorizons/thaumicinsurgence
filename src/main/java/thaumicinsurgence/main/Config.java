@@ -11,17 +11,16 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import thaumcraft.api.ThaumcraftApi;
 import thaumicinsurgence.block.*;
-import thaumicinsurgence.block.BlockInfusionFucker;
+import thaumicinsurgence.block.BlockInfusionIntercepter;
 import thaumicinsurgence.item.ItemMiscResources;
 import thaumicinsurgence.item.ItemSanitySoapAlpha;
 import thaumicinsurgence.item.ItemSanitySoapBeta;
 import thaumicinsurgence.item.armor.ItemBIGSHOT;
 import thaumicinsurgence.item.armor.ItemEightBitRedCrown;
-import thaumicinsurgence.item.armor.ItemRedCrown;
 import thaumicinsurgence.item.tools.ItemAlastorsWand;
 import thaumicinsurgence.item.tools.ItemThaumicInterfacer;
 import thaumicinsurgence.main.utils.VersionInfo;
-import thaumicinsurgence.tileentity.TileEntityInfusionFucker;
+import thaumicinsurgence.tileentity.TileEntityInfusionIntercepter;
 import thaumicinsurgence.tileentity.TileEntityInfusionMatrixAlpha;
 import thaumicinsurgence.tileentity.TileEntityInfusionPillarAlpha;
 import thaumicinsurgence.tileentity.TileEntityPedestalAlpha;
@@ -41,8 +40,6 @@ public class Config {
     public static int blockStoneDeviceThreeRI;
 
     public static ItemMiscResources miscResources;
-
-    public static Item redCrownItem;
     public static Item eightBitRedCrownItem;
     public static Item thaumicInterfacer;
     public static Item alastorsWand;
@@ -50,7 +47,7 @@ public class Config {
     public static Item soapBetaBitch;
     public static Item hyperLinkBlocked;
 
-    public static BlockInfusionFucker infusionIntercepter;
+    public static BlockInfusionIntercepter infusionIntercepter;
     public static BlockInfusionMatrixAlpha matrixAlpha;
     public static BlockInfusionPillarAlpha pillarAlpha;
     public static BlockArcaneMarble arcaneMarble;
@@ -92,14 +89,10 @@ public class Config {
         arcaneMarbleBrick = new BlockArcaneMarbleBrick();
         GameRegistry.registerBlock(arcaneMarbleBrick, arcaneMarbleBrick.getUnlocalizedName());
 
-        setupInfusionFucker();
+        setupInfusionAlpha();
     }
 
     public static void setupItems() {
-        redCrownItem = new ItemRedCrown(ThaumcraftApi.armorMatSpecial, 4, 0);
-
-        GameRegistry.registerItem(redCrownItem, redCrownItem.getUnlocalizedName());
-
         eightBitRedCrownItem = new ItemEightBitRedCrown(ThaumcraftApi.armorMatSpecial, 4, 0);
         GameRegistry.registerItem(eightBitRedCrownItem, eightBitRedCrownItem.getUnlocalizedName());
 
@@ -133,10 +126,11 @@ public class Config {
         thaumcraftActive = configuration.get(CATEGORY_MODULES, "Thaumcraft", true).getBoolean();
     }
 
-    public static void setupInfusionFucker() {
-        infusionIntercepter = new BlockInfusionFucker();
+    public static void setupInfusionAlpha() {
+        infusionIntercepter = new BlockInfusionIntercepter();
         GameRegistry.registerBlock(infusionIntercepter, "infusionIntercepter");
-        GameRegistry.registerTileEntity(TileEntityInfusionFucker.class, TileEntityInfusionFucker.tileEntityName);
+        GameRegistry
+                .registerTileEntity(TileEntityInfusionIntercepter.class, TileEntityInfusionIntercepter.tileEntityName);
 
         matrixAlpha = new BlockInfusionMatrixAlpha();
         GameRegistry.registerBlock(matrixAlpha, "matrixAlpha");

@@ -46,6 +46,10 @@ tc.research_name.TI_DeliciousKromer=[[Funky]] LITTLE [[Worm]]
 tc.research_text.TI_DeliciousKromer=THIS IS [One Purchase] YOU WILL [Regret] FOR THE REST OF YOUR LIFE!
 
 #Tiles
+tile.arcaneMarble.name=Arcane Marble Block
+tile.arcaneMarbleBrick.name=Arcane Marble Brick
+tile.matrixAlpha.name=Arcane Marble Matrix
+tile.pedestalAlpha.name=Marble Pedestal
 
 #Items
 tile.infusionIntercepter.name=Infusion Intercepter
