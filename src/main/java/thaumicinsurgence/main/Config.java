@@ -17,7 +17,6 @@ import thaumicinsurgence.item.ItemSanitySoapAlpha;
 import thaumicinsurgence.item.ItemSanitySoapBeta;
 import thaumicinsurgence.item.armor.ItemBIGSHOT;
 import thaumicinsurgence.item.armor.ItemEightBitRedCrown;
-import thaumicinsurgence.item.armor.ItemRedCrown;
 import thaumicinsurgence.item.tools.ItemAlastorsWand;
 import thaumicinsurgence.item.tools.ItemThaumicInterfacer;
 import thaumicinsurgence.main.utils.VersionInfo;
