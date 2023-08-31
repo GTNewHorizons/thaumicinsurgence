@@ -11,7 +11,7 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import thaumcraft.api.ThaumcraftApi;
 import thaumicinsurgence.block.*;
-import thaumicinsurgence.block.BlockInfusionFucker;
+import thaumicinsurgence.block.BlockInfusionContainer;
 import thaumicinsurgence.item.ItemMiscResources;
 import thaumicinsurgence.item.ItemSanitySoapAlpha;
 import thaumicinsurgence.item.ItemSanitySoapBeta;
@@ -21,7 +21,7 @@ import thaumicinsurgence.item.armor.ItemRedCrown;
 import thaumicinsurgence.item.tools.ItemAlastorsWand;
 import thaumicinsurgence.item.tools.ItemThaumicInterfacer;
 import thaumicinsurgence.main.utils.VersionInfo;
-import thaumicinsurgence.tileentity.TileEntityInfusionFucker;
+import thaumicinsurgence.tileentity.TileEntityInfusionAlpha;
 import thaumicinsurgence.tileentity.TileEntityInfusionMatrixAlpha;
 import thaumicinsurgence.tileentity.TileEntityInfusionPillarAlpha;
 import thaumicinsurgence.tileentity.TileEntityPedestalAlpha;
@@ -50,7 +50,7 @@ public class Config {
     public static Item soapBetaBitch;
     public static Item hyperLinkBlocked;
 
-    public static BlockInfusionFucker infusionIntercepter;
+    public static BlockInfusionContainer infusionIntercepter;
     public static BlockInfusionMatrixAlpha matrixAlpha;
     public static BlockInfusionPillarAlpha pillarAlpha;
     public static BlockArcaneMarble arcaneMarble;
@@ -92,7 +92,7 @@ public class Config {
         arcaneMarbleBrick = new BlockArcaneMarbleBrick();
         GameRegistry.registerBlock(arcaneMarbleBrick, arcaneMarbleBrick.getUnlocalizedName());
 
-        setupInfusionFucker();
+        setupInfusionAlpha();
     }
 
     public static void setupItems() {
@@ -133,10 +133,10 @@ public class Config {
         thaumcraftActive = configuration.get(CATEGORY_MODULES, "Thaumcraft", true).getBoolean();
     }
 
-    public static void setupInfusionFucker() {
-        infusionIntercepter = new BlockInfusionFucker();
+    public static void setupInfusionAlpha() {
+        infusionIntercepter = new BlockInfusionContainer();
         GameRegistry.registerBlock(infusionIntercepter, "infusionIntercepter");
-        GameRegistry.registerTileEntity(TileEntityInfusionFucker.class, TileEntityInfusionFucker.tileEntityName);
+        GameRegistry.registerTileEntity(TileEntityInfusionAlpha.class, TileEntityInfusionAlpha.tileEntityName);
 
         matrixAlpha = new BlockInfusionMatrixAlpha();
         GameRegistry.registerBlock(matrixAlpha, "matrixAlpha");

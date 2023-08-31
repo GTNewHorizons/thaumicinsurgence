@@ -821,7 +821,7 @@ public class TileEntityInfusionMatrixAlpha extends TileInfusionMatrix implements
                                                 var10007,
                                                 32.0D));
                             }
-                            // itemcount is always 0, (at least when it reaches this, what the fuck is the point?
+                            // Item count is always 0. At least when it reaches this, what is the point?
                             else if (this.itemCount-- <= 1) {
 
                                 pedestalList[numPedestals] = (TilePedestal) te;

@@ -45,7 +45,7 @@ public class ItemAdvancedWandCasting extends ItemWandCasting {
         }
 
         /*
-         * TODO: fucking terminate this code and replace it so hard, this is from Thaumcraft and needs to be replaced.
+         * TODO: Terminate this code and replace it so hard, this is from Thaumcraft and needs to be replaced.
          * Replace it or it's your ass my guy.
          */
 

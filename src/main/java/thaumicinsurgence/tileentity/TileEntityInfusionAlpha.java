@@ -10,7 +10,7 @@ import thaumcraft.api.aspects.IEssentiaTransport;
 import thaumcraft.common.tiles.TileInfusionMatrix;
 import thaumicinsurgence.main.utils.VersionInfo;
 
-public class TileEntityInfusionFucker extends TileEntity implements IAspectContainer, IEssentiaTransport {
+public class TileEntityInfusionAlpha extends TileEntity implements IAspectContainer, IEssentiaTransport {
 
     public static final String tileEntityName = VersionInfo.ModID + ".infusionIntercepter";
 
@@ -37,7 +37,7 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
         this.myAspects = aspects;
     }
 
-    public TileEntityInfusionFucker() {
+    public TileEntityInfusionAlpha() {
         this.currentSuction = null;
     }
 
@@ -53,14 +53,14 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
 
         // We cannot pull essentia if there is no source (essentiaEntity) or destination (matrix)
         if (matrix != null && essentiaEntity != null) {
-            matrixFuckery();
+            grabAllAspects();
         }
     }
 
     /**
      * If the matrix needs any aspects, attempt to grab ALL of them from the essentiaEntity sequentially in this tick.
      */
-    public void matrixFuckery() {
+    public void grabAllAspects() {
         if (matrix.getAspects().size() != 0) {
             // Copy the list so we can remove aspects from the matrix as needed
             // Cannot copy before checking size or the moronic AspectList copy method will add a null entry
@@ -165,7 +165,7 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
         return true;
     }
 
-    // modified for infusion fuckery
+    // modified for infusion
     @Override
     public int addToContainer(Aspect tag, int am) {
         if (am != 0) {
@@ -175,13 +175,13 @@ public class TileEntityInfusionFucker extends TileEntity implements IAspectConta
         return am;
     }
 
-    // modified for infusion fuckery
+    // modified for infusion alpha
     @Override
     public boolean takeFromContainer(Aspect tag, int amount) {
         return false;
     }
 
-    // modified for infusion fuckery
+    // modified for infusion alpha
     @Override
     public boolean takeFromContainer(AspectList ot) {
         // TODO Auto-generated method stub

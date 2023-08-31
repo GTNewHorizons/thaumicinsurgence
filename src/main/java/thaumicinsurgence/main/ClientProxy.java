@@ -1,8 +1,11 @@
 package thaumicinsurgence.main;
 
+import codechicken.nei.api.API;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
@@ -14,6 +17,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import thaumicinsurgence.block.BlockPedestalAlpha;
 import thaumicinsurgence.client.gui.GuiAdvancedWand;
 import thaumicinsurgence.renderers.blockrenderers.BlockAlphaPedestalRenderer;
 import thaumicinsurgence.renderers.blockrenderers.BlockMatrixAlphaRenderer;

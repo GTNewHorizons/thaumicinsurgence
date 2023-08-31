@@ -91,7 +91,7 @@ public class ItemThaumicInterfacer extends Item {
                 player.entityDropItem(wand2.getRod(wand).getItem(), 0.0f);
 
             } else {
-                player.addChatMessage(new ChatComponentText("COCK A DOODLE DO MOTHER FUCKER"));
+                player.addChatMessage(new ChatComponentText("Error"));
             }
         }
 
