@@ -16,19 +16,19 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
 import thaumicinsurgence.main.utils.VersionInfo;
-import thaumicinsurgence.tileentity.TileEntityInfusionAlpha;
+import thaumicinsurgence.tileentity.TileEntityInfusionIntercepter;
 
-public class BlockInfusionContainer extends BlockContainer {
+public class BlockInfusionIntercepter extends BlockContainer {
 
     @Override
     public TileEntity createNewTileEntity(World world, int metadata) {
-        return new TileEntityInfusionAlpha();
+        return new TileEntityInfusionIntercepter();
     }
 
     @SideOnly(Side.CLIENT)
     private IIcon[] icons;
 
-    public BlockInfusionContainer() {
+    public BlockInfusionIntercepter() {
         super(Material.rock);
         this.setCreativeTab(TabThaumicInsurgence.tabThaumicInsurgence);
         this.setBlockName("infusionIntercepter");
@@ -72,8 +72,8 @@ public class BlockInfusionContainer extends BlockContainer {
     public void breakBlock(World world, int x, int y, int z, Block block, int meta) {
         TileEntity te = world.getTileEntity(x, y, z);
 
-        if (((TileEntityInfusionAlpha) te).stabilityHasBeenAdded) {
-            ((TileEntityInfusionAlpha) te).removeStability();
+        if (((TileEntityInfusionIntercepter) te).stabilityHasBeenAdded) {
+            ((TileEntityInfusionIntercepter) te).removeStability();
         }
 
         if (te != null && te instanceof IInventory) {
