@@ -3,18 +3,18 @@ package thaumicinsurgence.main.modules.planar_artifice.utils;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-import tb.core.TBCore;
-import tb.init.TBItems;
+import thaumicinsurgence.main.Config;
+import thaumicinsurgence.main.utils.VersionInfo;
 
 public class TabPlanarArtifice extends CreativeTabs {
 
     public static TabPlanarArtifice tabPlanarArtifice = new TabPlanarArtifice();
 
     public TabPlanarArtifice() {
-        super(getNextID(), TBCore.modid);
+        super(getNextID(), VersionInfo.ModID);
     }
 
     public Item getTabIconItem() {
-        return TBItems.bloodyBoots;
+        return Config.alastorsWand;
     }
 }
