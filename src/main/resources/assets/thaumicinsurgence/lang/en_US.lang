@@ -66,3 +66,11 @@ item.ItemThaumicInterfacer.name=Madman's Lens
 
 
 itemGroup.Thaumic Insurgence=Thaumic Insurgence
+
+#Planar Artifice
+tile.alkimium_smeltery.name=Alkimium Alchemical Furnace
+tile.alkimium_smeltery_thaumium.name=Alkimium Thaumic Alchemical Furnace
+tile.alkimium_smeltery_void.name=Alkimium Void Smeltery
+tile.alkimium_smeltery_mithrillium.name=Alkimium Mithrillium Smeltery
+tile.alkimium_smeltery_adaminite.name=Alkimium Adaminite Smeltery
+tile.alkimium_smeltery_mithminite.name=Alkimium Mithminite Smeltery
