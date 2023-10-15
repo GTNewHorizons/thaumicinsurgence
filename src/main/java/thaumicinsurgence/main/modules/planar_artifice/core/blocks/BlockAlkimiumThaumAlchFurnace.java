@@ -19,8 +19,8 @@ import net.minecraft.world.World;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import thaumcraft.common.Thaumcraft;
 import thaumcraft.common.lib.utils.InventoryUtils;
+import thaumicinsurgence.main.ThaumicInsurgence;
 import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileThaumAlkimiumAlchemicalFurnace;
 import thaumicinsurgence.main.modules.planar_artifice.utils.TabPlanarArtifice;
 
@@ -118,7 +118,7 @@ public class BlockAlkimiumThaumAlchFurnace extends BlockContainer {
         TileEntity tileEntity = w.getTileEntity(x, y, z);
 
         if (!player.isSneaking() && tileEntity instanceof TileThaumAlkimiumAlchemicalFurnace) {
-            player.openGui(Thaumcraft.instance, 9, w, x, y, z);
+            player.openGui(ThaumicInsurgence.instance, 9, w, x, y, z);
             return true;
         }
 

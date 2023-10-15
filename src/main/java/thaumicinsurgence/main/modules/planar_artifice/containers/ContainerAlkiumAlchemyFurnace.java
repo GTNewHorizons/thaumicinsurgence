@@ -1,4 +1,4 @@
-package thaumicinsurgence.main.modules.planar_artifice.common;
+package thaumicinsurgence.main.modules.planar_artifice.containers;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -12,18 +12,19 @@ import cpw.mods.fml.relauncher.SideOnly;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.container.SlotLimitedHasAspects;
 import thaumcraft.common.lib.crafting.ThaumcraftCraftingManager;
-import thaumcraft.common.tiles.TileAlchemyFurnace;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileThaumAlkimiumAlchemicalFurnace;
 
-public class ContainerAlchemyFurnace extends Container {
+public class ContainerAlkiumAlchemyFurnace extends Container {
 
-    private TileAlchemyFurnace furnace;
+    private TileThaumAlkimiumAlchemicalFurnace furnace;
     private int lastCookTime;
     private int lastBurnTime;
     private int lastItemBurnTime;
     private int lastVis;
     private int lastSmelt;
 
-    public ContainerAlchemyFurnace(InventoryPlayer par1InventoryPlayer, TileAlchemyFurnace tileEntity) {
+    public ContainerAlkiumAlchemyFurnace(InventoryPlayer par1InventoryPlayer,
+            TileThaumAlkimiumAlchemicalFurnace tileEntity) {
         this.furnace = tileEntity;
         this.addSlotToContainer(new SlotLimitedHasAspects(tileEntity, 0, 80, 8));
         this.addSlotToContainer(new Slot(tileEntity, 1, 80, 48));
@@ -43,7 +44,7 @@ public class ContainerAlchemyFurnace extends Container {
     public void addCraftingToCrafters(ICrafting par1ICrafting) {
         super.addCraftingToCrafters(par1ICrafting);
         par1ICrafting.sendProgressBarUpdate(this, 0, this.furnace.furnaceCookTime);
-        par1ICrafting.sendProgressBarUpdate(this, 1, this.furnace.furnaceBurnTime);
+        par1ICrafting.sendProgressBarUpdate(this, 1, this.furnace.burnRemaining);
         par1ICrafting.sendProgressBarUpdate(this, 2, this.furnace.currentItemBurnTime);
         par1ICrafting.sendProgressBarUpdate(this, 3, this.furnace.vis);
         par1ICrafting.sendProgressBarUpdate(this, 4, this.furnace.smeltTime);
@@ -58,8 +59,8 @@ public class ContainerAlchemyFurnace extends Container {
                 icrafting.sendProgressBarUpdate(this, 0, this.furnace.furnaceCookTime);
             }
 
-            if (this.lastBurnTime != this.furnace.furnaceBurnTime) {
-                icrafting.sendProgressBarUpdate(this, 1, this.furnace.furnaceBurnTime);
+            if (this.lastBurnTime != this.furnace.burnRemaining) {
+                icrafting.sendProgressBarUpdate(this, 1, this.furnace.burnRemaining);
             }
 
             if (this.lastItemBurnTime != this.furnace.currentItemBurnTime) {
@@ -76,7 +77,7 @@ public class ContainerAlchemyFurnace extends Container {
         }
 
         this.lastCookTime = this.furnace.furnaceCookTime;
-        this.lastBurnTime = this.furnace.furnaceBurnTime;
+        this.lastBurnTime = this.furnace.burnRemaining;
         this.lastItemBurnTime = this.furnace.currentItemBurnTime;
         this.lastVis = this.furnace.vis;
         this.lastSmelt = this.furnace.smeltTime;
@@ -89,7 +90,7 @@ public class ContainerAlchemyFurnace extends Container {
         }
 
         if (par1 == 1) {
-            this.furnace.furnaceBurnTime = par2;
+            this.furnace.burnRemaining = par2;
         }
 
         if (par1 == 2) {
@@ -119,7 +120,7 @@ public class ContainerAlchemyFurnace extends Container {
             if (par2 != 1 && par2 != 0) {
                 AspectList al = ThaumcraftCraftingManager.getObjectTags(itemstack1);
                 al = ThaumcraftCraftingManager.getBonusTags(itemstack1, al);
-                if (TileAlchemyFurnace.isItemFuel(itemstack1)) {
+                if (TileThaumAlkimiumAlchemicalFurnace.isItemFuel(itemstack1)) {
                     if (!this.mergeItemStack(itemstack1, 1, 2, false)
                             && !this.mergeItemStack(itemstack1, 0, 1, false)) {
                         return null;

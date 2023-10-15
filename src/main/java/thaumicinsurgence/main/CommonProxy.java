@@ -7,6 +7,8 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.IGuiHandler;
+import thaumicinsurgence.main.modules.planar_artifice.containers.ContainerAlkiumAlchemyFurnace;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileThaumAlkimiumAlchemicalFurnace;
 import thaumicinsurgence.main.utils.CraftingManager;
 import thaumicinsurgence.main.utils.LogHelper;
 import thaumicinsurgence.main.utils.compat.ModHelperManager;
@@ -41,12 +43,13 @@ public class CommonProxy implements IGuiHandler {
 
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-        switch (ID) {
-            // case 0:
-            // return new ContainerAdvancedWand(player.inventory, world, x, y, z);
-            // bring back when the Advanced Wand is finished
-            default:
-                break;
+        // case 0:
+        // return new ContainerAdvancedWand(player.inventory, world, x, y, z);
+        // bring back when the Advanced Wand is finished
+        if (ID == 9) {
+            return new ContainerAlkiumAlchemyFurnace(
+                    player.inventory,
+                    (TileThaumAlkimiumAlchemicalFurnace) world.getTileEntity(x, y, z));
         }
         return null;
     }
