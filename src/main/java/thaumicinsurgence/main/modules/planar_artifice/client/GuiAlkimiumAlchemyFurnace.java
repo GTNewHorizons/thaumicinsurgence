@@ -9,15 +9,15 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import thaumcraft.client.lib.UtilsFX;
 import thaumcraft.common.container.ContainerAlchemyFurnace;
-import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileThaumAlkimiumAlchemicalFurnace;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileAlkimiumAlchemicalFurnace;
 
 @SideOnly(Side.CLIENT)
 public class GuiAlkimiumAlchemyFurnace extends GuiContainer {
 
-    private TileThaumAlkimiumAlchemicalFurnace furnaceInventory;
+    private TileAlkimiumAlchemicalFurnace furnaceInventory;
 
     public GuiAlkimiumAlchemyFurnace(InventoryPlayer par1InventoryPlayer,
-            TileThaumAlkimiumAlchemicalFurnace par2TileEntityFurnace) {
+            TileAlkimiumAlchemicalFurnace par2TileEntityFurnace) {
         super(new ContainerAlchemyFurnace(par1InventoryPlayer, par2TileEntityFurnace));
         furnaceInventory = par2TileEntityFurnace;
     }

@@ -17,19 +17,18 @@ import thaumcraft.common.tiles.TileAlchemyFurnace;
 import thaumcraft.common.tiles.TileAlembic;
 import thaumcraft.common.tiles.TileBellows;
 
-public class TileThaumAlkimiumAlchemicalFurnace extends TileAlchemyFurnace {
+public class TileAlkimiumAlchemicalFurnace extends TileAlchemyFurnace {
 
-    // TODO: Modify
     private static final int[] slots_bottom = new int[] { 1 };
     private static final int[] slots_top = new int[0];
     private static final int[] slots_sides = new int[] { 0 };
 
-    public int[] getAccessibleSlotsFromSide(int par1) {
-        return par1 == 0 ? slots_bottom : (par1 == 1 ? slots_top : slots_sides);
+    public int[] getAccessibleSlotsFromSide(int slot) {
+        return slot == 0 ? slots_bottom : (slot == 1 ? slots_top : slots_sides);
     }
 
-    // END TODO
-    public static final String tileEntityName = "planarartifice.alkimium_smeltery_thaumium";
+
+    public static final String tileEntityName = "planarartifice.alkimium_smeltery";
     public int burnRemaining;
     public int ticks;
     public int bellowCount;
@@ -44,7 +43,7 @@ public class TileThaumAlkimiumAlchemicalFurnace extends TileAlchemyFurnace {
     public int speedValue;
     public int maxVis;
 
-    public TileThaumAlkimiumAlchemicalFurnace() {
+    public TileAlkimiumAlchemicalFurnace() {
         setValues();
     }
 

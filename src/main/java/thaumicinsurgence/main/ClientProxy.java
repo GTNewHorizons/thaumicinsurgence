@@ -15,7 +15,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import thaumicinsurgence.main.modules.planar_artifice.client.GuiAlkimiumAlchemyFurnace;
-import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileThaumAlkimiumAlchemicalFurnace;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileAlkimiumAlchemicalFurnace;
 import thaumicinsurgence.renderers.blockrenderers.BlockAlphaPedestalRenderer;
 import thaumicinsurgence.renderers.blockrenderers.BlockMatrixAlphaRenderer;
 import thaumicinsurgence.renderers.blockrenderers.BlockPillarAlphaRenderer;
@@ -77,7 +77,7 @@ public class ClientProxy extends CommonProxy {
             if (ID == 9) {
                 return new GuiAlkimiumAlchemyFurnace(
                         player.inventory,
-                        (TileThaumAlkimiumAlchemicalFurnace) world.getTileEntity(x, y, z));
+                        (TileAlkimiumAlchemicalFurnace) world.getTileEntity(x, y, z));
             }
             /*
              * switch (ID) { case 0: return new GuiAdvancedWand(player.inventory, world, x, y, z); default: break; }

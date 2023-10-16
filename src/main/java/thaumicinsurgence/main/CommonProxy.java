@@ -8,7 +8,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.IGuiHandler;
 import thaumicinsurgence.main.modules.planar_artifice.containers.ContainerAlkiumAlchemyFurnace;
-import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileThaumAlkimiumAlchemicalFurnace;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileAlkimiumAlchemicalFurnace;
 import thaumicinsurgence.main.utils.CraftingManager;
 import thaumicinsurgence.main.utils.LogHelper;
 import thaumicinsurgence.main.utils.compat.ModHelperManager;
@@ -49,7 +49,7 @@ public class CommonProxy implements IGuiHandler {
         if (ID == 9) {
             return new ContainerAlkiumAlchemyFurnace(
                     player.inventory,
-                    (TileThaumAlkimiumAlchemicalFurnace) world.getTileEntity(x, y, z));
+                    (TileAlkimiumAlchemicalFurnace) world.getTileEntity(x, y, z));
         }
         return null;
     }

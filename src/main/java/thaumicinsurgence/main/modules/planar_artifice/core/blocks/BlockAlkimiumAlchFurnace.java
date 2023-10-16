@@ -21,34 +21,34 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import thaumcraft.common.lib.utils.InventoryUtils;
 import thaumicinsurgence.main.ThaumicInsurgence;
-import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileThaumAlkimiumAlchemicalFurnace;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileAlkimiumAlchemicalFurnace;
 import thaumicinsurgence.main.modules.planar_artifice.utils.TabPlanarArtifice;
 
-public class BlockAlkimiumThaumAlchFurnace extends BlockContainer {
+public class BlockAlkimiumAlchFurnace extends BlockContainer {
 
     public IIcon[] icons = new IIcon[6];
 
-    public BlockAlkimiumThaumAlchFurnace() {
+    public BlockAlkimiumAlchFurnace() {
         super(Material.rock);
         this.setCreativeTab(TabPlanarArtifice.tabPlanarArtifice);
         this.setHardness(2);
         this.setResistance(3);
-        this.setBlockName("alkimium_smeltery_thaumium");
+        this.setBlockName("alkimium_smeltery");
     }
 
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister ir) {
-        icons[0] = ir.registerIcon("planarartifice:furnaces/alkimium_smeltery_thaumium_side");
+        icons[0] = ir.registerIcon("planarartifice:furnaces/alkimium_smeltery_basic_side");
         icons[1] = ir.registerIcon("planarartifice:furnaces/alkimium_smeltery_top");
-        icons[2] = ir.registerIcon("planarartifice:furnaces/alkimium_smeltery_top_on");
-        icons[3] = ir.registerIcon("planarartifice:furnaces/alkimium_smeltery_thaumium_front");
-        icons[4] = ir.registerIcon("planarartifice:furnaces/alkimium_smeltery_thaumium_front_on");
-        icons[5] = ir.registerIcon("thaumicbases:tFurnace/bottom");
+        icons[2] = ir.registerIcon("planarartifice:furnaces/alkimium_smeltery_top");
+        icons[3] = ir.registerIcon("planarartifice:furnaces/alkimium_smeltery_basic_front");
+        icons[4] = ir.registerIcon("planarartifice:furnaces/alkimium_smeltery_basic_front_on");
+        icons[5] = ir.registerIcon("thaumcraft:al_furnace_side");
     }
 
     @Override
     public TileEntity createNewTileEntity(World w, int meta) {
-        return new TileThaumAlkimiumAlchemicalFurnace();
+        return new TileAlkimiumAlchemicalFurnace();
     }
 
     public IIcon getIcon(int side, int md) {
@@ -56,7 +56,7 @@ public class BlockAlkimiumThaumAlchFurnace extends BlockContainer {
     }
 
     public IIcon getIcon(IBlockAccess w, int x, int y, int z, int side) {
-        TileThaumAlkimiumAlchemicalFurnace tile = (TileThaumAlkimiumAlchemicalFurnace) w.getTileEntity(x, y, z);
+        TileAlkimiumAlchemicalFurnace tile = (TileAlkimiumAlchemicalFurnace) w.getTileEntity(x, y, z);
         if (side == w.getBlockMetadata(x, y, z)) {
             if (tile.burnRemaining()) {
                 return icons[4];
@@ -90,7 +90,7 @@ public class BlockAlkimiumThaumAlchFurnace extends BlockContainer {
     }
 
     public int getLightValue(IBlockAccess w, int x, int y, int z) {
-        TileThaumAlkimiumAlchemicalFurnace tile = (TileThaumAlkimiumAlchemicalFurnace) w.getTileEntity(x, y, z);
+        TileAlkimiumAlchemicalFurnace tile = (TileAlkimiumAlchemicalFurnace) w.getTileEntity(x, y, z);
         return tile.burnRemaining() ? 12 : 0;
     }
 
@@ -109,7 +109,7 @@ public class BlockAlkimiumThaumAlchFurnace extends BlockContainer {
     }
 
     public void onNeighborBlockChange(World w, int x, int y, int z, Block changed) {
-        ((TileThaumAlkimiumAlchemicalFurnace) w.getTileEntity(x, y, z)).getBellows();
+        ((TileAlkimiumAlchemicalFurnace) w.getTileEntity(x, y, z)).getBellows();
     }
 
     public boolean onBlockActivated(World w, int x, int y, int z, EntityPlayer player, int side, float par7, float par8,
@@ -117,7 +117,7 @@ public class BlockAlkimiumThaumAlchFurnace extends BlockContainer {
         if (w.isRemote) return true;
         TileEntity tileEntity = w.getTileEntity(x, y, z);
 
-        if (!player.isSneaking() && tileEntity instanceof TileThaumAlkimiumAlchemicalFurnace) {
+        if (!player.isSneaking() && tileEntity instanceof TileAlkimiumAlchemicalFurnace) {
             player.openGui(ThaumicInsurgence.instance, 9, w, x, y, z);
             return true;
         }
@@ -181,8 +181,8 @@ public class BlockAlkimiumThaumAlchFurnace extends BlockContainer {
     @SideOnly(Side.CLIENT)
     public void randomDisplayTick(final World w, final int x, final int y, final int z, final Random r) {
         final TileEntity te = w.getTileEntity(x, y, z);
-        if (te instanceof TileThaumAlkimiumAlchemicalFurnace
-                && ((TileThaumAlkimiumAlchemicalFurnace) te).burnRemaining()) {
+        if (te instanceof TileAlkimiumAlchemicalFurnace
+                && ((TileAlkimiumAlchemicalFurnace) te).burnRemaining()) {
             final float f = x + 0.5f;
             final float f2 = y + 0.2f + r.nextFloat() * 5.0f / 16.0f;
             final float f3 = z + 0.5f;

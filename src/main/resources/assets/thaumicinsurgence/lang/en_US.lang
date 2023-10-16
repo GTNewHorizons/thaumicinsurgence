@@ -68,9 +68,18 @@ item.ItemThaumicInterfacer.name=Madman's Lens
 itemGroup.Thaumic Insurgence=Thaumic Insurgence
 
 #Planar Artifice
+itemGroup.thaumicinsurgence=Planar Artifice
+
 tile.alkimium_smeltery.name=Alkimium Alchemical Furnace
-tile.alkimium_smeltery_thaumium.name=Alkimium Thaumic Alchemical Furnace
-tile.alkimium_smeltery_void.name=Alkimium Void Smeltery
-tile.alkimium_smeltery_mithrillium.name=Alkimium Mithrillium Smeltery
-tile.alkimium_smeltery_adaminite.name=Alkimium Adaminite Smeltery
-tile.alkimium_smeltery_mithminite.name=Alkimium Mithminite Smeltery
+tile.alkimium_smeltery_thaumium.name=Alkimium Thaumium Furnace
+tile.alkimium_smeltery_void.name=Alkimium Void Furnace
+tile.alkimium_smeltery_mithrillium.name=Alkimium Mithrillium Furnace
+tile.alkimium_smeltery_adaminite.name=Alkimium Adaminite Furnace
+tile.alkimium_smeltery_mithminite.name=Alkimium Mithminite Furnace
+
+item.alkimium.0.name=Alkimium Ingot
+item.alkimium.1.name=Alkimium Nugget
+item.alkimium.2.name=Alkimium Plate
+item.logo.name=--Mod Logo-- Report to Alastor
+
+item.alkimium_goggles.name=Alkimium Goggles

@@ -51,10 +51,6 @@ public class ItemBIGSHOT2 extends ItemGoggles
         return 10;
     }
 
-    public boolean showNodes(ItemStack itemstack, EntityLivingBase player) {
-        return true;
-    }
-
     public void onUpdate(final ItemStack stack, final World world, final Entity entity, final int i, final boolean b) {
         super.onUpdate(stack, world, entity, i, b);
         if (!world.isRemote && stack.isItemDamaged()

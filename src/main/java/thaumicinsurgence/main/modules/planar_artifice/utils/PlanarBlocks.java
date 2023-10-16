@@ -11,21 +11,23 @@ public class PlanarBlocks {
 
     public static final Class<PlanarArtifice> core = PlanarArtifice.class;
 
-    public static Block thaumAlkAlchFurnace = new BlockAlkimiumThaumAlchFurnace();
+    public static Block alkimiumAlchFurnace = new BlockAlkimiumAlchFurnace();
+    public static Block thaumAlkAlchFurnace = new BlockAlkimiumThaumiumAlchFurnace();
     public static Block voidAlkAlchFurnace = new BlockAlkimiumVoidAlchFurnace();
     public static Block mithrilAlkAlchFurnace = new BlockAlkimiumMithrilAlchFurnace();
     public static Block adamantAlkAlchFurnace = new BlockAlkimiumAdamantAlchFurnace();
     public static Block mithminiteAlkAlchFurnace = new BlockAlkimiumMithminiteAlchFurnace();
 
     public static void setup() {
-        // GameRegistry.registerBlock(alkimiumAlchFurnace, "alkimiumAlchFurnace");
-        // GameRegistry.registerTileEntity(TileAlkimiumAlchemicalFurnace.class,
-        // TileAlkimiumAlchemicalFurnace.tileEntityName);
+        GameRegistry.registerBlock(alkimiumAlchFurnace, "alkimiumAlchFurnace");
+        GameRegistry.registerTileEntity(
+                 TileAlkimiumAlchemicalFurnace.class,
+                 TileAlkimiumAlchemicalFurnace.tileEntityName);
 
         GameRegistry.registerBlock(thaumAlkAlchFurnace, "thaumAlkAlchFurnace");
         GameRegistry.registerTileEntity(
-                TileThaumAlkimiumAlchemicalFurnace.class,
-                TileThaumAlkimiumAlchemicalFurnace.tileEntityName);
+                TileThaumiumAlkimiumAlchemicalFurnace.class,
+                TileThaumiumAlkimiumAlchemicalFurnace.tileEntityName);
 
         GameRegistry.registerBlock(voidAlkAlchFurnace, "voidAlkAlchFurnace");
         GameRegistry.registerTileEntity(
@@ -47,4 +49,5 @@ public class PlanarBlocks {
                 TileMithminiteAlkimiumAlchemicalFurnace.class,
                 TileMithminiteAlkimiumAlchemicalFurnace.tileEntityName);
     }
+
 }

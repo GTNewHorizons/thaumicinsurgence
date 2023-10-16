@@ -6,7 +6,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import thaumicinsurgence.main.modules.planar_artifice.utils.TabPlanarArtifice;
 
-public class BlockAlkimiumVoidAlchFurnace extends BlockAlkimiumThaumAlchFurnace {
+public class BlockAlkimiumVoidAlchFurnace extends BlockAlkimiumAlchFurnace {
 
     public BlockAlkimiumVoidAlchFurnace() {
         this.setCreativeTab(TabPlanarArtifice.tabPlanarArtifice);

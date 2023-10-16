@@ -12,11 +12,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.common.container.SlotLimitedHasAspects;
 import thaumcraft.common.lib.crafting.ThaumcraftCraftingManager;
-import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileThaumAlkimiumAlchemicalFurnace;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileAlkimiumAlchemicalFurnace;
 
 public class ContainerAlkiumAlchemyFurnace extends Container {
 
-    private TileThaumAlkimiumAlchemicalFurnace furnace;
+    private TileAlkimiumAlchemicalFurnace furnace;
     private int lastCookTime;
     private int lastBurnTime;
     private int lastItemBurnTime;
@@ -24,7 +24,7 @@ public class ContainerAlkiumAlchemyFurnace extends Container {
     private int lastSmelt;
 
     public ContainerAlkiumAlchemyFurnace(InventoryPlayer par1InventoryPlayer,
-            TileThaumAlkimiumAlchemicalFurnace tileEntity) {
+            TileAlkimiumAlchemicalFurnace tileEntity) {
         this.furnace = tileEntity;
         this.addSlotToContainer(new SlotLimitedHasAspects(tileEntity, 0, 80, 8));
         this.addSlotToContainer(new Slot(tileEntity, 1, 80, 48));
@@ -120,7 +120,7 @@ public class ContainerAlkiumAlchemyFurnace extends Container {
             if (par2 != 1 && par2 != 0) {
                 AspectList al = ThaumcraftCraftingManager.getObjectTags(itemstack1);
                 al = ThaumcraftCraftingManager.getBonusTags(itemstack1, al);
-                if (TileThaumAlkimiumAlchemicalFurnace.isItemFuel(itemstack1)) {
+                if (TileAlkimiumAlchemicalFurnace.isItemFuel(itemstack1)) {
                     if (!this.mergeItemStack(itemstack1, 1, 2, false)
                             && !this.mergeItemStack(itemstack1, 0, 1, false)) {
                         return null;
