@@ -2,6 +2,8 @@ package thaumicinsurgence.main.modules.planar_artifice.utils;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
+import net.minecraft.util.IIcon;
+import net.minecraft.world.IBlockAccess;
 import thaumcraft.api.ThaumcraftApi;
 import thaumicinsurgence.main.modules.planar_artifice.PlanarArtifice;
 import thaumicinsurgence.main.modules.planar_artifice.core.items.ItemAlkimium;

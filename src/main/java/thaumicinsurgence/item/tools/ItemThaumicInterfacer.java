@@ -75,7 +75,7 @@ public class ItemThaumicInterfacer extends Item {
             } else if (matrix instanceof TilePedestal) {
                 player.addChatMessage(new ChatComponentText("Pedestal"));
             } else {
-                player.addChatMessage(new ChatComponentText("Error"));
+                player.addChatMessage(new ChatComponentText("Error: Mudspaw"));
             }
         }
 

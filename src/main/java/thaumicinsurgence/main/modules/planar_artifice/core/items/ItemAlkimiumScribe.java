@@ -25,7 +25,7 @@ import java.util.List;
 public class ItemAlkimiumScribe extends ItemAmuletVis implements IScribeTools {
     public IIcon scribe;
     public static int charge = 250;
-    DecimalFormat myFormatter = new DecimalFormat("#######.##");
+    DecimalFormat decimalFormatter = new DecimalFormat("#######.##");
 
     public ItemAlkimiumScribe(){
         setHasSubtypes(false);
@@ -40,6 +40,7 @@ public class ItemAlkimiumScribe extends ItemAmuletVis implements IScribeTools {
         return getUnlocalizedName();
     }
 
+    // Could've used Math.min, but it would've just been a bunch of gross nested methods.
     public int returnLowestVis(ItemStack stack){
         int lowest = 25000;
         if (lowest > getVis(stack, Aspect.FIRE)) lowest = getVis(stack, Aspect.FIRE);
@@ -61,6 +62,9 @@ public class ItemAlkimiumScribe extends ItemAmuletVis implements IScribeTools {
         int currentDamage = stack.getItemDamage();
         if(damage > currentDamage) {
             if (returnLowestVis(stack) >= 1){
+                // While you might be worried that this wouldn't work,
+                // I assure you, this ensures you can't use the scribe
+                // if even one aspect is less than 1.
                 this.addVis(stack, Aspect.FIRE, -1, true);
                 this.addVis(stack, Aspect.AIR, -1, true);
                 this.addVis(stack, Aspect.WATER, -1, true);
@@ -75,9 +79,9 @@ public class ItemAlkimiumScribe extends ItemAmuletVis implements IScribeTools {
 
     @Override
     @SideOnly(Side.CLIENT)
+    // Looks redundant, I still have to include it, or the parent supersedes it.
     public void getSubItems(Item item, CreativeTabs creativeTab, List list) {
         list.add(new ItemStack(item, 1, charge));
-        list.add(new ItemStack(item));
     }
 
     @Override
@@ -97,56 +101,58 @@ public class ItemAlkimiumScribe extends ItemAmuletVis implements IScribeTools {
     }
 
     @Override
+    // Returning null ensures the game doesn't think you can wear a pen as an amulet.
     public BaubleType getBaubleType(ItemStack itemstack) {
         return null;
     }
 
     @Override
+    // Has to be overriden otherwise the game thinks this is an amulet.
     public void onWornTick(ItemStack itemstack, EntityLivingBase player) {}
 
     @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
-        list.add(EnumChatFormatting.GOLD + StatCollector.translateToLocal("item.capacity.text") + " " + this.getMaxVis(stack) / 100);
+        list.add(EnumChatFormatting.GOLD + StatCollector.translateToLocal("item.capacity.text") + " " + getMaxVis(stack) / 100);
         if(stack.hasTagCompound()) {
-            int tag = 0;
             for(Aspect aspect : Aspect.getPrimalAspects()) {
                 if(stack.stackTagCompound.hasKey(aspect.getTag())) {
-                    String amount = this.myFormatter.format((double)((float)stack.stackTagCompound.getInteger(aspect.getTag()) / 100.0F));
+                    String amount = decimalFormatter.format((double)((float)stack.stackTagCompound.getInteger(aspect.getTag()) / 100.0F));
                     list.add(" §" + aspect.getChatcolor() + aspect.getName() + "§r x " + amount);
+                    // Not quite sure why § is used here, it was used in the original
+                    // vis amulets, so I kept it in for consistency's sake.
                 }
-                tag++;
             }
         }
     }
 
     @Override
     public int getMaxVis(ItemStack stack) {
-        return 25000;
-    } // 250 vis, I might increase it
+        return charge*100;
+    } // currently 250 vis, I might increase it, vis works to 2 sig figs after the decimal
 
     @Override
     public boolean canEquip(ItemStack itemstack, EntityLivingBase player) {
         return false;
-    }
-
-    public void setDurability(ItemStack stack){
-
-    }
+    } // So you can't use it like an amulet.
 
     @Override
-    public int addVis(ItemStack stack, Aspect aspect, int amount, boolean doit) {
-        if(!aspect.isPrimal()) {
+    // I don't understand why Azanor has a boolean value that would prevent this method
+    // from working, FFS just don't let the method be used the first place then dude.
+    public int addVis(ItemStack stack, Aspect aspect, int amount, boolean useless) {
+        if (!aspect.isPrimal()) {
             return 0;
-        } else {
-            int storeAmount = this.getVis(stack, aspect) + amount * 100;
-            int leftover = Math.max(storeAmount - this.getMaxVis(stack), 0);
-            if(doit) {
-                this.storeVis(stack, aspect, Math.min(storeAmount, this.getMaxVis(stack)));
-            }
-
-            return leftover / 100;
         }
+        // Azanor did something weird here that I corrected in my rewrite.
+        // That being, he for some reason didn't just have an if statement
+        // similar to the one found above, but further included an else
+        // statement to the effect of the code below, I feel that anxiety
+        // riddled paranoid thought that causes redundancy such as that.
+        int toStore = getVis(stack, aspect) + amount * 100;
+        int remaining = Math.max(toStore - getMaxVis(stack), 0);
+        if (useless) {
+            this.storeVis(stack, aspect, Math.min(toStore, getMaxVis(stack)));
+        }
+        return remaining / 100;
     }
-
 
 }
