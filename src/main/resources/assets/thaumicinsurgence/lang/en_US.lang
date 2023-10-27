@@ -77,6 +77,14 @@ tile.alkimium_smeltery_mithrillium.name=Alkimium Mithrillium Furnace
 tile.alkimium_smeltery_adaminite.name=Alkimium Adaminite Furnace
 tile.alkimium_smeltery_mithminite.name=Alkimium Mithminite Furnace
 
+tile.PA_PlanarDevice.0.name=Alkimium Construct
+tile.PA_PlanarDevice.1.name=Alkimium Block
+
+
+tile.PA_PlanarDevice.2.unused=Mithrillium Block
+tile.PA_PlanarDevice.3.unused=Adaminite Block
+tile.PA_PlanarDevice.4.unused=Mithminite Block
+
 item.alkimium.0.name=Alkimium Ingot
 item.alkimium.1.name=Alkimium Nugget
 item.alkimium.2.name=Alkimium Plate

@@ -155,4 +155,8 @@ public class ItemAlkimiumScribe extends ItemAmuletVis implements IScribeTools {
         return remaining / 100;
     }
 
+    @Override
+    public boolean showDurabilityBar(ItemStack stack) {
+        return false;
+    }
 }
