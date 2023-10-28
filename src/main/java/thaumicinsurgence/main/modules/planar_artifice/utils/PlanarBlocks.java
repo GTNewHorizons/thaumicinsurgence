@@ -19,6 +19,7 @@ public class PlanarBlocks {
     public static Block mithminiteAlkAlchFurnace = new BlockAlkimiumMithminiteAlchFurnace();
 
     public static Block blockPlanarDevice = new BlockPlanarDevice();
+    public static Block blockFurnaceDevice = new BlockAlkimiumAlchFurnace2();
 
     public static void setup() {
         GameRegistry.registerBlock(alkimiumAlchFurnace, "alkimiumAlchFurnace");
@@ -55,6 +56,12 @@ public class PlanarBlocks {
                 blockPlanarDevice,
                 ItemBlockPlanarDevice.class,
                 blockPlanarDevice.getUnlocalizedName()
+        );
+
+        GameRegistry.registerBlock(
+                blockFurnaceDevice,
+                ItemBlockFurnaceDevice.class,
+                blockFurnaceDevice.getUnlocalizedName()
         );
     }
 

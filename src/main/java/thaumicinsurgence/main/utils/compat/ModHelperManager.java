@@ -3,6 +3,7 @@ package thaumicinsurgence.main.utils.compat;
 import java.util.ArrayList;
 import java.util.List;
 
+import thaumicinsurgence.main.modules.arcana.Arcana;
 import thaumicinsurgence.main.modules.planar_artifice.PlanarArtifice;
 
 public class ModHelperManager {
@@ -33,5 +34,6 @@ public class ModHelperManager {
         helpers = new ArrayList<>();
         helpers.add(new ThaumcraftHelper());
         helpers.add(new PlanarArtifice());
+        helpers.add(new Arcana());
     }
 }
