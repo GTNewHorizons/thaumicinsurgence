@@ -12,7 +12,7 @@ public class TabPlanarArtifice extends CreativeTabs {
     public static TabPlanarArtifice tabPlanarArtifice = new TabPlanarArtifice();
 
     public TabPlanarArtifice() {
-        super(getNextID(), VersionInfo.ModID);
+        super(getNextID(), "Planar Artifice");
     }
 
     public Item getTabIconItem() {

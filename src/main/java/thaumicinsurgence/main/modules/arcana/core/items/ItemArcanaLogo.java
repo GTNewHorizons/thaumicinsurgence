@@ -18,7 +18,7 @@ public class ItemArcanaLogo extends Item {
 
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister ir) {
-        this.logo = ir.registerIcon("planarartifice:alkimium/logo_icon");
+        this.logo = ir.registerIcon("arcana:tainted_codex");
     }
     @SideOnly(Side.CLIENT)
     public IIcon getIconFromDamage(int damage) {

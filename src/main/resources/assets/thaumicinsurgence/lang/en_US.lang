@@ -68,7 +68,7 @@ item.ItemThaumicInterfacer.name=Madman's Lens
 itemGroup.Thaumic Insurgence=Thaumic Insurgence
 
 #Planar Artifice
-itemGroup.thaumicinsurgence=Planar Artifice
+itemGroup.Planar Artifice=Planar Artifice
 
 tile.alkimium_smeltery.name=Alkimium Alchemical Furnace
 tile.alkimium_smeltery_thaumium.name=Alkimium Thaumium Furnace
@@ -94,4 +94,52 @@ item.alkimium_goggles.name=Alkimium Goggles
 item.alkimium_scribe.name=Alkimium Scribing Tools
 
 #Arcana
+itemGroup.Arcana=Arcana
+
 item.arcanium_goggles.name=Arcanium Goggles
+
+tile.AR_WoodDevice.0.name=Dair Planks
+tile.AR_WoodDevice.1.name=Oblivion Planks
+tile.AR_WoodDevice.2.name=Arcanus Planks
+tile.AR_WoodDevice.3.name=Shimmerwood Planks
+tile.AR_WoodDevice.4.name=Polished Shimmerwood Planks
+tile.AR_WoodDevice.5.name=Trypophobius Planks
+tile.AR_WoodDevice.6.name=Eucalyptus Planks
+tile.AR_WoodDevice.7.name=Hawthorn Planks
+tile.AR_WoodDevice.8.name=Willow Planks
+
+tile.AR_TaintedWoodDevice.0.name=Tainted Oak Planks
+tile.AR_TaintedWoodDevice.1.name=Tainted Spruce Planks
+tile.AR_TaintedWoodDevice.2.name=Tainted Birch Planks
+tile.AR_TaintedWoodDevice.3.name=Tainted Jungle Planks
+tile.AR_TaintedWoodDevice.4.name=Tainted Acacia Planks
+tile.AR_TaintedWoodDevice.5.name=Tainted Dark Oak Planks
+tile.AR_TaintedWoodDevice.6.name=Tainted Dair Planks
+tile.AR_TaintedWoodDevice.7.name=Tainted Arcanus Planks
+tile.AR_TaintedWoodDevice.8.name=Tainted Eucalyptus Planks
+tile.AR_TaintedWoodDevice.9.name=Tainted Hawthorn Planks
+tile.AR_TaintedWoodDevice.10.name=Tainted Willow Planks
+
+tile.AR_LogDevice2.0.name=Dair Log
+tile.AR_LogDevice2.1.name=Oblivion Log
+tile.AR_LogDevice2.2.name=Arcanus Log
+tile.AR_LogDevice2.3.name=Shimmerwood Log
+
+tile.AR_LogDevice1.0.name=Trypophobius Log
+tile.AR_LogDevice1.1.name=Eucalyptus Log
+tile.AR_LogDevice1.2.name=Hawthorn Log
+tile.AR_LogDevice1.3.name=Willow Log
+
+tile.AR_TaintedLogDevice1.0.name=Tainted Oak Log
+tile.AR_TaintedLogDevice1.1.name=Tainted Spruce Log
+tile.AR_TaintedLogDevice1.2.name=Tainted Birch Log
+tile.AR_TaintedLogDevice1.3.name=Tainted Jungle Log
+
+tile.AR_TaintedLogDevice2.0.name=Tainted Acacia Log
+tile.AR_TaintedLogDevice2.1.name=Tainted Dark Oak Log
+tile.AR_TaintedLogDevice2.2.name=Tainted Dair Log
+
+tile.AR_TaintedLogDevice3.0.name=Tainted Arcanus Log
+tile.AR_TaintedLogDevice3.1.name=Tainted Eucalyptus Log
+tile.AR_TaintedLogDevice3.2.name=Tainted Hawthorn Log
+tile.AR_TaintedLogDevice3.3.name=Tainted Willow Log

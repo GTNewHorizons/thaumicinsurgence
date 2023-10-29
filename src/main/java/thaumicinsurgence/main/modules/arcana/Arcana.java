@@ -13,7 +13,8 @@ import thaumicinsurgence.main.utils.compat.IModHelper;
 
 public class Arcana implements IModHelper {
 
-    public static EnumRarity arcanaRed = EnumHelper.addRarity(VersionInfo.ModID, EnumChatFormatting.RED, VersionInfo.ModName);
+    public static String arcanaLabel = "arcana:";
+    public static EnumRarity arcanaRed = EnumHelper.addRarity("ArcanaRed", EnumChatFormatting.RED, VersionInfo.ModName);
     public void preInit() {
         if (ModuleConfig.arcanaActive) {
             ArcanaBlocks.setup();

@@ -10,10 +10,10 @@ public class TabArcana extends CreativeTabs {
     public static TabArcana tabArcana = new TabArcana();
 
     public TabArcana() {
-        super(getNextID(), VersionInfo.ModID);
+        super(getNextID(), "Arcana");
     }
 
     public Item getTabIconItem() {
-        return ArcanaItems.goggles;
+        return ArcanaItems.arcanaLogo;
     }
 }
