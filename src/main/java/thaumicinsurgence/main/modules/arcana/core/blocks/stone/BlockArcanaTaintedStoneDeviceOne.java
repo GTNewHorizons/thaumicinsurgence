@@ -10,26 +10,27 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import thaumicinsurgence.main.modules.arcana.Arcana;
 import thaumicinsurgence.main.modules.arcana.utils.TabArcana;
-import thaumicinsurgence.main.modules.planar_artifice.utils.TabPlanarArtifice;
 
-public class BlockArcanaStoneDevice extends BlockContainer {
+public class BlockArcanaTaintedStoneDeviceOne extends BlockContainer {
 
     public static String blocks[] = {
-            "arcane_stone_bricks", "arcane_stone", "amber_ore", "cinnabar_ore",
-            "ruby_ore", "silver_ore","arcanium_ore", "broken_ore"};
-    IIcon icons[] = new IIcon[255];
+            "rock", "gold", "iron", "coal", "lapis", "diamond",
+            "redstone", "emerald", "amber", "cinnabar", "ruby",
+            "silver", "arcanium", "destroyed"};
+
+    IIcon icons[] = new IIcon[blocks.length];
     //, "bottom_mithrillium", "bottom_adaminite", "bottom_mithminite"
-   String blockType = "stone/untainted/";
+   String blockType = "stone/tainted/";
 
 
-    public BlockArcanaStoneDevice() {
-        super(Material.iron);
+    public BlockArcanaTaintedStoneDeviceOne() {
+        super(Material.rock);
         setHardness(6.0F);
         setResistance(34.0F);
-        setStepSound(Block.soundTypeMetal);
+        setStepSound(Block.soundTypeStone);
         setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.0F, 1.0F);
         setCreativeTab(TabArcana.tabArcana);
-        setBlockName("AR_StoneDevice");
+        setBlockName("AR_TaintedStoneDevice");
     }
 
     @Override
@@ -39,8 +40,9 @@ public class BlockArcanaStoneDevice extends BlockContainer {
 
     @Override
     public void registerBlockIcons(IIconRegister reg) {
-        for (int i = 0; i < blocks.length; i++) {
-            icons[i] = reg.registerIcon(Arcana.arcanaLabel + blockType + blocks[i]);
+        icons[0] = reg.registerIcon(Arcana.arcanaLabel + blockType + "tainted_rock");
+        for (int i = 1; i < blocks.length; i++) {
+            icons[i] = reg.registerIcon(Arcana.arcanaLabel + blockType + "tainted_" + blocks[i] +"_ore");
         }
     }
 
@@ -64,14 +66,21 @@ public class BlockArcanaStoneDevice extends BlockContainer {
 
     public IIcon getMetaIcon(int meta, int side){
         int tempMeta = meta;
-        if (meta == 7) tempMeta += side;
-        return (tempMeta == 0?icons[2]
-                :(tempMeta == 1?icons[3]
-                :(tempMeta == 2?icons[4]
-                :(tempMeta == 3?icons[5]
-                :(tempMeta == 4?icons[6]
-                :(tempMeta == 5?icons[7]
-                :(tempMeta == 6 || tempMeta == 7 || tempMeta == 8)?icons[1]
-                :icons[0])))))); // 1 = arcane stone block texture, 0 = arcane stone brick texture, brick has block on top & bot
+        if (meta == 14) tempMeta += side;
+        return (tempMeta == 0?icons[0]
+                :(tempMeta == 1?icons[1]
+                :(tempMeta == 2?icons[2]
+                :(tempMeta == 3?icons[3]
+                :(tempMeta == 4?icons[4]
+                :(tempMeta == 5?icons[5]
+                :(tempMeta == 6?icons[6]
+                :(tempMeta == 7?icons[7]
+                :(tempMeta == 8?icons[8]
+                :(tempMeta == 9?icons[9]
+                :(tempMeta == 10?icons[10]
+                :(tempMeta == 11?icons[11]
+                :(tempMeta == 12?icons[12]
+                :icons[13]
+                )))))))))))));
     }
 }

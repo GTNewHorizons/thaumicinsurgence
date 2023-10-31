@@ -132,6 +132,9 @@ tile.AR_LogDevice1.1.name=Eucalyptus Log
 tile.AR_LogDevice1.2.name=Hawthorn Log
 tile.AR_LogDevice1.3.name=Willow Log
 
+tile.AR_LogDevice3.0.name=Tarnished Log
+tile.AR_LogDevice3.1.name=Numnum Log
+
 tile.AR_TaintedLogDevice1.0.name=Tainted Oak Log
 tile.AR_TaintedLogDevice1.1.name=Tainted Spruce Log
 tile.AR_TaintedLogDevice1.2.name=Tainted Birch Log
