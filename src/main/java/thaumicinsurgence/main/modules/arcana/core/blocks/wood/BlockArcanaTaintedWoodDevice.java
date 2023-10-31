@@ -23,7 +23,7 @@ public class BlockArcanaTaintedWoodDevice extends BlockContainer {
             "tainted_oak_planks", "tainted_spruce_planks", "tainted_birch_planks", "tainted_jungle_planks",
             "tainted_acacia_planks", "tainted_darkoak_planks", "tainted_dair_planks",
             "tainted_greatwood_planks", "tainted_eucalyptus_planks", "tainted_hawthorn_planks","tainted_willow_planks"};
-    String blockType = "wood/";
+    String blockType = "wood/tainted/";
 
 
     public BlockArcanaTaintedWoodDevice() {

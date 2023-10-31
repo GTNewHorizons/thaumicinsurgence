@@ -15,14 +15,14 @@ import thaumicinsurgence.main.modules.arcana.utils.TabArcana;
 public class BlockArcanaWoodDevice extends BlockContainer {
 
     public static String blocks[] = {
-            "dair", "dead", "greatwood", "silverwood", "silverwood_polished",
-            "trypophobius", "eucalyptus", "hawthorn", "willow"}; // 9
+            "dair", "dead", "greatwood", "silverwood", "silverwood_polished", "dead_silverwood",
+            "trypophobius", "eucalyptus", "hawthorn", "willow", "numnum"}; // 11
     IIcon icons[] = new IIcon[blocks.length];
 
     String[] blockNames = {
-            "dair_planks", "dead_planks", "greatwood_planks", "silverwood_planks", "silverwood_polished_planks",
-            "trypophobius_planks", "eucalyptus_planks", "hawthorn_planks", "willow_planks"}; // 9
-    String blockType = "wood/";
+            "dair_planks", "dead_planks", "greatwood_planks", "silverwood_planks", "silverwood_polished_planks", "dead_silverwood_planks",
+            "trypophobius_planks", "eucalyptus_planks", "hawthorn_planks", "willow_planks", "numnum_planks"}; // 11
+    String blockType = "wood/untainted/";
 
 
     public BlockArcanaWoodDevice() {

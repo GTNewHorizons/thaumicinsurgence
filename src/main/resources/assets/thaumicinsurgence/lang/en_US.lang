@@ -103,10 +103,12 @@ tile.AR_WoodDevice.1.name=Oblivion Planks
 tile.AR_WoodDevice.2.name=Arcanus Planks
 tile.AR_WoodDevice.3.name=Shimmerwood Planks
 tile.AR_WoodDevice.4.name=Polished Shimmerwood Planks
-tile.AR_WoodDevice.5.name=Trypophobius Planks
-tile.AR_WoodDevice.6.name=Eucalyptus Planks
-tile.AR_WoodDevice.7.name=Hawthorn Planks
-tile.AR_WoodDevice.8.name=Willow Planks
+tile.AR_WoodDevice.5.name=Tarnished Planks
+tile.AR_WoodDevice.6.name=Trypophobius Planks
+tile.AR_WoodDevice.7.name=Eucalyptus Planks
+tile.AR_WoodDevice.8.name=Hawthorn Planks
+tile.AR_WoodDevice.9.name=Willow Planks
+tile.AR_WoodDevice.10.name=Numnum Planks
 
 tile.AR_TaintedWoodDevice.0.name=Tainted Oak Planks
 tile.AR_TaintedWoodDevice.1.name=Tainted Spruce Planks

@@ -3,13 +3,19 @@ package thaumicinsurgence.main.modules.arcana.utils;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import thaumicinsurgence.main.modules.arcana.Arcana;
+import thaumicinsurgence.main.modules.arcana.core.blocks.leaves.BlockArcanaLeafDevice;
+import thaumicinsurgence.main.modules.arcana.core.blocks.leaves.ItemBlockArcanaLeafDevice;
 import thaumicinsurgence.main.modules.arcana.core.blocks.stone.BlockArcanaStoneDevice;
 import thaumicinsurgence.main.modules.arcana.core.blocks.stone.ItemBlockArcanaStoneDevice;
 import thaumicinsurgence.main.modules.arcana.core.blocks.wood.BlockArcanaTaintedWoodDevice;
 import thaumicinsurgence.main.modules.arcana.core.blocks.wood.BlockArcanaWoodDevice;
 import thaumicinsurgence.main.modules.arcana.core.blocks.wood.ItemBlockArcanaTaintedWoodDevice;
 import thaumicinsurgence.main.modules.arcana.core.blocks.wood.ItemBlockArcanaWoodDevice;
-import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.*;
+import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.tainted.*;
+import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.untainted.BlockArcanaLogDeviceOne;
+import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.untainted.BlockArcanaLogDeviceTwo;
+import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.untainted.ItemBlockArcanaLogDeviceOne;
+import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.untainted.ItemBlockArcanaLogDeviceTwo;
 
 public class ArcanaBlocks {
 
@@ -23,6 +29,7 @@ public class ArcanaBlocks {
     public static Block blockArcanaTaintedLogDeviceOne = new BlockArcanaTaintedLogDeviceOne();
     public static Block blockArcanaTaintedLogDeviceTwo = new BlockArcanaTaintedLogDeviceTwo();
     public static Block blockArcanaTaintedLogDeviceThree = new BlockArcanaTaintedLogDeviceThree();
+    public static Block blockArcanaLeafDevice = new BlockArcanaLeafDevice();
 
     public static void setup() {
         GameRegistry.registerBlock(
@@ -72,6 +79,12 @@ public class ArcanaBlocks {
                 ItemBlockArcanaTaintedLogDeviceThree.class,
                 blockArcanaTaintedLogDeviceThree.getUnlocalizedName()
         );
+
+       /* GameRegistry.registerBlock(
+                blockArcanaLeafDevice,
+                ItemBlockArcanaLeafDevice.class,
+                blockArcanaLeafDevice.getUnlocalizedName()
+        ); */
     }
 
 }
