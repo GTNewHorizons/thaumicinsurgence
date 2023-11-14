@@ -27,7 +27,6 @@ public class TileAlkimiumAlchemicalFurnace extends TileAlchemyFurnace {
         return slot == 0 ? slots_bottom : (slot == 1 ? slots_top : slots_sides);
     }
 
-
     public static final String tileEntityName = "planarartifice.alkimium_smeltery";
     public int burnRemaining;
     public int ticks;

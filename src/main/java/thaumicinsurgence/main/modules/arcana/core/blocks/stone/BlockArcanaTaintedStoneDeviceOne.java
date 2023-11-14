@@ -8,20 +8,18 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+
 import thaumicinsurgence.main.modules.arcana.Arcana;
 import thaumicinsurgence.main.modules.arcana.utils.TabArcana;
 
 public class BlockArcanaTaintedStoneDeviceOne extends BlockContainer {
 
-    public static String blocks[] = {
-            "rock", "gold", "iron", "coal", "lapis", "diamond",
-            "redstone", "emerald", "amber", "cinnabar", "ruby",
-            "silver", "arcanium", "destroyed"};
+    public static String blocks[] = { "rock", "gold", "iron", "coal", "lapis", "diamond", "redstone", "emerald",
+            "amber", "cinnabar", "ruby", "silver", "arcanium", "destroyed" };
 
     IIcon icons[] = new IIcon[blocks.length];
-    //, "bottom_mithrillium", "bottom_adaminite", "bottom_mithminite"
-   String blockType = "stone/tainted/";
-
+    // , "bottom_mithrillium", "bottom_adaminite", "bottom_mithminite"
+    String blockType = "stone/tainted/";
 
     public BlockArcanaTaintedStoneDeviceOne() {
         super(Material.rock);
@@ -42,7 +40,7 @@ public class BlockArcanaTaintedStoneDeviceOne extends BlockContainer {
     public void registerBlockIcons(IIconRegister reg) {
         icons[0] = reg.registerIcon(Arcana.arcanaLabel + blockType + "tainted_rock");
         for (int i = 1; i < blocks.length; i++) {
-            icons[i] = reg.registerIcon(Arcana.arcanaLabel + blockType + "tainted_" + blocks[i] +"_ore");
+            icons[i] = reg.registerIcon(Arcana.arcanaLabel + blockType + "tainted_" + blocks[i] + "_ore");
         }
     }
 
@@ -64,23 +62,24 @@ public class BlockArcanaTaintedStoneDeviceOne extends BlockContainer {
         return getMetaIcon(meta, side);
     }
 
-    public IIcon getMetaIcon(int meta, int side){
+    public IIcon getMetaIcon(int meta, int side) {
         int tempMeta = meta;
         if (meta == 14) tempMeta += side;
-        return (tempMeta == 0?icons[0]
-                :(tempMeta == 1?icons[1]
-                :(tempMeta == 2?icons[2]
-                :(tempMeta == 3?icons[3]
-                :(tempMeta == 4?icons[4]
-                :(tempMeta == 5?icons[5]
-                :(tempMeta == 6?icons[6]
-                :(tempMeta == 7?icons[7]
-                :(tempMeta == 8?icons[8]
-                :(tempMeta == 9?icons[9]
-                :(tempMeta == 10?icons[10]
-                :(tempMeta == 11?icons[11]
-                :(tempMeta == 12?icons[12]
-                :icons[13]
-                )))))))))))));
+        return (tempMeta == 0 ? icons[0]
+                : (tempMeta == 1 ? icons[1]
+                        : (tempMeta == 2 ? icons[2]
+                                : (tempMeta == 3 ? icons[3]
+                                        : (tempMeta == 4 ? icons[4]
+                                                : (tempMeta == 5 ? icons[5]
+                                                        : (tempMeta == 6 ? icons[6]
+                                                                : (tempMeta == 7 ? icons[7]
+                                                                        : (tempMeta == 8 ? icons[8]
+                                                                                : (tempMeta == 9 ? icons[9]
+                                                                                        : (tempMeta == 10 ? icons[10]
+                                                                                                : (tempMeta == 11
+                                                                                                        ? icons[11]
+                                                                                                        : (tempMeta
+                                                                                                                == 12 ? icons[12]
+                                                                                                                        : icons[13])))))))))))));
     }
 }

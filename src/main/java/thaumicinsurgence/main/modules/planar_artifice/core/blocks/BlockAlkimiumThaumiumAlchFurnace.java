@@ -1,8 +1,9 @@
 package thaumicinsurgence.main.modules.planar_artifice.core.blocks;
 
+import net.minecraft.client.renderer.texture.IIconRegister;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import thaumicinsurgence.main.modules.planar_artifice.utils.TabPlanarArtifice;
 
 public class BlockAlkimiumThaumiumAlchFurnace extends BlockAlkimiumAlchFurnace {

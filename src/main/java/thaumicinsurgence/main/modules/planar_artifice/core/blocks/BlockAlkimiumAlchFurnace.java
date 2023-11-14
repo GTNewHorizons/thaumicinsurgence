@@ -181,8 +181,7 @@ public class BlockAlkimiumAlchFurnace extends BlockContainer {
     @SideOnly(Side.CLIENT)
     public void randomDisplayTick(final World w, final int x, final int y, final int z, final Random r) {
         final TileEntity te = w.getTileEntity(x, y, z);
-        if (te instanceof TileAlkimiumAlchemicalFurnace
-                && ((TileAlkimiumAlchemicalFurnace) te).burnRemaining()) {
+        if (te instanceof TileAlkimiumAlchemicalFurnace && ((TileAlkimiumAlchemicalFurnace) te).burnRemaining()) {
             final float f = x + 0.5f;
             final float f2 = y + 0.2f + r.nextFloat() * 5.0f / 16.0f;
             final float f3 = z + 0.5f;

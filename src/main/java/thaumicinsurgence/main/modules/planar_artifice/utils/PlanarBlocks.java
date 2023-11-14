@@ -23,9 +23,8 @@ public class PlanarBlocks {
 
     public static void setup() {
         GameRegistry.registerBlock(alkimiumAlchFurnace, "alkimiumAlchFurnace");
-        GameRegistry.registerTileEntity(
-                 TileAlkimiumAlchemicalFurnace.class,
-                 TileAlkimiumAlchemicalFurnace.tileEntityName);
+        GameRegistry
+                .registerTileEntity(TileAlkimiumAlchemicalFurnace.class, TileAlkimiumAlchemicalFurnace.tileEntityName);
 
         GameRegistry.registerBlock(thaumAlkAlchFurnace, "thaumAlkAlchFurnace");
         GameRegistry.registerTileEntity(
@@ -52,17 +51,13 @@ public class PlanarBlocks {
                 TileMithminiteAlkimiumAlchemicalFurnace.class,
                 TileMithminiteAlkimiumAlchemicalFurnace.tileEntityName);
 
-        GameRegistry.registerBlock(
-                blockPlanarDevice,
-                ItemBlockPlanarDevice.class,
-                blockPlanarDevice.getUnlocalizedName()
-        );
+        GameRegistry
+                .registerBlock(blockPlanarDevice, ItemBlockPlanarDevice.class, blockPlanarDevice.getUnlocalizedName());
 
         GameRegistry.registerBlock(
                 blockFurnaceDevice,
                 ItemBlockFurnaceDevice.class,
-                blockFurnaceDevice.getUnlocalizedName()
-        );
+                blockFurnaceDevice.getUnlocalizedName());
     }
 
 }

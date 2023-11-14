@@ -47,7 +47,7 @@ tc.research_text.TI_DeliciousKromer=THIS IS [One Purchase] YOU WILL [Regret] FOR
 
 #Tiles
 tile.arcaneMarble.name=Arcane Marble Block
-tile.arcaneMarbleBrick.name=Arcane Marble Brick
+tile.arcaneMarbleBrick.name=Arcane Marble Bricks
 tile.matrixAlpha.name=Arcane Marble Matrix
 tile.pedestalAlpha.name=Marble Pedestal
 
@@ -148,3 +148,42 @@ tile.AR_TaintedLogDevice3.0.name=Tainted Arcanus Log
 tile.AR_TaintedLogDevice3.1.name=Tainted Eucalyptus Log
 tile.AR_TaintedLogDevice3.2.name=Tainted Hawthorn Log
 tile.AR_TaintedLogDevice3.3.name=Tainted Willow Log
+
+tile.AR_StoneDevice.0.name=Amber Ore
+tile.AR_StoneDevice.1.name=Vermilion Ore
+tile.AR_StoneDevice.2.name=Ruby Ore
+tile.AR_StoneDevice.3.name=Silver Ore
+tile.AR_StoneDevice.4.name=Arcanium Ore
+tile.AR_StoneDevice.5.name=Broken Ore
+tile.AR_StoneDevice.6.name=Arcane Stone Block
+tile.AR_StoneDevice.7.name=Arcane Stone Bricks
+
+tile.AR_TaintedStoneDevice.0.name=Tainted Stone
+tile.AR_TaintedStoneDevice.1.name=Tainted Gold Ore
+tile.AR_TaintedStoneDevice.2.name=Tainted Iron Ore
+tile.AR_TaintedStoneDevice.3.name=Curse-Coal Ore
+tile.AR_TaintedStoneDevice.4.name=Mirrored Ore
+tile.AR_TaintedStoneDevice.5.name=Hexgem Ore
+tile.AR_TaintedStoneDevice.6.name=Blightstone Ore
+tile.AR_TaintedStoneDevice.7.name=Avari Ore
+tile.AR_TaintedStoneDevice.8.name=Timeworn Ore
+tile.AR_TaintedStoneDevice.9.name=Haruspex Ore
+tile.AR_TaintedStoneDevice.10.name=Blood-Tear Ore
+tile.AR_TaintedStoneDevice.11.name=Tarnished Ore
+tile.AR_TaintedStoneDevice.12.name=True Arcanium Ore
+tile.AR_TaintedStoneDevice.13.name=Tainted-Wrought Ore
+
+tile.AR_TaintedStoneDevice2.0.name=Tainted Stone Bricks
+tile.AR_TaintedStoneDevice2.1.name=Tainted Bricks
+tile.AR_TaintedStoneDevice2.2.name=Taintstone
+tile.AR_TaintedStoneDevice2.3.name=Cursed Obsidian
+
+tile.AR_LeafDevice.0.name=Dair Leaves
+tile.AR_LeafDevice.1.name=Oblivion Leaves
+tile.AR_LeafDevice.2.name=Ancient Oblivion Leaves
+tile.AR_LeafDevice.3.name=Arcanus Leaves
+tile.AR_LeafDevice.4.name=Shimmerwood Leaves
+tile.AR_LeafDevice.5.name=Trypophobius Leaves
+tile.AR_LeafDevice.6.name=Eucalyptus Leaves
+tile.AR_LeafDevice.7.name=Hawthorn Leaves
+tile.AR_LeafDevice.8.name=Willow Leaves

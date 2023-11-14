@@ -8,23 +8,22 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+
 import thaumicinsurgence.main.modules.arcana.Arcana;
 import thaumicinsurgence.main.modules.arcana.utils.TabArcana;
 
 public class BlockArcanaTaintedWoodDevice extends BlockContainer {
 
-    public static String blocks[] = {
-            "tainted_oak", "tainted_spruce", "tainted_birch", "tainted_jungle",
-            "tainted_acacia", "tainted_darkoak", "tainted_dair",
-            "tainted_greatwood", "tainted_eucalyptus", "tainted_hawthorn", "tainted_willow"};
+    public static String blocks[] = { "tainted_oak", "tainted_spruce", "tainted_birch", "tainted_jungle",
+            "tainted_acacia", "tainted_darkoak", "tainted_dair", "tainted_greatwood", "tainted_eucalyptus",
+            "tainted_hawthorn", "tainted_willow" };
     IIcon icons[] = new IIcon[blocks.length];
 
-    String[] blockNames = {
-            "tainted_oak_planks", "tainted_spruce_planks", "tainted_birch_planks", "tainted_jungle_planks",
-            "tainted_acacia_planks", "tainted_darkoak_planks", "tainted_dair_planks",
-            "tainted_greatwood_planks", "tainted_eucalyptus_planks", "tainted_hawthorn_planks","tainted_willow_planks"};
+    String[] blockNames = { "tainted_oak_planks", "tainted_spruce_planks", "tainted_birch_planks",
+            "tainted_jungle_planks", "tainted_acacia_planks", "tainted_darkoak_planks", "tainted_dair_planks",
+            "tainted_greatwood_planks", "tainted_eucalyptus_planks", "tainted_hawthorn_planks",
+            "tainted_willow_planks" };
     String blockType = "wood/tainted/";
-
 
     public BlockArcanaTaintedWoodDevice() {
         super(Material.wood);
@@ -43,7 +42,7 @@ public class BlockArcanaTaintedWoodDevice extends BlockContainer {
 
     @Override
     public void registerBlockIcons(IIconRegister reg) {
-        for (int i = 0; i < blocks.length; i++){
+        for (int i = 0; i < blocks.length; i++) {
             icons[i] = reg.registerIcon(Arcana.arcanaLabel + blockType + blockNames[i]);
         }
     }

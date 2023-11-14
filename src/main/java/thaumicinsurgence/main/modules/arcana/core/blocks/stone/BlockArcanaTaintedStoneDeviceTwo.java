@@ -8,18 +8,18 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+
 import thaumicinsurgence.main.modules.arcana.Arcana;
 import thaumicinsurgence.main.modules.arcana.utils.TabArcana;
 
 public class BlockArcanaTaintedStoneDeviceTwo extends BlockContainer {
 
-    public static String blocks[] = {
-            "tainted_stonebricks", "tainted_bricks", "tainted_obsidian", "tainted_sandstone"};
+    public static String blocks[] = { "tainted_stonebricks", "tainted_bricks", "tainted_obsidian",
+            "tainted_sandstone" };
 
     IIcon icons[] = new IIcon[blocks.length];
-    //, "bottom_mithrillium", "bottom_adaminite", "bottom_mithminite"
-   String blockType = "stone/tainted/";
-
+    // , "bottom_mithrillium", "bottom_adaminite", "bottom_mithminite"
+    String blockType = "stone/tainted/";
 
     public BlockArcanaTaintedStoneDeviceTwo() {
         super(Material.rock);
@@ -61,12 +61,8 @@ public class BlockArcanaTaintedStoneDeviceTwo extends BlockContainer {
         return getMetaIcon(meta, side);
     }
 
-    public IIcon getMetaIcon(int meta, int side){
+    public IIcon getMetaIcon(int meta, int side) {
         int tempMeta = meta;
-        return (tempMeta == 0?icons[0]
-                :(tempMeta == 1?icons[1]
-                :(tempMeta == 2?icons[2]
-                :icons[3]
-                )));
+        return (tempMeta == 0 ? icons[0] : (tempMeta == 1 ? icons[1] : (tempMeta == 2 ? icons[2] : icons[3])));
     }
 }

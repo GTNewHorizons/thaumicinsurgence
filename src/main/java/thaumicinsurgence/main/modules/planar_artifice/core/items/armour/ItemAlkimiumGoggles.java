@@ -1,13 +1,14 @@
 package thaumicinsurgence.main.modules.planar_artifice.core.items.armour;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import thaumcraft.api.IGoggles;
 import thaumcraft.api.IRepairable;
 import thaumcraft.api.IRunicArmor;
@@ -17,8 +18,6 @@ import thaumcraft.api.nodes.IRevealer;
 import thaumcraft.common.items.armor.ItemGoggles;
 import thaumicinsurgence.main.modules.planar_artifice.PlanarArtifice;
 import thaumicinsurgence.main.modules.planar_artifice.utils.TabPlanarArtifice;
-
-import java.util.List;
 
 public class ItemAlkimiumGoggles extends ItemGoggles
         implements IRepairable, IVisDiscountGear, IRevealer, IGoggles, IRunicArmor {

@@ -7,20 +7,18 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.common.util.ForgeDirection;
+
 import thaumicinsurgence.main.modules.arcana.Arcana;
 import thaumicinsurgence.main.modules.arcana.utils.TabArcana;
 
 public class BlockArcanaLogDeviceTwo extends BlockRotatedPillar {
 
-    public static String blocks[] = {
-            "dair", "dead", "greatwood", "silverwood"};
+    public static String blocks[] = { "dair", "dead", "greatwood", "silverwood" };
     IIcon top[] = new IIcon[blocks.length];
     IIcon side[] = new IIcon[blocks.length];
 
-    String[] blockNames = {
-            "dair_log", "dead_log", "greatwood_log", "silverwood_log"};
+    String[] blockNames = { "dair_log", "dead_log", "greatwood_log", "silverwood_log" };
     String blockType = "logs/untainted/";
-
 
     public BlockArcanaLogDeviceTwo() {
         super(Material.wood);
@@ -34,7 +32,7 @@ public class BlockArcanaLogDeviceTwo extends BlockRotatedPillar {
 
     @Override
     public void registerBlockIcons(IIconRegister reg) {
-        for (int i = 0; i < blocks.length; i++){
+        for (int i = 0; i < blocks.length; i++) {
             top[i] = reg.registerIcon(Arcana.arcanaLabel + blockType + blockNames[i] + "_top");
             side[i] = reg.registerIcon(Arcana.arcanaLabel + blockType + blockNames[i]);
         }

@@ -7,20 +7,19 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.common.util.ForgeDirection;
+
 import thaumicinsurgence.main.modules.arcana.Arcana;
 import thaumicinsurgence.main.modules.arcana.utils.TabArcana;
 
 public class BlockArcanaTaintedLogDeviceThree extends BlockRotatedPillar {
 
-    public static String blocks[] = {
-            "tainted_greatwood", "tainted_willow", "tainted_eucalyptus", "tainted_hawthorn"};
+    public static String blocks[] = { "tainted_greatwood", "tainted_willow", "tainted_eucalyptus", "tainted_hawthorn" };
     IIcon top[] = new IIcon[blocks.length];
     IIcon side[] = new IIcon[blocks.length];
 
-    String[] blockNames = {
-            "tainted_greatwood_log", "tainted_eucalyptus_log", "tainted_hawthorn_log", "tainted_willow_log"};
+    String[] blockNames = { "tainted_greatwood_log", "tainted_eucalyptus_log", "tainted_hawthorn_log",
+            "tainted_willow_log" };
     String blockType = "logs/tainted/";
-
 
     public BlockArcanaTaintedLogDeviceThree() {
         super(Material.wood);
@@ -34,7 +33,7 @@ public class BlockArcanaTaintedLogDeviceThree extends BlockRotatedPillar {
 
     @Override
     public void registerBlockIcons(IIconRegister reg) {
-        for (int i = 0; i < blocks.length; i++){
+        for (int i = 0; i < blocks.length; i++) {
             top[i] = reg.registerIcon(Arcana.arcanaLabel + blockType + blockNames[i] + "_top");
             side[i] = reg.registerIcon(Arcana.arcanaLabel + blockType + blockNames[i]);
         }

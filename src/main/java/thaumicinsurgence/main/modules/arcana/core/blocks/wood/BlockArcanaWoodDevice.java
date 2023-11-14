@@ -4,26 +4,24 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+
 import thaumicinsurgence.main.modules.arcana.Arcana;
 import thaumicinsurgence.main.modules.arcana.utils.TabArcana;
 
 public class BlockArcanaWoodDevice extends BlockContainer {
 
-    public static String blocks[] = {
-            "dair", "dead", "greatwood", "silverwood", "silverwood_polished", "dead_silverwood",
-            "trypophobius", "eucalyptus", "hawthorn", "willow", "numnum"}; // 11
+    public static String blocks[] = { "dair", "dead", "greatwood", "silverwood", "silverwood_polished",
+            "dead_silverwood", "trypophobius", "eucalyptus", "hawthorn", "willow", "numnum" }; // 11
     IIcon icons[] = new IIcon[blocks.length];
 
-    String[] blockNames = {
-            "dair_planks", "dead_planks", "greatwood_planks", "silverwood_planks", "silverwood_polished_planks", "dead_silverwood_planks",
-            "trypophobius_planks", "eucalyptus_planks", "hawthorn_planks", "willow_planks", "numnum_planks"}; // 11
+    String[] blockNames = { "dair_planks", "dead_planks", "greatwood_planks", "silverwood_planks",
+            "silverwood_polished_planks", "dead_silverwood_planks", "trypophobius_planks", "eucalyptus_planks",
+            "hawthorn_planks", "willow_planks", "numnum_planks" }; // 11
     String blockType = "wood/untainted/";
-
 
     public BlockArcanaWoodDevice() {
         super(Material.wood);
@@ -42,7 +40,7 @@ public class BlockArcanaWoodDevice extends BlockContainer {
 
     @Override
     public void registerBlockIcons(IIconRegister reg) {
-        for (int i = 0; i < blocks.length; i++){
+        for (int i = 0; i < blocks.length; i++) {
             icons[i] = reg.registerIcon(Arcana.arcanaLabel + blockType + blockNames[i]);
         }
     }

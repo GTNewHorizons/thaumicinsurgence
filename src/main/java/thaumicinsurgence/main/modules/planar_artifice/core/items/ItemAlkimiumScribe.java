@@ -1,8 +1,8 @@
 package thaumicinsurgence.main.modules.planar_artifice.core.items;
 
-import baubles.api.BaubleType;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import java.text.DecimalFormat;
+import java.util.List;
+
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
@@ -13,21 +13,23 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.StatCollector;
+
+import baubles.api.BaubleType;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import thaumcraft.api.IScribeTools;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.common.items.baubles.ItemAmuletVis;
 import thaumicinsurgence.main.modules.planar_artifice.PlanarArtifice;
 import thaumicinsurgence.main.modules.planar_artifice.utils.TabPlanarArtifice;
 
-import java.text.DecimalFormat;
-import java.util.List;
-
 public class ItemAlkimiumScribe extends ItemAmuletVis implements IScribeTools {
+
     public IIcon scribe;
     public static int charge = 250;
     DecimalFormat decimalFormatter = new DecimalFormat("#######.##");
 
-    public ItemAlkimiumScribe(){
+    public ItemAlkimiumScribe() {
         setHasSubtypes(false);
         setMaxDamage(250);
         setUnlocalizedName("alkimium_scribe");
@@ -41,7 +43,7 @@ public class ItemAlkimiumScribe extends ItemAmuletVis implements IScribeTools {
     }
 
     // Could've used Math.min, but it would've just been a bunch of gross nested methods.
-    public int returnLowestVis(ItemStack stack){
+    public int returnLowestVis(ItemStack stack) {
         int lowest = 25000;
         if (lowest > getVis(stack, Aspect.FIRE)) lowest = getVis(stack, Aspect.FIRE);
         if (lowest > getVis(stack, Aspect.AIR)) lowest = getVis(stack, Aspect.AIR);
@@ -49,7 +51,7 @@ public class ItemAlkimiumScribe extends ItemAmuletVis implements IScribeTools {
         if (lowest > getVis(stack, Aspect.EARTH)) lowest = getVis(stack, Aspect.EARTH);
         if (lowest > getVis(stack, Aspect.ORDER)) lowest = getVis(stack, Aspect.ORDER);
         if (lowest > getVis(stack, Aspect.ENTROPY)) lowest = getVis(stack, Aspect.ENTROPY);
-        return lowest/100;
+        return lowest / 100;
     }
 
     @Override
@@ -60,8 +62,8 @@ public class ItemAlkimiumScribe extends ItemAmuletVis implements IScribeTools {
     @Override
     public void setDamage(ItemStack stack, int damage) {
         int currentDamage = stack.getItemDamage();
-        if(damage > currentDamage) {
-            if (returnLowestVis(stack) >= 1){
+        if (damage > currentDamage) {
+            if (returnLowestVis(stack) >= 1) {
                 // While you might be worried that this wouldn't work,
                 // I assure you, this ensures you can't use the scribe
                 // if even one aspect is less than 1.
@@ -112,11 +114,15 @@ public class ItemAlkimiumScribe extends ItemAmuletVis implements IScribeTools {
 
     @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
-        list.add(EnumChatFormatting.GOLD + StatCollector.translateToLocal("item.capacity.text") + " " + getMaxVis(stack) / 100);
-        if(stack.hasTagCompound()) {
-            for(Aspect aspect : Aspect.getPrimalAspects()) {
-                if(stack.stackTagCompound.hasKey(aspect.getTag())) {
-                    String amount = decimalFormatter.format((double)((float)stack.stackTagCompound.getInteger(aspect.getTag()) / 100.0F));
+        list.add(
+                EnumChatFormatting.GOLD + StatCollector.translateToLocal("item.capacity.text")
+                        + " "
+                        + getMaxVis(stack) / 100);
+        if (stack.hasTagCompound()) {
+            for (Aspect aspect : Aspect.getPrimalAspects()) {
+                if (stack.stackTagCompound.hasKey(aspect.getTag())) {
+                    String amount = decimalFormatter
+                            .format((double) ((float) stack.stackTagCompound.getInteger(aspect.getTag()) / 100.0F));
                     list.add(" §" + aspect.getChatcolor() + aspect.getName() + "§r x " + amount);
                     // Not quite sure why § is used here, it was used in the original
                     // vis amulets, so I kept it in for consistency's sake.
@@ -127,7 +133,7 @@ public class ItemAlkimiumScribe extends ItemAmuletVis implements IScribeTools {
 
     @Override
     public int getMaxVis(ItemStack stack) {
-        return charge*100;
+        return charge * 100;
     } // currently 250 vis, I might increase it, vis works to 2 sig figs after the decimal
 
     @Override

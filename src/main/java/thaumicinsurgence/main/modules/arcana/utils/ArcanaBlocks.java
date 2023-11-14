@@ -1,8 +1,10 @@
 package thaumicinsurgence.main.modules.arcana.utils;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
+
+import cpw.mods.fml.common.registry.GameRegistry;
 import thaumicinsurgence.main.modules.arcana.Arcana;
+import thaumicinsurgence.main.modules.arcana.core.blocks.crops.BlockArcanaTaintedSugarCane;
 import thaumicinsurgence.main.modules.arcana.core.blocks.leaves.BlockArcanaLeafDevice;
 import thaumicinsurgence.main.modules.arcana.core.blocks.leaves.ItemBlockArcanaLeafDevice;
 import thaumicinsurgence.main.modules.arcana.core.blocks.stone.*;
@@ -24,84 +26,75 @@ public class ArcanaBlocks {
     public static Block blockArcanaTaintedWoodDevice = new BlockArcanaTaintedWoodDevice();
     public static Block blockArcanaLogDeviceOne = new BlockArcanaLogDeviceOne();
     public static Block blockArcanaLogDeviceTwo = new BlockArcanaLogDeviceTwo();
-    public static Block blockArcanaLogDeviceThree= new BlockArcanaLogDeviceThree();
+    public static Block blockArcanaLogDeviceThree = new BlockArcanaLogDeviceThree();
     public static Block blockArcanaTaintedLogDeviceOne = new BlockArcanaTaintedLogDeviceOne();
     public static Block blockArcanaTaintedLogDeviceTwo = new BlockArcanaTaintedLogDeviceTwo();
     public static Block blockArcanaTaintedLogDeviceThree = new BlockArcanaTaintedLogDeviceThree();
     public static Block blockArcanaLeafDevice = new BlockArcanaLeafDevice();
+    public static Block blockTaintedReeds = new BlockArcanaTaintedSugarCane();
 
     public static void setup() {
         GameRegistry.registerBlock(
                 blockArcanaStoneDevice,
                 ItemBlockArcanaStoneDevice.class,
-                blockArcanaStoneDevice.getUnlocalizedName()
-        );
+                blockArcanaStoneDevice.getUnlocalizedName());
 
         GameRegistry.registerBlock(
                 blockArcanaTaintedStoneDeviceOne,
                 ItemBlockArcanaTaintedStoneDeviceOne.class,
-                blockArcanaTaintedStoneDeviceOne.getUnlocalizedName()
-        );
+                blockArcanaTaintedStoneDeviceOne.getUnlocalizedName());
 
         GameRegistry.registerBlock(
                 blockArcanaTaintedStoneDeviceTwo,
                 ItemBlockArcanaTaintedStoneDeviceTwo.class,
-                blockArcanaTaintedStoneDeviceTwo.getUnlocalizedName()
-        );
+                blockArcanaTaintedStoneDeviceTwo.getUnlocalizedName());
 
         GameRegistry.registerBlock(
                 blockArcanaWoodDevice,
                 ItemBlockArcanaWoodDevice.class,
-                blockArcanaWoodDevice.getUnlocalizedName()
-        );
+                blockArcanaWoodDevice.getUnlocalizedName());
 
         GameRegistry.registerBlock(
                 blockArcanaTaintedWoodDevice,
                 ItemBlockArcanaTaintedWoodDevice.class,
-                blockArcanaTaintedWoodDevice.getUnlocalizedName()
-        );
+                blockArcanaTaintedWoodDevice.getUnlocalizedName());
 
         GameRegistry.registerBlock(
                 blockArcanaLogDeviceOne,
                 ItemBlockArcanaLogDeviceOne.class,
-                blockArcanaLogDeviceOne.getUnlocalizedName()
-        );
+                blockArcanaLogDeviceOne.getUnlocalizedName());
 
         GameRegistry.registerBlock(
                 blockArcanaLogDeviceTwo,
                 ItemBlockArcanaLogDeviceTwo.class,
-                blockArcanaLogDeviceTwo.getUnlocalizedName()
-        );
+                blockArcanaLogDeviceTwo.getUnlocalizedName());
 
         GameRegistry.registerBlock(
                 blockArcanaLogDeviceThree,
                 ItemBlockArcanaLogDeviceThree.class,
-                blockArcanaLogDeviceThree.getUnlocalizedName()
-        );
+                blockArcanaLogDeviceThree.getUnlocalizedName());
 
         GameRegistry.registerBlock(
                 blockArcanaTaintedLogDeviceOne,
                 ItemBlockArcanaTaintedLogDeviceOne.class,
-                blockArcanaTaintedLogDeviceOne.getUnlocalizedName()
-        );
+                blockArcanaTaintedLogDeviceOne.getUnlocalizedName());
 
         GameRegistry.registerBlock(
                 blockArcanaTaintedLogDeviceTwo,
                 ItemBlockArcanaTaintedLogDeviceTwo.class,
-                blockArcanaTaintedLogDeviceTwo.getUnlocalizedName()
-        );
+                blockArcanaTaintedLogDeviceTwo.getUnlocalizedName());
 
         GameRegistry.registerBlock(
                 blockArcanaTaintedLogDeviceThree,
                 ItemBlockArcanaTaintedLogDeviceThree.class,
-                blockArcanaTaintedLogDeviceThree.getUnlocalizedName()
-        );
+                blockArcanaTaintedLogDeviceThree.getUnlocalizedName());
 
-       /* GameRegistry.registerBlock(
+        GameRegistry.registerBlock(
                 blockArcanaLeafDevice,
                 ItemBlockArcanaLeafDevice.class,
-                blockArcanaLeafDevice.getUnlocalizedName()
-        ); */
+                blockArcanaLeafDevice.getUnlocalizedName());
+
+        GameRegistry.registerBlock(blockTaintedReeds, blockTaintedReeds.getUnlocalizedName());
     }
 
 }

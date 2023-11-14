@@ -1,15 +1,15 @@
 package thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.untainted;
 
+import java.util.List;
+
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.untainted.BlockArcanaLogDeviceTwo;
-
-import java.util.List;
 
 public class ItemBlockArcanaLogDeviceTwo extends ItemBlock {
+
     public ItemBlockArcanaLogDeviceTwo(Block block) {
         super(block);
         setHasSubtypes(true);
@@ -23,7 +23,7 @@ public class ItemBlockArcanaLogDeviceTwo extends ItemBlock {
     @Override
     public void getSubItems(Item item, CreativeTabs tab, List list) {
         // love the creative naming schemes mojang, thx XOXO
-        for (int i = 0; i < BlockArcanaLogDeviceTwo.blocks.length; i++){
+        for (int i = 0; i < BlockArcanaLogDeviceTwo.blocks.length; i++) {
             list.add(new ItemStack(this, 1, i));
         }
     }

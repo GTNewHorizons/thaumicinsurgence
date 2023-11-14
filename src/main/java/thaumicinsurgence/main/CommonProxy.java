@@ -17,28 +17,22 @@ import thaumicinsurgence.main.utils.compat.ModHelperManager;
 public class CommonProxy implements IGuiHandler {
 
     public void preInit(FMLPreInitializationEvent event) {
-        LogHelper.info("Preinit started");
         Config.Init(event.getSuggestedConfigurationFile());
 
         Config.setupBlocks();
         Config.setupItems();
 
         ModHelperManager.preInit();
-
-        LogHelper.info("Preinit completed");
     }
 
     public void init(FMLInitializationEvent event) {
         ModHelperManager.init();
-        LogHelper.info("Init completed");
     }
 
     public void postInit(FMLPostInitializationEvent event) {
         ModHelperManager.postInit();
 
         CraftingManager.setupCrafting();
-
-        LogHelper.info("Postinit completed");
     }
 
     @Override

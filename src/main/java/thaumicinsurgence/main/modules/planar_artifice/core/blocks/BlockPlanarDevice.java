@@ -4,22 +4,21 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import thaumcraft.common.Thaumcraft;
-import thaumicinsurgence.main.modules.planar_artifice.PlanarArtifice;
+
 import thaumicinsurgence.main.modules.planar_artifice.utils.TabPlanarArtifice;
 
 public class BlockPlanarDevice extends BlockContainer {
 
-    //, "mithrilliumBlock", "adaminiteBlock", "mithminiteBlock"
-    public static String blocks[] = {"alkimiumConstruct", "alkimiumBlock"};
+    // , "mithrilliumBlock", "adaminiteBlock", "mithminiteBlock"
+    public static String blocks[] = { "alkimiumConstruct", "alkimiumBlock" };
     IIcon icons[] = new IIcon[blocks.length];
-    //, "bottom_mithrillium", "bottom_adaminite", "bottom_mithminite"
-    String iconNames[] = {"alchemical_alkimium_construct", "alkimium_block"};
+    // , "bottom_mithrillium", "bottom_adaminite", "bottom_mithminite"
+    String iconNames[] = { "alchemical_alkimium_construct", "alkimium_block" };
+
     public BlockPlanarDevice() {
         super(Material.iron);
         setHardness(6.0F);
@@ -37,7 +36,7 @@ public class BlockPlanarDevice extends BlockContainer {
 
     @Override
     public void registerBlockIcons(IIconRegister reg) {
-        for (int i = 0; i < icons.length; i++){
+        for (int i = 0; i < icons.length; i++) {
             icons[i] = reg.registerIcon("planarartifice:" + iconNames[i]);
         }
     }

@@ -1,31 +1,29 @@
 package thaumicinsurgence.main.modules.planar_artifice.core.blocks;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
-import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import thaumcraft.common.lib.utils.InventoryUtils;
 import thaumicinsurgence.main.ThaumicInsurgence;
 import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileAlkimiumAlchemicalFurnace;
 import thaumicinsurgence.main.modules.planar_artifice.utils.TabPlanarArtifice;
 
-import java.util.Random;
-
 public class BlockAlkimiumAlchFurnace2 extends BlockContainer {
 
-    public static String blocks[] = {"basic", "thaumium", "void"};
+    public static String blocks[] = { "basic", "thaumium", "void" };
 
     public IIcon[][] icons = new IIcon[blocks.length][6];
 
@@ -45,8 +43,11 @@ public class BlockAlkimiumAlchFurnace2 extends BlockContainer {
             icons[i][2] = ir.registerIcon("planarartifice:furnaces/alkimium_smeltery_top");
             icons[i][3] = ir.registerIcon("planarartifice:furnaces/alkimium_smeltery_" + blocks[i] + "_front");
             icons[i][4] = ir.registerIcon("planarartifice:furnaces/alkimium_smeltery_" + blocks[i] + "_front_on");
-            if (i == 0) {icons[i][5] = ir.registerIcon("thaumcraft:al_furnace_side");}
-            else {icons[i][5] = ir.registerIcon("planarartifice:bottom_" + blocks[i]);}
+            if (i == 0) {
+                icons[i][5] = ir.registerIcon("thaumcraft:al_furnace_side");
+            } else {
+                icons[i][5] = ir.registerIcon("planarartifice:bottom_" + blocks[i]);
+            }
         }
     }
 
@@ -167,13 +168,10 @@ public class BlockAlkimiumAlchFurnace2 extends BlockContainer {
         }
     }
 
-
-
     @SideOnly(Side.CLIENT)
     public void randomDisplayTick(final World w, final int x, final int y, final int z, final Random r) {
         final TileEntity te = w.getTileEntity(x, y, z);
-        if (te instanceof TileAlkimiumAlchemicalFurnace
-                && ((TileAlkimiumAlchemicalFurnace) te).burnRemaining()) {
+        if (te instanceof TileAlkimiumAlchemicalFurnace && ((TileAlkimiumAlchemicalFurnace) te).burnRemaining()) {
             final float f = x + 0.5f;
             final float f2 = y + 0.2f + r.nextFloat() * 5.0f / 16.0f;
             final float f3 = z + 0.5f;

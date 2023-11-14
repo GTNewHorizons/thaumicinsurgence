@@ -1,4 +1,4 @@
-package thaumicinsurgence.main.modules.arcana.core.blocks.stone;
+package thaumicinsurgence.main.modules.arcana.core.blocks.crops;
 
 import java.util.List;
 
@@ -8,11 +8,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
-public class ItemBlockArcanaTaintedStoneDeviceTwo extends ItemBlock {
+public class ItemBlockArcanaTaintedSugarCane extends ItemBlock {
 
-    public ItemBlockArcanaTaintedStoneDeviceTwo(Block block) {
+    public ItemBlockArcanaTaintedSugarCane(Block block) {
         super(block);
-        setHasSubtypes(true);
     }
 
     @Override
@@ -23,9 +22,7 @@ public class ItemBlockArcanaTaintedStoneDeviceTwo extends ItemBlock {
     @Override
     public void getSubItems(Item item, CreativeTabs tab, List list) {
         // love the creative naming schemes mojang, thx XOXO
-        for (int i = 0; i < BlockArcanaTaintedStoneDeviceTwo.blocks.length; i++) {
-            list.add(new ItemStack(this, 1, i));
-        }
+        list.add(new ItemStack(this, 1, 0));
     }
 
     @Override
