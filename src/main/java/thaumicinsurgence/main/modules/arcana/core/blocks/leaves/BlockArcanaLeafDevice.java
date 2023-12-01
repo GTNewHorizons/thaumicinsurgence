@@ -39,20 +39,20 @@ public class BlockArcanaLeafDevice extends BlockOldLeaf {
 
     @Override
     public int damageDropped(int meta) {
-        return meta;
+        return meta % 8;
     }
 
     @Override
     // this is the method that displays it in inventory
     public IIcon getIcon(int side, int meta) {
-        return icons[meta];
+        return icons[meta % 8];
     }
 
     @Override
     // this is the method that actually displays it in world
     public IIcon getIcon(IBlockAccess worldIn, int x, int y, int z, int side) {
         int meta = worldIn.getBlockMetadata(x, y, z);
-        return icons[meta];
+        return icons[meta % 8];
     }
 
     @SideOnly(Side.CLIENT)

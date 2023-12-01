@@ -7,6 +7,8 @@ import thaumicinsurgence.main.modules.arcana.Arcana;
 import thaumicinsurgence.main.modules.arcana.core.blocks.crops.BlockArcanaTaintedSugarCane;
 import thaumicinsurgence.main.modules.arcana.core.blocks.leaves.BlockArcanaLeafDevice;
 import thaumicinsurgence.main.modules.arcana.core.blocks.leaves.ItemBlockArcanaLeafDevice;
+import thaumicinsurgence.main.modules.arcana.core.blocks.saplings.untainted.BlockArcanaUntaintedSapling;
+import thaumicinsurgence.main.modules.arcana.core.blocks.saplings.untainted.ItemBlockArcanaUntaintedSapling;
 import thaumicinsurgence.main.modules.arcana.core.blocks.stone.*;
 import thaumicinsurgence.main.modules.arcana.core.blocks.wood.BlockArcanaTaintedWoodDevice;
 import thaumicinsurgence.main.modules.arcana.core.blocks.wood.BlockArcanaWoodDevice;
@@ -32,6 +34,7 @@ public class ArcanaBlocks {
     public static Block blockArcanaTaintedLogDeviceThree = new BlockArcanaTaintedLogDeviceThree();
     public static Block blockArcanaLeafDevice = new BlockArcanaLeafDevice();
     public static Block blockTaintedReeds = new BlockArcanaTaintedSugarCane();
+    public static Block blockUntaintedSaplings= new BlockArcanaUntaintedSapling();
 
     public static void setup() {
         GameRegistry.registerBlock(
@@ -95,6 +98,11 @@ public class ArcanaBlocks {
                 blockArcanaLeafDevice.getUnlocalizedName());
 
         GameRegistry.registerBlock(blockTaintedReeds, blockTaintedReeds.getUnlocalizedName());
+
+        GameRegistry.registerBlock(
+                blockUntaintedSaplings,
+                ItemBlockArcanaUntaintedSapling.class,
+                blockUntaintedSaplings.getUnlocalizedName());
     }
 
 }
