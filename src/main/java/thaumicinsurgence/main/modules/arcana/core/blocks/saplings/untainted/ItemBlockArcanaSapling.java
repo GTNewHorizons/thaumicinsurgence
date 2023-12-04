@@ -1,29 +1,31 @@
-package thaumicinsurgence.main.modules.arcana.core.blocks.leaves;
+package thaumicinsurgence.main.modules.arcana.core.blocks.saplings.untainted;
 
-import java.util.List;
-
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
 
-public class ItemBlockArcanaLeafDevice extends ItemBlock {
+import java.util.List;
 
-    public ItemBlockArcanaLeafDevice(Block block) {
+public class ItemBlockArcanaSapling extends ItemBlock {
+    public ItemBlockArcanaSapling(Block block) {
         super(block);
         setHasSubtypes(true);
+
     }
 
-    @Override
-    public int getMetadata(int damageVal) {
-        return damageVal;
+    public int getMetadata(int meta) {
+        return meta;
     }
 
     @Override
     public void getSubItems(Item item, CreativeTabs tab, List list) {
         // love the creative naming schemes mojang, thx XOXO
-        for (int i = 0; i < BlockArcanaLeafDevice.blocks.length; i++) {
+        for (int i = 0; i < BlockArcanaSapling.saplings.length; i++) {
             list.add(new ItemStack(this, 1, i));
         }
     }
@@ -31,5 +33,10 @@ public class ItemBlockArcanaLeafDevice extends ItemBlock {
     @Override
     public String getUnlocalizedName(ItemStack item) {
         return getUnlocalizedName() + "." + item.getItemDamage();
+    }
+
+    @SideOnly(Side.CLIENT)
+    public IIcon getIconFromDamage(int meta) {
+        return this.field_150939_a.getIcon(2, meta);
     }
 }

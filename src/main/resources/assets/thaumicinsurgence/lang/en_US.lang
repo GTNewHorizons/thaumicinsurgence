@@ -179,11 +179,53 @@ tile.AR_TaintedStoneDevice2.2.name=Taintstone
 tile.AR_TaintedStoneDevice2.3.name=Cursed Obsidian
 
 tile.AR_LeafDevice.0.name=Dair Leaves
-tile.AR_LeafDevice.1.name=Oblivion Leaves
-tile.AR_LeafDevice.2.name=Ancient Oblivion Leaves
-tile.AR_LeafDevice.3.name=Arcanus Leaves
-tile.AR_LeafDevice.4.name=Shimmerwood Leaves
-tile.AR_LeafDevice.5.name=Trypophobius Leaves
-tile.AR_LeafDevice.6.name=Eucalyptus Leaves
-tile.AR_LeafDevice.7.name=Hawthorn Leaves
-tile.AR_LeafDevice.8.name=Willow Leaves
+tile.AR_LeafDevice.1.name=Eucalyptus Leaves
+tile.AR_LeafDevice.2.name=Hawthorn Leaves
+tile.AR_LeafDevice.3.name=Willow Leaves
+tile.AR_LeafDevice.4.name=Arcanus Leaves
+tile.AR_LeafDevice.5.name=Shimmerwood Leaves
+
+tile.AR_CursedLeafDevice.0.name=Trypophobius Leaves
+tile.AR_CursedLeafDevice.1.name=Oblivion Leaves
+tile.AR_CursedLeafDevice.2.name=Ancient Oblivion Leaves
+tile.AR_CursedLeafDevice.3.name=Tarnished Leaves
+tile.AR_CursedLeafDevice.4.name=Numnum Leaves
+
+tile.AR_TaintedVanillaSapling.0.name=Corrupted Oak Sapling
+tile.AR_TaintedVanillaSapling.1.name=Twisted Spruced Sapling
+tile.AR_TaintedVanillaSapling.2.name=Warped Birch Sapling
+tile.AR_TaintedVanillaSapling.3.name=Tainted Jungle Sapling
+tile.AR_TaintedVanillaSapling.4.name=Evil Acacia Sapling
+tile.AR_TaintedVanillaSapling.5.name=Oblivion Oak Sapling
+
+tile.AR_TaintedVanillaLeafDevice.0.name=Corrupted Oak Leaves
+tile.AR_TaintedVanillaLeafDevice.1.name=Twisted Spruced Leaves
+tile.AR_TaintedVanillaLeafDevice.2.name=Warped Birch Leaves
+tile.AR_TaintedVanillaLeafDevice.3.name=Tainted Jungle Leaves
+tile.AR_TaintedVanillaLeafDevice.4.name=Evil Acacia Leaves
+tile.AR_TaintedVanillaLeafDevice.5.name=Oblivion Oak Leaves
+
+tile.AR_TaintedSapling.0.name=Tainted Dair Sapling
+tile.AR_TaintedSapling.1.name=Tainted Arcanus Sapling
+tile.AR_TaintedSapling.2.name=Tainted Willow Sapling
+tile.AR_TaintedSapling.3.name=Tainted Eucalyptus Sapling
+tile.AR_TaintedSapling.4.name=Tainted Hawthorn Sapling
+
+tile.AR_CursedSapling.0.name=Trypophobius Sapling
+tile.AR_CursedSapling.1.name=Oblivion Sapling
+tile.AR_CursedSapling.2.name=Ancient Oblivion Sapling
+tile.AR_CursedSapling.3.name=Tarnished Sapling
+tile.AR_CursedSapling.4.name=Numnum Sapling
+
+tile.AR_TaintedLeafDevice.0.name=Tainted Dair Leaves
+tile.AR_TaintedLeafDevice.1.name=Tainted Arcanus Leaves
+tile.AR_TaintedLeafDevice.2.name=Tainted Willow Leaves
+tile.AR_TaintedLeafDevice.3.name=Tainted Eucalyptus Leaves
+tile.AR_TaintedLeafDevice.4.name=Tainted Hawthorn Leaves
+
+tile.AR_Sapling.0.name=Dair Sapling
+tile.AR_Sapling.1.name=Eucalyptus Sapling
+tile.AR_Sapling.2.name=Hawthorn Sapling
+tile.AR_Sapling.3.name=Willow Sapling
+tile.AR_Sapling.4.name=Arcanus Sapling
+tile.AR_Sapling.5.name=Shimmerwood Sapling

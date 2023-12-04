@@ -1,0 +1,51 @@
+package thaumicinsurgence.main.modules.arcana.core.blocks.leaves.tainted;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.block.BlockOldLeaf;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
+import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
+import thaumicinsurgence.main.modules.arcana.Arcana;
+import thaumicinsurgence.main.modules.arcana.core.blocks.leaves.LeafBase;
+import thaumicinsurgence.main.modules.arcana.utils.TabArcana;
+
+import java.util.ArrayList;
+
+public class BlockArcanaTaintedLeafDevice extends LeafBase {
+
+    public static String blocks[] = {
+            "dair", "greatwood",
+            "willow", "eucalyptus", "hawthorn"
+    }; // 5
+    IIcon icons[] = new IIcon[blocks.length];
+    String blockType = "leaves/tainted/tainted_";
+
+    public BlockArcanaTaintedLeafDevice() {
+        super();
+        setCreativeTab(TabArcana.tabArcana);
+        setBlockName("AR_TaintedLeafDevice");
+    }
+
+    @Override
+    public void registerBlockIcons(IIconRegister reg) {
+        for (int i = 0; i < blocks.length; i++) {
+            icons[i] = reg.registerIcon(Arcana.arcanaLabel + blockType + blocks[i] + "_leaves");
+        }
+    }
+
+    @Override
+    // this is the method that displays it in inventory
+    public IIcon getIcon(int side, int meta) {
+        return icons[meta % 8];
+    }
+
+    @Override
+    // this is the method that actually displays it in world
+    public IIcon getIcon(IBlockAccess worldIn, int x, int y, int z, int side) {
+        int meta = worldIn.getBlockMetadata(x, y, z);
+        return icons[meta % 8];
+    }
+}

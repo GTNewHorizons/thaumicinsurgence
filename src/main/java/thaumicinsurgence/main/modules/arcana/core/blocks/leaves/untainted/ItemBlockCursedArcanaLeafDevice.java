@@ -1,16 +1,17 @@
-package thaumicinsurgence.main.modules.arcana.core.blocks.saplings.tainted;
+package thaumicinsurgence.main.modules.arcana.core.blocks.leaves.untainted;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import thaumicinsurgence.main.modules.arcana.core.blocks.saplings.ItemSaplingBase;
+import thaumicinsurgence.main.modules.arcana.core.blocks.leaves.ItemLeafBase;
 
 import java.util.List;
 
-public class ItemBlockArcanaTaintedSapling extends ItemSaplingBase {
-    public ItemBlockArcanaTaintedSapling(Block block) {
+public class ItemBlockCursedArcanaLeafDevice extends ItemLeafBase {
+
+    public ItemBlockCursedArcanaLeafDevice(Block block) {
         super(block);
         setHasSubtypes(true);
     }
@@ -18,8 +19,9 @@ public class ItemBlockArcanaTaintedSapling extends ItemSaplingBase {
     @Override
     public void getSubItems(Item item, CreativeTabs tab, List list) {
         // love the creative naming schemes mojang, thx XOXO
-        for (int i = 0; i < BlockArcanaTaintedSapling.saplings.length; i++) {
+        for (int i = 0; i < BlockCursedArcanaLeafDevice.blocks.length; i++) {
             list.add(new ItemStack(this, 1, i));
         }
     }
+
 }

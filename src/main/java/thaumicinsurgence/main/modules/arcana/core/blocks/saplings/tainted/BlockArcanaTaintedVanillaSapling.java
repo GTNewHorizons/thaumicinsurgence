@@ -12,18 +12,19 @@ import thaumicinsurgence.main.modules.arcana.utils.TabArcana;
 
 import java.util.Random;
 
-public class BlockArcanaTaintedSapling extends BlockSapling {
+public class BlockArcanaTaintedVanillaSapling extends BlockSapling {
     public static String saplings[] = {
-            "tainted_dair", "tainted_greatwood", "tainted_willow", "tainted_eucalyptus", "tainted_hawthorn"
+            "tainted_oak", "tainted_spruce", "tainted_birch", "tainted_jungle",
+            "tainted_acacia", "tainted_darkoak"
     };
     IIcon icons[] = new IIcon[saplings.length];
 
     String blockType = "saplings/tainted/";
 
-    public BlockArcanaTaintedSapling() {
+    public BlockArcanaTaintedVanillaSapling() {
         super();
         setCreativeTab(TabArcana.tabArcana);
-        setBlockName("AR_TaintedSapling");
+        setBlockName("AR_TaintedVanillaSapling");
     }
 
     @Override
@@ -37,22 +38,19 @@ public class BlockArcanaTaintedSapling extends BlockSapling {
         if (!net.minecraftforge.event.terraingen.TerrainGen.saplingGrowTree(w, rnd, x, y, z)) return;
         w.setBlockToAir(x, y, z);
         switch (meta){
-            case 0: // dair
-                new WorldGenBigOak(true, 6, meta+2, meta, 5, ArcanaBlocks.blockArcanaTaintedLogDeviceTwo, ArcanaBlocks.blockTaintedArcanaLeafDevice).generate(w, rnd, x, y, z);
+            case 0: // Oak
+            case 2: // Birch
+                new WorldGenOak(true, 5, meta, meta, false, ArcanaBlocks.blockArcanaTaintedLogDeviceOne, ArcanaBlocks.blockArcanaTaintedVanillaLeafDevice).generate(w, rnd, x, y, z);
                 return;
-            case 1: // greatwood
-                new WorldGenBigOak(true, 6, 0, 1, 5, ArcanaBlocks.blockArcanaTaintedLogDeviceThree, ArcanaBlocks.blockTaintedArcanaLeafDevice).generate(w, rnd, x, y, z);
+            case 1: // Spruce
+            case 3: // Jungle
+                new WorldGenBigOak(true, 6, meta, meta, 5, ArcanaBlocks.blockArcanaTaintedLogDeviceOne, ArcanaBlocks.blockArcanaTaintedVanillaLeafDevice).generate(w, rnd, x, y, z);
                 return;
-            case 2: // willow
-                new WorldGenBigOak(true, 6, 3, 2, 5, ArcanaBlocks.blockArcanaTaintedLogDeviceThree, ArcanaBlocks.blockTaintedArcanaLeafDevice).generate(w, rnd, x, y, z);
+            case 4: // Acacia
+            case 5: // Dark Oak
+                new WorldGenBigOak(true, 6, meta-4, meta, 5, ArcanaBlocks.blockArcanaTaintedLogDeviceTwo, ArcanaBlocks.blockArcanaTaintedVanillaLeafDevice).generate(w, rnd, x, y, z);
                 return;
-            case 3: // eucalyptus
-                new WorldGenBigOak(true, 6, 1, 3, 5, ArcanaBlocks.blockArcanaTaintedLogDeviceThree, ArcanaBlocks.blockTaintedArcanaLeafDevice).generate(w, rnd, x, y, z);
-                return;
-            case 4: // hawthorn
-                new WorldGenBigOak(true, 6, 2, 4, 5, ArcanaBlocks.blockArcanaTaintedLogDeviceThree, ArcanaBlocks.blockTaintedArcanaLeafDevice).generate(w, rnd, x, y, z);
-
-        }
+            }
     }
 
     public int damageDropped(int meta) {

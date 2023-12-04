@@ -381,7 +381,7 @@ public class WorldGenBigOak extends WorldGenAbstractTree {
                 basePos[1] - 1,
                 basePos[2],
                 ForgeDirection.UP,
-                (IPlantable) ArcanaBlocks.blockUntaintedSaplings);
+                (IPlantable) ArcanaBlocks.blockSaplings);
         if (!isSoil) {
             return false;
         } else {
