@@ -23,7 +23,7 @@ public class ItemBlockFurnaceDevice extends ItemBlock {
     @Override
     public void getSubItems(Item item, CreativeTabs tab, List list) {
         // love the creative naming schemes mojang, thx XOXO
-        for (int i = 0; i < BlockAlkimiumAlchFurnace2.blocks.length; i++) {
+        for (int i = 0; i < BlockAlkimiumAlchFurnace.blocks.length; i++) {
             list.add(new ItemStack(this, 1, i));
         }
     }

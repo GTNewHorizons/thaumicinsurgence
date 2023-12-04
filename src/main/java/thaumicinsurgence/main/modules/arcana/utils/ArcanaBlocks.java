@@ -21,13 +21,28 @@ import thaumicinsurgence.main.modules.arcana.core.blocks.saplings.untainted.Bloc
 import thaumicinsurgence.main.modules.arcana.core.blocks.saplings.untainted.BlockCursedArcanaSapling;
 import thaumicinsurgence.main.modules.arcana.core.blocks.saplings.untainted.ItemBlockArcanaSapling;
 import thaumicinsurgence.main.modules.arcana.core.blocks.saplings.untainted.ItemBlockCursedArcanaSapling;
-import thaumicinsurgence.main.modules.arcana.core.blocks.stone.*;
+import thaumicinsurgence.main.modules.arcana.core.blocks.stone.BlockArcanaStoneDevice;
+import thaumicinsurgence.main.modules.arcana.core.blocks.stone.BlockArcanaTaintedStoneDeviceOne;
+import thaumicinsurgence.main.modules.arcana.core.blocks.stone.BlockArcanaTaintedStoneDeviceTwo;
+import thaumicinsurgence.main.modules.arcana.core.blocks.stone.ItemBlockArcanaStoneDevice;
+import thaumicinsurgence.main.modules.arcana.core.blocks.stone.ItemBlockArcanaTaintedStoneDeviceOne;
+import thaumicinsurgence.main.modules.arcana.core.blocks.stone.ItemBlockArcanaTaintedStoneDeviceTwo;
 import thaumicinsurgence.main.modules.arcana.core.blocks.wood.BlockArcanaTaintedWoodDevice;
 import thaumicinsurgence.main.modules.arcana.core.blocks.wood.BlockArcanaWoodDevice;
 import thaumicinsurgence.main.modules.arcana.core.blocks.wood.ItemBlockArcanaTaintedWoodDevice;
 import thaumicinsurgence.main.modules.arcana.core.blocks.wood.ItemBlockArcanaWoodDevice;
-import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.tainted.*;
-import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.untainted.*;
+import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.tainted.BlockArcanaTaintedLogDeviceOne;
+import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.tainted.BlockArcanaTaintedLogDeviceThree;
+import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.tainted.BlockArcanaTaintedLogDeviceTwo;
+import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.tainted.ItemBlockArcanaTaintedLogDeviceOne;
+import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.tainted.ItemBlockArcanaTaintedLogDeviceThree;
+import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.tainted.ItemBlockArcanaTaintedLogDeviceTwo;
+import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.untainted.BlockArcanaLogDeviceOne;
+import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.untainted.BlockArcanaLogDeviceThree;
+import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.untainted.BlockArcanaLogDeviceTwo;
+import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.untainted.ItemBlockArcanaLogDeviceOne;
+import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.untainted.ItemBlockArcanaLogDeviceThree;
+import thaumicinsurgence.main.modules.arcana.core.blocks.wood.logs.untainted.ItemBlockArcanaLogDeviceTwo;
 
 public class ArcanaBlocks {
 

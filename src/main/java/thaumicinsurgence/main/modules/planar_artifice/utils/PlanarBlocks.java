@@ -4,8 +4,20 @@ import net.minecraft.block.Block;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import thaumicinsurgence.main.modules.planar_artifice.PlanarArtifice;
-import thaumicinsurgence.main.modules.planar_artifice.core.blocks.*;
-import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.*;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.BlockAlkimiumAdamantAlchFurnace;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.BlockAlkimiumAlchFurnace;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.BlockAlkimiumMithminiteAlchFurnace;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.BlockAlkimiumMithrilAlchFurnace;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.BlockAlkimiumThaumiumAlchFurnace;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.BlockAlkimiumVoidAlchFurnace;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.BlockPlanarDevice;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.ItemBlockPlanarDevice;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileAdamantAlkimiumAlchemicalFurnace;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileAlkimiumAlchemicalFurnace;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileMithminiteAlkimiumAlchemicalFurnace;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileMithrilAlkimiumAlchemicalFurnace;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileThaumiumAlkimiumAlchemicalFurnace;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileVoidAlkimiumAlchemicalFurnace;
 
 public class PlanarBlocks {
 

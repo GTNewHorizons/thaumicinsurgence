@@ -17,7 +17,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import thaumcraft.common.blocks.BlockStoneDevice;
 import thaumcraft.common.lib.utils.InventoryUtils;
-import thaumcraft.common.tiles.*;
+import thaumcraft.common.tiles.TilePedestal;
 import thaumicinsurgence.main.Config;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
 import thaumicinsurgence.main.utils.VersionInfo;

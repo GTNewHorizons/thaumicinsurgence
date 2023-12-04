@@ -10,7 +10,11 @@ import net.minecraft.world.World;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import thaumcraft.api.*;
+import thaumcraft.api.IGoggles;
+import thaumcraft.api.IRepairable;
+import thaumcraft.api.IRunicArmor;
+import thaumcraft.api.IVisDiscountGear;
+import thaumcraft.api.IWarpingGear;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.nodes.IRevealer;
 import thaumcraft.common.items.armor.ItemGoggles;
