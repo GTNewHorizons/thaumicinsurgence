@@ -24,8 +24,6 @@ public class Arcana implements IModHelper {
 
     public void init() {}
 
-    public void postInit() {
-
-    }
+    public void postInit() {}
 
 }

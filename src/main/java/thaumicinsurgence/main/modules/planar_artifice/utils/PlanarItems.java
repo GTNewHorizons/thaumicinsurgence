@@ -1,10 +1,15 @@
 package thaumicinsurgence.main.modules.planar_artifice.utils;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.item.ItemStack;
 import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.aspects.Aspect;
+import thaumcraft.api.aspects.AspectList;
 import thaumicinsurgence.main.modules.planar_artifice.PlanarArtifice;
+import thaumicinsurgence.main.modules.planar_artifice.core.PlanarAspects;
 import thaumicinsurgence.main.modules.planar_artifice.core.items.ItemAlkimium;
 import thaumicinsurgence.main.modules.planar_artifice.core.items.ItemAlkimiumScribe;
 import thaumicinsurgence.main.modules.planar_artifice.core.items.ItemLogo;
@@ -29,6 +34,35 @@ public class PlanarItems {
         GameRegistry.registerItem(goggles, goggles.getUnlocalizedName());
 
         GameRegistry.registerItem(scribe, scribe.getUnlocalizedName());
+    }
+
+    public static void setupItemAspects() {
+        ItemStack item;
+        AspectList list;
+
+        list = new AspectList(new ItemStack(Items.leather_boots)).add(PlanarAspects.ALCHEMY, 2);
+        item = new ItemStack(Items.nether_wart);
+        ThaumcraftApi.registerObjectTag(item, list);
+
+        list = new AspectList(new ItemStack(PlanarItems.alkimium, 1, 0)).add(PlanarAspects.ALCHEMY, 4).add(Aspect.METAL, 2);
+        item = new ItemStack(PlanarItems.alkimium);
+        ThaumcraftApi.registerObjectTag(item, list);
+
+        list = new AspectList(new ItemStack(PlanarItems.alkimium, 1, 2)).add(PlanarAspects.ALCHEMY, 4).add(Aspect.METAL, 2);
+        item = new ItemStack(PlanarItems.alkimium);
+        ThaumcraftApi.registerObjectTag(item, list);
+
+        list = new AspectList(new ItemStack(PlanarItems.alkimium, 1, 1)).add(Aspect.METAL, 1);
+        item = new ItemStack(PlanarItems.alkimium);
+        ThaumcraftApi.registerObjectTag(item, list);
+
+        list = new AspectList(new ItemStack(PlanarItems.goggles)).add(PlanarAspects.ALCHEMY, 8).add(Aspect.METAL, 4);
+        item = new ItemStack(PlanarItems.goggles);
+        ThaumcraftApi.registerObjectTag(item, list);
+
+        list = new AspectList(new ItemStack(PlanarItems.scribe)).add(PlanarAspects.ALCHEMY, 4);
+        item = new ItemStack(PlanarItems.scribe);
+        ThaumcraftApi.registerObjectTag(item, list);
     }
 
 }

@@ -15,6 +15,9 @@ import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 import thaumcraft.common.config.ConfigItems;
 import thaumicinsurgence.main.Config;
+import thaumicinsurgence.main.modules.planar_artifice.utils.PlanarItems;
+import thaumicinsurgence.main.modules.planar_artifice.utils.PlanarRecipes;
+import thaumicinsurgence.main.modules.planar_artifice.utils.PlanarResearch;
 import thaumicinsurgence.main.utils.BlockInterface;
 import thaumicinsurgence.main.utils.ItemInterface;
 import thaumicinsurgence.main.utils.LocalizationManager;
@@ -207,6 +210,8 @@ public class ThaumcraftHelper implements IModHelper {
     public void postInit() {
         setupItemAspects();
         setupCrafting();
+        PlanarRecipes.planarCrafting();
+        PlanarRecipes.planarAlchemy();
         setupResearch();
     }
 
@@ -409,6 +414,8 @@ public class ThaumcraftHelper implements IModHelper {
         littleSponge.setPages(unintelligbleLaughter, shootForTheSky);
         littleSponge.setParents("GOGGLES");
 
+        PlanarResearch.planarResearch();
+
         ThaumcraftApi.addWarpToResearch("TI_InfusionIntercepter", 4);
         ResearchCategories.addResearch(infusionIntercepterPage);
         // ResearchCategories.addResearch(redCrownPage); // TODO: actually implement this feature.
@@ -422,5 +429,8 @@ public class ThaumcraftHelper implements IModHelper {
         return new ResearchPage(LocalizationManager.getLocalizedString("tc.research_page." + ident));
     }
 
-    public static void setupItemAspects() {}
+    public static void setupItemAspects() {
+        // Planar Artifice
+        PlanarItems.setupItemAspects();
+    }
 }
