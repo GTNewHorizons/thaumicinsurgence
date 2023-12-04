@@ -15,6 +15,7 @@ import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 import thaumcraft.common.config.ConfigItems;
 import thaumicinsurgence.main.Config;
+import thaumicinsurgence.main.modules.arcana.utils.ArcanaRecipes;
 import thaumicinsurgence.main.modules.planar_artifice.utils.PlanarItems;
 import thaumicinsurgence.main.modules.planar_artifice.utils.PlanarRecipes;
 import thaumicinsurgence.main.modules.planar_artifice.utils.PlanarResearch;
@@ -212,6 +213,7 @@ public class ThaumcraftHelper implements IModHelper {
         setupCrafting();
         PlanarRecipes.planarCrafting();
         PlanarRecipes.planarAlchemy();
+        ArcanaRecipes.arcanaAlchemy();
         setupResearch();
     }
 

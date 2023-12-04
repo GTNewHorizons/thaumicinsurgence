@@ -1,13 +1,13 @@
 package thaumicinsurgence.main.modules.arcana.common.event;
 
+import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenTrees;
 import net.minecraftforge.common.util.ForgeDirection;
-
-import java.util.Random;
 
 public class WorldGenOak extends WorldGenTrees {
 
@@ -18,7 +18,7 @@ public class WorldGenOak extends WorldGenTrees {
     public int minTreeHeight;
 
     public WorldGenOak(boolean doBlockNotify, int minHeight, int metaWood, int metaLeaves, boolean doVines, Block tree,
-                       Block leaves) {
+            Block leaves) {
         super(doBlockNotify, minHeight, metaWood, metaLeaves, doVines);
         trunkMeta = metaWood;
         leavesMeta = metaLeaves;

@@ -1,25 +1,16 @@
 package thaumicinsurgence.main.modules.arcana.core.blocks.leaves.tainted;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.block.BlockOldLeaf;
 import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
+
 import thaumicinsurgence.main.modules.arcana.Arcana;
 import thaumicinsurgence.main.modules.arcana.core.blocks.leaves.LeafBase;
 import thaumicinsurgence.main.modules.arcana.utils.TabArcana;
 
-import java.util.ArrayList;
-
 public class BlockArcanaTaintedLeafDevice extends LeafBase {
 
-    public static String blocks[] = {
-            "dair", "greatwood",
-            "willow", "eucalyptus", "hawthorn"
-    }; // 5
+    public static String blocks[] = { "dair", "greatwood", "willow", "eucalyptus", "hawthorn" }; // 5
     IIcon icons[] = new IIcon[blocks.length];
     String blockType = "leaves/tainted/tainted_";
 

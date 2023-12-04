@@ -118,10 +118,7 @@ public class ArcanaBlocks {
 
         GameRegistry.registerBlock(blockTaintedReeds, blockTaintedReeds.getUnlocalizedName());
 
-        GameRegistry.registerBlock(
-                blockSaplings,
-                ItemBlockArcanaSapling.class,
-                blockSaplings.getUnlocalizedName());
+        GameRegistry.registerBlock(blockSaplings, ItemBlockArcanaSapling.class, blockSaplings.getUnlocalizedName());
 
         GameRegistry.registerBlock(
                 blockTaintedVanillaSaplings,

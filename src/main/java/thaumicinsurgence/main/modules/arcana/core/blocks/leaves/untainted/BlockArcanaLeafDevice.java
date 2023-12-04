@@ -2,24 +2,18 @@ package thaumicinsurgence.main.modules.arcana.core.blocks.leaves.untainted;
 
 import java.util.ArrayList;
 
-import net.minecraft.block.BlockOldLeaf;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import thaumicinsurgence.main.modules.arcana.Arcana;
 import thaumicinsurgence.main.modules.arcana.core.blocks.leaves.LeafBase;
 import thaumicinsurgence.main.modules.arcana.utils.TabArcana;
 
 public class BlockArcanaLeafDevice extends LeafBase {
 
-    public static String blocks[] = {
-            "dair", "eucalyptus", "hawthorn", "willow",
-            "greatwood", "silverwood"};
+    public static String blocks[] = { "dair", "eucalyptus", "hawthorn", "willow", "greatwood", "silverwood" };
     IIcon icons[] = new IIcon[blocks.length];
 
     String blockType = "leaves/untainted/";

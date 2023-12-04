@@ -1,6 +1,7 @@
 package thaumicinsurgence.main.modules.arcana.utils;
 
 import net.minecraft.item.ItemStack;
+
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
@@ -11,11 +12,11 @@ import thaumicinsurgence.main.modules.planar_artifice.utils.PlanarItems;
 import thaumicinsurgence.main.modules.planar_artifice.utils.PlanarRecipes;
 
 public class ArcanaResearch {
-    public static void arcanaResearch(){
+
+    public static void arcanaResearch() {
         String category = "THAUMICINSURGENCE";
         ResearchItem alkimiumPage;
         ResearchPage alkimium1, alkimium2, alkimium3, alkimium4, alkimium5, alkimium6, alkimium7, alkimium8;
-
 
         alkimiumPage = new ResearchItem(
                 "PA_Alkimium",
@@ -38,5 +39,5 @@ public class ArcanaResearch {
         alkimiumPage.setPages(alkimium1, alkimium2, alkimium3, alkimium4, alkimium5, alkimium6, alkimium7, alkimium8);
         alkimiumPage.setParents("DISTILESSENTIA");
         ResearchCategories.addResearch(alkimiumPage);
-    }}
-
+    }
+}

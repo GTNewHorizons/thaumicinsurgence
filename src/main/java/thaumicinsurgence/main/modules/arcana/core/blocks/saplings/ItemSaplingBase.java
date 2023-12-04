@@ -1,13 +1,15 @@
 package thaumicinsurgence.main.modules.arcana.core.blocks.saplings;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 public class ItemSaplingBase extends ItemBlock {
+
     public ItemSaplingBase(Block block) {
         super(block);
     }

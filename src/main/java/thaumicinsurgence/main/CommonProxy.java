@@ -10,7 +10,6 @@ import cpw.mods.fml.common.network.IGuiHandler;
 import thaumicinsurgence.main.modules.planar_artifice.containers.ContainerAlkiumAlchemyFurnace;
 import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileAlkimiumAlchemicalFurnace;
 import thaumicinsurgence.main.utils.CraftingManager;
-import thaumicinsurgence.main.utils.LogHelper;
 import thaumicinsurgence.main.utils.compat.ModHelperManager;
 
 @SuppressWarnings("unused")

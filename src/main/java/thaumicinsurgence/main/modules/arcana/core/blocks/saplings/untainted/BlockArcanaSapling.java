@@ -1,22 +1,20 @@
 package thaumicinsurgence.main.modules.arcana.core.blocks.saplings.untainted;
 
+import java.util.Random;
+
 import net.minecraft.block.BlockSapling;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
+
 import thaumicinsurgence.main.modules.arcana.Arcana;
 import thaumicinsurgence.main.modules.arcana.common.event.WorldGenBigOak;
-import thaumicinsurgence.main.modules.arcana.common.event.WorldGenOak;
 import thaumicinsurgence.main.modules.arcana.utils.ArcanaBlocks;
 import thaumicinsurgence.main.modules.arcana.utils.TabArcana;
 
-import java.util.Random;
-
 public class BlockArcanaSapling extends BlockSapling {
 
-    public static String saplings[] = {
-            "dair", "eucalyptus", "hawthorn", "willow",
-            "greatwood", "silverwood"};
+    public static String saplings[] = { "dair", "eucalyptus", "hawthorn", "willow", "greatwood", "silverwood" };
     IIcon icons[] = new IIcon[saplings.length];
 
     String blockType = "saplings/untainted/";
@@ -39,24 +37,44 @@ public class BlockArcanaSapling extends BlockSapling {
         w.setBlockToAir(x, y, z);
         switch (meta) {
             case 0:
-                new WorldGenBigOak(true, 6, meta, meta, 5, ArcanaBlocks.blockArcanaLogDeviceTwo, ArcanaBlocks.blockArcanaLeafDevice).generate(w, rnd, x, y, z);
+                new WorldGenBigOak(
+                        true,
+                        6,
+                        meta,
+                        meta,
+                        5,
+                        ArcanaBlocks.blockArcanaLogDeviceTwo,
+                        ArcanaBlocks.blockArcanaLeafDevice).generate(w, rnd, x, y, z);
                 return;
             case 1:
             case 2:
             case 3:
-                new WorldGenBigOak(true, 6, meta, meta, 5, ArcanaBlocks.blockArcanaLogDeviceOne, ArcanaBlocks.blockArcanaLeafDevice).generate(w, rnd, x, y, z);
+                new WorldGenBigOak(
+                        true,
+                        6,
+                        meta,
+                        meta,
+                        5,
+                        ArcanaBlocks.blockArcanaLogDeviceOne,
+                        ArcanaBlocks.blockArcanaLeafDevice).generate(w, rnd, x, y, z);
                 return;
             case 4:
             case 5:
-                new WorldGenBigOak(true, 6, meta-2, meta, 5, ArcanaBlocks.blockArcanaLogDeviceTwo, ArcanaBlocks.blockArcanaLeafDevice).generate(w, rnd, x, y, z);
-    }
+                new WorldGenBigOak(
+                        true,
+                        6,
+                        meta - 2,
+                        meta,
+                        5,
+                        ArcanaBlocks.blockArcanaLogDeviceTwo,
+                        ArcanaBlocks.blockArcanaLeafDevice).generate(w, rnd, x, y, z);
+        }
 
-}
+    }
 
     public int damageDropped(int meta) {
         return meta % 8;
     }
-
 
     @Override
     public void registerBlockIcons(IIconRegister reg) {

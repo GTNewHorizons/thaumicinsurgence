@@ -1,14 +1,15 @@
 package thaumicinsurgence.main.modules.arcana.common.event;
 
+import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.util.ForgeDirection;
-import thaumicinsurgence.main.modules.arcana.utils.ArcanaBlocks;
 
-import java.util.Random;
+import thaumicinsurgence.main.modules.arcana.utils.ArcanaBlocks;
 
 public class WorldGenBigOak extends WorldGenAbstractTree {
 
@@ -33,7 +34,7 @@ public class WorldGenBigOak extends WorldGenAbstractTree {
     public int trunkMeta;
 
     public WorldGenBigOak(boolean doBlockNotify, int minHeight, int metaWood, int metaLeaves, int treeSize, Block tree,
-                          Block leaves) {
+            Block leaves) {
         super(doBlockNotify);
         trunkMeta = metaWood;
         leavesMeta = metaLeaves;

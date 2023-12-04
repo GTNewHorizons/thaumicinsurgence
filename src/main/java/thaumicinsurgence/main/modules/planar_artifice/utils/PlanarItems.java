@@ -2,9 +2,9 @@ package thaumicinsurgence.main.modules.planar_artifice.utils;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.item.ItemStack;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -44,11 +44,13 @@ public class PlanarItems {
         item = new ItemStack(Items.nether_wart);
         ThaumcraftApi.registerObjectTag(item, list);
 
-        list = new AspectList(new ItemStack(PlanarItems.alkimium, 1, 0)).add(PlanarAspects.ALCHEMY, 4).add(Aspect.METAL, 2);
+        list = new AspectList(new ItemStack(PlanarItems.alkimium, 1, 0)).add(PlanarAspects.ALCHEMY, 4)
+                .add(Aspect.METAL, 2);
         item = new ItemStack(PlanarItems.alkimium);
         ThaumcraftApi.registerObjectTag(item, list);
 
-        list = new AspectList(new ItemStack(PlanarItems.alkimium, 1, 2)).add(PlanarAspects.ALCHEMY, 4).add(Aspect.METAL, 2);
+        list = new AspectList(new ItemStack(PlanarItems.alkimium, 1, 2)).add(PlanarAspects.ALCHEMY, 4)
+                .add(Aspect.METAL, 2);
         item = new ItemStack(PlanarItems.alkimium);
         ThaumcraftApi.registerObjectTag(item, list);
 

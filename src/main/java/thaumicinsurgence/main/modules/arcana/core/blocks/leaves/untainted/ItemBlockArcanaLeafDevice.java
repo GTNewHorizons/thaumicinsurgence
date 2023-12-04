@@ -5,10 +5,9 @@ import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+
 import thaumicinsurgence.main.modules.arcana.core.blocks.leaves.ItemLeafBase;
-import thaumicinsurgence.main.modules.arcana.core.blocks.leaves.untainted.BlockArcanaLeafDevice;
 
 public class ItemBlockArcanaLeafDevice extends ItemLeafBase {
 
