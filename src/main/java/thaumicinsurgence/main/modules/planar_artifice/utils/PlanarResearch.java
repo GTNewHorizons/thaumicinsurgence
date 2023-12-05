@@ -44,7 +44,8 @@ public class PlanarResearch {
         gogglesPage = new ResearchItem(
                 "PA_Goggles",
                 category,
-                new AspectList().add(Aspect.MAGIC, 25).add(PlanarAspects.ALCHEMY, 25).add(Aspect.TOOL, 25).add(Aspect.ARMOR, 25),
+                new AspectList().add(Aspect.MAGIC, 25).add(PlanarAspects.ALCHEMY, 25).add(Aspect.TOOL, 25)
+                        .add(Aspect.ARMOR, 25),
                 4,
                 -2,
                 0,
@@ -72,11 +73,11 @@ public class PlanarResearch {
         furnacePage.setParents("PA_Alkimium");
         ResearchCategories.addResearch(furnacePage);
 
-
         scribePage = new ResearchItem(
                 "PA_Scribe",
                 category,
-                new AspectList().add(Aspect.MAGIC, 25).add(PlanarAspects.ALCHEMY, 25).add(Aspect.TOOL, 25).add(Aspect.ENERGY, 10),
+                new AspectList().add(Aspect.MAGIC, 25).add(PlanarAspects.ALCHEMY, 25).add(Aspect.TOOL, 25)
+                        .add(Aspect.ENERGY, 10),
                 2,
                 -4,
                 0,
