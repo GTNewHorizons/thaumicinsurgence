@@ -252,3 +252,15 @@ tile.AR_Sapling.5.name=Shimmerwood Sapling
 
 tc.research_name.AR_Base=Arcana
 tc.research_text.AR_Base=Transmutation through taint
+
+tc.research_name.AR_ArcanaSapling=Arcane Arborology
+tc.research_text.AR_ArcanaSapling=The Study of Arcane Trees
+
+tc.research_name.AR_CursedSapling=Cursed Arborology
+tc.research_text.AR_CursedSapling=The Study of Cursed Trees
+
+tc.research_name.AR_TaintedVanilla=Corrupted Arborology
+tc.research_text.AR_TaintedVanilla=The Study of Corrupted Trees
+
+tc.research_name.AR_TaintedSapling=Tainted Arborology
+tc.research_text.AR_TaintedSapling=The Study of Tainted Trees
