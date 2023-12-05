@@ -1,6 +1,7 @@
 package thaumicinsurgence.main.modules.planar_artifice.utils;
 
-import net.minecraft.item.Item;
+import java.awt.*;
+
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.api.ThaumcraftApi;
@@ -12,8 +13,6 @@ import thaumcraft.api.crafting.ShapelessArcaneRecipe;
 import thaumcraft.common.config.ConfigItems;
 import thaumicinsurgence.main.modules.planar_artifice.core.PlanarAspects;
 import thaumicinsurgence.main.utils.compat.ThaumcraftHelper;
-
-import java.awt.*;
 
 public class PlanarRecipes {
 

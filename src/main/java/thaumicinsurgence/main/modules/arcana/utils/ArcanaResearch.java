@@ -7,9 +7,6 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
-import thaumicinsurgence.main.modules.planar_artifice.core.PlanarAspects;
-import thaumicinsurgence.main.modules.planar_artifice.utils.PlanarItems;
-import thaumicinsurgence.main.modules.planar_artifice.utils.PlanarRecipes;
 
 public class ArcanaResearch {
 
