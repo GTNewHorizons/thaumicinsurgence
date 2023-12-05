@@ -1,7 +1,5 @@
 package thaumicinsurgence.main.modules.planar_artifice.utils;
 
-import java.awt.*;
-
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.api.ThaumcraftApi;

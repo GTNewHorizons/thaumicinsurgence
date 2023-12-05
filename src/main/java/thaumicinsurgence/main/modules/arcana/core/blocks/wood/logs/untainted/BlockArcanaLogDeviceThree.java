@@ -40,17 +40,17 @@ public class BlockArcanaLogDeviceThree extends BlockRotatedPillar {
 
     @Override
     public int damageDropped(int meta) {
-        return meta;
+        return meta % 4;
     }
 
     @Override
     protected IIcon getTopIcon(int meta) {
-        return top[meta];
+        return top[meta % 4];
     }
 
     @Override
     protected IIcon getSideIcon(int meta) {
-        return side[meta];
+        return side[meta % 4];
     }
 
     @Override
