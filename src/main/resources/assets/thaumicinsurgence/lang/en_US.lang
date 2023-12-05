@@ -93,8 +93,28 @@ item.logo.name=--Mod Logo-- Report to Alastor
 item.alkimium_goggles.name=Alkimium Goggles
 item.alkimium_scribe.name=Alkimium Scribing Tools
 
+tc.research_name.PA_Alkimium=Planar Artifice
+tc.research_text.PA_Alkimium=Transformation through transmutation
+Alkimium.1=During your studies of Nether Wart, you discovered an aspect of magic unique to them. You discovered that it has some particular reactions with Thaumium, namely forming a new alloy you've labeled as "Alkimium." <BR><BR>You wonder where this might be able to be applied...
+
+tc.research_name.PA_Scribe=Alchemical Ink
+tc.research_text.PA_Scribe=Note-taking with magic
+AlkimiumScrib.1=You've noticed something peculiar, alkimium can be used to place vis stationary in space, one application of this is utilizing vis as a sort of ink via an alkimia clad scribe tip.
+
+tc.research_name.PA_Furnace=Alchemical Efficiency
+tc.research_text.PA_Furnace=Burning brighter than the sun
+AlkimiumFurnace.1=
+
+tc.research_name.PA_Goggles=Alchemical Goggles
+tc.research_text.PA_Goggles=Improving sight through alchemy
+AlkimiumGoggles.1=
+
+item.alkimium.name=alkimium
+
 #Arcana
 itemGroup.Arcana=Arcana
+
+item.arcanaLogo.name=--Mod Logo-- Report to Alastor
 
 item.arcanium_goggles.name=Arcanium Goggles
 
@@ -229,3 +249,6 @@ tile.AR_Sapling.2.name=Hawthorn Sapling
 tile.AR_Sapling.3.name=Willow Sapling
 tile.AR_Sapling.4.name=Arcanus Sapling
 tile.AR_Sapling.5.name=Shimmerwood Sapling
+
+tc.research_name.AR_Base=Arcana
+tc.research_text.AR_Base=Transmutation through taint

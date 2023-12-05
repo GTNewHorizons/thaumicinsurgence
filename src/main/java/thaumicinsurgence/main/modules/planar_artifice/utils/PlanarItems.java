@@ -5,6 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
@@ -26,8 +27,7 @@ public class PlanarItems {
     public static Item scribe = new ItemAlkimiumScribe();
 
     public static void setup() {
-        alkimium = new ItemAlkimium();
-        GameRegistry.registerItem(new ItemAlkimium(), "Alkimium");
+        GameRegistry.registerItem(alkimium, "Alkimium");
 
         GameRegistry.registerItem(logo, "logo");
 
