@@ -1,7 +1,7 @@
 // Add your dependencies here
 
 dependencies {
-	compileOnly('com.github.GTNewHorizons:ForestryMC:4.8.0:dev')
+	compileOnly('com.github.GTNewHorizons:ForestryMC:4.8.2:dev')
 	api('thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev')
 	api('com.github.GTNewHorizons:Baubles:1.0.3:dev')
 
