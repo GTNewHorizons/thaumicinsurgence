@@ -1,6 +1,6 @@
-Language.name=Russian
-язык.регион=RU
-Language.code=ru_RU
+language.name=Russian
+language.регион=RU
+language.code=ru_RU
 
 # Miscellaneous strings
 # -- Updater strings. Please try to keep these to one line if possible.
