@@ -4,4 +4,10 @@ public class TileMithrilAlkimiumAlchemicalFurnace extends TileAlkimiumAlchemical
 
     public static final String tileEntityName = "planarartifice.alkimium_smeltery_mithril";
 
+    public void setValues() {
+        speedValue = 3;
+        maxVis = 337;
+        tierSpeed = 0.95;
+    }
+
 }

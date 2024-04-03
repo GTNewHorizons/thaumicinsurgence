@@ -4,6 +4,10 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileAlkimiumAlchemicalFurnace;
+import thaumicinsurgence.main.modules.planar_artifice.core.blocks.tiles.TileVoidAlkimiumAlchemicalFurnace;
 import thaumicinsurgence.main.modules.planar_artifice.utils.TabPlanarArtifice;
 
 public class BlockAlkimiumVoidAlchFurnace extends BlockAlkimiumAlchFurnace {
@@ -23,5 +27,10 @@ public class BlockAlkimiumVoidAlchFurnace extends BlockAlkimiumAlchFurnace {
         icons[3] = ir.registerIcon("planarartifice:furnaces/alkimium_smeltery_void_front");
         icons[4] = ir.registerIcon("planarartifice:furnaces/alkimium_smeltery_void_front_on");
         icons[5] = ir.registerIcon("planarartifice:bottom_void");
+    }
+
+    @Override
+    public TileEntity createNewTileEntity(World w, int meta) {
+        return new TileVoidAlkimiumAlchemicalFurnace();
     }
 }

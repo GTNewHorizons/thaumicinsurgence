@@ -41,6 +41,7 @@ public class TileAlkimiumAlchemicalFurnace extends TileAlchemyFurnace {
     // Configurable values
     public int speedValue;
     public int maxVis;
+    public double tierSpeed;
 
     public TileAlkimiumAlchemicalFurnace() {
         setValues();
@@ -48,7 +49,8 @@ public class TileAlkimiumAlchemicalFurnace extends TileAlchemyFurnace {
 
     public void setValues() {
         speedValue = 20;
-        maxVis = 100;
+        maxVis = 75; // base is 50, this is supposed to have a 1.5x capacity upgrade
+        tierSpeed = 0.95;
     }
 
     public int returnSpeed() {
@@ -59,6 +61,8 @@ public class TileAlkimiumAlchemicalFurnace extends TileAlchemyFurnace {
         return maxVis;
     }
 
+    public double returnTierSpeed() { return tierSpeed; }
+
     // Handles the
     @SideOnly(Side.CLIENT)
     @Override
@@ -67,7 +71,7 @@ public class TileAlkimiumAlchemicalFurnace extends TileAlchemyFurnace {
     }
 
     private String customName;
-    private ItemStack[] furnaceItemStacks = new ItemStack[2];
+    public ItemStack[] furnaceItemStacks = new ItemStack[2];
     public boolean alumentumUsed = false;
 
     public boolean burnRemaining() {
@@ -183,11 +187,19 @@ public class TileAlkimiumAlchemicalFurnace extends TileAlchemyFurnace {
         if (smeltList.visSize() > returnMaxVis() - vis) {
             return false;
         }
-        smeltTime = (int) ((smeltList.visSize() * 10) * (1.0F - 0.125F * bellowCount));
+        smeltTime = (int) ((smeltList.visSize() * 10 * returnTierSpeed()) * (1.0F - 0.125F * bellowCount) * returnTierSpeed());
+        // Original Formula:
         // This formula breaks down to: (1) * (2)
         // (1) each point of essentia in an item adds (base) 10 ticks (half a second) to the total time (2 aspects = 1
         // second)
         // (2) each bellow reduces the total time by an eighth, starting from x1.125, all the way to x0.75 (three total)
+
+        // Modified Formula:
+        // This formula breaks down to: (1) * (2) * (3)
+        // (1) The original formula is unchanged, however a secondary modifier was thrown in to reduce tick time production
+        // (2) nothing is changed here
+        // (3) this was an additional modifier thrown in to make this more accurate to the original number changes
+        // while still maintaining the speed expected of GTNH, a modification to this formula would be (1) * (2) * (3)^2
         return true;
     }
 
