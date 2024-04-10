@@ -13,10 +13,16 @@ public class PlanarResearch {
 
     public static void planarResearch() {
         String category = "THAUMICINSURGENCE";
-        ResearchItem alkimiumPage, gogglesPage, furnacePage, scribePage;
+        ResearchItem alkimiumPage, gogglesPage, scribePage;
+        ResearchItem furnacePage, thaumiumFurnace, voidFurnace, mithrilFurnace, adamantFurnace, mithriliumFurnace;
         ResearchPage alkimium1, alkimium2, alkimium3, alkimium4, alkimium5, alkimium6, alkimium7, alkimium8;
         ResearchPage goggles1, goggles2;
         ResearchPage furnace1, furnace2;
+        ResearchPage thaumiumFurnace1, thaumiumFurnace2;
+        ResearchPage voidFurnace1, voidFurnace2;
+        ResearchPage mithrilFurnace1, mithrilFurnace2;
+        ResearchPage adamantFurnace1, adamantFurnace2;
+        ResearchPage mithriliumFurnace1, mithriliumFurnace2;
         ResearchPage scribe1, scribe2;
 
         alkimiumPage = new ResearchItem(
@@ -58,7 +64,7 @@ public class PlanarResearch {
         gogglesPage.setParents("PA_Alkimium");
         ResearchCategories.addResearch(gogglesPage);
 
-        furnacePage = new ResearchItem(
+        furnacePage =new ResearchItem(
                 "PA_Furnace",
                 category,
                 new AspectList().add(Aspect.MAGIC, 25).add(PlanarAspects.ALCHEMY, 25).add(Aspect.MOTION, 10),
@@ -72,6 +78,36 @@ public class PlanarResearch {
         furnacePage.setPages(furnace1, furnace2);
         furnacePage.setParents("PA_Alkimium");
         ResearchCategories.addResearch(furnacePage);
+
+        thaumiumFurnace = new ResearchItem(
+                "PA_ThaumiumFurnace",
+                category,
+                new AspectList().add(Aspect.MAGIC, 25).add(PlanarAspects.ALCHEMY, 25).add(Aspect.MOTION, 10),
+                5,
+                -5,
+                0,
+                new ItemStack(PlanarBlocks.thaumAlkAlchFurnace));
+        thaumiumFurnace1 = new ResearchPage("ThaumiumFurnace.1");
+        thaumiumFurnace2 = new ResearchPage(PlanarRecipes.alkimiumFurnace);
+
+        thaumiumFurnace.setPages(thaumiumFurnace1, thaumiumFurnace2);
+        thaumiumFurnace.setParents("PA_Furnace");
+        ResearchCategories.addResearch(thaumiumFurnace);
+
+        voidFurnace = new ResearchItem(
+                "PA_VoidFurnace",
+                category,
+                new AspectList().add(Aspect.MAGIC, 25).add(PlanarAspects.ALCHEMY, 25).add(Aspect.MOTION, 10),
+                6,
+                -6,
+                0,
+                new ItemStack(PlanarBlocks.thaumAlkAlchFurnace));
+        voidFurnace1 = new ResearchPage("VoidFurnace.1");
+        voidFurnace2 = new ResearchPage(PlanarRecipes.alkimiumFurnace);
+
+        voidFurnace.setPages(voidFurnace1, voidFurnace2);
+        voidFurnace.setParents("PA_ThaumiumFurnace");
+        ResearchCategories.addResearch(voidFurnace);
 
         scribePage = new ResearchItem(
                 "PA_Scribe",
