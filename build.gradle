@@ -2,4 +2,39 @@
 
 plugins {
     id 'com.gtnewhorizons.gtnhconvention'
+
+
+}
+
+def getURL(String main, String fallback) {
+    return pingURL(main, 10000) ? main : fallback
+}
+
+// credit: https://stackoverflow.com/a/3584332
+def pingURL(String url, int timeout) {
+    url = url.replaceFirst("^https", "http") // Otherwise an exception may be thrown on invalid SSL certificates.
+    try {
+        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection()
+        connection.setConnectTimeout(timeout)
+        connection.setReadTimeout(timeout)
+        connection.setRequestMethod("HEAD")
+        int responseCode = connection.getResponseCode()
+        return 200 <= responseCode && responseCode <= 399
+    } catch (IOException ignored) {
+        return false
+    }
+}
+
+// For easier scripting of things that require variables defined earlier in the buildscript
+if (file('addon.late.gradle.kts').exists()) {
+    apply from: 'addon.late.gradle.kts'
+} else if (file('addon.late.gradle').exists()) {
+    apply from: 'addon.late.gradle'
+}
+
+// File for local tweaks not commited to Git
+if (file('addon.late.local.gradle.kts').exists()) {
+    apply from: 'addon.late.local.gradle.kts'
+} else if (file('addon.late.local.gradle').exists()) {
+    apply from: 'addon.late.local.gradle'
 }
