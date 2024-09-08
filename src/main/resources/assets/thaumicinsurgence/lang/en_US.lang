@@ -262,3 +262,13 @@ tc.research_text.AR_TaintedVanilla=The Study of Corrupted Trees
 
 tc.research_name.AR_TaintedSapling=Tainted Arborology
 tc.research_text.AR_TaintedSapling=The Study of Tainted Trees
+
+# Thaumic Rings
+item.TR_Rings.0.name=Master's Light-Infused Ring
+item.TR_Rings.1.name=Master's Chaos-Gem Ring
+item.TR_Rings.2.name=Master's Balanced Ring
+item.TR_Rings.3.name=Purified Shard Ring
+item.TR_Rings.4.name=Corrupted Shard Ring
+item.TR_Rings.5.name=Balanced Shard Ring
+item.TR_Rings.6.name=Sanguophagic Skull Ring
+item.TR_Rings.name=ERROR, why are you seeing this? Report to Alastor

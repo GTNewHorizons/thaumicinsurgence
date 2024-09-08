@@ -35,19 +35,6 @@ public class CommonProxy implements IGuiHandler {
     }
 
     @Override
-    public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-        // case 0:
-        // return new ContainerAdvancedWand(player.inventory, world, x, y, z);
-        // bring back when the Advanced Wand is finished
-        if (ID == 9) {
-            return new ContainerAlkiumAlchemyFurnace(
-                    player.inventory,
-                    (TileAlkimiumAlchemicalFurnace) world.getTileEntity(x, y, z));
-        }
-        return null;
-    }
-
-    @Override
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         return null;
     }
@@ -61,11 +48,6 @@ public class CommonProxy implements IGuiHandler {
             default:
                 break;
         }
-        return null;
-    }
-
-    @Override
-    public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         return null;
     }
 }

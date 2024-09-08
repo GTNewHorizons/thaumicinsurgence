@@ -2,7 +2,9 @@ package thaumicinsurgence.main;
 
 import java.io.File;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.util.WeightedRandom;
 import net.minecraftforge.common.config.Configuration;
 
 import cpw.mods.fml.client.event.ConfigChangedEvent;
@@ -10,12 +12,19 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.aspects.Aspect;
+import thaumcraft.api.aspects.AspectList;
+import thaumcraft.common.items.ItemNuggetEdible;
 import thaumicinsurgence.block.BlockArcaneMarble;
 import thaumicinsurgence.block.BlockArcaneMarbleBrick;
 import thaumicinsurgence.block.BlockInfusionIntercepter;
 import thaumicinsurgence.block.BlockInfusionMatrixAlpha;
 import thaumicinsurgence.block.BlockInfusionPillarAlpha;
 import thaumicinsurgence.block.BlockPedestalAlpha;
+import thaumicinsurgence.block.kekztech.BlockIchorJar;
+import thaumicinsurgence.block.kekztech.BlockThaumiumReinforcedJar;
+import thaumicinsurgence.block.kekztech.ItemBlockIchorJar;
+import thaumicinsurgence.block.kekztech.ItemBlockThaumiumReinforcedJar;
 import thaumicinsurgence.item.ItemMiscResources;
 import thaumicinsurgence.item.ItemSanitySoapAlpha;
 import thaumicinsurgence.item.ItemSanitySoapBeta;
@@ -23,6 +32,7 @@ import thaumicinsurgence.item.armor.ItemBIGSHOT;
 import thaumicinsurgence.item.armor.ItemEightBitRedCrown;
 import thaumicinsurgence.item.tools.ItemAlastorsWand;
 import thaumicinsurgence.item.tools.ItemThaumicInterfacer;
+import thaumicinsurgence.main.modules.thaumic_rings.core.ItemGeneralVisRings;
 import thaumicinsurgence.main.utils.VersionInfo;
 import thaumicinsurgence.tileentity.TileEntityInfusionIntercepter;
 import thaumicinsurgence.tileentity.TileEntityInfusionMatrixAlpha;
@@ -51,12 +61,22 @@ public class Config {
     public static Item soapBetaBitch;
     public static Item hyperLinkBlocked;
 
+    public static Item TAPMasterRing;
+    public static Item AIOMasterRing;
+    public static Item balancedMasterRing;
+    public static Item TAPShardRing;
+    public static Item AIOShardRing;
+    public static Item balancedShardRing;
+    public static Item skullRing;
+
     public static BlockInfusionIntercepter infusionIntercepter;
     public static BlockInfusionMatrixAlpha matrixAlpha;
     public static BlockInfusionPillarAlpha pillarAlpha;
     public static BlockArcaneMarble arcaneMarble;
     public static BlockArcaneMarbleBrick arcaneMarbleBrick;
     public static BlockPedestalAlpha marblePedestal;
+    public static BlockThaumiumReinforcedJar thaumiumJar = new BlockThaumiumReinforcedJar();
+    public static BlockIchorJar ichorJar = new BlockIchorJar();
 
     // ----- Config State info ----------------------------------
     public static Configuration configuration;
@@ -93,7 +113,13 @@ public class Config {
         arcaneMarbleBrick = new BlockArcaneMarbleBrick();
         GameRegistry.registerBlock(arcaneMarbleBrick, arcaneMarbleBrick.getUnlocalizedName());
 
+        setupKekztech();
         setupInfusionAlpha();
+    }
+
+    public static void setupKekztech(){
+        GameRegistry.registerBlock(thaumiumJar, ItemBlockThaumiumReinforcedJar.class, thaumiumJar.getUnlocalizedName());
+        GameRegistry.registerBlock(ichorJar, ItemBlockIchorJar.class, ichorJar.getUnlocalizedName());
     }
 
     public static void setupItems() {
@@ -116,6 +142,18 @@ public class Config {
 
         hyperLinkBlocked = new ItemBIGSHOT(ThaumcraftApi.armorMatSpecial, 4, 0);
         GameRegistry.registerItem(hyperLinkBlocked, hyperLinkBlocked.getUnlocalizedName());
+
+        AIOMasterRing = (new ItemGeneralVisRings("goldFireOpal", new AspectList().add(Aspect.AIR, 5).add(Aspect.FIRE, 5).add(Aspect.ORDER, 5))).setUnlocalizedName("AIOMaster");
+        GameRegistry.registerItem(AIOMasterRing, "AIOMaster");
+
+        TAPMasterRing = (new ItemGeneralVisRings("silverFireOpal", new AspectList().add(Aspect.EARTH, 5).add(Aspect.WATER, 5).add(Aspect.ENTROPY, 5))).setUnlocalizedName("TAPMaster");
+        GameRegistry.registerItem(TAPMasterRing, "TAPMaster");
+
+        balancedMasterRing = (new ItemGeneralVisRings("goldMixedOpal",
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.FIRE, 5).add(Aspect.ORDER, 5)
+                        .add(Aspect.EARTH, 5).add(Aspect.WATER, 5).add(Aspect.ENTROPY, 5))
+                .setUnlocalizedName("balancedMaster"));
+        GameRegistry.registerItem(balancedMasterRing, "balancedMaster");
     }
 
     private static void processConfigFile() {

@@ -5,6 +5,7 @@ import java.util.List;
 
 import thaumicinsurgence.main.modules.arcana.Arcana;
 import thaumicinsurgence.main.modules.planar_artifice.PlanarArtifice;
+import thaumicinsurgence.main.modules.thaumic_rings.ThaumicRings;
 
 public class ModHelperManager {
 
@@ -35,5 +36,6 @@ public class ModHelperManager {
         helpers.add(new ThaumcraftHelper());
         helpers.add(new PlanarArtifice());
         helpers.add(new Arcana());
+        helpers.add(new ThaumicRings());
     }
 }
