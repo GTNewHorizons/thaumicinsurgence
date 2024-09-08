@@ -72,10 +72,6 @@ public class BlockInfusionIntercepter extends BlockContainer {
     public void breakBlock(World world, int x, int y, int z, Block block, int meta) {
         TileEntity te = world.getTileEntity(x, y, z);
 
-        if (((TileEntityInfusionIntercepter) te).stabilityHasBeenAdded) {
-            ((TileEntityInfusionIntercepter) te).removeStability();
-        }
-
         if (te != null && te instanceof IInventory) {
             IInventory inventory = (IInventory) te;
 

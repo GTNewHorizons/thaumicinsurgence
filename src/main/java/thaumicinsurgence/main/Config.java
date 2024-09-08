@@ -9,6 +9,7 @@ import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.common.config.Property;
 import thaumcraft.api.ThaumcraftApi;
 import thaumicinsurgence.block.*;
 import thaumicinsurgence.block.BlockInfusionIntercepter;
@@ -53,6 +54,7 @@ public class Config {
     public static BlockArcaneMarble arcaneMarble;
     public static BlockArcaneMarbleBrick arcaneMarbleBrick;
     public static BlockPedestalAlpha marblePedestal;
+    public static boolean energisticsActive;
 
     // ----- Config State info ----------------------------------
     public static Configuration configuration;
@@ -123,7 +125,11 @@ public class Config {
     }
 
     private static void doModuleConfigs() {
+        Property p;
         thaumcraftActive = configuration.get(CATEGORY_MODULES, "Thaumcraft", true).getBoolean();
+
+        p = configuration.get(CATEGORY_MODULES, "ThaumicEnergistics", true);
+        energisticsActive = p.getBoolean();
     }
 
     public static void setupInfusionAlpha() {

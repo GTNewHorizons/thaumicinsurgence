@@ -1,5 +1,6 @@
 package thaumicinsurgence.tileentity;
 
+import cpw.mods.fml.common.Optional;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
 
@@ -8,7 +9,12 @@ import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.aspects.IAspectContainer;
 import thaumcraft.api.aspects.IEssentiaTransport;
 import thaumcraft.common.tiles.TileInfusionMatrix;
+import thaumicenergistics.common.tiles.TileEssentiaProvider;
+import thaumicinsurgence.main.Config;
 import thaumicinsurgence.main.utils.VersionInfo;
+import thaumicinsurgence.main.utils.compat.EnergisticsHelper;
+
+import java.util.concurrent.TimeUnit;
 
 public class TileEntityInfusionIntercepter extends TileEntity implements IAspectContainer, IEssentiaTransport {
 
@@ -19,6 +25,7 @@ public class TileEntityInfusionIntercepter extends TileEntity implements IAspect
     private Aspect currentSuction;
     private TileInfusionMatrix matrix = null;
     private IEssentiaTransport essentiaEntity = null;
+    private TileEntity essentiaTile = null;
 
     public boolean addedStability;
     public boolean stabilityHasBeenAdded;
@@ -108,6 +115,7 @@ public class TileEntityInfusionIntercepter extends TileEntity implements IAspect
             TileEntity inputCandidate = worldObj.getTileEntity(this.xCoord, this.yCoord - 1, this.zCoord);
             if (inputCandidate instanceof IEssentiaTransport) {
                 essentiaEntity = (IEssentiaTransport) inputCandidate;
+                essentiaTile = inputCandidate;
             }
         } catch (Exception ignored) {}
     }
@@ -123,9 +131,12 @@ public class TileEntityInfusionIntercepter extends TileEntity implements IAspect
     }
 
     /** this method handles removing essentia from the essentia source, and adds it to myAspects */
-    private int removeFromSource(int desiredAmount) {
+    private int removeFromSource(int desiredAmount) throws InterruptedException {
         int sourceAmount = essentiaEntity.getEssentiaAmount(ForgeDirection.UP);
         Aspect tubeAspect = essentiaEntity.getEssentiaType(ForgeDirection.UP);
+        if (Config.energisticsActive && EnergisticsHelper.isActive() && essentiaTile instanceof TileEssentiaProvider) {
+            return checkEssentiaNetwork(tubeAspect, desiredAmount);
+        }
         if (tubeAspect != null && tubeAspect.equals(currentSuction) && sourceAmount > 0) {
             int usedAmount = Math.min(sourceAmount, desiredAmount);
             essentiaEntity.takeEssentia(tubeAspect, usedAmount, ForgeDirection.UP);
@@ -135,6 +146,17 @@ public class TileEntityInfusionIntercepter extends TileEntity implements IAspect
 
         return 0;
     }
+
+    @Optional.Method(modid = "thaumicenergistics")
+    private int checkEssentiaNetwork(Aspect aspect, int amount) throws InterruptedException {
+        int aspects = essentiaTile.takeEssentiaOrder(aspect, amount);
+        if (aspects < amount){
+            wait(10000); // If there isn't enough, it waits for a ten seconds and tries again
+            return checkEssentiaNetwork(aspect, amount);
+        }
+        return Math.min(amount, aspects);
+    }
+
 
     /** based on currentSuction, move necessary essentia to the matrix if we have any */
     private void moveEssentiaToMatrix(int desiredAmount) {

@@ -30,5 +30,6 @@ public class ModHelperManager {
     private static void setupHelpers() {
         helpers = new ArrayList<>();
         helpers.add(new ThaumcraftHelper());
+        helpers.add(new EnergisticsHelper());
     }
 }
