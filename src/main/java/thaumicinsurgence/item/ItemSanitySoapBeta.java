@@ -52,7 +52,7 @@ public class ItemSanitySoapBeta extends ItemSanitySoap {
 
     public void onUsingTick(ItemStack stack, EntityPlayer player, int count) {
         int ticks = this.getMaxItemUseDuration(stack) - count;
-        if (ticks > 2) {
+        if (ticks > 40) {
             player.stopUsingItem();
         }
 
