@@ -44,7 +44,7 @@ public class Config {
     public static Item thaumicInterfacer;
     public static Item alastorsWand;
     public static Item soapAlpha;
-    public static Item soapBetaBitch;
+    public static Item soapBeta;
     public static Item hyperLinkBlocked;
 
     public static BlockInfusionIntercepter infusionIntercepter;
@@ -102,13 +102,11 @@ public class Config {
         alastorsWand = new ItemAlastorsWand();
         GameRegistry.registerItem(alastorsWand, alastorsWand.getUnlocalizedName());
 
-        // miscResources = new ItemMiscResources();
-
         soapAlpha = new ItemSanitySoapAlpha();
         GameRegistry.registerItem(soapAlpha, soapAlpha.getUnlocalizedName());
 
-        soapBetaBitch = new ItemSanitySoapBeta();
-        GameRegistry.registerItem(soapBetaBitch, soapBetaBitch.getUnlocalizedName());
+        soapBeta = new ItemSanitySoapBeta();
+        GameRegistry.registerItem(soapBeta, soapBeta.getUnlocalizedName());
 
         hyperLinkBlocked = new ItemBIGSHOT(ThaumcraftApi.armorMatSpecial, 4, 0);
         GameRegistry.registerItem(hyperLinkBlocked, hyperLinkBlocked.getUnlocalizedName());

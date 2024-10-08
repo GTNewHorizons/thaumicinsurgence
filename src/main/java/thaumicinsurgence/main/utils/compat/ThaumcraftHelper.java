@@ -273,13 +273,13 @@ public class ThaumcraftHelper implements IModHelper {
                 "TI_SanitizingSoapAlpha",
                 new ItemStack(Config.soapAlpha),
                 new ItemStack(ConfigItems.itemSanitySoap),
-                new AspectList().add(Aspect.HEAL, 16).add(Aspect.ORDER, 32));
+                new AspectList().add(Aspect.HEAL, 8).add(Aspect.ORDER, 16));
 
         soapBeta = ThaumcraftApi.addCrucibleRecipe(
                 "TI_SanitizingSoapBeta",
-                new ItemStack(Config.soapBetaBitch),
+                new ItemStack(Config.soapBeta),
                 new ItemStack(Config.soapAlpha),
-                new AspectList().add(Aspect.ELDRITCH, 16).add(Aspect.EXCHANGE, 32).add(Aspect.HEAL, 32));
+                new AspectList().add(Aspect.ELDRITCH, 8).add(Aspect.EXCHANGE, 16).add(Aspect.HEAL, 16));
 
         bigShot = ThaumcraftApi.addCrucibleRecipe(
                 "TI_DeliciousKromer",
@@ -334,7 +334,7 @@ public class ThaumcraftHelper implements IModHelper {
                 -2,
                 2,
                 2,
-                new ItemStack(Config.soapBetaBitch));
+                new ItemStack(Config.soapBeta));
 
         infusionIntercepterPage = new ResearchItem(
                 "TI_InfusionIntercepter",
@@ -411,7 +411,6 @@ public class ThaumcraftHelper implements IModHelper {
 
         ThaumcraftApi.addWarpToResearch("TI_InfusionIntercepter", 4);
         ResearchCategories.addResearch(infusionIntercepterPage);
-        // ResearchCategories.addResearch(redCrownPage); // TODO: actually implement this feature.
         ResearchCategories.addResearch(thaumicInterfacerPage);
         ResearchCategories.addResearch(soapAlphaPage);
         ResearchCategories.addResearch(soapBetaPage);
