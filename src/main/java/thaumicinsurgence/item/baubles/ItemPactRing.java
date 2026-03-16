@@ -4,7 +4,6 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 
-import baubles.common.items.ItemRing;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import thaumicinsurgence.main.utils.TabThaumicInsurgence;
