@@ -24,6 +24,7 @@ import thaumicinsurgence.tileentity.TileEntityInfusionIntercepter;
 import thaumicinsurgence.tileentity.TileEntityInfusionMatrixAlpha;
 import thaumicinsurgence.tileentity.TileEntityInfusionPillarAlpha;
 import thaumicinsurgence.tileentity.TileEntityPedestalAlpha;
+import thaumicinsurgence.tileentity.TileVisweaver;
 
 /**
  * A class to hold some data related to mod state & functions.
@@ -38,6 +39,7 @@ public class Config {
     public static int blockStoneDeviceRI;
     public static int blockStoneDeviceTwoRI;
     public static int blockStoneDeviceThreeRI;
+    public static int visweaverRI;
 
     public static ItemMiscResources miscResources;
     public static Item eightBitRedCrownItem;
@@ -53,6 +55,7 @@ public class Config {
     public static BlockArcaneMarble arcaneMarble;
     public static BlockArcaneMarbleBrick arcaneMarbleBrick;
     public static BlockPedestalAlpha marblePedestal;
+    public static BlockVisweaver visweaver;
 
     // ----- Config State info ----------------------------------
     public static Configuration configuration;
@@ -88,6 +91,9 @@ public class Config {
         GameRegistry.registerBlock(arcaneMarble, arcaneMarble.getUnlocalizedName());
         arcaneMarbleBrick = new BlockArcaneMarbleBrick();
         GameRegistry.registerBlock(arcaneMarbleBrick, arcaneMarbleBrick.getUnlocalizedName());
+        visweaver = new BlockVisweaver();
+        GameRegistry.registerBlock(visweaver, visweaver.getUnlocalizedName());
+        GameRegistry.registerTileEntity(TileVisweaver.class, "tileVisweaver");
 
         setupInfusionAlpha();
     }

@@ -13,6 +13,7 @@ import thaumcraft.api.crafting.InfusionRecipe;
 import thaumcraft.api.research.ResearchCategories;
 import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
+import thaumcraft.common.config.ConfigBlocks;
 import thaumcraft.common.config.ConfigItems;
 import thaumicinsurgence.main.Config;
 import thaumicinsurgence.main.utils.BlockInterface;
@@ -212,6 +213,7 @@ public class ThaumcraftHelper implements IModHelper {
 
     public static InfusionRecipe infusionIntercepter;
     public static InfusionRecipe thaumicInterfacer;
+    public static InfusionRecipe visweaver;
     public static CrucibleRecipe soapAlpha;
     public static CrucibleRecipe soapBeta;
     public static CrucibleRecipe bigShot;
@@ -269,6 +271,17 @@ public class ThaumcraftHelper implements IModHelper {
                 new ItemStack[] { new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal()),
                         new ItemStack(metal, 1, MetalDeviceType.ALEMBIC.ordinal()) });
 
+        visweaver = ThaumcraftApi.addInfusionCraftingRecipe(
+                "visweaver",
+                new ItemStack(Config.visweaver),
+                7,
+                new AspectList().add(Aspect.EXCHANGE, 40).add(Aspect.MECHANISM, 20).add(Aspect.MAGIC, 20),
+                new ItemStack(ConfigBlocks.blockTable),
+                new ItemStack[] { new ItemStack(ConfigItems.itemShard, 1, 6),
+                        new ItemStack(ConfigItems.itemResource, 1, 2), new ItemStack(ConfigItems.itemShard, 1, 6),
+                        new ItemStack(ConfigItems.itemResource, 1, 15), new ItemStack(ConfigItems.itemShard, 1, 6),
+                        new ItemStack(ConfigItems.itemResource, 1, 3), });
+
         soapAlpha = ThaumcraftApi.addCrucibleRecipe(
                 "TI_SanitizingSoapAlpha",
                 new ItemStack(Config.soapAlpha),
@@ -317,6 +330,8 @@ public class ThaumcraftHelper implements IModHelper {
         ResearchItem littleSponge;
         ResearchPage unintelligbleLaughter;
         ResearchPage shootForTheSky;
+
+        ResearchItem visweaverPage;
 
         soapAlphaPage = new ResearchItem(
                 "TI_SanitizingSoapAlpha",
@@ -374,6 +389,16 @@ public class ThaumcraftHelper implements IModHelper {
                 0,
                 new ItemStack(Config.hyperLinkBlocked));
 
+        visweaverPage = new ResearchItem(
+                "visweaver",
+                category,
+                new AspectList().add(Aspect.MECHANISM, 1).add(Aspect.EXCHANGE, 1).add(Aspect.MAGIC, 1)
+                        .add(Aspect.ENERGY, 1),
+                -2,
+                0,
+                2,
+                new ItemStack(Config.visweaver));
+
         intercepter1 = new ResearchPage("InfusionIntercepter.1");
         intercepter2 = new ResearchPage(infusionIntercepter);
 
@@ -381,6 +406,9 @@ public class ThaumcraftHelper implements IModHelper {
 
         thaumicInterfacer1 = new ResearchPage("ThaumicInterfacer.1");
         thaumicInterface2 = new ResearchPage(thaumicInterfacer);
+
+        ResearchPage visweaver1 = new ResearchPage("visweaver1");
+        ResearchPage visweaver2 = new ResearchPage(visweaver);
 
         soapAlpha1 = new ResearchPage("SoapAlpha.1");
         soapAlpha2 = new ResearchPage(soapAlpha);
@@ -400,6 +428,9 @@ public class ThaumcraftHelper implements IModHelper {
         thaumicInterfacerPage.setPages(thaumicInterfacer1, thaumicInterface2);
         thaumicInterfacerPage.setParents("INFUSION");
 
+        visweaverPage.setPages(visweaver1, visweaver2);
+        visweaverPage.setParents("VISPOWER");
+
         soapAlphaPage.setPages(soapAlpha1, soapAlpha2);
         soapAlphaPage.setParents("SANESOAP");
 
@@ -410,9 +441,11 @@ public class ThaumcraftHelper implements IModHelper {
         littleSponge.setParents("GOGGLES");
 
         ThaumcraftApi.addWarpToResearch("TI_InfusionIntercepter", 4);
+
         ResearchCategories.addResearch(infusionIntercepterPage);
         // ResearchCategories.addResearch(redCrownPage); // TODO: actually implement this feature.
         ResearchCategories.addResearch(thaumicInterfacerPage);
+        ResearchCategories.addResearch(visweaverPage);
         ResearchCategories.addResearch(soapAlphaPage);
         ResearchCategories.addResearch(soapBetaPage);
         ResearchCategories.addResearch(littleSponge);

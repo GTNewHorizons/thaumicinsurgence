@@ -7,9 +7,11 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.IGuiHandler;
+import thaumicinsurgence.common.container.ContainerVisweaver;
 import thaumicinsurgence.main.utils.CraftingManager;
 import thaumicinsurgence.main.utils.LogHelper;
 import thaumicinsurgence.main.utils.compat.ModHelperManager;
+import thaumicinsurgence.tileentity.TileVisweaver;
 
 @SuppressWarnings("unused")
 public class CommonProxy implements IGuiHandler {
@@ -42,17 +44,16 @@ public class CommonProxy implements IGuiHandler {
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         switch (ID) {
-            // case 0:
-            // return new ContainerAdvancedWand(player.inventory, world, x, y, z);
-            // bring back when the Advanced Wand is finished
+            case 0:
+                return new ContainerVisweaver(player.inventory, (TileVisweaver) world.getTileEntity(x, y, z));
             default:
                 break;
         }
         return null;
     }
 
-    @Override
-    public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+    public Object getClientGuiElement(final int ID, final EntityPlayer player, final World world, final int x,
+            final int y, final int z) {
         return null;
     }
 }
