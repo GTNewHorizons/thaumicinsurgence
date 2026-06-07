@@ -1,5 +1,8 @@
 package thaumicinsurgence.api;
 
+import java.util.Collection;
+import java.util.Collections;
+
 import net.minecraft.item.ItemStack;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenCustomHashMap;
@@ -23,5 +26,9 @@ public class VisweaverRecipeMap {
     public static void putRecipe(int centivisCost, Aspect centivisType, ItemStack input, ItemStack output) {
         VisweaverRecipe recipe = new VisweaverRecipe(centivisCost, centivisType, input, output);
         recipeMap.put(input, recipe);
+    }
+
+    public static Collection<VisweaverRecipe> getAllRecipes() {
+        return Collections.unmodifiableCollection(recipeMap.values());
     }
 }
