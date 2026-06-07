@@ -15,6 +15,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import thaumicinsurgence.client.gui.GuiVisweaver;
+import thaumicinsurgence.compat.aspectrecipeindex.IMCForNEI;
 import thaumicinsurgence.renderers.blockrenderers.BlockAlphaPedestalRenderer;
 import thaumicinsurgence.renderers.blockrenderers.BlockMatrixAlphaRenderer;
 import thaumicinsurgence.renderers.blockrenderers.BlockPillarAlphaRenderer;
@@ -40,6 +41,7 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void init(FMLInitializationEvent event) {
         super.init(event);
+        IMCForNEI.IMCSender();
     }
 
     @Override
