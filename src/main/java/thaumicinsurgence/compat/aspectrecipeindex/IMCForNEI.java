@@ -7,7 +7,7 @@ import cpw.mods.fml.common.event.FMLInterModComms;
 public class IMCForNEI {
 
     public static void IMCSender() {
-        registerHandlerInfo(VisweaverRecipeHandler.class.getName(), "thaumicinsurgence:tile.visweaver", 136);
+        registerHandlerInfo(VisweaverRecipeHandler.class.getName(), "thaumicinsurgence:tile.visweaver", 60);
         registerCatalystInfo(new VisweaverRecipeHandler().getOverlayIdentifier(), "thaumicinsurgence:tile.visweaver");
     }
 
