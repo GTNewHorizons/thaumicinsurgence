@@ -6,13 +6,6 @@ dependencies {
 	api('com.github.GTNewHorizons:Baubles-Expanded:2.2.11-GTNH:dev')
 
 	implementation('com.github.GTNewHorizons:AspectRecipeIndex:1.1.1:dev')
-
-	/*
-	runtimeOnly('com.github.GTNewHorizons:TCNEIAdditions:1.4.8:dev') {
-		exclude module: 'Baubles'
-	}
-	
-	 */
 }
 
 
