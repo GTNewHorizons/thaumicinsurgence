@@ -9,7 +9,7 @@ import org.lwjgl.opengl.GL12;
 
 import thaumcraft.client.lib.UtilsFX;
 import thaumicinsurgence.model.ModelVisweaver;
-import thaumicinsurgence.tileentity.TileVisweaver;
+import thaumicinsurgence.tileentity.TileEntityVisweaver;
 
 public class TileVisweaverRender extends TileEntitySpecialRenderer {
 
@@ -21,7 +21,7 @@ public class TileVisweaverRender extends TileEntitySpecialRenderer {
     @Override
     public void renderTileEntityAt(TileEntity tileentity, double x, double y, double z, float f) {
 
-        TileVisweaver visweaver = (TileVisweaver) tileentity;
+        TileEntityVisweaver visweaver = (TileEntityVisweaver) tileentity;
 
         GL11.glPushMatrix();
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);

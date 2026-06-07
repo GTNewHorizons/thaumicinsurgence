@@ -15,7 +15,7 @@ import thaumcraft.api.visnet.VisNetHandler;
 import thaumicinsurgence.api.VisweaverRecipe;
 import thaumicinsurgence.api.VisweaverRecipeMap;
 
-public class TileVisweaver extends TileEntity implements IInventory {
+public class TileEntityVisweaver extends TileEntity implements IInventory {
 
     private static final String TAG_INTERNAL_VIS = "internalVis";
     private static final String TAG_REQUIRED_VIS = "requiredVis";

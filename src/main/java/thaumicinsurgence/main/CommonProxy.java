@@ -11,7 +11,7 @@ import thaumicinsurgence.common.container.ContainerVisweaver;
 import thaumicinsurgence.main.utils.CraftingManager;
 import thaumicinsurgence.main.utils.LogHelper;
 import thaumicinsurgence.main.utils.compat.ModHelperManager;
-import thaumicinsurgence.tileentity.TileVisweaver;
+import thaumicinsurgence.tileentity.TileEntityVisweaver;
 
 @SuppressWarnings("unused")
 public class CommonProxy implements IGuiHandler {
@@ -45,7 +45,7 @@ public class CommonProxy implements IGuiHandler {
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         switch (ID) {
             case 0:
-                return new ContainerVisweaver(player.inventory, (TileVisweaver) world.getTileEntity(x, y, z));
+                return new ContainerVisweaver(player.inventory, (TileEntityVisweaver) world.getTileEntity(x, y, z));
             default:
                 break;
         }

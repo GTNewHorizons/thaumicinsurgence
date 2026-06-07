@@ -6,6 +6,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
@@ -13,9 +14,11 @@ import net.minecraft.world.World;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import thaumcraft.api.aspects.Aspect;
+import thaumicinsurgence.api.VisweaverRecipeMap;
 import thaumicinsurgence.main.Config;
 import thaumicinsurgence.main.ThaumicInsurgence;
-import thaumicinsurgence.tileentity.TileVisweaver;
+import thaumicinsurgence.tileentity.TileEntityVisweaver;
 
 public class BlockVisweaver extends BlockContainer {
 
@@ -26,6 +29,9 @@ public class BlockVisweaver extends BlockContainer {
 
         this.setBlockName("visweaver");
         this.setBlockTextureName("ThaumicInsurgence:visweaver");
+
+        VisweaverRecipeMap.putRecipe(25, Aspect.FIRE, new ItemStack(Items.bed), new ItemStack(Items.spider_eye));
+        VisweaverRecipeMap.putRecipe(50, Aspect.EARTH, new ItemStack(Items.brick), new ItemStack(Items.netherbrick));
     }
 
     public boolean onBlockActivated(final World world, final int x, final int y, final int z, final EntityPlayer player,
@@ -36,7 +42,7 @@ public class BlockVisweaver extends BlockContainer {
 
     public void breakBlock(final World world, final int x, final int y, final int z, final Block block, final int md) {
         final TileEntity te = world.getTileEntity(x, y, z);
-        if (te instanceof final TileVisweaver tile) {
+        if (te instanceof final TileEntityVisweaver tile) {
             ItemStack input = tile.getStackInSlot(0);
             ItemStack output = tile.getStackInSlot(1);
             if (input != null) {
@@ -61,7 +67,7 @@ public class BlockVisweaver extends BlockContainer {
 
     @Override
     public TileEntity createNewTileEntity(World world, int var2) {
-        return new TileVisweaver();
+        return new TileEntityVisweaver();
     }
 
     @Override

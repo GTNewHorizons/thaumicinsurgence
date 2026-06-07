@@ -14,7 +14,7 @@ import org.lwjgl.opengl.GL11;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import thaumicinsurgence.common.container.ContainerVisweaver;
-import thaumicinsurgence.tileentity.TileVisweaver;
+import thaumicinsurgence.tileentity.TileEntityVisweaver;
 
 @SideOnly(Side.CLIENT)
 public class GuiVisweaver extends GuiContainer {
@@ -22,13 +22,13 @@ public class GuiVisweaver extends GuiContainer {
     private static final ResourceLocation gui = new ResourceLocation(
             "thaumicinsurgence",
             "textures/gui/guivisweaver.png");
-    public TileVisweaver visweaver;
+    public TileEntityVisweaver visweaver;
     public List<String> tooltip = new ArrayList<>();
     int x, y;
     ItemStack lastTickStack;
     ItemStack currentStack;
 
-    public GuiVisweaver(InventoryPlayer inv, TileVisweaver visweaver) {
+    public GuiVisweaver(InventoryPlayer inv, TileEntityVisweaver visweaver) {
         super(new ContainerVisweaver(inv, visweaver));
         this.visweaver = visweaver;
         lastTickStack = visweaver.getStackInSlot(0);

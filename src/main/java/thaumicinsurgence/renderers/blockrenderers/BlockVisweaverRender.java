@@ -9,7 +9,7 @@ import org.lwjgl.opengl.GL11;
 
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import thaumicinsurgence.main.Config;
-import thaumicinsurgence.tileentity.TileVisweaver;
+import thaumicinsurgence.tileentity.TileEntityVisweaver;
 
 public class BlockVisweaverRender implements ISimpleBlockRenderingHandler {
 
@@ -17,7 +17,7 @@ public class BlockVisweaverRender implements ISimpleBlockRenderingHandler {
     public void renderInventoryBlock(Block block, int metadata, int modelID, RenderBlocks renderer) {
         GL11.glPushMatrix();
         GL11.glTranslatef(-0.5F, -0.5F, -0.5F);
-        TileEntityRendererDispatcher.instance.renderTileEntityAt(new TileVisweaver(), 0.0D, 0.0D, 0.0D, 0.0F);
+        TileEntityRendererDispatcher.instance.renderTileEntityAt(new TileEntityVisweaver(), 0.0D, 0.0D, 0.0D, 0.0F);
         GL11.glPopMatrix();
     }
 

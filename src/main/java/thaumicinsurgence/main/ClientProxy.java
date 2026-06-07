@@ -27,7 +27,7 @@ import thaumicinsurgence.renderers.tileentityrenderers.TileVisweaverRender;
 import thaumicinsurgence.tileentity.TileEntityInfusionMatrixAlpha;
 import thaumicinsurgence.tileentity.TileEntityInfusionPillarAlpha;
 import thaumicinsurgence.tileentity.TileEntityPedestalAlpha;
-import thaumicinsurgence.tileentity.TileVisweaver;
+import thaumicinsurgence.tileentity.TileEntityVisweaver;
 
 @SuppressWarnings("unused")
 @SideOnly(Side.CLIENT)
@@ -74,7 +74,7 @@ public class ClientProxy extends CommonProxy {
         this.registerTileEntitySpecialRenderer(TileEntityPedestalAlpha.class, new TileAlphaPedestalRenderer());
         this.registerBlockRenderer(new BlockAlphaPedestalRenderer());
 
-        ClientRegistry.bindTileEntitySpecialRenderer(TileVisweaver.class, new TileVisweaverRender());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityVisweaver.class, new TileVisweaverRender());
         Config.visweaverRI = RenderingRegistry.getNextAvailableRenderId();
         this.registerBlockRenderer(new BlockVisweaverRender());
     }
@@ -84,7 +84,7 @@ public class ClientProxy extends CommonProxy {
         if (world instanceof WorldClient) {
             switch (ID) {
                 case 0:
-                    return new GuiVisweaver(player.inventory, (TileVisweaver) world.getTileEntity(x, y, z));
+                    return new GuiVisweaver(player.inventory, (TileEntityVisweaver) world.getTileEntity(x, y, z));
                 default:
                     break;
             }

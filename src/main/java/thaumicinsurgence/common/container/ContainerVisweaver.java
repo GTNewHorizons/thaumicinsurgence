@@ -7,13 +7,13 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
 import thaumcraft.common.container.SlotOutput;
-import thaumicinsurgence.tileentity.TileVisweaver;
+import thaumicinsurgence.tileentity.TileEntityVisweaver;
 
 public class ContainerVisweaver extends Container {
 
-    TileVisweaver visweaver;
+    TileEntityVisweaver visweaver;
 
-    public ContainerVisweaver(InventoryPlayer inv, TileVisweaver visweaver) {
+    public ContainerVisweaver(InventoryPlayer inv, TileEntityVisweaver visweaver) {
         this.visweaver = visweaver;
 
         addSlotToContainer(new Slot(visweaver, 0, 20, 30));
