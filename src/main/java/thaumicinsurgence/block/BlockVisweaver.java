@@ -6,7 +6,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
@@ -14,8 +13,6 @@ import net.minecraft.world.World;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import thaumcraft.api.aspects.Aspect;
-import thaumicinsurgence.api.VisweaverRecipeMap;
 import thaumicinsurgence.main.Config;
 import thaumicinsurgence.main.ThaumicInsurgence;
 import thaumicinsurgence.tileentity.TileEntityVisweaver;
@@ -29,9 +26,6 @@ public class BlockVisweaver extends BlockContainer {
 
         this.setBlockName("visweaver");
         this.setBlockTextureName("ThaumicInsurgence:visweaver");
-
-        VisweaverRecipeMap.putRecipe(25, Aspect.FIRE, new ItemStack(Items.bed), new ItemStack(Items.spider_eye));
-        VisweaverRecipeMap.putRecipe(50, Aspect.EARTH, new ItemStack(Items.brick), new ItemStack(Items.netherbrick));
     }
 
     public boolean onBlockActivated(final World world, final int x, final int y, final int z, final EntityPlayer player,
