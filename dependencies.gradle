@@ -5,9 +5,7 @@ dependencies {
 	api('thaumcraft:Thaumcraft:1.7.10-4.2.3.5:dev')
 	api('com.github.GTNewHorizons:Baubles-Expanded:2.2.11-GTNH:dev')
 
-	runtimeOnly('com.github.GTNewHorizons:TCNEIAdditions:1.4.8:dev') {
-		exclude module: 'Baubles'
-	}
+	implementation('com.github.GTNewHorizons:AspectRecipeIndex:1.1.1:dev')
 }
 
 

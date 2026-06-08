@@ -14,15 +14,20 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import thaumicinsurgence.client.gui.GuiVisweaver;
+import thaumicinsurgence.compat.aspectrecipeindex.IMCForNEI;
 import thaumicinsurgence.renderers.blockrenderers.BlockAlphaPedestalRenderer;
 import thaumicinsurgence.renderers.blockrenderers.BlockMatrixAlphaRenderer;
 import thaumicinsurgence.renderers.blockrenderers.BlockPillarAlphaRenderer;
+import thaumicinsurgence.renderers.blockrenderers.BlockVisweaverRender;
 import thaumicinsurgence.renderers.tileentityrenderers.TileAlphaPedestalRenderer;
 import thaumicinsurgence.renderers.tileentityrenderers.TileMatrixAlphaRenderer;
 import thaumicinsurgence.renderers.tileentityrenderers.TilePillarAlphaRenderer;
+import thaumicinsurgence.renderers.tileentityrenderers.TileVisweaverRender;
 import thaumicinsurgence.tileentity.TileEntityInfusionMatrixAlpha;
 import thaumicinsurgence.tileentity.TileEntityInfusionPillarAlpha;
 import thaumicinsurgence.tileentity.TileEntityPedestalAlpha;
+import thaumicinsurgence.tileentity.TileEntityVisweaver;
 
 @SuppressWarnings("unused")
 @SideOnly(Side.CLIENT)
@@ -36,6 +41,7 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void init(FMLInitializationEvent event) {
         super.init(event);
+        IMCForNEI.IMCSender();
     }
 
     @Override
@@ -67,14 +73,21 @@ public class ClientProxy extends CommonProxy {
         Config.blockStoneDeviceThreeRI = RenderingRegistry.getNextAvailableRenderId();
         this.registerTileEntitySpecialRenderer(TileEntityPedestalAlpha.class, new TileAlphaPedestalRenderer());
         this.registerBlockRenderer(new BlockAlphaPedestalRenderer());
+
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityVisweaver.class, new TileVisweaverRender());
+        Config.visweaverRI = RenderingRegistry.getNextAvailableRenderId();
+        this.registerBlockRenderer(new BlockVisweaverRender());
     }
 
     @Override
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         if (world instanceof WorldClient) {
-            /*
-             * switch (ID) { case 0: return new GuiAdvancedWand(player.inventory, world, x, y, z); default: break; }
-             */ // bring back when the advanced wand is finished
+            switch (ID) {
+                case 0:
+                    return new GuiVisweaver(player.inventory, (TileEntityVisweaver) world.getTileEntity(x, y, z));
+                default:
+                    break;
+            }
         }
         return null;
     }
