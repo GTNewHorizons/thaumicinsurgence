@@ -8,6 +8,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ChatComponentTranslation;
+import net.minecraft.util.ChatStyle;
+import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
@@ -30,6 +33,7 @@ public class BlockVisweaver extends BlockContainer {
 
         this.setBlockName("visweaver");
         this.setBlockTextureName("ThaumicInsurgence:visweaver");
+        this.setStepSound(Block.soundTypeWood);
 
         VisweaverRecipeMap.putRecipe(Aspect.FIRE, 25, new ItemStack(Items.bed), new ItemStack(Items.spider_eye));
         VisweaverRecipeMap.putRecipe(Aspect.EARTH, 50, new ItemStack(Items.brick), new ItemStack(Items.netherbrick));
@@ -39,6 +43,10 @@ public class BlockVisweaver extends BlockContainer {
             final int side, final float subX, final float subY, final float subZ) {
         if (ThaumcraftApiHelper.isResearchComplete(player.getCommandSenderName(), "visweaver")) {
             player.openGui(ThaumicInsurgence.instance, 0, world, x, y, z);
+        } else if (!player.worldObj.isRemote) {
+            player.addChatMessage(
+                    new ChatComponentTranslation("tc.researchmissing")
+                            .setChatStyle(new ChatStyle().setColor(EnumChatFormatting.RED)));
         }
         return true;
     }
