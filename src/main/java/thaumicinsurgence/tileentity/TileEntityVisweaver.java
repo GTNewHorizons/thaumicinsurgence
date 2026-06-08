@@ -47,7 +47,7 @@ public class TileEntityVisweaver extends TileEntity implements ISidedInventory {
                 worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
             }
         }
-        if (tickCounter % 20 != 0) return;
+        if (tickCounter % 5 != 0) return;
         if (!working) {
             recipeCheck();
         } else {
