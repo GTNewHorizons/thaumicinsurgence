@@ -18,8 +18,6 @@ public class VisweaverRecipeMap {
     private static final Object2ObjectOpenCustomHashMap<ItemStack, VisweaverRecipe> recipeMap = new Object2ObjectOpenCustomHashMap<>(
             ItemId.STACK_ITEM_META_STRATEGY);
 
-    private VisweaverRecipeMap() {}
-
     public static VisweaverRecipe lookup(ItemStack input) {
         return recipeMap.get(input);
     }
