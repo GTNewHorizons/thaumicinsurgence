@@ -1,7 +1,7 @@
 package thaumicinsurgence.tileentity;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -9,13 +9,14 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.Constants;
+import net.minecraftforge.common.util.ForgeDirection;
 
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.visnet.VisNetHandler;
 import thaumicinsurgence.api.VisweaverRecipe;
 import thaumicinsurgence.api.VisweaverRecipeMap;
 
-public class TileEntityVisweaver extends TileEntity implements IInventory {
+public class TileEntityVisweaver extends TileEntity implements ISidedInventory {
 
     private static final String TAG_INTERNAL_VIS = "internalVis";
     private static final String TAG_REQUIRED_VIS = "requiredVis";
@@ -271,5 +272,21 @@ public class TileEntityVisweaver extends TileEntity implements IInventory {
 
     public int getRequiredVis() {
         return requiredVis;
+    }
+
+    @Override
+    public int[] getAccessibleSlotsFromSide(int side) {
+        if (side == ForgeDirection.UP.ordinal()) return new int[0];
+        return new int[] { 0, 1 };
+    }
+
+    @Override
+    public boolean canInsertItem(int index, ItemStack itemStack, int ordinalSide) {
+        return index == 0;
+    }
+
+    @Override
+    public boolean canExtractItem(int index, ItemStack itemStack, int ordinalSide) {
+        return index == 1;
     }
 }
