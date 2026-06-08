@@ -34,31 +34,30 @@ public class ContainerVisweaver extends Container {
         ItemStack itemstack = null;
         Slot slot = (Slot) this.inventorySlots.get(index);
 
-        if (slot != null && slot.getHasStack()) {
-            ItemStack stackInSlot = slot.getStack();
-            itemstack = stackInSlot.copy();
+        if (slot == null || !slot.getHasStack()) {
+            return itemstack;
+        }
+        ItemStack stackInSlot = slot.getStack();
+        itemstack = stackInSlot.copy();
 
-            if (index == 0 || index == 1) {
-                if (!this.mergeItemStack(stackInSlot, 2, 38, true)) {
-                    return null;
-                }
-                slot.onSlotChange(stackInSlot, itemstack);
-            } else {
-                if (!this.mergeItemStack(stackInSlot, 0, 1, false)) {
-                    return null;
-                }
-            }
-
-            if (stackInSlot.stackSize == 0) {
-                slot.putStack(null);
-            } else {
-                slot.onSlotChanged();
-            }
-            if (stackInSlot.stackSize == itemstack.stackSize) {
+        if (index == 0 || index == 1) {
+            if (!this.mergeItemStack(stackInSlot, 2, 38, true)) {
                 return null;
             }
-            slot.onPickupFromSlot(player, stackInSlot);
+            slot.onSlotChange(stackInSlot, itemstack);
+        } else if (!this.mergeItemStack(stackInSlot, 0, 1, false)) {
+            return null;
         }
+
+        if (stackInSlot.stackSize == 0) {
+            slot.putStack(null);
+        } else {
+            slot.onSlotChanged();
+        }
+        if (stackInSlot.stackSize == itemstack.stackSize) {
+            return null;
+        }
+        slot.onPickupFromSlot(player, stackInSlot);
         return itemstack;
     }
 

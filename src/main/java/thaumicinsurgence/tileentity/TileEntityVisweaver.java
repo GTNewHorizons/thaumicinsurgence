@@ -21,16 +21,17 @@ public class TileEntityVisweaver extends TileEntity implements ISidedInventory {
     private static final String TAG_INTERNAL_VIS = "internalVis";
     private static final String TAG_REQUIRED_VIS = "requiredVis";
     private static final String TAG_WORKING = "working";
-    private static final String TAG_ASPECT = "cvType";
+    private static final String TAG_ASPECT = "aspect";
     private static final String TAG_INPUT = "currentInput";
     private static final String TAG_OUTPUT = "currentOutput";
+    private static final String TAG_TICKS = "tickCounter";
 
     private int tickCounter = -1;
     private int internalVis = 0;
     private boolean working = false;
     private ItemStack currentOutput;
     private ItemStack currentInput;
-    private Aspect cvType;
+    private Aspect aspect;
     private int requiredVis;
 
     ItemStack[] inventorySlots = new ItemStack[2];
@@ -50,7 +51,7 @@ public class TileEntityVisweaver extends TileEntity implements ISidedInventory {
         if (!working) {
             recipeCheck();
         } else {
-            internalVis += VisNetHandler.drainVis(this.worldObj, this.xCoord, this.yCoord, this.zCoord, cvType, 500);
+            internalVis += VisNetHandler.drainVis(this.worldObj, this.xCoord, this.yCoord, this.zCoord, aspect, 500);
             progressRecipe();
             worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
         }
@@ -68,19 +69,19 @@ public class TileEntityVisweaver extends TileEntity implements ISidedInventory {
         requiredVis = 0;
         currentOutput = null;
         currentInput = null;
-        cvType = null;
+        aspect = null;
         working = false;
     }
 
     private void recipeCheck() {
         VisweaverRecipe recipe = VisweaverRecipeMap.lookup(getStackInSlot(0));
         if (recipe != null) {
-            ItemStack output = recipe.getOutput();
+            ItemStack output = recipe.output();
             if (canAddToSlot(output, 1) <= 0) return;
-            cvType = recipe.getCentivisType();
-            requiredVis = recipe.getCentivisCost();
+            aspect = recipe.aspect();
+            requiredVis = recipe.cost();
             currentOutput = output;
-            currentInput = recipe.getInput();
+            currentInput = recipe.input();
             working = true;
         }
     }
@@ -108,22 +109,20 @@ public class TileEntityVisweaver extends TileEntity implements ISidedInventory {
     }
 
     @Override
-    public ItemStack decrStackSize(int i, int j) {
-        if (inventorySlots[i] != null) {
-            ItemStack stackAt;
-
-            if (inventorySlots[i].stackSize <= j) {
-                stackAt = inventorySlots[i];
-                inventorySlots[i] = null;
-            } else {
-                stackAt = inventorySlots[i].splitStack(j);
-
-                if (inventorySlots[i].stackSize == 0) inventorySlots[i] = null;
-
-            }
-            return stackAt;
+    public ItemStack decrStackSize(int slot, int count) {
+        if (inventorySlots[slot] == null) {
+            return null;
         }
-        return null;
+        ItemStack stackAt;
+
+        if (inventorySlots[slot].stackSize <= count) {
+            stackAt = inventorySlots[slot];
+            inventorySlots[slot] = null;
+        } else {
+            stackAt = inventorySlots[slot].splitStack(count);
+            if (inventorySlots[slot].stackSize == 0) inventorySlots[slot] = null;
+        }
+        return stackAt;
     }
 
     /**
@@ -194,52 +193,54 @@ public class TileEntityVisweaver extends TileEntity implements ISidedInventory {
     }
 
     @Override
-    public void readFromNBT(NBTTagCompound par1NBTTagCompound) {
-        super.readFromNBT(par1NBTTagCompound);
+    public void readFromNBT(NBTTagCompound tag) {
+        super.readFromNBT(tag);
 
-        working = par1NBTTagCompound.getBoolean(TAG_WORKING);
-        internalVis = par1NBTTagCompound.getInteger(TAG_INTERNAL_VIS);
-        requiredVis = par1NBTTagCompound.getInteger(TAG_REQUIRED_VIS);
-        cvType = Aspect.getAspect(par1NBTTagCompound.getString(TAG_ASPECT));
-        currentInput = ItemStack.loadItemStackFromNBT(par1NBTTagCompound.getCompoundTag(TAG_INPUT));
-        currentOutput = ItemStack.loadItemStackFromNBT(par1NBTTagCompound.getCompoundTag(TAG_OUTPUT));
+        working = tag.getBoolean(TAG_WORKING);
+        internalVis = tag.getInteger(TAG_INTERNAL_VIS);
+        requiredVis = tag.getInteger(TAG_REQUIRED_VIS);
+        tickCounter = tag.getInteger(TAG_TICKS);
+        aspect = Aspect.getAspect(tag.getString(TAG_ASPECT));
+        currentInput = ItemStack.loadItemStackFromNBT(tag.getCompoundTag(TAG_INPUT));
+        currentOutput = ItemStack.loadItemStackFromNBT(tag.getCompoundTag(TAG_OUTPUT));
 
-        NBTTagList var2 = par1NBTTagCompound.getTagList("Items", Constants.NBT.TAG_COMPOUND);
+        NBTTagList items = tag.getTagList("Items", Constants.NBT.TAG_COMPOUND);
         inventorySlots = new ItemStack[getSizeInventory()];
-        for (int var3 = 0; var3 < var2.tagCount(); ++var3) {
-            NBTTagCompound var4 = var2.getCompoundTagAt(var3);
-            byte var5 = var4.getByte("Slot");
-            if (var5 >= 0 && var5 < inventorySlots.length) inventorySlots[var5] = ItemStack.loadItemStackFromNBT(var4);
+        for (int i = 0; i < items.tagCount(); ++i) {
+            NBTTagCompound item = items.getCompoundTagAt(i);
+            byte slot = item.getByte("Slot");
+            if (slot >= 0 && slot < inventorySlots.length) inventorySlots[slot] = ItemStack.loadItemStackFromNBT(item);
         }
     }
 
     @Override
-    public void writeToNBT(NBTTagCompound par1NBTTagCompound) {
-        super.writeToNBT(par1NBTTagCompound);
+    public void writeToNBT(NBTTagCompound tag) {
+        super.writeToNBT(tag);
 
         NBTTagCompound input = new NBTTagCompound();
         NBTTagCompound output = new NBTTagCompound();
 
-        par1NBTTagCompound.setBoolean(TAG_WORKING, working);
-        par1NBTTagCompound.setInteger(TAG_INTERNAL_VIS, internalVis);
-        par1NBTTagCompound.setInteger(TAG_REQUIRED_VIS, requiredVis);
+        tag.setBoolean(TAG_WORKING, working);
+        tag.setInteger(TAG_INTERNAL_VIS, internalVis);
+        tag.setInteger(TAG_REQUIRED_VIS, requiredVis);
+        tag.setInteger(TAG_TICKS, tickCounter);
 
         if (working) {
-            par1NBTTagCompound.setString(TAG_ASPECT, cvType.getTag());
-            par1NBTTagCompound.setTag(TAG_INPUT, currentInput.writeToNBT(input));
-            par1NBTTagCompound.setTag(TAG_OUTPUT, currentOutput.writeToNBT(output));
+            tag.setString(TAG_ASPECT, aspect.getTag());
+            tag.setTag(TAG_INPUT, currentInput.writeToNBT(input));
+            tag.setTag(TAG_OUTPUT, currentOutput.writeToNBT(output));
         }
 
-        NBTTagList var2 = new NBTTagList();
-        for (int var3 = 0; var3 < inventorySlots.length; ++var3) {
-            if (inventorySlots[var3] != null) {
-                NBTTagCompound var4 = new NBTTagCompound();
-                var4.setByte("Slot", (byte) var3);
-                inventorySlots[var3].writeToNBT(var4);
-                var2.appendTag(var4);
+        NBTTagList items = new NBTTagList();
+        for (int i = 0; i < inventorySlots.length; ++i) {
+            if (inventorySlots[i] != null) {
+                NBTTagCompound item = new NBTTagCompound();
+                item.setByte("Slot", (byte) i);
+                inventorySlots[i].writeToNBT(item);
+                items.appendTag(item);
             }
         }
-        par1NBTTagCompound.setTag("Items", var2);
+        tag.setTag("Items", items);
     }
 
     @Override
@@ -262,8 +263,8 @@ public class TileEntityVisweaver extends TileEntity implements ISidedInventory {
         return tickCounter;
     }
 
-    public Aspect getCvType() {
-        return cvType;
+    public Aspect getAspect() {
+        return aspect;
     }
 
     public int getInternalVis() {

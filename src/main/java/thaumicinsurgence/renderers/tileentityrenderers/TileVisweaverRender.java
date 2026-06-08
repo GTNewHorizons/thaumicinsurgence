@@ -33,7 +33,7 @@ public class TileVisweaverRender extends TileEntitySpecialRenderer {
         GL11.glTranslatef(0.5F, 1.5F, 0.5F);
         GL11.glScalef(1F, -1F, -1F);
 
-        model.render(visweaver.isWorking(), visweaver.getTickCounter(), visweaver.getCvType());
+        model.render(visweaver.isWorking(), visweaver.getTickCounter(), visweaver.getAspect());
 
         GL11.glRotatef(90F, 1F, 0F, 0F);
         GL11.glTranslatef(0F, 0F, -0.6F);

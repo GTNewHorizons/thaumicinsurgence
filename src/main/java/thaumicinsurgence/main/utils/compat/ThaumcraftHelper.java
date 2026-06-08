@@ -429,7 +429,7 @@ public class ThaumcraftHelper implements IModHelper {
         thaumicInterfacerPage.setParents("INFUSION");
 
         visweaverPage.setPages(visweaver1, visweaver2);
-        visweaverPage.setParents("VISPOWER");
+        visweaverPage.setParents("VISPOWER", "INFUSION");
 
         soapAlphaPage.setPages(soapAlpha1, soapAlpha2);
         soapAlphaPage.setParents("SANESOAP");

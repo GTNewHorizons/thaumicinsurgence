@@ -1,12 +1,7 @@
 package thaumicinsurgence.client.gui;
 
-import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
-
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
@@ -23,16 +18,11 @@ public class GuiVisweaver extends GuiContainer {
             "thaumicinsurgence",
             "textures/gui/guivisweaver.png");
     public TileEntityVisweaver visweaver;
-    public List<String> tooltip = new ArrayList<>();
     int x, y;
-    ItemStack lastTickStack;
-    ItemStack currentStack;
 
     public GuiVisweaver(InventoryPlayer inv, TileEntityVisweaver visweaver) {
         super(new ContainerVisweaver(inv, visweaver));
         this.visweaver = visweaver;
-        lastTickStack = visweaver.getStackInSlot(0);
-        currentStack = visweaver.getStackInSlot(0);
     }
 
     @Override
@@ -41,12 +31,6 @@ public class GuiVisweaver extends GuiContainer {
 
         x = (width - xSize) / 2;
         y = (height - ySize) / 2;
-    }
-
-    @Override
-    public void updateScreen() {
-        currentStack = visweaver.getStackInSlot(0);
-        lastTickStack = currentStack;
     }
 
     @Override
@@ -61,8 +45,8 @@ public class GuiVisweaver extends GuiContainer {
             int pixels = (int) (67D * ((double) visweaver.getInternalVis() / (double) visweaver.getRequiredVis()));
 
             // Draw aspect color to fill
-            Color color = new Color(visweaver.getCvType().getColor());
-            GL11.glColor3ub((byte) color.getRed(), (byte) color.getGreen(), (byte) color.getBlue());
+            int color = visweaver.getAspect().getColor();
+            GL11.glColor3ub((byte) (color >> 16 & 0xFF), (byte) (color >> 8 & 0xFF), (byte) (color & 0xFF));
             drawTexturedModalRect(x + 56, y + 35, 185, 10, pixels, 8);
         }
 

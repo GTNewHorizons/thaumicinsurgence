@@ -37,7 +37,7 @@ public class VisweaverRecipeHandler extends TemplateThaumHandler {
     public void loadCraftingRecipes(ItemStack result) {
         boolean visweaverResearched = Util.shouldShowRecipe("visweaver");
         for (VisweaverRecipe recipe : VisweaverRecipeMap.getAllRecipes()) {
-            if (NEIServerUtils.areStacksSameTypeCraftingWithNBT(recipe.getOutput(), result)) {
+            if (NEIServerUtils.areStacksSameTypeCraftingWithNBT(recipe.output(), result)) {
                 new VisweaverCachedRecipe(recipe, visweaverResearched);
             }
         }
@@ -46,9 +46,19 @@ public class VisweaverRecipeHandler extends TemplateThaumHandler {
     @Override
     public void loadUsageRecipes(ItemStack ingredient) {
         if (!Util.shouldShowRecipe("visweaver")) return;
-        for (VisweaverRecipe recipe : VisweaverRecipeMap.getAllRecipes()) {
-            if (NEIServerUtils.areStacksSameTypeCraftingWithNBT(recipe.getInput(), ingredient)) {
-                new VisweaverCachedRecipe(recipe, true);
+        if (ingredient.getItem() instanceof ItemAspect) {
+            Aspect aspect = ItemAspect.getAspect(ingredient);
+            if (!aspect.isPrimal()) return;
+            for (VisweaverRecipe recipe : VisweaverRecipeMap.getAllRecipes()) {
+                if (aspect == recipe.aspect()) {
+                    new VisweaverCachedRecipe(recipe, true);
+                }
+            }
+        } else {
+            for (VisweaverRecipe recipe : VisweaverRecipeMap.getAllRecipes()) {
+                if (NEIServerUtils.areStacksSameTypeCraftingWithNBT(recipe.input(), ingredient)) {
+                    new VisweaverCachedRecipe(recipe, true);
+                }
             }
         }
     }
@@ -72,11 +82,11 @@ public class VisweaverRecipeHandler extends TemplateThaumHandler {
 
         public VisweaverCachedRecipe(VisweaverRecipe recipe, boolean shouldShowRecipe) {
             super(shouldShowRecipe);
-            AspectList aspect = new AspectList();
-            aspect.aspects.put(recipe.getCentivisType(), recipe.getCentivisCost());
 
-            this.setIngredient(recipe.getInput());
-            this.setResult(recipe.getOutput());
+            AspectList aspect = new AspectList().add(recipe.aspect(), recipe.cost());
+
+            this.setIngredient(recipe.input());
+            this.setResult(recipe.output());
             this.setAspects(aspect);
             tryAddResearch(ResearchCategories.getResearch("visweaver"));
             this.addAspectToIngredients(aspects);

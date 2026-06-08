@@ -5,7 +5,7 @@ import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
@@ -13,8 +13,12 @@ import net.minecraft.world.World;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import thaumcraft.api.ThaumcraftApiHelper;
+import thaumcraft.api.aspects.Aspect;
+import thaumicinsurgence.api.VisweaverRecipeMap;
 import thaumicinsurgence.main.Config;
 import thaumicinsurgence.main.ThaumicInsurgence;
+import thaumicinsurgence.main.utils.compat.ThaumcraftHelper;
 import thaumicinsurgence.tileentity.TileEntityVisweaver;
 
 public class BlockVisweaver extends BlockContainer {
@@ -26,11 +30,16 @@ public class BlockVisweaver extends BlockContainer {
 
         this.setBlockName("visweaver");
         this.setBlockTextureName("ThaumicInsurgence:visweaver");
+
+        VisweaverRecipeMap.putRecipe(Aspect.FIRE, 25, new ItemStack(Items.bed), new ItemStack(Items.spider_eye));
+        VisweaverRecipeMap.putRecipe(Aspect.EARTH, 50, new ItemStack(Items.brick), new ItemStack(Items.netherbrick));
     }
 
     public boolean onBlockActivated(final World world, final int x, final int y, final int z, final EntityPlayer player,
-            final int p_149727_6_, final float p_149727_7_, final float p_149727_8_, final float p_149727_9_) {
-        player.openGui(ThaumicInsurgence.instance, 0, world, x, y, z);
+            final int side, final float subX, final float subY, final float subZ) {
+        if (ThaumcraftApiHelper.isResearchComplete(player.getCommandSenderName(), "visweaver")) {
+            player.openGui(ThaumicInsurgence.instance, 0, world, x, y, z);
+        }
         return true;
     }
 
@@ -51,7 +60,7 @@ public class BlockVisweaver extends BlockContainer {
     @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int meta) {
-        return Blocks.planks.getIcon(0, 1);
+        return ThaumcraftHelper.wooden.getIcon(1, 6);
     }
 
     @Override
