@@ -40,8 +40,8 @@ public class TileEntityVisweaver extends TileEntity implements ISidedInventory {
     public void updateEntity() {
         tickCounter++;
         if (worldObj.isRemote) return;
+        ItemStack currentStack = getStackInSlot(0);
         if (working) {
-            ItemStack currentStack = getStackInSlot(0);
             if (currentStack == null || currentInput == null || !currentStack.isItemEqual(currentInput)) {
                 flushRecipe();
                 worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
@@ -51,7 +51,16 @@ public class TileEntityVisweaver extends TileEntity implements ISidedInventory {
         if (!working) {
             recipeCheck();
         } else {
-            internalVis += VisNetHandler.drainVis(this.worldObj, this.xCoord, this.yCoord, this.zCoord, aspect, 500);
+            // This is guaranteed by the above check but I want the linter to shut up
+            if (currentStack != null) {
+                internalVis += VisNetHandler.drainVis(
+                        this.worldObj,
+                        this.xCoord,
+                        this.yCoord,
+                        this.zCoord,
+                        aspect,
+                        currentStack.stackSize * requiredVis - internalVis);
+            }
             progressRecipe();
             worldObj.markBlockForUpdate(xCoord, yCoord, zCoord);
         }
