@@ -11,6 +11,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.ForgeDirection;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.visnet.VisNetHandler;
 import thaumicinsurgence.api.VisweaverRecipe;
@@ -35,6 +37,7 @@ public class TileEntityVisweaver extends TileEntity implements ISidedInventory {
     private int requiredVis;
 
     ItemStack[] inventorySlots = new ItemStack[2];
+    private static final int[] slotIndices = { 0, 1 };
 
     @Override
     public void updateEntity() {
@@ -286,8 +289,8 @@ public class TileEntityVisweaver extends TileEntity implements ISidedInventory {
 
     @Override
     public int[] getAccessibleSlotsFromSide(int side) {
-        if (side == ForgeDirection.UP.ordinal()) return new int[0];
-        return new int[] { 0, 1 };
+        if (side == ForgeDirection.UP.ordinal()) return ArrayUtils.EMPTY_INT_ARRAY;
+        return slotIndices;
     }
 
     @Override
