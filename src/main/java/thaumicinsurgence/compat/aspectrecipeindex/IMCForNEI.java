@@ -8,7 +8,7 @@ public class IMCForNEI {
 
     public static void IMCSender() {
         registerHandlerInfo(VisweaverRecipeHandler.class.getName(), "thaumicinsurgence:tile.visweaver", 60);
-        registerCatalystInfo(new VisweaverRecipeHandler().getOverlayIdentifier(), "thaumicinsurgence:tile.visweaver");
+        registerCatalystInfo(VisweaverRecipeHandler.OVERLAY, "thaumicinsurgence:tile.visweaver");
     }
 
     private static void registerHandlerInfo(String name, String stack, int height) {
